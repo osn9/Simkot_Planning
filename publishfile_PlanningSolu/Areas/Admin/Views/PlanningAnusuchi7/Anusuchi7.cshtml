@@ -1,0 +1,391 @@
+﻿@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi7ViewModel
+
+@{
+    ViewBag.Title = "Anusuchi7";
+    Layout = null;
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from o in db.Organization_Setup select o).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+    }
+
+}
+
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+
+
+<div class="tab-pane fade in active" id="fiscalYearRecord">
+    <h3 class="step_ttl">अनुसूची ७ / उपभोक्ता समिति सम्बन्धी विवरण</h3>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well" }))
+    {
+        @Html.HiddenFor(model => model.Planning_Samjhauta_Id)
+        @Html.HiddenFor(model => model.AnuSuchi7_Id)
+        <fieldset>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>क. उपभोक्ता समिति गठन गरेको मितिः</label>
+                        @Html.EditorFor(model => model.Samiti_Estd_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Samiti_Estd_Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>ख. स्थानः</label>
+                        @Html.EditorFor(model => model.Samiti_Address, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Samiti_Address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>घ. अध्यक्षताः</label>
+                        @Html.EditorFor(model => model.Adakshyata, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.ValidationMessageFor(model => model.Adakshyata, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="form-group">
+                        <label>ग. गठन प्रक्रिया(सर्वसम्मत वा चुनाव, सूचना प्रवाहको विधि आदि):</label>
+                        @Html.EditorFor(model => model.Established_Type, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.ValidationMessageFor(model => model.Established_Type, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>ङ. उपस्थित संख्याः</label>
+                        @Html.EditorFor(model => model.Total_Present_No, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.ValidationMessageFor(model => model.Total_Present_No, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <label><strong>च. उपभोक्ता समितिका सदस्यहरुको नामावलीः</strong></label>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" id="btn-UpaBhoktaSamitiOptions" class="btn btn-primary btn-add pull-right">
+                        <i class="fa fa-plus"></i>&nbsp; सदस्य थप्नुहोस्
+                    </button>
+                </div>
+                <div class="clearfix">
+                </div>
+                @if (Model.Anusuchi7_Upabhokta_SamitiViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.Anusuchi7_Upabhokta_SamitiViewModelList)
+                    {
+                        @Html.Partial("_UpaBhoktaSamiti", item)
+                    }
+                }
+                else
+                {
+                    @Html.Partial("_UpaBhoktaSamiti")
+                }
+                <div id="getUpaBhoktaSamitiOption">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <label><strong>अनुगमन तथा सहजीकरण समितिका सदस्यहरुको नामावलीः</strong></label>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" id="btn-AnugamanSamitiOptions" class="btn btn-primary btn-add pull-right">
+                        <i class="fa fa-plus"></i>&nbsp; सदस्य थप्नुहोस्
+                    </button>
+                </div>
+                <div class="clearfix">
+                </div>
+                @if (Model.Anusuchi7_Anugaman_SamitiViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.Anusuchi7_Anugaman_SamitiViewModelList)
+                    {
+                        @Html.Partial("_AnugamanSamiti", item)
+                    }
+                }
+                else
+                {
+                    @Html.Partial("_AnugamanSamiti")
+                }
+                <div id="getAnugamanSamitiOption">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+            <div class="form-group">
+                <label class="col-lg-3  col-md-4 control-label"></label>
+                <div class="col-lg-7 col-md-7">
+                    <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">प्रिन्ट</button>
+                </div>
+            </div>
+        </fieldset>
+    }
+</div>
+
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:800px;">
+            <div class="cotract_letter" id="printdiv">
+
+                <style>
+                    .header-section .table tbody > tr, .content-section .table tbody > tr, .detail .table tbody > tr, .sign.table tbody > tr {
+                        border: none !important;
+                    }
+
+                    header-section .table tr td, .content-section .table tbody > tr, .detail .table tbody > tr, .sign .table tbody > tr {
+                        border: none !important;
+                        border-color: #f9f9f9 !important;
+                        padding: 0px !important;
+                    }
+
+                    @@media print {
+                        .header-section .table tr td, .content-section .table tr td {
+                            border: none !important;
+                            border: !important;
+                            border-color: #fff !important;
+                            padding: 0px !important;
+                        }
+
+                        .header-section .table tbody > tr, .content-section .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+
+                        .header-section .table, .table tbody > tr, td, .content-section .table, .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+
+                        .body-section th, .body-section td {
+                            padding: 0px !important;
+                            text-align:center;
+                        }
+
+                        .body-section td {
+                            color: #000000 !important;
+                            text-align:center;
+                        }
+                    }
+                </style>
+
+                <div class="header-section">
+                    <table class="table" border="0" style="border:0px !important; margin-top:0px; margin-bottom: 0px;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="25%" style="border:none !important; border:0px !important;">
+                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                </td>
+                                <td width="45%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h2 style="font-weight:bold; font-size:16px;">अनुसूची-७ </h2>
+                                    <h2 style="font-weight:bold; font-size:16px; margin-top:0px;">उपभोक्ता समिती सम्बन्धित  विवरण </h2>
+                                </td>
+                                <td width="30%" style="border:none !important; border:0px !important;">
+                                    <img src="@ViewBag.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-section">
+                    <table class="table" border="0" style="border:0px !important; margin-bottom:0px;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="font-size:14px; border:none !important; margin-bottom:0px;"><span style="display:block;">क. उपभोक्ता समिती गठन गरेको मिति: @if (Model.Samiti_Estd_Date != null) { @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Samiti_Estd_Date.Value.ToShortDateString())}</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px; border:none !important; margin-bottom:0px;"><span style="display:block;">ख. स्थान: @Model.Samiti_Address</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px; border:none !important; margin-bottom:0px;"><span style="display:block;">ग. गठन प्रक्रीया  (सर्वसम्मत वा चुनाब , सूचना प्रवाहको विधि आदि): @Model.Established_Type</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important; margin-bottom:0px;"><span style="display:block;">घ. अध्यक्षता: @Model.Adakshyata</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px; border:none !important; margin-bottom:0px;"><span style="display:block;"> ङ. उपश्थित संख्या: @Model.Total_Present_No</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px; border:none !important; margin-bottom:0px;"><span style="display:block;">च. उपभोक्ता सहमिति सदरय्हरूको नामावली: </span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-lg-12 col-md-12 body-section" style="font-size:14px; font-weight:500; padding:0px 10px;">
+                    <table class="table table-bordered" style="margin-bottom:10px;">
+                        <thead>
+
+                            <tr>
+                                <th>सि.नं.</th>
+                                <th>पदाधिकारीको नाम</th>
+                                <th>लिंग</th>
+                                <th>पद</th>
+                                <th>बाबू वा पतिको नाम</th>
+                                <th>बाजेको नाम</th>
+                                <th>मोबाइल न</th>
+                                <th>हस्ताक्षर</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{int i = 1;}
+                            @foreach (var item in Model.Anusuchi7_Upabhokta_SamitiViewModelList)
+                            {
+                                <tr>
+                                    <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</td>
+                                    <td>@item.Upabhokta_Samiti_Member_Name</td>
+                                    <td>@item.Upabhokta_Samiti_Gender</td>
+                                    <td>@item.Upabhokta_Samiti_Position</td>
+                                    <td>@item.Upabhokta_Samiti_Father_Husband_Name</td>
+                                    <td>@item.Upabhokta_Samiti_GrandFather_Name</td>
+                                    <td>@item.Upabhokta_Samiti_Mobile_No</td>
+                                    <td></td>
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-section">
+                    <table class="table" border="0" style="border:0px !important; margin-bottom:0px;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">अनुगामा तथा सहजीकरण सहमितिका सदरय्हरूको नामावली :</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-lg-12 col-md-12 body-section" style="font-size:14px; font-weight:500; padding:0px 10px;">
+                    <table class="table table-bordered" style="margin-bottom:0px;">
+                        <thead>
+                            <tr>
+                                <th>सि.नं.</th>
+                                <th>पदाधिकारीको नाम</th>
+                                <th>लिंग</th>
+                                <th>पद</th>
+                                <th>बाबू वा पतिको नाम</th>
+                                <th>बाजेको नाम</th>
+                                <th>मोबाइल न</th>
+                                <th>हस्ताक्षर</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{int j = 1;}
+                            @foreach (var item in Model.Anusuchi7_Anugaman_SamitiViewModelList)
+                            {
+                                <tr>
+                                    <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(j.ToString())</td>
+                                    <td>@item.Anugaman_Samiti_Member_Name</td>
+                                    <td>@item.Anugaman_Samiti_Gender</td>
+                                    <td>@item.Anugaman_Samiti_Position</td>
+                                    <td>@item.Anugaman_Samiti_Father_Husband_Name</td>
+                                    <td>@item.Anugaman_Samiti_GrandFather_Name</td>
+                                    <td>@item.Anugaman_Samiti_Mobile_No</td>
+                                    <td></td>
+                                </tr>
+                                j++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-UpaBhoktaSamitiOptions').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddUpaBhoktaSamiti", "PlanningAnusuchi7")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getUpaBhoktaSamitiOption').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-AnugamanSamitiOptions').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddAnugamanSamiti", "PlanningAnusuchi7")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getAnugamanSamitiOption').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+<script>
+    $('#Samiti_Estd_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+</script>
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+
+        $('#myModal').modal('hide')
+        $('.modal-backdrop').hide();
+
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.btn-info').click(function () {
+        $('#myModal').modal({
+			backdrop: 'static'
+		});
+	});
+});
+</script>
+

@@ -1,0 +1,65 @@
+﻿@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi7ViewModel
+
+@using Planning.Helpers
+
+@using (Html.BeginCollectionItem("Anusuchi7_Anugaman_SamitiViewModelList"))
+    {
+<div id="Members_Anugaman_Samiti" class="form-group">
+
+    <div class="col-lg-3 col-md-6" style="padding-right:5px;">
+        <div class="form-group">
+            <label>पदाधिकारी नामः</label>
+            @Html.EditorFor(model => model.Anugaman_Samiti_Member_Name, new { htmlAttributes = new { @class = "form-control " } })
+            @Html.ValidationMessageFor(model => model.Anugaman_Samiti_Member_Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-lg-1 col-md-6" style="padding-right:5px; padding-left:0px;">
+        <div class="form-group">
+            <label>लिंगः</label>
+            @Html.DropDownListFor(model => model.Anugaman_Samiti_Gender, Planning.Utility.CommonUtility.GetGenderList(), "-- छान्नुहोस --", new { @class = "form-control " })
+            @Html.ValidationMessageFor(model => model.Anugaman_Samiti_Gender, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-lg-1 col-md-6" style="padding-right:0px; padding-left:0px;">
+        <div class="form-group">
+            <label>पदः</label>
+            @Html.DropDownListFor(model => model.Anugaman_Samiti_Position, Planning.Utility.CommonUtility.GetDesignitionList(), "-- छान्नुहोस --", new { @class = "form-control " })
+            @Html.ValidationMessageFor(model => model.Anugaman_Samiti_Position, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-6" style="padding-right:0px; padding-left:5px;">
+        <div class="form-group">
+            <label>बाबु वा पतिको नामः</label>
+            @Html.EditorFor(model => model.Anugaman_Samiti_Father_Husband_Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Anugaman_Samiti_Father_Husband_Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-6" style="padding-right:0px; padding-left:5px;">
+        <div class="form-group">
+            <label>बाजेको नामः</label>
+            @Html.EditorFor(model => model.Anugaman_Samiti_GrandFather_Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Anugaman_Samiti_GrandFather_Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-6" style="padding-right:0px; padding-left:5px;">
+        <div class="form-group">
+            <label>मोबाइल नंः</label>
+            @Html.EditorFor(model => model.Anugaman_Samiti_Mobile_No, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Anugaman_Samiti_Mobile_No, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="btn-delete col-md-1" style="margin-top: 25px;">
+        <div><a href='javascript:;' class="btn btn-danger btn-sm removeAnugaman_Samiti"><span class='fa fa-minus fa-1x'></span></a></div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+}
+
+
+<script>
+    $(".removeAnugaman_Samiti").click(function () {
+        $(this).parents("#Members_Anugaman_Samiti").remove();
+    });
+</script>
+

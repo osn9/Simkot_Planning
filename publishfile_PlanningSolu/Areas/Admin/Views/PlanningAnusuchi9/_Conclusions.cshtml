@@ -1,0 +1,24 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi9ViewModel
+
+@using Planning.Helpers
+
+@using (Html.BeginCollectionItem("Anusuchi9_Discussion_ConclusionsViewModelList"))
+{
+    <div id="Conclusions_SamitiBaithak" class="form-group">
+
+        <div class="col-md-6">@Html.TextAreaFor(model => model.Conclusions, 3, 70, new { htmlAttributes = new { @class = "form-control", @placeholder = "विषय राख्नुहोस" } }) </div>
+
+        <div class="btn-delete col-md-1">
+            <div><a href='javascript:;' class="btn btn-danger btn-sm removeconclusion"><span class='fa fa-minus fa-1x'></span></a></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+
+
+<script>
+    $(".removeconclusion").click(function () {
+        $(this).parents("#Conclusions_SamitiBaithak").remove();
+    });
+</script>

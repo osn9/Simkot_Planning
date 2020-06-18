@@ -1,0 +1,192 @@
+﻿@model Planning.Areas.Admin.Models.PlanningDashBoardViewModel
+@{
+    //Layout = null;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 255, j = 0;
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/js/Chart.min.js"></script>
+<script src="~/js/charts-home.js"></script>
+<script src="~/js/charts-custom.js"></script>
+
+@if (TempData["PasswordResetMsg"] != null)
+{
+    <div class="alert alert-success" role="alert" id="success-alert">
+        @TempData["PasswordResetMsg"]
+    </div>
+}
+
+<div>
+    <!-- Pie Chart-->
+    <div class="col-lg-4 col-md-6 dash-center">
+        <div class="card project-progress">
+            <h2 class="display h4">स्रोत अनुसार विवरण</h2>
+            <div class="pie-chart">                
+                <canvas id="pieChartWithVariable" width="300" height="300"> </canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Line Chart -->
+    <div class="col-lg-8 col-md-12 flex-lg-last flex-md-first align-self-baseline">
+        <div class="card bar-chart-example">
+            <h2 class="display h4">वडा स्तरिय/नगर स्तरिय स्रोत अनुसार वाडफाड विवरण</h2>
+            <div class="card-body">
+                @*<canvas id="barChartExample"></canvas>*@
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
+        $("#success-alert").slideUp(500);
+    });
+</script>
+<script src="~/js/modular-chart.js"></script>
+<script>
+    $(document).ready(function () {
+
+        'use strict';
+        // Main Template Color
+        $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
+            $("#success-alert").slideUp(500);
+        });
+        var inputLabel=[];
+        var inputData = [];
+        var colors = [];
+        var border = [];
+
+        var arrayindexcounter=0;
+        // var arraylenget=colorarray.length();
+        var count=@Model.BudgetSourceList.Count;
+        @{
+            var arrayindexcounter = 0;
+            //var arraylenget = colorarray.length();
+        }
+        @foreach (var item in Model.BudgetSourceList)
+        {
+            @:inputLabel.push("@Planning.Utility.CommonUtility.GetBudgetSourceNameById(item.BudgetSourceId)");
+            @:inputData.push("@item.PlanningTotalAmount");
+                                  //  @:colors.push("rgba(@(i), @(j), @(i+40), @(j+50))");
+            string[] colorse = new string[] { "rgba(255, 99, 132,1)", "rgba(54, 162, 235,1)", "rgba(255, 206, 86,1)", "rgba(51, 179, 90,1)", "rgba(75, 192, 192,1)" };
+            var arraylenget = colorse.Length;
+            if (arrayindexcounter>=arraylenget)
+            {
+                arrayindexcounter = 0;
+            }
+            @:colors.push("@colorse[arrayindexcounter]")
+                    arrayindexcounter++;
+            @:border.push(2);
+            i =i + 20;
+            j = j + 12;
+        }
+
+        drawDoughnut('pieChartWithVariable', inputLabel, inputData, colors, border);
+    });
+</script>
+<script>
+    //$(document).ready(function () {
+    var inputLabel=[];
+    var inputData = [];
+    var colors = [];
+    var border = [];
+    var data=[];
+    var inputDataNagar = [];    
+    @foreach(var item in Model.BudgetSourceList)
+    {
+           @:inputLabel.push("@Planning.Utility.CommonUtility.GetBudgetSourceNameById(item.BudgetSourceId)");
+            double wardSum = 0;
+             double nagarSum = 0;
+            foreach( var k in Model.PlanningWardTypeList)
+            {
+                if (item.BudgetSourceId == k.BudgetSourceId)
+                {
+                      wardSum+=k.PlanningTotalAmount;
+                }
+            }
+                @:inputData.push("@wardSum");
+
+            foreach (var k in Model.PlanningNagarTypeList)
+            {
+                if (item.BudgetSourceId == k.BudgetSourceId)
+                {
+                    nagarSum += k.PlanningTotalAmount;
+                }
+            }
+              @:inputDataNagar.push("@nagarSum");
+               @:colors.push("rgba(@(i), @(j), @(i+40), @(j+50))");
+                        @:border.push(2);
+                        i=i + 20;
+                        j = j + 12;
+    }
+    
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: inputLabel,
+            datasets: [
+                {
+                    label: 'वडास्तरिय योजनाको रकम',
+                    data: inputData,
+                    backgroundColor: [
+                             'rgba(75,192,192,1)',
+                             'rgba(75,192,192,1)',
+                             'rgba(75,192,192,1)',
+                             'rgba(75,192,192,1)',
+                             'rgba(75,192,192,1)',
+                             'rgba(75,192,192,1)',
+                             'rgba(75,192,192,1)'
+                    ],
+                    borderColor: [
+                        'rgba(75,192,192,1)',
+                        'rgba(75,192,192,1)',
+                        'rgba(75,192,192,1)',
+                        'rgba(75,192,192,1)',
+                        'rgba(75,192,192,1)',
+                        'rgba(75,192,192,1)',
+                        'rgba(75,192,192,1)'
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'नगरस्तरिय योजनाको रकम',
+                    data: inputDataNagar,
+                    backgroundColor: [
+                           'rgba(51, 179, 90, 1)',
+                           'rgba(51, 179, 90, 1)',
+                           'rgba(51, 179, 90, 1)',
+                           'rgba(51, 179, 90, 1)',
+                           'rgba(51, 179, 90, 1)',
+                           'rgba(51, 179, 90, 1)',
+                           'rgba(51, 179, 90, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(51, 179, 90, 1)',
+                        'rgba(51, 179, 90, 1)',
+                        'rgba(51, 179, 90, 1)',
+                        'rgba(51, 179, 90, 1)',
+                        'rgba(51, 179, 90, 1)',
+                        'rgba(51, 179, 90, 1)',
+                        'rgba(51, 179, 90, 1)'
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        }
+        //,
+        //options: {
+        //    scales: {
+        //        yAxes: [{
+        //            ticks: {
+        //                beginAtZero: true
+        //            }
+        //        }]
+        //    }
+        //}
+    });
+    //});
+</script>

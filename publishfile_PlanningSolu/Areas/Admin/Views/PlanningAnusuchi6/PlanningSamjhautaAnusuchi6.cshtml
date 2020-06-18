@@ -1,0 +1,475 @@
+﻿@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi6ViewModel
+
+@{
+    Layout = null;
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from o in db.Organization_Setup select o).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+    }
+
+}
+
+
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+
+<div class="tab-pane fade in active" id="fiscalYearRecord">
+    <h3 class="step_ttl">अनुसूची ६ / उपभोक्ता समितिको भोेतिक तथा वित्तिय प्रगति प्रतिवेदन</h3>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well" }))
+    {
+        @Html.HiddenFor(model=>model.Planning_Samjhauta_Id)
+        @Html.HiddenFor(model=>model.Anusuchi6_Id)
+        <fieldset>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजनाको नामः</label>
+                        @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>वडा नं.</label>
+                        @Html.EditorFor(model => model.Ward_No, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Ward_No, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>टोल-बस्तीः</label>
+                        @Html.EditorFor(model => model.Street_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Street_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>उपभोक्ता समिति</label>
+                        @Html.EditorFor(model => model.Upabhokta_Samiti_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Upabhokta_Samiti_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>अध्यक्षः</label>
+                        @Html.EditorFor(model => model.Adakshya, new { htmlAttributes = new { @class = "form-control  nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Adakshya, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>सचिवः</label>
+                        @Html.EditorFor(model => model.Sachib, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Sachib, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>अनुदान रकमः</label>
+                        @Html.EditorFor(model => model.Anudan_Rakam, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Anudan_Rakam, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>चन्दा रकमः</label>
+                        @Html.EditorFor(model => model.Chanda_Rakam, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Chanda_Rakam, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>जनसहभागिता रकमः</label>
+                        @Html.EditorFor(model => model.Jana_Sahabhagita_Rakam, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Jana_Sahabhagita_Rakam, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>जम्मा रकमः</label>
+                        @Html.EditorFor(model => model.Total_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Total_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>हालसम्मको खर्चः</label>
+                        @Html.EditorFor(model => model.Total_Expenses_TillNow, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Total_Expenses_TillNow, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="row">
+                <div class="detail" style="font-size:16px; font-weight:500;">कार्यालयबाट</div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>कार्यालयबाट प्राप्त रकमः</label>
+                        @Html.EditorFor(model => model.Karyalaya_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Karyalaya_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>निर्माण सामाग्री रुः</label>
+                        @Html.EditorFor(model => model.Nirman_Samagri_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Nirman_Samagri_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>दक्ष रुः</label>
+                        @Html.EditorFor(model => model.Dashya_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Dashya_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>अदक्ष रुः</label>
+                        @Html.EditorFor(model => model.Adashya_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Adashya_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>अन्यः</label>
+                        @Html.EditorFor(model => model.Others_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Others_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>दैनिक भ्रमण भत्ता रुः</label>
+                        @Html.EditorFor(model => model.Travel_Expenses_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Travel_Expenses_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>प्राविधिक निरीक्षण खर्चः</label>
+                        @Html.EditorFor(model => model.Technical_Supervise_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Technical_Supervise_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>मसलन्द सामान रुः</label>
+                        @Html.EditorFor(model => model.Masalanda_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Masalanda_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="row">
+                <div class="detail" style="font-size:16px; font-weight:500;">जनसहभागिताबाट</div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>जनसहभागिताबाट व्यहोरिएको खर्चः</label>
+                        @Html.EditorFor(model => model.Janasahabhagita_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Janasahabhagita_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>श्रमको मूल्यः</label>
+                        @Html.EditorFor(model => model.Sharam_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Sharam_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>जिन्सी सामान मूल्यः</label>
+                        @Html.EditorFor(model => model.Jinsi_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Jinsi_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>प्राविधिक प्रतिवेदन मुल्यांकन रकमः</label>
+                        @Html.EditorFor(model => model.Technical_Review_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Technical_Review_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>उ.स. निर्णय बमोजिम रकमः</label>
+                        @Html.EditorFor(model => model.Upabhikta_Decision_Amount, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Upabhikta_Decision_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>माग गरेको किस्ता रकमः</label>
+                        @Html.EditorFor(model => model.Kista_Rakam_Demand, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Kista_Rakam_Demand, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>अनुगमनको सुझावः</label>
+                        @Html.EditorFor(model => model.Field_Supervise_Decision, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Field_Supervise_Decision, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>मुख्य खर्च प्रयोजनः</label>
+                        @Html.EditorFor(model => model.Main_Expenses, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Main_Expenses, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="row">
+                <div class="col-md-2"><label>सामाधानका उपायहरु</label></div>
+                <div class="col-md-6"><button type="button" id="btn-AddSolutionOptions" class="btn btn-primary btn-add pull-right"><i class="fa fa-plus"></i>&nbsp; उपायहरु थप्नुहोस्</button></div>
+                <div class="clearfix"></div><br />
+                @if (Model.Anusuchi6_SolutionsViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.Anusuchi6_SolutionsViewModelList)
+                    {
+                        @Html.Partial("_PragatiPratibedanSolutions", item)
+                    }
+                }
+                else
+                {
+                    @Html.Partial("_PragatiPratibedanSolutions")
+                }
+                <div id="getSolutionOptions">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="form-group">
+                <label class="col-lg-3  col-md-4 control-label"></label>
+                <div class="col-lg-7 col-md-7">
+                    <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">प्रिन्ट</button>
+                </div>
+            </div>
+        </fieldset>
+    }
+</div>
+
+
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:800px;">
+
+            <div class="cotract_letter" id="printdiv">
+
+                <style>
+                    .header-section .table tbody > tr, .content-section .table tbody > tr, .detail .table tbody > tr, .sign.table tbody > tr {
+                        border: none !important;
+                    }
+
+                    header-section .table tr td, .content-section .table tbody > tr, .detail .table tbody > tr, .sign .table tbody > tr {
+                        border: none !important;
+                        border-color: #f9f9f9 !important;
+                        padding: 0px !important;
+                    }
+
+                    @@media print {
+                        .header-section .table tr td, .content-section .table tr td {
+                            border: none !important;
+                            border: !important;
+                            border-color: #fff !important;
+                            padding: 0px !important;
+                        }
+
+                        .header-section .table tbody > tr, .content-section .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+
+                        .header-section .table, .table tbody > tr, td, .content-section .table, .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+                    }
+                </style>
+
+                <div class="header-section">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="25%" style="border:none !important; border:0px !important;">
+                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                </td>
+                                <td width="45%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h2 style="font-weight:bold; font-size:14px;">अनुसूची ६</h2>
+                                    <h2 style="font-weight:bold; font-size:14px; margin-top:0px;">(कार्यविधिको दफा १६ (ङ) सँग सम्बन्धित)</h2>
+                                    <h2 style="font-weight:bold; font-size:14px; margin-top:0px;">उपभोक्ता समितिको भोेतिक तथा वित्तिय प्रगति प्रतिवेदन</h2>
+                                    <h2 style="font-weight:bold; font-size:14px; margin-top:0px;">विवरण पेश गरेको कार्यालय...................</h2>
+                                </td>
+                                <td width="30%" style="border:none !important; border:0px !important;">
+                                    <img src="@ViewBag.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">१. आयोजनाको विवरण</div>
+                <div class="col-lg-12 col-md-12" style="font-size:14px; font-weight:500; padding-left:60px; line-height:30px;">
+                    <div class="row">
+                        <div class="col-md-4" style="display:inline-block; position:relative; vertical-align:top;">
+                            <div class="col-lg-12 col-md-12" style="font-size:14px;">आयोजनाको नामः <span>@Model.Project_Name </span></div>
+                            <div class="col-lg-12 col-md-12" style="font-size:14px;">उपभोक्ता समिति: <span>@Model.Upabhokta_Samiti_Name </span></div>
+                        </div>
+                        <div class="col-md-4" style="display:inline-block;position:relative;">
+                            <div class="col-lg-12 col-md-12" style="font-size:14px;">वडा नं.: <span> @Model.Ward_No </span></div>
+                            <div class="col-lg-12 col-md-12" style="font-size:14px;">अध्यक्षः <span> @Model.Adakshya </span></div>
+                        </div>
+                        <div class="col-md-4" style="display:inline-block;position:relative;">
+                            <div class="col-lg-12 col-md-12" style="font-size:14px;">टोल-बस्तीः <span>@Model.Street_Name </span></div>
+                            <div class="col-lg-12 col-md-12" style="font-size:14px;">सचिवः <span> @Model.Sachib </span></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">२. आयोजनाको लागतः प्राप्त अनुदान रकम रु.&nbsp;&nbsp;<strong>@Model.Anudan_Rakam</strong>&nbsp;&nbsp; चन्दा रकम रु.&nbsp;&nbsp;<strong>@Model.Chanda_Rakam</strong>&nbsp;&nbsp; जनसहभागिता रकम रु. &nbsp;&nbsp;<strong>@Model.Jana_Sahabhagita_Rakam</strong>&nbsp;&nbsp;  जम्मा रकम रु.&nbsp;&nbsp;<strong>@Model.Total_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">३. हालसम्मको खर्च रकम रु.&nbsp;&nbsp;<strong>@Model.Total_Expenses_TillNow</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">क. कार्यालयबाट प्राप्त रकम रु.&nbsp;&nbsp;<strong>@Model.Karyalaya_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">१. निर्माण सामग्रीमा(सिमेन्ट,छड,काठ,ढुंगा वा फुवा,गिट्टी,उपकरण आदि) रु.&nbsp;&nbsp;<strong>@Model.Nirman_Samagri_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">२. ज्यालाः- दक्षः रु.&nbsp;&nbsp;<strong>@Model.Dashya_Amount</strong>&nbsp;&nbsp;&nbsp;&nbsp;अदक्षः रु.&nbsp;&nbsp;<strong>@Model.Adashya_Amount</strong>&nbsp;&nbsp;&nbsp;&nbsp;जम्मा रु.&nbsp;&nbsp;<strong>@Model.Dashya_Amount +  @Model.Adashya_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">३. मसलन्द सामान(कपि,कलम,मसी,कागज आदि) रु.&nbsp;&nbsp;<strong>@Model.Masalanda_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">४. दैनिक भ्रमण भत्ता(सम्झोेतामा स्वीकृत भए) रु.&nbsp;&nbsp;<strong>@Model.Travel_Expenses_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">५. प्राविधिक निरीक्षण बापत खर्च(सम्झोेतामा स्वीकृत भए) रु.&nbsp;&nbsp;<strong>@Model.Technical_Supervise_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">६. अन्य &nbsp;&nbsp;<strong>@Model.Others_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">ख. जनसहभागिताबाट व्यहोरिएको खर्च रु. &nbsp;&nbsp;<strong>@Model.Janasahabhagita_Amount</strong>&nbsp;&nbsp; श्रमको मूल्य बराबर रकम रु. &nbsp;&nbsp;<strong>@Model.Sharam_Amount</strong>&nbsp;&nbsp; जिन्सी सामान मूल्य बराबर रकम रु. &nbsp;&nbsp;<strong>@Model.Jinsi_Amount</strong>&nbsp;&nbsp; कुल जम्मा रु.&nbsp;&nbsp;<strong></strong>&nbsp;&nbsp;</div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">७. प्राविधिक प्रतिवेदन बमोजिम मुल्यांकन रकम रु. &nbsp;&nbsp;<strong>@Model.Technical_Review_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">८. उपभोक्ता समितिको निर्णय बमोजिम-समीक्षाबाट खर्च देखिएको रु. &nbsp;&nbsp;<strong>@Model.Upabhikta_Decision_Amount</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">९.सामाधानका उपायहरु: </div>
+
+                @{ int s = 1;}
+                @if (Model.Anusuchi6_SolutionsViewModelList != null)
+                {
+                    foreach (var sol in Model.Anusuchi6_SolutionsViewModelList)
+                    {
+                        <div class="col-lg-12 col-md-12" style="font-size:14px; margin-left:30px;">@Planning.Utility.NepaliEnglishNumber.English_Nepali(s.ToString()).<span>@sol.Solutions </span></div>
+                        s++;
+                    }
+                }
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">१०. कार्यालयबाट र अन्य निकायबाट अनुगमन भए अनुगमनको सुझाव &nbsp;&nbsp;<strong>@Model.Field_Supervise_Decision</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">११. हाल माग गरेको किस्ता रकम रु. &nbsp;&nbsp;<strong>@Model.Kista_Rakam_Demand</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">१२. मुख्य खर्च प्रयोजन &nbsp;&nbsp;<strong>@Model.Main_Expenses</strong>&nbsp;&nbsp; </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px;">१३. प्राप्त रकम आयोजना बाहेक अन्य कार्यमा खर्च गर्ने गराउने छैनोे ।</div>
+
+
+                <br /><br /><br /><br /><br /><br /><br /><br />
+
+                <div class="sign">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>...................................</td>
+                                <td>...................................</td>
+                                <td>...................................</td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">कोषाध्यक्ष</span></td>
+                                <td style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">सचिव</span></td>
+                                <td style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">अध्यक्ष</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-AddSolutionOptions').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddMore", "PlanningAnusuchi6")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getSolutionOptions').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+
+        debugger;
+        $('#myModal').modal('hide')
+        $('.modal-backdrop').hide();
+
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.btn-info').click(function () {
+        $('#myModal').modal({
+			backdrop: 'static'
+		});
+	});
+});
+</script>
+
+
+

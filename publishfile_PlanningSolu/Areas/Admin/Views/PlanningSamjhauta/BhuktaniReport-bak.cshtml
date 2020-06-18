@@ -1,0 +1,212 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningBhuktaniViewModel.PlanningBhuktaniViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .cotract_letter {
+        border: 1px solid #ccc;
+        margin: 30px 0px;
+        padding: 30px;
+    }
+
+        .cotract_letter header-sec img {
+            max-width: 100%;
+            max-height: 100px;
+        }
+
+    .header-section h1 {
+        font-size: 65px;
+        letter-spacing: 5px;
+    }
+
+    .header-section h2 {
+        font-size: 40px;
+    }
+
+    .header-section h3, .subject h3 {
+        font-size: 30px;
+    }
+
+    .header-section h4 {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+
+    .header-section h1, .header-section h2, .header-section h3,
+    .header-section h4, .subject h3, .letter_footer h3, .letter_content h4 {
+        font-weight: 600;
+    }
+
+    .subject h3 {
+        margin-top: 60px;
+    }
+
+    .letter_footer {
+        margin-top: 60px;
+    }
+
+        .letter_footer, .letter_footer strong, .letter_content,.titleNumber {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+            .letter_footer ul {
+                margin-top: 15px;
+            }
+
+                .letter_footer ul li {
+                    list-style-type: none;
+                }
+
+                    .letter_footer ul li span {
+                        padding-left: 20px;
+                        vertical-align: middle;
+                        display: inline-block;
+                        position: relative;
+                        margin-top: -14px;
+                    }
+                    .titleNumber ul li {
+                    list-style-type: none;
+                }
+</style>
+
+
+<style>
+    .personName {
+        border-style: none;
+    }
+
+        .personName:hover {
+            border-style: none;
+        }
+
+        .personName:focus {
+            border-style: none;
+        }
+</style>
+
+@foreach (var item in Model.PlanningBhuktaniViewModelList)
+{
+    <input type="button" class="btn btn-primary pull-right" value="भुक्तानी प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+
+<div class="container" id="printdiv">
+    <div class="cotract_letter">
+        <div class="row header-section">
+            <div class="col-md-2">
+                <img src="~/img/gov-logo.png" />
+            </div>
+            <div class="col-md-10 text-center">
+                @*<h1>त्रियुगा नगरपालिका</h1>
+                <h2>नगर कार्यपालिकाको कार्यालय</h2>
+                <h3>गाईघाट, उदयपुर</h3>
+                <h4>१ न. प्रदेश, नेपाल</h4>*@
+
+                <h1>धनगढीमाई नगरपालिका</h1>
+                <h2>नगर कार्यपालिकाको कार्यालय</h2>
+                <h3>धनगढी, सिरहा</h3>
+                <h4>२ न. प्रदेश, नेपाल</h4>
+            </div>
+        </div>
+        <div class="text-center subject"><h3> विषय: भुक्तानी । </h3></div>
+        <br />
+        <div class="letter_content">
+            <h4>श्रीमान्</h4>
+            <p>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; चालु आ.व&nbsp; <strong>@item.Fiscal_Year_Record</strong> &nbsp;मा &nbsp; <strong>@item.Budget_Title</strong> &nbsp; वजेट अन्तर्गत &nbsp; <strong>@item.Nirman_Upabhokta</strong> &nbsp; निर्माण
+                उपभोक्ता समिति योजना / कार्यक्रम अन्तर्गत स्वीकृत भई सञ्चालन भएका निम्न आयोजनाको सम्बन्धमा अध्ययन गर्दा
+                तपसिल बमोजिमको कागजातहरु,प्रगति र मूल्याङ्कन भएको देखिएकाले पहिलो किस्ता / दोश्रो किस्ता / अन्तिम किस्ता
+                रकम भुक्तानी हुन मनासिब देखि निणयार्थ पेश गर्दछु ।
+            </p>
+        </div>
+
+        <div class="titleNumber">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <ul>
+                        <li>१. &nbsp; वजेट शिर्षक नं.:<strong>@item.Budget_Title_Number</strong></li>
+                        <li>२. &nbsp; योजना / कार्यक्रम :<strong>@item.Aayojana_Karyakram</strong></li>
+                        <li>३. &nbsp; आयोजनाको विवरण :</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="Bhuktani-Table">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>कूल ल.ई.</th>
+                        <th>न.पा.विनियोजित</th>
+                        <th>अन्य</th>
+                        <th>जन सहभागिता</th>
+                        <th>पेश्की / रनिङ भुक्तानी</th>
+                        <th>अन्तिम प्राविधिक मूल्याङ्कन</th>
+                        <th>कन्टिन्जेन्सी</th>
+                        <th>बाँकी भुक्तानी रकम</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>@item.Kul_La_Ie</strong></td>
+                        <td><strong>@item.NaPa_Binayajit</strong></td>
+                        <td><strong>@item.Otheers</strong></td>
+                        <td><strong>@item.Jana_Sahabagita</strong></td>
+                        <td><strong>@item.Peski</strong></td>
+                        <td><strong>@item.Technical_Amount</strong></td>
+                        <td><strong>@item.Kantigenci</strong></td>
+                        <td><strong>@item.Remaining_Bhuktani_Amount</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="letter_footer">
+            <h3>संलग्न कागजातहरु</h3>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <ul>
+                        <li>१. &nbsp; वडा सिफारिस</li>
+                        <li>२. &nbsp; सूचना पार्टी र आयोजनाको फोटो</li>
+                        <li>३. &nbsp; खर्च सार्वजनिकीकरन</li>
+                        <li>४. &nbsp; सार्वजनिक परिक्षण प्रतिवेदन</li>
+                        <li>५. &nbsp; उ.स.निर्णय</li>
+                        <li>६. &nbsp; अनुगमन समितिको सिफारिस /प्रतिवेददन</li>
+                        <li>७. &nbsp; प्राविधिक कागजातहरु</li>
+                    </ul>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <ul>
+                        <li><strong><span>भएको / नभएको</span></strong></li>
+                        <li><strong><span>भएको / नभएको</span></strong></li>
+                        <li><strong><span>भएको / नभएको</span></strong></li>
+                        <li><strong><span>भएको / नभएको</span></strong></li>
+                        <li><strong><span>भएको / नभएको</span></strong></li>
+                        <li><strong><span>भएको / नभएको</span></strong></li>
+                        <li><span>(क) ठेक्का विल</span><span>(ख) नापी किताब</span><span>(ग) कार्यसम्पन्न प्रतिवेदन्</span></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+}
+
+
+
+<script language="javascript" type="text/javascript">
+        function printDiv(divID) {
+            var divElements = document.getElementById(divID).innerHTML;
+            var oldPage = document.body.innerHTML;
+            document.body.innerHTML =
+              "<html><head><title></title></head><body>" +
+              divElements + "</body>";
+            window.print();
+            document.body.innerHTML = oldPage;
+        }
+</script>

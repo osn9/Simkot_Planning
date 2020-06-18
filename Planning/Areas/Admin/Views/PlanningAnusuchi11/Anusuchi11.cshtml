@@ -1,0 +1,224 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi11ViewModel
+
+@{
+    ViewBag.Title = "Anusuchi11";
+    Layout = null;
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from j in db.Organization_Setup select j).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+    }
+
+}
+
+
+<div class="tab-pane fade in active" id="fiscalYearRecord">
+    <h3 class="step_ttl">अनुसूची ११ / प्राविधिक | आगन्तुकको अभिलेख र सल्लाह | सुझाब </h3>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well" }))
+    {
+        @Html.HiddenFor(model => model.Planning_Samjhauta_Id)
+        @Html.HiddenFor(model => model.AnuSuchi11_Id)
+        <h2 style="font-weight:bold; font-size:18px; margin-top:0px;">प्राविधिक | आगन्तुकको अभिलेख र सल्लाह | सुझाब </h2>
+        <span style="display:block; text-align:justify;">
+            योजनासँग सम्बन्धित समुदाय, कर्मचारी तथा संघ, संस्थाका प्रतिनिधिबाट समेत बेला-बेलामा योजनास्थलको निरिक्षण अनुगमन हुनेछ | त्यसको अनुगमनको विवरण सहित उपभोक्ता समितिलाई सल्लाह, सुझाव प्रदान गरिनेछ | उक्त विवरणमा बिशेष गरि कामको गुणस्तर, नापी नक्शा आदिका बारेमा उल्लेख गर्नुका साथै उपभोक्ता समितिलाई दिईनु पर्ने आबश्यक सुझाबहरु समावेस हुनेछ | यसको अतिरिक्त रनिङ्ग बिल प्राप्त भएपछि संबन्धित प्राबिधिकले दिने निर्देशन पनि यसै नोटमा समावेस गर्नु पर्नेछ | अनुगमनको रुपमा उ.स. ले योजनाको ल.ई., नक्सा, डिजाईन, अनुगमन मागेको बखत अनिवार्य रुपमा उपलब्ध गराउनु पर्नेछ |
+        </span>
+
+        <fieldset>
+            <div class="row">
+                <div class="col-md-12"><button type="button" id="btn-AddSuggestionsOptions" class="btn btn-primary btn-add pull-right"><i class="fa fa-plus"></i>&nbsp; अभिलेख र सल्लाह | सुझाब थप्नुहोस्</button></div>
+                <div class="clearfix"></div><br />
+
+                @if (Model.Anusuchi11ViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.Anusuchi11ViewModelList)
+                    {
+                        @Html.Partial("_Members", item)
+                    }
+                }
+                else
+                {
+                    @Html.Partial("_Members")
+                }
+
+                <div id="getSuggestionsOptions">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="form-group">
+                <label class="col-lg-3  col-md-4 control-label"></label>
+                <div class="col-lg-7 col-md-7">
+                    <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">प्रिन्ट</button>
+                </div>
+            </div>
+        </fieldset>
+    }
+</div>
+
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:800px;">
+            <div class="cotract_letter" id="printdiv">
+
+                <style>
+                    .header-section .table tbody > tr, .content-section .table tbody > tr, .detail .table tbody > tr, .sign.table tbody > tr {
+                        border: none !important;
+                    }
+
+                    header-section .table tr td, .content-section .table tbody > tr, .detail .table tbody > tr, .sign .table tbody > tr {
+                        border: none !important;
+                        border-color: #f9f9f9 !important;
+                        padding: 0px !important;
+                    }
+
+                    @@media print {
+                        .header-section .table tr td, .content-section .table tr td {
+                            border: none !important;
+                            border: !important;
+                            border-color: #fff !important;
+                            padding: 0px !important;
+                        }
+
+                        .header-section .table tbody > tr, .content-section .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+
+                        .header-section .table, .table tbody > tr, td, .content-section .table, .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+                    }
+                </style>
+
+               
+                <div class="header-section">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="20%" style="border:none !important; border:0px !important;">
+                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                </td>
+                                <td width="60%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h2 style="font-weight:bold; font-size:18px; padding-left:10px;">अनुसूची ११</h2>
+                                    <h2 style="font-weight:bold; font-size:18px; margin-top:0px;">प्राविधिक | आगन्तुकको अभिलेख र सल्लाह | सुझाब </h2>
+                                </td>
+                                <td width="20%" style="border:none !important; border:0px !important;">
+                                    <img src="@ViewBag.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-section">
+                    <table class="table" border="0" style="border:0px !important; margin-top:0px;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td colspan="2" style="font-size:16px; border:none !important;">
+                                    <span style="display:block; text-align:justify;">
+                                        योजनासँग सम्बन्धित समुदाय, कर्मचारी तथा संघ, संस्थाका प्रतिनिधिबाट समेत बेला-बेलामा योजनास्थलको निरिक्षण अनुगमन हुनेछ | त्यसको अनुगमनको विवरण सहित उपभोक्ता समितिलाई सल्लाह, सुझाव प्रदान गरिनेछ | उक्त विवरणमा बिशेष गरि कामको गुणस्तर, नापी नक्शा आदिका बारेमा उल्लेख गर्नुका साथै उपभोक्ता समितिलाई दिईनु पर्ने आबश्यक सुझाबहरु समावेस हुनेछ | यसको अतिरिक्त रनिङ्ग बिल प्राप्त भएपछि संबन्धित प्राबिधिकले दिने निर्देशन पनि यसै नोटमा समावेस गर्नु पर्नेछ | अनुगमनको रुपमा उ.स. ले योजनाको ल.ई., नक्सा, डिजाईन, अनुगमन मागेको बखत अनिवार्य रुपमा उपलब्ध गराउनु पर्नेछ |
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            @{ int m = 1;}
+                            @if (Model.Anusuchi11ViewModelList != null)
+                            {
+                                foreach (var item in Model.Anusuchi11ViewModelList)
+                                {
+                                    <tr>
+                                        <td style="font-size:16px; border:none !important;"><span style="display:block;">@Planning.Utility.NepaliEnglishNumber.English_Nepali(m.ToString())</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size:16px; border:none !important;"><span style="display:block;">दस्तखत: </span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size:16px; border:none !important;"><span style="display:block;">नाम,थर: @item.Name</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size:16px; border:none !important;"><span style="display:block;">पद: @item.Position</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size:16px; border:none !important;"><span style="display:block;">मिति: @if (item.Date != null) { @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Date.Value.ToShortDateString())}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size:16px; border:none !important;"><span style="display:block;">सुझाव|प्रतिक्रिया: @item.Suggestion</span></td>
+                                    </tr>
+                                   <tr>
+                                       <td>&nbsp;</td>
+                                   </tr>
+                                    m++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-AddSuggestionsOptions').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddMembers", "PlanningAnusuchi11")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getSuggestionsOptions').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+
+        $('#myModal').modal('hide')
+        $('.modal-backdrop').hide();
+
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.btn-info').click(function () {
+        $('#myModal').modal({
+			backdrop: 'static'
+		});
+	});
+});
+</script>
+
+

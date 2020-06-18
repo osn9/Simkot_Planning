@@ -1,0 +1,191 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+body.login_body{background:#3c8dbc;}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 100%;
+    display:block;
+}
+
+/*
+* ===================================================================
+*     LOGIN PAGE CSS BY: BIKASH BHANDARI {bikash.433@gmail.com}
+* ===================================================================
+*/
+.login-page,
+.register-page {
+  width: 100%;
+  min-height: auto;
+  padding-bottom: 0;
+}
+
+.login-page .form-outer,
+.register-page .form-outer {
+  	min-height: 80vh;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
+}
+
+.login-page .form-outer h4, .register-page .form-outer h4{text-align:left; margin-bottom:20px;}
+
+.login-page .copyrights,
+.register-page .copyrights {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+.login-page .copyrights a, .register-page .copyrights a{color:#ffe200;}
+
+.login-page .copyrights p,
+.register-page .copyrights p {
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.login-page .form-inner,
+.register-page .form-inner {
+  padding: 30px;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+  box-shadow: 0 1px 3px rgba(0,0,0,.13);
+  margin-bottom: 20px;
+  border-radius:4px;
+}
+
+.login-page .logo,
+.register-page .logo {
+  font-size: 2.5em;
+  font-weight: 500;
+  padding-bottom:0.2em;
+  border-bottom:1px solid #ddd;
+}
+
+.login-page .logo span,
+.register-page .logo span {
+  color: #3c8dbc;
+  font-weight:bold;
+  display:block;
+  padding:5px 0px;
+  vertical-align:middle;
+}
+
+.login-page p,
+.register-page p {
+  font-size: 0.8em;
+  font-weight: 300;
+  color: #faffbd;
+  margin-bottom: 0;
+}
+
+.login-page form,
+.register-page form {
+  margin: 2rem auto 1rem;
+  max-width: 370px;
+}
+
+.login-page a.forgot-pass,
+.login-page a.signup,
+.register-page a.forgot-pass,
+.register-page a.signup {
+  font-size: 1em;
+  color: #0073aa;
+}
+
+.login-page a.forgot-pass:hover, .login-page a.forgot-pass:focus,
+.login-page a.signup:hover,
+.login-page a.signup:focus,
+.register-page a.forgot-pass:hover,
+.register-page a.forgot-pass:focus,
+.register-page a.signup:hover,
+.register-page a.signup:focus {
+  color: #66b0ff;
+  text-decoration: none;
+}
+
+.login-page a.forgot-pass,
+.register-page a.forgot-pass {
+  display: block;
+}
+
+.login-page a.create-account,
+.register-page a.create-account {
+  border-radius: 50px;
+  font-size: 0.75em;
+  margin-top: 10px;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.login-page .terms-conditions,
+.register-page .terms-conditions {
+  margin-top: 20px;
+}
+
+.login-page small,
+.register-page small {
+  font-size: 1em;
+  color: #666;
+  line-height: 0.9em;
+}
+.login-page .logo figure img{max-width:100%; max-height:100px;}
+.login-page .logo .col-lg-10{padding-left:0px;}
+
+/* LOGIN MEDIAQUERIES -------------------------- */
+@media (max-width: 1200px) {
+    .login-page .logo, .register-page .logo{font-size:1.7em;}
+}
+@media (min-width: 768px) {
+  .login-page p,
+  .register-page p {
+    font-size: 1em;
+  }
+  .login-page form label.label-custom,
+  .register-page form label.label-custom {
+    font-size: 0.9em;
+  }
+  .login-page form small,
+  .register-page form small {
+    font-size: 0.8em;
+  }
+  .login-page .terms-conditions label,
+  .register-page .terms-conditions label {
+    font-size: 0.9em;
+  }
+  .login-page a.forgot-pass,
+  .login-page a.signup,
+  .register-page a.forgot-pass,
+  .register-page a.signup {
+    font-size: 1em;
+  }
+  .login-page small,
+  .register-page small {
+    font-size: 1em;
+  }
+  .login-page .copyrights p,
+  .register-page .copyrights p {
+    font-size: 1em;
+    font-weight: 400;
+  }
+}

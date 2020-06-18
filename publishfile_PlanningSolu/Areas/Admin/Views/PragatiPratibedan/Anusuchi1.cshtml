@@ -1,0 +1,176 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+@{
+    ViewBag.Title = "Anusuchi1";
+    int i = 1;
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from b in db.Organization_Setup select b).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+    }
+
+}
+
+@using (Html.BeginForm("Anusuchi1", "PragatiPratibedan", FormMethod.Get))
+{
+    <fieldset>
+        <div class="row" style="margin-left:20px;">
+            <div class="col-md-3">
+                <label>आर्थिक वर्ष</label>
+                @Html.DropDownList("FiscalYear", Planning.Utility.CommonUtility.GetFiscalYearList(), "-- छान्नुहोस --", new { @class = "form-control", @OnChange = "GetProjectNameByFiscalYear()" })
+            </div>
+          
+            <div class="col-md-3">
+                <label>वडा / नगर</label>
+                @Html.DropDownList("OdaNagar", new List<SelectListItem>
+                {
+                    new SelectListItem { Text = "वडा", Value = "O"},
+                    new SelectListItem { Text = "नगर", Value = "N"},
+                }, "--छान्नुहोस--",new { @class = "form-control" })
+            </div>
+
+            <div class="col-md-3">
+                <label>आयोजनाको नाम</label>
+                @Html.DropDownList("ProjectName", Planning.Utility.CommonUtility.GetProjectNameList(), "-- छान्नुहोस --", new { @class = "form-control " })
+            </div>
+            <div class="col-md-2" style="padding-left:0px; padding-top:20px;">
+                <input type="submit" name="submit" id="submit" value="खाेज्नुहाेस" class="btn btn-primary" />
+            </div>
+        </div>
+    </fieldset>
+}
+
+
+
+<div class="padding-md">
+    <input type="button" class="btn btn-primary pull-right" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+    <div class="cotract_letter" id="printdiv">
+
+        <style>
+            @@media print {
+                        .table tr td {
+                            border: none !important;
+                            border: 0 !important;
+                            border-color: #fff !important;
+                            padding: 0px !important;
+                        }
+
+                        .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+
+                        .table, .table tbody > tr, td {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+                    }
+        </style>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="25%" style="border:none !important; border:0px !important;">
+                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                </td>
+                                <td width="45%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h4>प्रगति प्रतिवेदन</h4>
+                                    <h4>अनुसूचि १</h4>
+                                    <h4>प्रथम | चौमासिक | बार्षिक</h4>
+                                    <h4>वडास्तरीय / नगरस्तरीय योजनाको भौतिक प्रगति विवरण</h4>
+                                </td>
+                                <td width="30%" style="border:none !important; border:0px !important;">
+                                    <img src="@ViewBag.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered table-condensed table-hover table-striped">
+                        <thead>
+                            <tr class="success">
+                                <th>सि.नं.</th>
+                                <th>योजनाको नाम</th>
+                                <th>स्वीकृत रकम</th>
+                                <th>सम्झौता मिति</th>
+                                <th>सम्पन्न मिति</th>
+                                <th>उपभोक्ता समितिको नाम</th>
+                                <th>सम्पर्क नम्बर</th>
+                                <th>भौतिक प्रगति प्रतिशत</th>
+                                <th>कैफियत</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.PragatiPratibedanAnusuchi1List)
+                        {
+                                <tr>
+                                    <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</td>
+                                    <td>@item.Project_Name</td>
+                                    <td>@item.Project_estimated_Amount</td>
+                                    <td>@if (item.Municipality_Manjuri_Date != null) { @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Municipality_Manjuri_Date.Value.ToShortDateString()))}</td>
+                                    <td>@if (item.Project_End_Date != null) { @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Project_End_Date.Value.ToShortDateString()))}</td>
+                                    <td>@item.Samjhauta_Org_Name</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                           i++;
+                         }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script language="javascript" type="text/javascript">
+        function printDiv(divID) {
+            var divElements = document.getElementById(divID).innerHTML;
+            var oldPage = document.body.innerHTML;
+            document.body.innerHTML =
+              "<html><head><title></title></head><body>" +
+              divElements + "</body>";
+            window.print();
+            document.body.innerHTML = oldPage;
+        }
+</script>
+
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function GetProjectNameByFiscalYear() {
+        debugger;
+        var value = $('#FiscalYear option:selected').val();
+        if (value == null || value == 0) {
+            var item = "<option>-- छान्नुहोस --</option>";
+            $("#ProjectName").html(item);
+            return false;
+        }
+        $.ajax({
+            url: "@Url.Action("GetProjectNameByFiscalYear", "PragatiPratibedan")",
+            type: 'get',
+            datatype: "json",
+            data: { fiscalYear: value },
+            success: function (data) {
+                var items = "<option value=\"\">" + "छान्नुहोस्" + "</option>";
+                $.each(data, function (i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#ProjectName").html(items);
+            },
+            failure: function () {
+                alert('An error occurred.');
+            }
+        })
+    }
+</script>

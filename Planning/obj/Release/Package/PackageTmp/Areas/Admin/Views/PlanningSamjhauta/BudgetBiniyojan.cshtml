@@ -1,0 +1,148 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+@using (Html.BeginForm("BudgetBiniyojan", "PlanningSamjhauta", FormMethod.Get))
+{
+    <fieldset>
+        <div class="row" style="margin-left:20px;">
+            <div class="col-md-3">
+                <label>आर्थिक वर्ष</label>
+                @Html.TextBox("FiscalYear", null, new { @class = "form-control", @required = "required" })
+            </div>
+            <div class="col-md-2" style="padding-left:0px; padding-top:20px;">
+                <input type="submit" name="submit" id="submit" value="खाेज्नुहाेस" class="btn btn-primary" />
+            </div>
+        </div>
+    </fieldset>
+}
+
+
+
+<br />
+<input type="button" class="btn btn-primary pull-right" value="बिनियोजन प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+
+
+<div class="container" id="printdiv">
+    <div class="budget-biniyojan">
+        <div class="row header-section">
+            <div class="col-md-2">
+                <img src="~/img/gov-logo.png" width="250px;" height="120px" />
+            </div>
+            <div class="col-md-10 text-center" style="display:inline-block; position:relative;">
+                <h4>त्रियुगा नगरपालिका</h4>
+                <h4>नगर कार्यपालिकाको कार्यालय, उदयपुर</h4>
+                <br />
+                <h4><strong>कार्यक्रम / परियोजना अनुसार बिनियोजन</strong></h4>
+                @*@foreach (var org in Model.OrganizationSetupList)
+                {
+                    <h1>@org.Organization_Name</h1>
+                            <h2>@org.Organization_Type</h2>
+                            <h3>@org.District_Name</h3>
+                            <h4>@org.State_Country</h4>
+                }*@
+                
+            </div>
+        </div>
+        <br /><br />
+
+        <div class="row">
+            @*<div class="col-md-2">आर्थिक वर्षः&nbsp;&nbsp;<strong>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Fiscal_Year_Record)</strong>&nbsp;&nbsp;</div>*@
+            <div class="col-md-2">आर्थिक वर्षः</div>
+            <div class="col-md-4">बजेट उप शीर्षकः</div>
+            <div class="col-md-2">क्षेत्रः</div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2">रकम रु. हजारमा</div>
+        </div>
+
+        <div class="biniyojan-Table">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2">सि.नं.</th>
+                        <th scope="col" rowspan="2">कार्यक्रम / परियोजनाको नाम</th>
+                        <th scope="col" rowspan="2">कार्यान्वयन हुने स्थान</th>
+                        <th scope="col" rowspan="2">लक्षित समूह</th>
+                        <th scope="col" rowspan="2">खर्च शीर्षक</th>
+                        <th scope="col" rowspan="2">स्रोत</th>
+                        <th scope="col" rowspan="2">लक्ष</th>
+                        <th scope="col" rowspan="1" colspan="4">विनियोजन रु.</th>
+                        <th scope="col" rowspan="2">केेफियत</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">प्रथम चौमासिक</th>
+                        <th scope="col">दोश्रो चौमासिक</th>
+                        <th scope="col">तेश्रो चौमासिक</th>
+                        <th scope="col">जम्मा</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.BudgetBiniyojanList != null)
+                    {
+                        foreach (var item in Model.BudgetBiniyojanList)
+                        {
+                            <tr>
+                                <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</td>
+                                <td>@item.Project_Name</td>
+                                <td>@item.Project_Place</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    @if (item.Kista_Kram == "पहिलो")
+                                    {
+                                        @item.Kista_Rakam
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Kista_Kram == "दोश्रो")
+                                    {
+                                        @item.Kista_Rakam
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Kista_Kram == "अन्तिम")
+                                    {
+                                        @item.Kista_Rakam
+                                    }
+                                </td>
+                                <td>@item.Total_Amount</td>
+                                <td></td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        <br />
+                        <br />
+                        <br />
+                        <span>कार्यक्रम / परियोजना अनुसार बिनियोजनको सुचि छैन । पहिला कार्यक्रम / परियोजना बनाउनुहोस ।</span>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>

@@ -1,0 +1,29 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+
+@using Planning.Helpers
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+@{ int i = 1;}
+
+@using (Html.BeginCollectionItem("UpaBhoktaSamitiMemberList"))
+{
+    <div id="SamitiMembersFormgroup" class="form-group">
+        <div class="col-md-3"></div>
+                    <div class="col-md-6">@Html.EditorFor(model => model.Sadashya, new { htmlAttributes = new { @class = "form-control",@placeholder="सदस्य राख्नुहोस"} }) </div>
+                    <div class="btn-delete col-md-1">
+                        <div><a href='javascript:;' class="btn btn-danger btn-sm removesamitimember"><span class='fa fa-minus fa-1x'></span></a></div>
+                    </div>
+        <div class="clearfix"></div>
+    </div>
+}
+
+
+<script>
+    $(".removesamitimember").click(function () {
+        $(this).parents("#SamitiMembersFormgroup").remove();
+    });
+</script>
+

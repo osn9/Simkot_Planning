@@ -1,0 +1,122 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningBhuktaniViewModel.PlanningBhuktaniViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div id="dialog-confirm" style="display: none">
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        Are you sure to delete?
+    </p>
+</div>
+<div id="dialog-edit" style="display: none">
+</div>
+<div id="dialog-detail" style="display: none">
+</div>
+
+<div class="padding-md">
+
+
+    @if (TempData["Msg"] != null)
+    {
+               <div class="alert alert-success" role="alert" id="success-alert">
+           Sucess
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="header-list" style="text-align: center">
+                    @{
+                        string fiscalYear = Model.Fiscal_Year_Record;
+                        string projectName = Model.Aayojana_Karyakram;
+                        ViewBag.fiscalYear = fiscalYear;
+                        ViewBag.projectName = projectName;
+                    }
+                    <h2>आर्थिक वर्ष @ViewBag.fiscalYear को @ViewBag.projectName अन्तरगतको भुक्तानी</h2>
+                </div>
+                <hr />
+                <div class="panel-heading">
+                    @{
+                        int samjhautaId = Model.Planning_Samjhauta_Id ?? 0;
+                        ViewBag.planningSamjhautaId = samjhautaId;
+                    }
+
+                    @*@Html.ActionLink("नयाँ भुक्तानी राख्नुहोस्", "CreateBhuktani", null, new { @class = "btn btn-success btn_add btn-xs", id = Model.Planning_Samjhauta_Id })*@
+                    <a class="btn btn-success btn_add btn-xs" href="@Url.Action("triCreateBhuktani", "PlanningSamjhauta", new { id = ViewBag.planningSamjhautaId})"> नयाँ भुक्तानी राख्नुहोस्</a>
+                    <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("PlanningSamjhautaIndex", "PlanningSamjhauta")'">मुख्य मेनु</button>
+                </div>
+                <table class="table table-bordered table-condensed table-hover table-striped">
+                    <thead>
+                        <tr class="success">
+                            <th>क्र.स.</th>
+                            @*<th>आर्थिक वर्ष</th>*@
+                            @*<th>वजेट शिर्षक</th>
+                                <th>वजेट शिर्षक नं.</th>*@
+                            <th>आयोजना / कार्यक्रम</th>
+                            <th>निर्माण उपभोक्ता</th>
+                            <th>भुक्तानी प्रकार</th>
+                            <th>भुक्तानी रकम</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.PlanningBhuktaniViewModelList)
+                        {
+                            <tr>
+                                <th>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</th>
+                                @*<td>@item.Fiscal_Year_Record</td>*@
+                                @*<td>@item.Budget_Title</td>
+                                    <td>@item.Budget_Title_Number</td>*@
+                                <td>@item.Aayojana_Karyakram</td>
+                                <td>@item.Nirman_Upabhokta</td>
+                                <td>@if (item.Bhuktani_Type == 1)
+                                {<span>पेशकी</span> }
+                                else if (item.Bhuktani_Type == 2)
+                                { <span>प्रथम भुक्तानी</span>}
+                                else if (item.Bhuktani_Type == 3)
+                                { <span>दोश्रो भुक्तानी</span>}
+                                else if (item.Bhuktani_Type == 4)
+                                {<span>अन्तिम भुक्तानी</span>} </td>
+                                <td>@item.Remaining_Bhuktani_Amount</td>
+                                <td>
+                                    @if (item.IsBhuktaniApproval == false)
+                                    {
+                                        <a class="btn btn-success btn-sm" title="सच्याउनुहोस्" href="@Url.Action("triEditBhuktani", "PlanningSamjhauta", new { id = item.Planning_Bhuktani_Id ,id1=item.Planning_Samjhauta_Id})"><i class="fa fa-edit"></i> सच्याउनुहोस्</a>
+                                    }
+                                    <a class="btn btn-primary btn-sm" title="विवरण" href="@Url.Action("BhuktaniReport", "PlanningSamjhauta", new { planningBhuktaniId = item.Planning_Bhuktani_Id })"><i class="fa fa-edit"></i> विवरण</a>
+                                    <a class="btn btn-default btn-sm" title="विवरण" href="@Url.Action("bhukataniitem", "planningsamjhauta", new { id = item.Planning_Bhuktani_Id ,samjhautaid=item.Planning_Samjhauta_Id})"><i class="fa fa-edit"></i>  परिमाण विवरण</a>
+                                    <a class="btn btn-default btn-sm" href='@Url.Action("DeleteBhuktani","PlanningSamjhauta", new {id = item.Planning_Bhuktani_Id ,ids = @item.Planning_Samjhauta_Id  })' onclick="return confirm('के तपाईं निश्चित रूपमा मेटाउन चाहनुहुन्छ?')">
+
+                                        <i class="fa fa-trash-o"></i>&nbsp;
+                                        हटाउनु
+                                    </a>
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p>&nbsp;</p>
+    <div class="form-group">
+        <label class="col-lg-3  col-md-4 control-label"></label>
+        <div class="col-lg-7 col-md-7">
+            @*<button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("PlanningSamjhautaIndex", "PlanningSamjhauta")'">मुख्य मेनु</button>*@
+        </div>
+    </div>
+
+</div>
+
+
+
+
+

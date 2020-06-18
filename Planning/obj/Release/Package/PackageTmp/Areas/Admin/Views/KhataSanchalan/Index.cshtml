@@ -1,0 +1,77 @@
+﻿
+@model Planning.Areas.Admin.Models.DarkhastaFormViewModel.DarkhastaFormViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div id="dialog-confirm" style="display: none">
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        Are you sure to delete?
+    </p>
+</div>
+<div id="dialog-edit" style="display: none">
+</div>
+<div id="dialog-detail" style="display: none">
+</div>
+
+<div class="padding-md">
+
+
+    @if (TempData["Msg"] != null)
+    {
+        <script>alert("@TempData["Msg"]");</script>
+    }
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="header-list" style="text-align: center">
+                    <h2>संयुक्त खाताको लागि बैङ्क फारम</h2>
+                </div>
+                <hr />
+                <div class="panel-heading">
+                    @Html.ActionLink("नयाँ राख्नुहोस्", "CreateDarkhastaForm", null, new { @class = "btn btn-success btn_add btn-xs" })
+                </div>
+                <table class="table table-bordered table-condensed table-hover table-striped">
+                    <thead>
+                        <tr class="success">
+                            <th>क्र.स.</th>
+                            <th>चलानी न.</th>
+                            <th>बैंक</th>
+                            <th>वडा नं.</th>
+                            <th>उपभोक्ता समिति</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.DarkhastaFormViewModelList)
+                        {
+                            <tr>
+                                <th>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</th>
+                                <td>@item.Chalani_Number</td>
+                                <td>@if (item.Bank_Name == "अन्य") { @item.Other_Bank_Name} else { @item.Bank_Name}</td>
+                                <td>@item.Ward_No</td>
+                                <td>@item.Samiti_Name</td>
+                                <td>
+                                    <a class="btn btn-success btn-sm" title="सच्याउनुहोस्" href="@Url.Action("EditDarkhastaForm", "khatasanchalan", new { id = item.Darkhasta_Form_Id })"><i class="fa fa-edit"></i> सच्याउनुहोस्</a>
+                                    <a class="btn btn-primary btn-sm" title="विवरण" href="@Url.Action("DarkhastaReport", "khatasanchalan", new { darkhastaFormId = item.Darkhasta_Form_Id })"><i class="fa fa-edit"></i> विवरण</a>
+                                    <a class="btn btn-danger btn-sm" title="हटाउनुहोस" href="@Url.Action("DeleteDarkhastaForm", "khatasanchalan", new { id = item.Darkhasta_Form_Id })"><i class="fa fa-edit"></i> हटाउनुहोस</a>
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

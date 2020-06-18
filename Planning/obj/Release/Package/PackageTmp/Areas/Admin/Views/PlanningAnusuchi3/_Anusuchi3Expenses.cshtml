@@ -1,0 +1,30 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi3ViewModel
+
+@using Planning.Helpers
+
+
+@using (Html.BeginCollectionItem("Anusuchi3ExpensesViewModelList"))
+{
+    @Html.HiddenFor(model => model.Type, new { @class = "form-control", @Value = "1" })
+    <div class="col-md-2">१ सामाग्री (के के सामाग्री खरिद भयो ?)</div>
+    <div class="col-md-4">@Html.TextBoxFor(model => model.Expenses_Details, new { @class = "form-control"}) </div>
+    <div class="col-md-2">@Html.TextBoxFor(model => model.Expenses_Rate, new { @class = "form-control" }) </div>
+    <div class="col-md-2">@Html.TextBoxFor(model => model.Expenses_Quantity, new { @class = "form-control"}) </div>
+    <div class="col-md-2">@Html.TextBoxFor(model => model.Expenses_Total, new { @class = "form-control"}) </div>
+    <div class="clearfix"></div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

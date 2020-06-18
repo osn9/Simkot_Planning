@@ -1,0 +1,91 @@
+﻿@model Planning.Areas.Admin.Models.OrganizationSetupViewModel.OrganizationSetupViewModel
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="padding-md">
+    @if (TempData["alreadyexist"] != null)
+    {
+        <div class="alert alert-info">
+            <h5 style="text-align:center"><strong style="color:red;">@TempData["alreadyexist"]</strong></h5>
+        </div>
+    }
+
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <h3 class="step_ttl">राख्नुहोस् </h3>
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well", @id = "contact_form" }))
+                            {
+                                @Html.ValidationSummary()
+                                @Html.HiddenFor(model=>model.Organization_Setup_Id)
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>नाम</label>
+                                                @Html.EditorFor(model => model.Organization_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Organization_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>कार्यालय</label>
+                                                @Html.EditorFor(model => model.Organization_Type, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Organization_Type, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>ठेगाना</label>
+                                                @Html.EditorFor(model => model.District_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.District_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>प्रदेश</label>
+                                                @Html.EditorFor(model => model.State_Country, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.State_Country, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>कार्यालय लोगो</label>
+                                                <input type="file" name="file" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+                                    <div class="form-group">
+                                        <label class="col-lg-3  col-md-4 control-label"></label>
+                                        <div class="col-lg-7 col-md-7">
+                                            <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                                            @Html.ActionLink("मुख्य मेनु", "Index", null, new { @class = "btn btn-info" })
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            }
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

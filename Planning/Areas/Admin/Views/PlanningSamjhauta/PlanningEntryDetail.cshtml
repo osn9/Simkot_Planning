@@ -1,0 +1,208 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningEntryViewModel.PlanningEntryViewModel
+
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery.maskedinput.js"></script>
+
+<div class="padding-md">
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <div class="main-content">
+
+                                
+                                    <div class="col-md-12">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8">
+                                            <h3>योजना फारम</h3>
+                                            <br /><br />
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-12">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-1">आर्थिक वर्षः</div>
+                                        <div class="col-md-6 form-group">
+                                            @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.FiscalYear)
+                                        </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-2">वडा/नगर स्तरिय</div>
+                                    <div class="col-md-6 form-group">
+                                        @if(Model.Planning_Type=="O")
+                                        {
+                                            <span>वडा स्तरिय</span>
+                                        }
+                                        else if(Model.Planning_Type == "N")
+                                        {
+                                            <span>नगर स्तरिय</span>
+                                        }
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-1">कार्यक्षेत्र  :</div>
+                                    <div class="col-md-6 form-group">@Planning.Utility.CommonUtility.GetWorkAreaNameById(Model.Work_Area)</div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-1">वडा नं. :</div>
+                                    <div class="col-md-6 form-group">@Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Ward_No.ToString())</div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-1">वजेट श्रोत :</div>
+                                    <div class="col-md-6 form-group">@Planning.Utility.CommonUtility.GetBudgetSourceNameById(Model.Budget_Source_Id)</div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-4"><h5><strong> आयोजनाः सम्बनधी विवरण :</strong></h5></div>
+                                        <div class="col-md-8"></div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">योजनाको नाम र स्थान :</div>
+                                        <div class="col-md-6 form-group">@Html.DisplayFor(model => model.Planning_Name, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">योजना शुरु हुने मिति :</div>
+                                        <div class="col-md-6 form-group">@Html.DisplayFor(model => model.Planning_Start_Date, new { @class = "form-control", @placeholder = "____/__/__" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">योजना सम्पन्न हुने मिति :</div>
+                                        <div class="col-md-6 form-group">@Html.DisplayFor(model => model.Planning_End_Date, new { @class = "form-control", @placeholder = "____/__/__" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">कामको विवरण :</div>
+                                        <div class="col-md-6 form-group">@Html.DisplayFor(model => model.Work_Details, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">लागत इष्टिमेट अङ्क रु :</div>
+                                        <div class="col-md-6 form-group">@Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Amount_Estimate.ToString())</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">कामको किसिम :</div>
+                                        <div class="col-md-6 form-group">@Planning.Utility.CommonUtility.GetWorkTypeNameById(Model.Work_Type)</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2"> अनुदान :</div>
+                                        <div class="col-md-6"></div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">क. धनगढीमाई नगरपालिका</div>
+                                        <div class="col-md-6 form-group">रु.&nbsp; @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Amount_Estimate.ToString())</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">ख. उ.स.</div>
+                                        <div class="col-md-6 form-group">रु.&nbsp; @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.UpaBhoktaSamiti_Amt.ToString())</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">ग. अन्य</div>
+                                        <div class="col-md-6 form-group">रु.&nbsp; @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Other_Amt.ToString())</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">घ. जनसहभागीता</div>
+                                        <div class="col-md-6 form-group">रु.&nbsp; @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.JanaSahaBhagita_Amt.ToString())</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">ङ. गेेर सरकारी संघ/संस्था</div>
+                                        <div class="col-md-6 form-group"></div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-3">उपभोक्ता समितिको अध्यक्षको नाम र ठेगाना</div>
+                                        <div class="col-md-6 form-group">@Html.DisplayFor(model => model.UpaBhoktaSamiti_HeadName, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-3">ठेकेदारको नाम र ठगाना</div>
+                                        <div class="col-md-6 form-group">@Html.DisplayFor(model => model.Contractor_Name, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p></p><p></p>
+
+                                    <div class="col-md-4"><h5 style="text-align:center;"><strong>ठेकेदारले न.पा. बाट प्रप्त गर्ने किस्ता विवरण</strong></h5></div>
+                                    <div class="col-md-8"></div>
+                                    <div class="clearfix"></div>
+
+                                    
+
+                                    <div class="col-md-1">किस्ता क्रम </div>
+                                    <div class="col-md-2">किस्ता रकम</div>
+                                    <div class="col-md-2">मिति</div>
+                                    <div class="col-md-2">पेश्की / भुक्तानी</div>
+                                    <div class="col-md-2">शर्त</div>
+                                    <div class="col-md-3">केेफियत</div>
+                                    <div class="clearfix"></div>
+
+                                    <div id="SourceFormgroup">
+                                        <div class="form-group">
+                                            <div class="col-lg-12 col-md-12 inputGroupContainer">
+                                                <div class="row">
+
+                                                    @if (Model.KistaFirstDetailsList.Count() > 0 || Model.KistaSecondDetailsList.Count() > 0 || Model.KistaThirdDetailsList.Count() > 0 || Model.KistaLastDetailsList.Count() > 0)
+                                                    {
+                                                        if (Model.KistaFirstDetailsList.Count() > 0)
+                                                        {
+                                                            foreach (var item in Model.KistaFirstDetailsList)
+                                                            {
+                                                                @Html.Partial("_FirstKista", item)
+                                                            }
+                                                        }
+                                                        if (Model.KistaSecondDetailsList.Count() > 0)
+                                                        {
+                                                            foreach (var item in Model.KistaSecondDetailsList)
+                                                            {
+                                                                @Html.Partial("_SecondKista", item)
+                                                            }
+                                                        }
+                                                        if (Model.KistaThirdDetailsList.Count() > 0)
+                                                        {
+                                                            foreach (var item in Model.KistaThirdDetailsList)
+                                                            {
+                                                                @Html.Partial("_ThirdKista", item)
+                                                            }
+                                                        }
+                                                        if (Model.KistaLastDetailsList.Count() > 0)
+                                                        {
+                                                            foreach (var item in Model.KistaLastDetailsList)
+                                                            {
+                                                                @Html.Partial("_LastKista", item)
+                                                            }
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        @Html.Partial("_FirstKista")
+                                                        @Html.Partial("_SecondKista")
+                                                        @Html.Partial("_ThirdKista")
+                                                        @Html.Partial("_LastKista")
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $("#Planning_Start_Date").mask("9999/99/99");
+        $("#Planning_End_Date").mask("9999/99/99");
+    });
+</script>

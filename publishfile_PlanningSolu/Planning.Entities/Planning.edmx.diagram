@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0a1dacea6ac74bb19e2ccb995f0a8c4a" Name="Diagram1" ZoomLevel="70">
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Aayojana_Maintainance" Width="1.5" PointX="3.5" PointY="16.125" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Beneficiaries_Group" Width="1.5" PointX="3" PointY="50.375" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Budget_Source" Width="1.5" PointX="3.75" PointY="33.875" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Municipality_Samiti_Manjuri_Patra" Width="1.5" PointX="3" PointY="44.75" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Organization_Representative" Width="1.5" PointX="2.875" PointY="7.25" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Payment_Records" Width="1.5" PointX="3" PointY="40.125" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Planning_Entry" Width="1.5" PointX="6" PointY="27.125" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Planning_Entry_Anudan" Width="1.5" PointX="11.25" PointY="28.375" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Planning_Entry_Kista_Detail" Width="1.5" PointX="8.25" PointY="28.125" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Project_Entry_Detail" Width="1.5" PointX="3" PointY="55" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Project_Other_Source" Width="1.5" PointX="3" PointY="23.5" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Project_Source_Detail" Width="1.5" PointX="4.875" PointY="7.75" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Samiti_Detail" Width="1.5" PointX="3" PointY="27.875" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Upload_File" Width="1.5" PointX="2.375" PointY="0.5" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Work_Area" Width="1.5" PointX="3.75" PointY="36.5" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Work_Type" Width="1.5" PointX="2.5" PointY="4.5" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Planning_Entry_Budget_Source" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Planning_Entry_Anudan_Planning_Entry" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Planning_Entry_Kista_Detail_Planning_Entry" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Planning_Entry_Work_Area" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Planning_Entry_Work_Type" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.UpaBhokta_Samiti_Members_Details" Width="1.5" PointX="3" PointY="60.5" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Class_A_Bank_List" Width="1.5" PointX="0.5" PointY="4.375" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Darkhasta_Form" Width="1.5" PointX="6.5" PointY="0.5" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Planning_Documents" Width="1.5" PointX="3" PointY="64.75" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi4" Width="1.5" PointX="3" PointY="70.875" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Anusuchi4_Income" Width="1.5" PointX="5.25" PointY="70.25" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Anusuchi4_Income_AnuSuchi4" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Anusuchi6" Width="1.5" PointX="3" PointY="79.625" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Anusuchi6_Solutions" Width="1.5" PointX="5.25" PointY="77.75" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Anusuchi6_Solutions_Anusuchi6" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Anusuchi6_Karyalaya" Width="1.5" PointX="5.25" PointY="88.875" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Anusuchi6_Karyalaya_Anusuchi6" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Anusuchi6_Janasahabhagita" Width="1.5" PointX="5.25" PointY="80.875" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Anusuchi6_Janasahabhagita_Anusuchi6" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi3_Bhuktani" Width="1.5" PointX="5.25" PointY="104.625" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi3_Expenses" Width="1.5" PointX="5.25" PointY="107.375" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi3_Project_Work_Detail" Width="1.5" PointX="5.25" PointY="96.25" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi3_Work_Division" Width="1.5" PointX="5.25" PointY="102" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi3" Width="1.5" PointX="3" PointY="86.125" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi3_Bhuktani_AnuSuchi3" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi3_Expenses_AnuSuchi3" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi3_Project_Work_Detail_AnuSuchi3" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi3_Work_Division_AnuSuchi3" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi3_Income" Width="1.5" PointX="5.25" PointY="85.375" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi3_Income_AnuSuchi3" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi3_Maujat" Width="1.5" PointX="5.25" PointY="66.375" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Anusuchi4_Expenses" Width="1.5" PointX="5.25" PointY="74" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi3_Maujat_AnuSuchi3" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Anusuchi4_Expenses_AnuSuchi4" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi5" Width="1.5" PointX="3" PointY="94.125" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi9" Width="1.5" PointX="3" PointY="113.25" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi9_Discussion_Conclusions" Width="1.5" PointX="5.25" PointY="118.75" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi9_Discussion_Subjects" Width="1.5" PointX="5.25" PointY="113.5" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi9_Meeting" Width="1.5" PointX="5.25" PointY="116" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi9_Members" Width="1.5" PointX="5.25" PointY="110.75" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi9_Discussion_Conclusions_AnuSuchi9" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi9_Discussion_Subjects_AnuSuchi9" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi9_Meeting_AnuSuchi9" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi9_Members_AnuSuchi9" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi10" Width="1.5" PointX="3" PointY="124.625" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi10_Discussion_Conclusions" Width="1.5" PointX="5.25" PointY="121.75" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi10_Discussion_Subjects" Width="1.5" PointX="5.25" PointY="124.25" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi10_Meeting" Width="1.5" PointX="5.25" PointY="129.875" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi10_Members" Width="1.5" PointX="5.25" PointY="126.75" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi10_Discussion_Conclusions_AnuSuchi10" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi10_Discussion_Subjects_AnuSuchi10" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi10_Meeting_AnuSuchi10" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi10_Members_AnuSuchi10" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi1" Width="1.5" PointX="3" PointY="105" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi11" Width="1.5" PointX="3" PointY="100.125" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi7" Width="1.5" PointX="3" PointY="133.875" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi7_Anugaman_Samiti" Width="1.5" PointX="5.25" PointY="133" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.AnuSuchi7_Upabhokta_Samiti" Width="1.5" PointX="5.25" PointY="136.5" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi7_Anugaman_Samiti_AnuSuchi7" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi7_Upabhokta_Samiti_AnuSuchi7" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Organization_Setup" Width="1.5" PointX="7.375" PointY="5.75" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Planning_Samjhauta" Width="1.5" PointX="0.75" PointY="68.5" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Aayojana_Maintainance_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi1_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi10_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi11_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi3_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi4_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi5_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Anusuchi6_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi7_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_AnuSuchi9_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Beneficiaries_Group_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Municipality_Samiti_Manjuri_Patra_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Organization_Representative_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Payment_Records_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Planning_Documents_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Planning_Entry_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Planning_Entry_Anudan_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Planning_Entry_Kista_Detail_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Project_Entry_Detail_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Project_Other_Source_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Project_Source_Detail_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_Samiti_Detail_Planning_Samjhauta" />
+        <AssociationConnector Association="PLANNING_OCT_03Model.FK_UpaBhokta_Samiti_Members_Details_Planning_Samjhauta" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Planning_Bhuktani" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Sarta_Setup" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Kar_Katti" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PLANNING_OCT_03Model.Fiscal_Year_Record" Width="1.5" PointX="0.75" PointY="11.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

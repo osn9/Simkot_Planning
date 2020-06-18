@@ -1,0 +1,257 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div class="header-title">
+    <div class="row" style="text-align:center">
+        @if (Model.FileId == 1)
+        {
+            <h3>उ.स.लाई गहन गर्ने सम्बन्धमा</h3>
+        }
+        else if (Model.FileId == 2)
+        {
+            <h3>निर्णय</h3>
+        }
+        else if (Model.FileId == 3)
+        {
+            <h3>सम्झोेता गरी पाउँ</h3>
+        }
+        else if (Model.FileId == 4)
+        {
+            <h3>अनुमान</h3>
+        }
+        else if (Model.FileId == 5)
+        {
+            <h3>मापन</h3>
+        }
+        else if (Model.FileId == 6)
+        {
+            <h3>प्रमाणीकरण रिपोर्ट</h3>
+        }
+        else if (Model.FileId == 7)
+        {
+            <h3>कार्य सम्पन्न रिपोर्ट</h3>
+        }
+        else if (Model.FileId == 8)
+        {
+            <h3>भुक्तानी निबेदन</h3>
+        }
+    </div>
+
+    <div class="clearfix"></div>
+</div>
+
+
+<div class="padding-md">
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @*@Html.ValidationSummary()*@
+
+        @Html.HiddenFor(model => model.FileId)
+
+        <div class="form-group">
+            <label class="col-lg-2  col-md-4 control-label">आर्थिक वर्ष</label>
+            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                @Html.EditorFor(model => model.Fiscal_Year_Record, new { htmlAttributes = new { @class = "form-control", @placeholder = "(उदाहरणः ०७४/०७५)" } })
+                @Html.ValidationMessageFor(model => model.Fiscal_Year_Record, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <label class="col-lg-2  col-md-4 control-label">वडा नं.</label>
+            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                @Html.EditorFor(model => model.WardNo, new { htmlAttributes = new { @class = "form-control", @placeholder = "(क्रिपया वडाको नम्बर मात्र राख्नुहोला)(उदाहरणः १/२/..)" } })
+                @Html.ValidationMessageFor(model => model.WardNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            <label class="col-lg-2  col-md-4 control-label">डकुमेन्ट अपलोड गर्नुहोस</label>
+            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                <div style="position:relative;">
+                    <input id="uploadFile2" class="form-control" placeholder="Choose File" disabled="disabled" />
+                    <div class="fileUpload2 btn btn-info">
+                        <span>Upload</span>
+                        <input id="File" type="file" name="File" class="upload" required="required"/>
+                        @Html.ValidationMessageFor(model => model.FilePath, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById("File").onchange = function () {
+                document.getElementById("uploadFile2").value = this.value;
+            };
+        </script>
+        <div class="clearfix"></div>
+
+        //loader test
+        @*<style>
+            input#btnUpload {background:#999;border:1px solid #666;color:#fff;cursor:pointer;display:block;margin:0 0 10px;outline:none;padding:5px;}
+progress, #downloadProgress, #progUpdate {float:left;}
+progress, #downloadProgress {margin-right:10px;}
+#progUpdate, #downloadProgress {font:12px Arial, Verdana, sans-serif;color:#000;}
+        </style>
+
+        <input type="button" value="Begin Upload" id="btnUpload" />
+        <div class="clear"></div>
+        <progress value="0" max="100" id="progBar">
+            <span id="downloadProgress">
+               
+            </span>
+        </progress>
+        <div id="progUpdate">
+            
+        </div>
+
+
+        <script>
+            $('#File').click(function () {
+                var bar = document.getElementById('progBar'),
+                    fallback = document.getElementById('downloadProgress'),
+                    loaded = 0;
+
+                var load = function () {
+                    loaded += 1;
+                    bar.value = loaded;
+
+                   
+                    $(fallback).empty().append("HTML5 progress tag not supported: ");
+                    $('#progUpdate').empty().append(loaded + "% loaded");
+
+                    if (loaded == 100) {
+                        clearInterval(beginLoad);
+                        $('#progUpdate').empty().append("Upload Complete");
+                        console.log('Load was performed.');
+                    }
+                };
+
+                var beginLoad = setInterval(function () {
+                    load();
+                }, 50);
+
+            });
+        </script>*@
+        //end
+
+
+        <div class="form-group">
+            <label class="col-lg-3  col-md-4 control-label"></label>
+            <div class="col-lg-7 col-md-7">
+                <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                @*<button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Index", "PlanningSamjhauta")'">मुख्य मेनु</button>*@
+            </div>
+        </div>
+    }
+</div>
+
+<br /><br /><br /><br />
+
+@if (Model.UploadImageList != null)
+{
+    <div class="padding-md">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        @using (Html.BeginForm("UploadFiles", "PlanningSamjhauta", FormMethod.Get))
+                        {
+                            <div class=" row" style="background-color:lightblue; color:white; text-align:center" >
+                                @if (Model.FileId == 1)
+                                {
+                                    <h4><strong>क्रिपया चाहिएको उ.स.लाई गहन गर्ने सम्बन्धका फाइल यहाँ बाट खाेज्नुहाेस्</strong></h4>
+                                }
+                                else if (Model.FileId == 2)
+                                {
+                                    <h4><strong>क्रिपया चाहिएको निर्णयका फाइल यहाँ बाट खाेज्नुहाेस्</strong></h4>
+                                }
+                                else if (Model.FileId == 3)
+                                {
+                                    <h4><strong>क्रिपया चाहिएको सम्झोेता गरी पाउँका फाइल यहाँ बाट खाेज्नुहाेस्</strong></h4>
+                                }
+                                else if (Model.FileId == 4)
+                                {
+                                    <h4><strong>क्रिपया चाहिएको अनुमानका फाइल यहाँ बाट खाेज्नुहाेस्</strong></h4>
+                                }
+                                else if (Model.FileId == 5)
+                                {
+                                    <h4><strong>क्रिपया चाहिएको मापनका फाइल यहाँ बाट खाेज्नुहाेस्</strong></h4>
+                                }
+                                else if (Model.FileId == 6)
+                                {
+                                    <h4><strong>क्रिपया चाहिएको प्रमाणीकरण रिपोर्टका फाइल यहाँ बाट खाेज्नुहाेस्</strong></h4>
+                                }
+                                else if (Model.FileId == 7)
+                                {
+                                    <h4><strong>क्रिपया चाहिएको कार्य सम्पन्न रिपोर्टका फाइल यहाँ बाट खाेज्नुहाेस्</strong></h4>
+                                }
+                                else if (Model.FileId == 8)
+                                {
+                                    <h4><strong>क्रिपया चाहिएको भुक्तानी निबेदनका फाइल यहाँ बाट खाेज्नुहाेस्</strong></h4>
+                                }
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>आर्थिक वर्ष</label>
+                                    @Html.TextBox("fiscalYear", null, new { @class = "form-control", @required = "required" })
+                                </div>
+                                <div class="col-md-3">
+                                    <label>वडा नं.</label>
+                                    @Html.TextBox("wardNo", null, new { @class = "form-control", @required = "required" })
+                                </div>
+                                <div class="col-md-2" style="padding-left:0px; padding-top:20px;">
+                                    <input type="submit" name="submit" id="submit" value="खाेज्नुहाेस" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <table class="table table-bordered table-condensed table-hover table-striped">
+                        <thead>
+                            <tr class="success">
+                                <th>क्र.स.</th>
+                                <th>आर्थिक वर्ष</th>
+                                <th>वडा नं.</th>
+                                <th>फाईल</th>
+                                <th>फाइल डाउनलोड</th>
+                                <th>पूर्वावलोकन</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.UploadImageList)
+                            {
+                                <tr>
+                                    <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</td>
+                                    @*<td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Fiscal_Year_Record)</td>
+                                    <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.WardNo)</td>*@
+                                    <td>@item.Fiscal_Year_Record</td>
+                                    <td>@item.WardNo</td>
+                                    <td>@item.FileName</td>
+                                    <td><a href="@Url.Action("DownloadFiles", "PlanningSamjhauta",new { @id=item.UploadFileId})" style="color:forestgreen"><i class="fa fa-download">&nbsp;</i> डाउनलोड गर्नुहोस्</a></td>
+                                    <td><a href="@Url.Action("PreviewFile", "PlanningSamjhauta",new { @id=item.UploadFileId})" target="_blank" style="color:cornflowerblue"> <i class="fa fa-file">&nbsp;</i> पूर्वावलोकन</a></td>
+                                    @*<td><a href="@Url.Action("View", "PlanningSamjhauta",new { @id=item.UploadFileId})" target="_blank" style="color:red"> <i class="fa fa-file">&nbsp;</i> हेर्नुहोस</a></td>*@
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+

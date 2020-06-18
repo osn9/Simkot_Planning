@@ -1,0 +1,34 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+@using Planning.Helpers
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+@using (Html.BeginCollectionItem("PlanningSamjhautaKistaSecondDetailsList"))
+{
+    if (Model.Payment_Date != null)
+    {
+        var payment = Model.Payment_Date.Value.ToShortDateString();
+        Model.NepaliPaymentDate = Planning.Utility.CommonUtility.getNepaliDate(payment);
+    }
+    @Html.HiddenFor(model => model.Kista_Kram, new { @class = "form-control", @Value = "दोश्राे" })
+    <div class="col-md-1"></div>
+    <div class="col-md-2">दोश्रो किस्ता</div>
+    @*<div class="col-md-2">@Html.TextBoxFor(model => model.Payment_Date, new { @class = "form-control nepali-calendar", @id = "SamjhautaPayment_Date2", @placeholder = "____/__/__" })</div>*@
+    <div class="col-md-2">@Html.TextBoxFor(model => model.NepaliPaymentDate, new { @class = "form-control nepali-calendar", @id = "SamjhautaPayment_Date2", @placeholder = "____/__/__" })</div>
+    <div class="col-md-2">@Html.TextBoxFor(model => model.Kista_Rakam, new { @class = "form-control", @id = "Kista_Rakam2" })</div>
+    <div class="col-md-2">@Html.TextBoxFor(model => model.Nirmarn_Samagri, new { @class = "form-control", @id = "Nirmarn_Samagri" })</div>
+    <div class="col-md-3 form-group">@Html.TextAreaFor(model => model.Nirmarn_Samagri, new { @class = "form-control", @id = "Nirmarn_Samagri" })</div>
+    <div class="clearfix"></div>
+}
+
+
+<script type="text/javascript">
+    $('#SamjhautaPayment_Date2').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+</script>

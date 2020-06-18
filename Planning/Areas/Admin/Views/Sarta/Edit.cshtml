@@ -1,0 +1,73 @@
+﻿
+@model Planning.Areas.Admin.Models.OrganizationSetupViewModel.OrganizationSetupViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/ckeditor_4.11.1_standard/ckeditor/ckeditor.js"></script>
+
+<div class="padding-md">
+    @if (TempData["alreadyexist"] != null)
+    {
+        <div class="alert alert-info">
+            <h5 style="text-align:center"><strong style="color:red;">@TempData["alreadyexist"]</strong></h5>
+        </div>
+    }
+
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <h3 class="step_ttl">राख्नुहोस </h3>
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well", @id = "contact_form" }))
+                            {
+                                @Html.ValidationSummary()
+                                @Html.HiddenFor(model=>model.Sarta_Setup_Id)
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-lg-10 col-md-10">
+                                            <div class="form-group">
+                                                <label>शर्त</label>
+                                               @Html.TextAreaFor(model => model.Description, 10, 170, new { htmlAttributes = new { @class = "form-control" } })
+                                               @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+                                    <div class="form-group">
+                                        <label class="col-lg-3  col-md-4 control-label"></label>
+                                        <div class="col-lg-7 col-md-7">
+                                            <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                                            @Html.ActionLink("मुख्य मेनु", "Index", null, new { @class = "btn btn-info" })
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            }
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<script>
+    CKEDITOR.replace('Description', {
+        height: ['500px']
+    });
+
+
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

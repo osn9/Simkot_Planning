@@ -1,0 +1,413 @@
+﻿@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi4ViewModel
+
+@{
+    Layout = null;
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from o in db.Organization_Setup select o).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+    }
+
+}
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+
+<div class="tab-pane fade in active" id="fiscalYearRecord">
+    <h3 class="step_ttl">अनुसूची ४ / खर्च सार्वजनिक सूचना फारम</h3>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well" }))
+    {
+        @Html.HiddenFor(model=>model.Planning_Samjhauta_Id)
+        @Html.HiddenFor(model => model.AnuSuchi4_Id)
+        <fieldset>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजनाको नामः</label>
+                        @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजनाको स्थलः</label>
+                        @Html.EditorFor(model => model.Project_Place, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Project_Place, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>विनियोजित वजेटः</label>
+                        @Html.EditorFor(model => model.Project_Estimated_Amount, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Project_Estimated_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजना स्विकृत भएको आ.वः</label>
+                        @Html.EditorFor(model => model.Fiscal_Year, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Fiscal_Year, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजना सम्झोेता भएको मितिः</label>
+                        @Html.EditorFor(model => model.Project_Approval_Date, new { htmlAttributes = new { @class = "form-control  nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Project_Approval_Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>काम सम्पन्न गर्नु पर्ने मितिः</label>
+                        @Html.EditorFor(model => model.Project_To_Finish_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Project_To_Finish_Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>काम सम्पन्न भएको मितिः</label>
+                        @Html.EditorFor(model => model.Project_Ended_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Project_Ended_Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>उ.स.बेेठकले खर्च स्विकृत गरेको मितिः</label>
+                        @Html.EditorFor(model => model.Samiti_Expenses_Approval_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Samiti_Expenses_Approval_Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="row">
+                <div class="detail" style="font-size:16px; font-weight:500;">आम्दानी र खर्चको विवरणः</div>
+                <table class="table table-bordered" style="border-color:black">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="2" style="text-align:center">आम्दानी</th>
+                            <th scope="col" colspan="2" style="text-align:center">खर्च</th>
+                        </tr>
+                        <tr>
+                            <th>विवरण</th>
+                            <th>रकम</th>
+                            <th>विवरण</th>
+                            <th>रकम</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>प्रथम किस्ता</td>
+                            <td>@Html.TextBoxFor(model => model.First_Kista)</td>
+                            <td>ज्याला</td>
+                            <td>@Html.TextBoxFor(model => model.Jyalla)</td>
+                        </tr>
+                        <tr>
+                            <td>दोस्रो किस्ता</td>
+                            <td>@Html.TextBoxFor(model => model.Second_Kista)</td>
+                            <td>निर्माण सामाग्री खरिद</td>
+                            <td>@Html.TextBoxFor(model => model.Nirman_Samagri_Kharid)</td>
+                        </tr>
+                        <tr>
+                            <td>तेस्रो किस्ता</td>
+                            <td>@Html.TextBoxFor(model => model.Third_Kista)</td>
+                            <td>ढुवानी</td>
+                            <td>@Html.TextBoxFor(model => model.Dhuwani)</td>
+                        </tr>
+                        <tr>
+                            <td>जनश्रमदान</td>
+                            <td>@Html.TextBoxFor(model => model.Janashram)</td>
+                            <td>भाडा</td>
+                            <td>@Html.TextBoxFor(model => model.Bhada)</td>
+                        </tr>
+                        <tr>
+                            <td>वस्तुगत सहायता</td>
+                            <td>@Html.TextBoxFor(model => model.Bastugat_Sahayata)</td>
+                            <td>व्यवस्थापन खर्च</td>
+                            <td>@Html.TextBoxFor(model => model.Bawestapan_Kharcha)</td>
+                        </tr>
+                        <tr>
+                            <td>लागत सहभागिता</td>
+                            <td>@Html.TextBoxFor(model => model.Lagat_Sahabhagita)</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="form-group">
+                <label class="col-lg-3  col-md-4 control-label"></label>
+                <div class="col-lg-7 col-md-7">
+                    <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">प्रिन्ट</button>
+                </div>
+            </div>
+        </fieldset>
+    }
+</div>
+
+
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:800px;">
+
+            <div class="cotract_letter" id="printdiv">
+
+                <style>
+                    .header-section .table tbody > tr, .content-section .table tbody > tr, .detail .table tbody > tr, .sign.table tbody > tr {
+                        border: none !important;
+                    }
+
+                    header-section .table tr td, .content-section .table tbody > tr, .detail .table tbody > tr, .sign .table tbody > tr {
+                        border: none !important;
+                        border-color: #f9f9f9 !important;
+                        padding: 0px !important;
+                    }
+
+                    @@media print {
+                        .header-section .table tr td, .content-section .table tr td {
+                            border: none !important;
+                            border: !important;
+                            border-color: #fff !important;
+                            padding: 0px !important;
+                        }
+
+                        .header-section .table tbody > tr, .content-section .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+
+                        .header-section .table, .table tbody > tr, td, .content-section .table, .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+                    }
+                </style>
+
+                <div class="header-section">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="25%" style="border:none !important; border:0px !important;">
+                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                </td>
+                                <td width="45%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h2 style="font-weight:bold; font-size:18px;">अनुसूची ४</h2>
+                                    <h2 style="font-weight:bold; font-size:18px; margin-top:0px;">(कार्यविधिको दफा ११(६) सँग सम्बन्धित)</h2>
+                                    <h2 style="font-weight:bold; font-size:18px; margin-top:0px;">खर्च सार्वजनिक सूचना फारम</h2>
+                                </td>
+                                <td width="30%" style="border:none !important; border:0px !important;">
+                                    <img src="@ViewBag.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-section">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                @{ var date = DateTime.Now;
+                                    var currentEnglishDate = date.ToShortDateString();
+                                    var currentNepaliDate = @Planning.Utility.CommonUtility.getNepaliDate(currentEnglishDate);
+                                }
+                                <td colspan="2" style="text-align:right; font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">मिति: @Planning.Utility.NepaliEnglishNumber.English_Nepali(currentNepaliDate)</b></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">आयोजनाको नामः @Model.Project_Name</span></td>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">आयोजनाको स्थलः @Model.Project_Place</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">विनियोजित वजेटः @Model.Project_Estimated_Amount</span></td>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">आयोजना स्विकृत भएको आ.वः @Model.Fiscal_Year</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">आयोजना सम्झोेता भएको मितिः @if (Model.Project_Approval_Date != null) { @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Project_Approval_Date)}</span></td>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">काम सम्पन्न गर्नु पर्ने मितिः @if (Model.Project_To_Finish_Date != null)
+                                {@Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Project_To_Finish_Date)}</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">काम सम्पन्न भएको मितिः @if (Model.Project_Ended_Date != null)
+                                { @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Project_Ended_Date)}</span></td>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">उ.स.बेेठकले खर्च स्विकृत गरेको मितिः @if (Model.Samiti_Expenses_Approval_Date != null)
+                                { @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Samiti_Expenses_Approval_Date.Value.ToShortDateString())}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h2 style="font-weight:bold; font-size:14px;">आम्दानी र खर्चको विवरण</h2>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="col-lg-12 col-md-12" style="font-size:14px; font-weight:500; padding:0px 60px;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="2" style="text-align:center">आम्दानी</th>
+                                <th scope="col" colspan="2" style="text-align:center">खर्च</th>
+                            </tr>
+                            <tr>
+                                <th>विवरण</th>
+                                <th>रकम</th>
+                                <th>विवरण</th>
+                                <th>रकम</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>प्रथम किस्ता</td>
+                                <td>@Model.First_Kista</td>
+                                <td>ज्याला</td>
+                                <td>@Model.Jyalla</td>
+                            </tr>
+                            <tr>
+                                <td>दोस्रो किस्ता</td>
+                                <td>@Model.Second_Kista</td>
+                                <td>निर्माण सामाग्री खरिद</td>
+                                <td>@Model.Nirman_Samagri_Kharid</td>
+                            </tr>
+                            <tr>
+                                <td>तेस्रो किस्ता</td>
+                                <td>@Model.Third_Kista</td>
+                                <td>ढुवानी</td>
+                                <td>@Model.Dhuwani</td>
+                            </tr>
+                            <tr>
+                                <td>जनश्रमदान</td>
+                                <td>@Model.Janashram</td>
+                                <td>भाडा</td>
+                                <td>@Model.Bhada</td>
+                            </tr>
+                            <tr>
+                                <td>वस्तुगत सहायता</td>
+                                <td>@Model.Bastugat_Sahayata</td>
+                                <td>व्यवस्थापन खर्च</td>
+                                <td>@Model.Bawestapan_Kharcha</td>
+                            </tr>
+                            <tr>
+                                <td>लागत सहभागिता</td>
+                                <td>@Model.Lagat_Sahabhagita</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="detail">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p style="letter-spacing:1px; line-height:30px; font-weight:500; font-size:14px; padding-top:15px; text-align:justify !important;">
+                                        उपर्यक्तानुसारको आम्दानी तथा खर्च विवरण यथार्थ हो । यसमा सबै आम्दानी तथा खर्चहरु समावेश गरिएको छ । उपभोक्ताहरुको प्रत्यक्ष सहभागितामा कार्यान्वयन गरिएको छ । यसको एक प्रति वडा कार्यालयमा समेत पेश गरिएको छ ।
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br /><br /><br /><br /><br />
+                <div class="sign">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>...................................</td>
+                                <td>...................................</td>
+                                <td>...................................</td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">कोषाध्यक्ष</span></td>
+                                <td style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">सचिव</span></td>
+                                <td style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">अध्यक्ष</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+
+        $('#myModal').modal('hide')
+        $('.modal-backdrop').hide();
+
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.btn-info').click(function () {
+        $('#myModal').modal({
+			backdrop: 'static'
+		});
+	});
+});
+</script>
+
+
+<script>
+    $('#Project_Approval_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    $('#Project_To_Finish_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    $('#Project_Ended_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    $('#Samiti_Expenses_Approval_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+</script>
+
+

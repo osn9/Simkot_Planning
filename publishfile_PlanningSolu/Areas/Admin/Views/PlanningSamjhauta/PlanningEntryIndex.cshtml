@@ -1,0 +1,129 @@
+﻿
+
+
+@model Planning.Areas.Admin.Models.PlanningEntryViewModel.PlanningEntryViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div id="dialog-confirm" style="display: none">
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        Are you sure to delete?
+    </p>
+</div>
+<div id="dialog-edit" style="display: none">
+</div>
+<div id="dialog-detail" style="display: none">
+</div>
+
+<div class="padding-md">
+    @if (ViewBag.success != null)
+    {
+        <div class="alert alert-success">
+            <strong>Well done!</strong> @ViewBag.success
+        </div>
+    }
+    @if (TempData["SuccessMsg"] != null)
+    {
+        <script>alert("@TempData["SuccessMsg"]");</script>
+    }
+
+    @if (TempData["Msg"] != null)
+    {
+        <script>alert("@TempData["Msg"]");</script>
+    }
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="header-list" style="text-align: center">
+                    <h2>योजना सुचि</h2>
+                </div>
+                <hr />
+                <div class="panel-heading">
+                    @Html.ActionLink("नयाँ योजना राख्नुहोस्", "PlanningEntry", null, new { @class = "btn btn-success btn_add btn-xs" })
+                </div>
+                <table class="table table-bordered table-condensed table-hover table-striped">
+                    <thead>
+                        <tr class="success">
+                            <th>क्र.स.</th>
+                            <th>आर्थिक वर्ष</th>
+                            <th>वडा/नगर स्तरिय</th>
+                            <th>कार्यक्षेत्र </th>
+                            <th>वजेट श्रोत</th>
+                            <th>योजनाको नाम</th>
+                            <th>लागत इष्टिमेट</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.PlanningEntryViewModelList)
+                        {
+                            <tr>
+                                <th>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</th>
+                                <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.FiscalYear)</td>
+                                <td>
+                                    @if (item.Planning_Type == "O")
+                                    {
+                                        <span style="color:darkorange">वडास्तरीय</span>
+                                    }
+                                    else if (item.Planning_Type == "N")
+                                    {
+                                        <span style="color:darkblue">नगरस्तरीय</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if(item.Work_Area==1)
+                                    {
+                                        <span>पूर्वाधार</span>
+                                    }
+                                    else if (item.Work_Area == 2)
+                                    {
+                                        <span>सामाजिक</span>
+                                    }
+                                    else if (item.Work_Area == 3)
+                                    {
+                                        <span>आर्थिक</span>
+                                    }
+                                    else if (item.Work_Area == 4)
+                                    {
+                                        <span>वातावरण</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if(item.Budget_Source_Id==1)
+                                    {
+                                        <span>वितिय समानिकरण</span>
+                                    }
+                                    else if (item.Budget_Source_Id == 2)
+                                    {
+                                        <span>प्रदेश सरकार</span>
+                                    }
+                                    else if (item.Budget_Source_Id == 3)
+                                    {
+                                        <span>आन्तरिक श्रोत</span>
+                                    }
+                                </td>
+                                <td>@item.Planning_Name</td>
+                                <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Amount_Estimate.ToString())</td>
+                                <td>
+                                    <a class="btn btn-success btn-sm" title="सच्याउनुहोस्" href="@Url.Action("EditPlanningEntry", "PlanningSamjhauta", new { id = item.Planning_Entry_Id })"><i class="fa fa-edit"></i> सच्याउनुहोस्</a>
+                                    <a class="btn btn-success btn-sm" title="विवरण" href="@Url.Action("PlanningEntryDetail", "PlanningSamjhauta", new { id = item.Planning_Entry_Id })"><i class="fa fa-edit"></i> विवरण</a>
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

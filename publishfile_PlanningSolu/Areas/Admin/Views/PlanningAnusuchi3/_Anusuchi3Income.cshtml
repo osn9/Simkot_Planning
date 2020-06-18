@@ -1,0 +1,29 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi3ViewModel
+
+@using Planning.Helpers
+
+
+@{ int i = 1;}
+
+@using (Html.BeginCollectionItem("Anusuchi3IncomeViewModelList"))
+{
+    <div id="Anusuchi3IncomeFormgroup" class="form-group">
+
+        <div class="col-md-5"><label>आम्दानीको श्रोत (कहाँबाट कति नगद तथा जिन्सी प्राप्त भयो खुलाउने)</label>@Html.TextAreaFor(model=>model.Income_Source, new { @class = "form-control"}) </div>
+        <div class="col-md-2"><label>रकम वा परिमाण</label>@Html.TextBoxFor(model => model.Amount_Quantity, new { @class = "form-control" }) </div>
+        <div class="col-md-4"><label>कैफियत</label>@Html.TextAreaFor(model => model.Income_Remarks, new { @class = "form-control" }) </div>
+        <div class="btn-delete col-md-1">
+            <div><a href='javascript:;' class="btn btn-danger btn-sm removeincome" style="margin-top:35px;"><span class='fa fa-minus fa-1x'></span></a></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+
+
+<script>
+    $(".removeincome").click(function () {
+        $(this).parents("#Anusuchi3IncomeFormgroup").remove();
+    });
+</script>
+

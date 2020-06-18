@@ -1,0 +1,409 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningBhuktaniViewModel.PlanningBhuktaniViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .cotract_letter {
+        border: 1px solid #ccc;
+        margin: 30px 0px;
+        padding: 30px;
+    }
+
+        .cotract_letter header-sec img {
+            max-width: 100%;
+            max-height: 100px;
+        }
+
+    .header-section h1 {
+        font-size: 65px;
+        letter-spacing: 5px;
+    }
+
+    .header-section h2 {
+        font-size: 40px;
+    }
+
+    .header-section h3, .subject h3 {
+        font-size: 30px;
+    }
+
+    .header-section h4 {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+
+    .header-section h1, .header-section h2, .header-section h3,
+    .header-section h4, .subject h3, .letter_footer h3, .letter_content h4, .aanya-raaya h3 {
+        font-weight: 600;
+    }
+
+    .subject h3 {
+        margin-top: 60px;
+    }
+
+    .letter_footer {
+        margin-top: 60px;
+    }
+
+    .approved-by {
+        margin-top: 60px;
+    }
+
+    .letter_footer, .letter_footer strong, .letter_content, .titleNumber {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+        .letter_footer ul {
+            margin-top: 15px;
+        }
+
+            .letter_footer ul li {
+                list-style-type: none;
+            }
+
+                .letter_footer ul li span {
+                    padding-left: 20px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    position: relative;
+                    margin-top: -14px;
+                }
+
+        .titleNumber ul li {
+            list-style-type: none;
+        }
+
+    .personName {
+        border-style: none;
+    }
+
+        .personName:hover {
+            border-style: none;
+        }
+
+        .personName:focus {
+            border-style: none;
+        }
+
+    .btn.btn-primary.pull-right {
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+</style>
+
+@foreach (var item in Model.PlanningBhuktaniViewModelList)
+{
+    <div class="container">
+        <input type="button" class="btn btn-primary pull-right" value="भुक्तानी प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+        <div class="cotract_letter" id="printdiv">
+
+            <style>
+                .table tbody > tr {
+                    border: none !important;
+                }
+
+                .table tr td {
+                    border: none !important;
+                    border-color: #f9f9f9 !important;
+                    padding: 5px !important;
+                }
+
+                @@media print {
+                    .table tr td {
+                        border: none !important;
+                        border: 0 !important;
+                        border-color: #fff !important;
+                        padding: 5px !important;
+                    }
+
+                    .table tbody > tr {
+                        border: none !important;
+                        border: 0 !important;
+                    }
+
+                    .table, .table tbody > tr, td {
+                        border: none !important;
+                        border: 0 !important;
+                    }
+                }                
+            </style>
+
+            <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td width="25%" style="border:none !important; border:0px !important;">
+                            <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                        </td>
+                        @if (Model.OrganizationSetupList.Count > 0)
+                        {
+                            foreach (var org in Model.OrganizationSetupList)
+                            {
+                                <td width="45%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h1 style="font-weight:bold; font-size:29px;">@org.Organization_Name</h1>
+                                    <h2 style="font-weight:bold; font-size:24px; margin-top:0px;">@org.Organization_Type</h2>
+                                    <h3 style="font-weight:bold; font-size:18px; margin-top:0px;">@org.District_Name</h3>
+                                    <h4 style="font-weight:bold; font-size:14px;">@org.State_Country</h4>
+                                </td>
+                                <td width="30%" style="border:none !important; border:0px !important;">
+                                    <img src="@org.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @{ var date = DateTime.Now;
+                            var currentEnglishDate = date.ToShortDateString();
+                            var currentNepaliDate = @Planning.Utility.CommonUtility.getNepaliDate(currentEnglishDate);
+                        }
+                        <td colspan="3" style="text-align:right; font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">मिति: @Planning.Utility.NepaliEnglishNumber.English_Nepali(currentNepaliDate)</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align:center; font-size:20px; border:none !important;"><b style="margin-top:0px; display:block;">टिप्पणी र आदेश ।</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align:center; font-size:18px; border:none !important;"><b style="margin-top:0px; display:block;">विषय: योजना/कार्यक्रमको पेश्की/प्रथम/दोस्रो/अन्तिम रकम भुक्तानी सम्बन्धमा ।</b></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table" border="0" style="border:0px !important;margin-bottom:0px;" cellpadding="0" cellspacing="0">
+                @{
+                    var samDate = item.SamjhautaDate;
+                    var SamjhautaDate = @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(samDate));
+                }
+                <tbody>
+                    <tr>
+                        <td>
+                            <p style="letter-spacing:1px; line-height:30px; font-weight:500; font-size:14px; padding-top:0px; text-align:justify !important;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; आर्थिक वर्ष &nbsp; <strong>@item.Fiscal_Year_Record</strong> &nbsp;मा को स्वीकृत वजेट, नीति कार्यक्रम/ न.पा.को बेेठकको निर्णय अनुसार &nbsp; <strong>@item.Aayojana_Karyakram</strong> &nbsp;
+                                स्वीकृत योजना अनुसार मिति &nbsp; <strong>@SamjhautaDate</strong> &nbsp; गते यस कार्यालय र &nbsp; <strong>@item.Nirman_Upabhokta</strong> &nbsp; उपभोक्ता समिति बीच भएको योजना सम्झोेता अनुसार उपभोक्ता समितिका अध्यक्ष, श्री &nbsp; <strong>@item.AdakshyaName</strong> &nbsp; ले उक्त योजना सञ्चालन/ सम्पन्न गर्न/ गरी
+                                पेश्की/प्रथम/दोस्रो/तेस्रो किस्ता रकम माग गर्नु भएकोले भूक्तानीका लागि तपसिलका कागजातहरु संलग्न गरी निर्णयार्थ पेश गर्दछु ।
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            @*<table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">विनियोजित रकम : @item.NaPa_Binayajit</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">योजनाको कूल.ल.ई : @item.Kul_La_Ie</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">जनासहभागिता : @item.Jana_Sahabagita</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">कन्टेन्जेन्सी ५ प्रतिशत रकम : @item.Kantigenci</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">पेशकी रकम : @item.Peski</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">फर्छोेट गर्नुपर्ने पेश्की रकम : @item.Farchot_Amount</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">रनिङ भूक्तानी : @item.Running_Bhuktani</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">प्राविधिक मूल्याँकन : @item.Technical_Amount</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">सामाजिक सुरक्षा कर (१ प्रतिशत) : @item.Samajik_Surekchya</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">अग्रिम आय कर (१.५ प्रतिशत) : @item.Agrim_Shulka</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">पारिश्रमिक कर (१५ प्रतिशत) : @item.Parishramik</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">बहाल कर(१० प्रतिशत) : @item.Bahal_Kar</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">जम्मा करकट्टी रकम : @item.Katti_Rakam</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><b style="margin-top:0px; display:block;">भूक्तानी रकम : @item.Remaining_Bhuktani_Amount</b></td>
+                    </tr>
+                </tbody>
+            </table>*@
+
+            <table class="table table-bordered itemtable" border="1" style="font-size:14px; margin-bottom:5px;color:#333;">
+                <thead>
+                    <tr>
+                        <th width="5%"> <strong> कूल ल.ई. </strong> </th>
+                        <th width="10%"> <strong> न.पा. विनियोजित </strong> </th>
+                        <th width="10%"> <strong> जन सहभागिता </strong> </th>
+                        <th width="10%"> <strong> पेश्की </strong> </th>
+                        <th width="10%"> <strong> फर्छोेट गर्नुपर्ने पेश्की रकम</strong> </th>
+                        <th width="10%"> <strong> रनिङ भुक्तानी </strong> </th>
+                        <th width="10%"> <strong> प्राविधिक मूल्याङ्कन </strong> </th>
+                        <th width="10%"> <strong> मर्मत सम्भार </strong> </th>
+                        <th> <strong> कन्टिन्जेन्सी  </strong> </th>
+                        <th> <strong> भुक्तानी रकम  </strong> </th>
+                        <th> <strong> कर कट्टी </strong> </th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr>
+                        <td><strong>@item.Kul_La_Ie</strong></td>
+                        <td><strong>@item.NaPa_Binayajit</strong></td>
+                        <td><strong>@item.Jana_Sahabagita</strong></td>
+                        <td><strong>@item.Peski</strong></td>
+                        <td><strong>@item.Farchot_Amount</strong></td>
+                        <td><strong>@item.Running_Bhuktani</strong></td>
+                        <td><strong>@item.Technical_Amount</strong></td>
+                        <td><strong>@item.Marmat_Sambhar</strong></td>
+                        <td><strong>@item.Kantigenci</strong></td>
+                        <td><strong>@item.Remaining_Bhuktani_Amount</strong></td>
+                        <td>
+                            @*<p>कन्टिन्जेन्सी   :  @item.Kantigenci</p>*@
+                            <p>पारिश्रमिक कर  :  @item.Parishramik</p>
+                            <p>
+                                बहाल कर   : @item.Bahal_Kar
+                            </p>
+                            <p>
+                                धुवानी: @item.Samajik_Surekchya
+                            </p>
+                            <p>
+                                @*१.५%*@ अग्रिम कर कट्टी :  @item.Agrim_Shulka
+                            </p>
+                            <p>
+                                जम्मा कट्टी रकम  :  @item.Katti_Rakam
+                            </p>
+                            @*<p> अन्य : @item.Otheers</p>*@
+                            @*<p>
+                                भुक्तानी रकम &nbsp;: &nbsp;  @item.Remaining_Bhuktani_Amount
+                            </p>*@
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            @*<table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td colspan="3" style="font-size:20px; border:none !important;"><b style="margin-top:0px; display:block;">संलग्न कागजातहरु :</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">१. &nbsp; उपभोक्ता समितिको प्रमाणित निर्णय प्रतिलिपि (पेशकीको लागि)</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">२. &nbsp; सम्बन्धित वडाको सिफारिस (पेशकीको लागि)</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">३. &nbsp; सक्कल सबेे बील भर्पाई तथा डोरहाजिर फारम</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">४. &nbsp; प्राविधिकको अन्तिम मूल्याँकन साथ कार्य सम्पन्न प्रतिवेदन</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">५. &nbsp; नापी किताब</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">६. &nbsp; योजना अनुगमन समितिबाट अनुगमन भएको मिति समेत खुलेको उपस्थिति र निर्णय</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">७. &nbsp; कार्य सम्पन्न भएको योजनासँग सम्बन्धित फोटो</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">८. &nbsp; समितिको बेेठकले निर्णय गरेको सम्पादन गरेको काम र भएको खर्चको विवरण</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">९. &nbsp; कार्यालयको प्रतिनिधिको रोहवरमा सार्वजनिक परीक्षण गरेको प्रतिवेदन</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">१०. &nbsp; निर्माण सम्पन्न भएको योजना झल्किने फोटो</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:14px; border:none !important;"><span style="margin-top:0px; display:block;">११. &nbsp; उ.स.को निवेदन(पेशकीको लागि)</span></td>
+                    </tr>
+                </tbody>
+            </table>*@
+
+            <table class="table" border="0" style="border:0 !important; width:100%; margin-bottom:2px;">
+                <tbody>
+                    <tr>
+                        <td colspan="3">
+                            <b style="font-weight:bold; text-decoration:underline; padding-bottom:5px !important; display:block;font-size:14px;">संलग्न कागजातहरु</b>
+                        </td>
+                    </tr>
+                    <tr style="font-size:14px;">
+                        <td width="31%">१. &nbsp;वडा सिफारिस </td>
+                        <td width="31%">भएको / नभएको</td>
+                        <td width="38%">&nbsp;</td>
+                    </tr>
+                    <tr style="font-size:14px;">
+                        <td>२. &nbsp;सूचना पार्टी र आयोजनाको फोटो </td>
+                        <td>भएको / नभएको</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr style="font-size:14px;">
+                        <td>३. &nbsp;खर्च सार्वजनिकीकरन </td>
+                        <td>भएको / नभएको</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr style="font-size:14px;">
+                        <td>४. &nbsp;सार्वजनिक परिक्षण प्रतिवेदन</td>
+                        <td>भएको / नभएको</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr style="font-size:14px;">
+                        <td>५. &nbsp;अनुगमन समितिको सिफारिस /प्रतिवेदन </td>
+                        <td>भएको / नभएको</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table" border="0" style="border:0 !important; width:100%;">
+                <tbody>
+                    <tr style="font-size:14px;">
+                        <td>६. &nbsp;प्राविधिक कागजातहरु </td>
+                        <td>(क) ठेक्का विल</td>
+                        <td>(ख) नापी किताब</td>
+                        <td>(ग) कार्यसम्पन्न प्रतिवेदन्</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br /><br /><br />
+            <table class="table" border="0" style="border:0 !important; width:100%; text-align:center; font-size:14px;">
+                <tbody>
+                    <tr>
+                        <td>________________</td>
+                        <td>________________</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td><b style="display:block; padding-top:5px;">पेश गर्ने</b></td>
+                        <td><b style="display:block; padding-top:5px;">चेक गर्ने </b> </td>
+                        <td><b style="display:block; padding-top:5px;"> स्वीकृत गर्ने </b> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+}
+
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>

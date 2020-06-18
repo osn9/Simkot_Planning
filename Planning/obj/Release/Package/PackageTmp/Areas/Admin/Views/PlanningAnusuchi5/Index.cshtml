@@ -1,0 +1,286 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi5ViewModel
+
+@{
+    Layout = null;
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from o in db.Organization_Setup select o).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+    }
+
+}
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+<div class="tab-pane fade in active" id="fiscalYearRecord">
+    <h3 class="step_ttl">अनुसूची ५ / आयोजना सूचना पाटीको नमूना</h3>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well" }))
+    {
+        @Html.HiddenFor(model=>model.Planning_Samjhauta_Id)
+        @Html.HiddenFor(model=>model.AnuSuchi5_Id)
+        <fieldset>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजनाको नाम</label>
+                        @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजना संचालन गर्ने कार्यालय/कार्यक्रमको नाम</label>
+                        @Html.EditorFor(model => model.Project_Run_Org, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Project_Run_Org, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>उपभोक्ता समितिको अध्यक्षको नाम र सम्पर्क नं.</label>
+                        @Html.EditorFor(model => model.Upabhokta_Samiti_Adakshya, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Upabhokta_Samiti_Adakshya, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजनाको कुल लागत रकम रु.</label>
+                        @Html.EditorFor(model => model.Project_Estimate_Amount, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Project_Estimate_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजना कार्यालयबाट व्यहोर्ने लागत रु.</label>
+                        @Html.EditorFor(model => model.Municipality_Amount, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Municipality_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>जनसहभागिताबाट व्यहोर्ने लागत रकम रु.</label>
+                        @Html.EditorFor(model => model.Jana_Sahabhagita_Amount, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Jana_Sahabhagita_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजनामा लगानी गर्ने अन्य निकायको नाम र व्यहोर्ने लागत रु.</label>
+                        @Html.EditorFor(model => model.Other_Org_Source_Amount, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Other_Org_Source_Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजना सम्झौता मिति</label>
+                        @Html.EditorFor(model => model.Project_Contract_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Project_Contract_Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजना सम्पन्न गर्ने मिति</label>
+                        @Html.EditorFor(model => model.Project_End_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Project_End_Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @if (Model.Total_Project_Beneficiaries == null)
+                {
+                    if (Model.Total_Male !=null ||Model.Total_Female!=null   )
+                    {
+
+                    var male = Planning.Utility.NepaliEnglishNumber.Nepali_English(Model.Total_Male);
+                    var female = Planning.Utility.NepaliEnglishNumber.Nepali_English(Model.Total_Female);
+                    int totmale = Convert.ToInt32(male);
+                    int totfemale = Convert.ToInt32(female);
+                    int total = totmale + totfemale;
+                    var totalBeneficiaries = Planning.Utility.NepaliEnglishNumber.English_Nepali(total.ToString());
+                    Model.Total_Project_Beneficiaries = totalBeneficiaries;
+                }
+                    }
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>आयोजनाबाट लाभान्वित जनसंख्या</label>
+                        @Html.EditorFor(model => model.Total_Project_Beneficiaries, new { htmlAttributes = new { @class = "form-control"} })
+                        @Html.ValidationMessageFor(model => model.Total_Project_Beneficiaries, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+           
+            <div class="form-group">
+                <label class="col-lg-3  col-md-4 control-label"></label>
+                <div class="col-lg-7 col-md-7">
+                    <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">प्रिन्ट</button>
+                </div>
+            </div>
+
+        </fieldset>
+    }
+</div>
+
+
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:800px;">
+            <div class="main-content" id="printdiv">
+
+                <style>
+                    .header-section .table tbody > tr, .content-section .table tbody > tr, .detail .table tbody > tr, .sign.table tbody > tr {
+                        border: none !important;
+                    }
+
+                    header-section .table tr td, .content-section .table tbody > tr, .detail .table tbody > tr, .sign .table tbody > tr {
+                        border: none !important;
+                        border-color: #f9f9f9 !important;
+                        padding: 0px !important;
+                    }
+
+                    @@media print {
+                        .header-section .table tr td, .content-section .table tr td {
+                            border: none !important;
+                            border: !important;
+                            border-color: #fff !important;
+                            padding: 0px !important;
+                        }
+                    }
+                </style>
+
+                <div class="header-section">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="20%" style="border:none !important; border:0px !important;">
+                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                </td>
+                                <td width="60%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h2 style="font-weight:bold; font-size:18px; padding-left:10px;">अनुसूची ५</h2>
+                                    <h2 style="font-weight:bold; font-size:18px; margin-top:0px;">कार्यविधिको दफा ११ (७) सँग सम्बन्धित) </h2>
+                                    <h2 style="font-weight:bold; font-size:18px; margin-top:0px; text-decoration:underline">आयोजना सूचना पाटीको नमूना </h2>
+                                </td>
+                                <td width="20%" style="border:none !important; border:0px !important;">
+                                    <img src="@ViewBag.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-section">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">१. आयोजनाको नाम : @Model.Project_Name</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">२. आयोजना संचालन गर्ने कार्यालय/कार्यक्रमको नाम : @Model.Project_Run_Org</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">३. उपभोक्ता समितिको अध्यक्षको नाम र सम्पर्क नं. : @Model.Upabhokta_Samiti_Adakshya</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">४. आयोजनाको कुल लागत रकम रु. : @Model.Project_Estimate_Amount</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block; margin-left:20px;">४.१. आयोजना कार्यालयबाट व्यहोर्ने लागत रु. : @Model.Municipality_Amount</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block; margin-left:20px;">४.२. जनसहभागिताबाट व्यहोर्ने लागत रकम रु. : @Model.Jana_Sahabhagita_Amount</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block; margin-left:20px;">४.३. आयोजनामा लगानी गर्ने अन्य निकायको नाम र व्यहोर्ने लागत रु. : @Model.Other_Org_Source_Amount</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">
+    ५. आयोजना सम्झौता मिति : @if (Model.Project_Contract_Date!=null
+        )
+    {
+        @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Project_Contract_Date)
+    }
+</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">६. आयोजना सम्पन्न गर्ने मिति : 
+                                    @if (Model.Project_End_Date!=null)
+                                    {
+
+                                    @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Project_End_Date)
+                                    }
+                                       
+                                       </span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="display:block;">७. आयोजनाबाट लाभान्वित जनसंख्या : @Model.Total_Project_Beneficiaries</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    $('#Project_Contract_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    $('#Project_End_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    
+</script>
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+
+        $('#myModal').modal('hide')
+        $('.modal-backdrop').hide();
+
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.btn-info').click(function () {
+        $('#myModal').modal({
+			backdrop: 'static'
+		});
+	});
+});
+</script>
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi9ViewModel
+
+@using Planning.Helpers
+
+
+@using (Html.BeginCollectionItem("Anusuchi9_MembersViewModelList"))
+{
+    <div id="Members_UpaBhoktaSamiti" class="form-group">
+
+        <div class="col-lg-4 col-md-6">
+            <div class="form-group">
+                <label>सदस्यको नामः</label>
+                @Html.EditorFor(model => model.Members, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.Members, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="form-group">
+                <label>सदस्यको ठेगानाः</label>
+                @Html.EditorFor(model => model.Members_Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Members_Address, "", new { @class = "text-danger" })
+            </div>
+        </div>         <div class="btn-delete col-md-1">
+            <div><a href='javascript:;' class="btn btn-danger btn-sm removemembers"><span class='fa fa-minus fa-1x'></span></a></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+
+
+<script>
+    $(".removemembers").click(function () {
+        $(this).parents("#Members_UpaBhoktaSamiti").remove();
+    });
+</script>

@@ -1,0 +1,625 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningBhuktaniViewModel.PlanningBhuktaniViewModel
+
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+<div class="padding-md">
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <h3 class="step_ttl">रकम भुक्तानी</h3>
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well", @id = "contact_form" }))
+                            {
+                                @Html.HiddenFor(model => model.Planning_Samjhauta_Id)
+
+                                if (Model.PlanningBhuktaniKarKattiViewModelList.Count > 0)
+                                {
+                                    foreach (var item in Model.PlanningBhuktaniKarKattiViewModelList)
+                                    {
+                                        Model.Kantigenci1 = item.Kantigenci1;
+                                        Model.Samajik_Surekchya1 = item.Samajik_Surekchya1;
+                                        Model.Agrim_Shulka1 = item.Agrim_Shulka1;
+                                        Model.Parishramik1 = item.Parishramik1;
+                                        Model.Bahal_Kar1 = item.Bahal_Kar1;
+                                        Model.Marmat_Sambhar1 = item.Marmat_Sambhar1;
+                                    }
+                                }
+
+                                <fieldset>
+                                    <div class="row">
+
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>भुक्तानी प्रकार</label>
+                                                @Html.DropDownListFor(model => model.Bhuktani_Type, Planning.Utility.CommonUtility.GetBhuktaniType(), "-- छान्नुहोस --", new { @class = "form-control", @required = "required" })
+                                                @Html.ValidationMessageFor(model => model.Bhuktani_Type, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>आर्थिक वर्षः</label>
+                                                @Html.EditorFor(model => model.Fiscal_Year_Record, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                                @*@Html.DropDownListFor(model => model.Fiscal_Year_Record, Planning.Utility.CommonUtility.GetFiscalYearList(), "-- छान्नुहोस --", new { @class = "form-control", @required = "required", @OnChange = "GetProjectNameByFiscalYear()" })*@
+                                                @Html.ValidationMessageFor(model => model.Fiscal_Year_Record, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>योजना / कार्यक्रम:</label>
+                                                @Html.EditorFor(model => model.Aayojana_Karyakram, new { htmlAttributes = new { @class = "form-control" } })
+                                                @*@Html.DropDownListFor(model => model.Aayojana_Karyakram, Planning.Utility.CommonUtility.GetProjectNameList(), "-- छान्नुहोस --", new { @class = "form-control", @required = "required", @OnChange = "GetSamjhautaDetailsByProjectName()" })*@
+                                                @Html.ValidationMessageFor(model => model.Aayojana_Karyakram, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>वजेट शिर्षकः</label>
+                                                @Html.EditorFor(model => model.Budget_Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Budget_Title, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>वजेट शिर्षक नं.:</label>
+                                                @Html.EditorFor(model => model.Budget_Title_Number, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Budget_Title_Number, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>उपभोक्ता समितिः</label>
+                                                @Html.EditorFor(model => model.Nirman_Upabhokta, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Nirman_Upabhokta, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>अध्यक्षको नामः</label>
+                                                @Html.EditorFor(model => model.AdakshyaName, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AdakshyaName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>सम्झोेता मितिः</label>
+                                                @*@Html.EditorFor(model => model.SamjhautaDate, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })*@
+                                                @Html.EditorFor(model => model.ManjuriSamjhautaDate, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                                                @Html.ValidationMessageFor(model => model.SamjhautaDate, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p></p>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12" style="font-size:16px; font-weight:600;"><b>आयोजनाको विवरणः</b></div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>कुल ल.ई.</label>
+                                                @Html.EditorFor(model => model.Kul_La_Ie, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Kul_La_Ie, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>न.पा.विनियोजित</label>
+                                                @Html.EditorFor(model => model.NaPa_Binayajit, new { htmlAttributes = new { @class = "form-control", onchange = "getnapa()" } })
+                                                @Html.ValidationMessageFor(model => model.NaPa_Binayajit, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>जन सहभागिता</label>
+                                                @Html.EditorFor(model => model.Jana_Sahabagita, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Jana_Sahabagita, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                @*<label>कन्टेन्जेन्सी (५ प्रतिशत)</label>*@
+                                                <label>कन्टेन्जेन्सी (@Model.Kantigenci1 प्रतिशत)</label>
+                                                @Html.EditorFor(model => model.Kantigenci, new { htmlAttributes = new { @class = "form-control", onchange = "getconti()" } })
+                                                @Html.ValidationMessageFor(model => model.Kantigenci, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>पेश्की रकम</label>
+                                                @Html.EditorFor(model => model.Peski, new { htmlAttributes = new { @class = "form-control", onchange = "getpeski()" } })
+                                                @Html.ValidationMessageFor(model => model.Peski, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>फर्छोेट गर्नुपर्ने पेश्की रकम</label>
+                                                @Html.EditorFor(model => model.Farchot_Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Farchot_Amount, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>रनिङ भुक्तानी</label>
+                                                @Html.EditorFor(model => model.Running_Bhuktani, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Running_Bhuktani, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>प्राविधिक मूल्याङ्कन</label>
+                                                @Html.EditorFor(model => model.Technical_Amount, new { htmlAttributes = new { @class = "form-control", onchange = "gettechni()" } })
+                                                @Html.ValidationMessageFor(model => model.Technical_Amount, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                @*<label>सामाजिक सुरक्षा कर (१ प्रतिशत)</label>*@
+                                                <label>सामाजिक सुरक्षा कर (@Model.Samajik_Surekchya1 प्रतिशत)</label>
+                                                @Html.EditorFor(model => model.Samajik_Surekchya, new { htmlAttributes = new { @class = "form-control", onchange = "getsamajik()" } })
+                                                @Html.ValidationMessageFor(model => model.Samajik_Surekchya, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                @*<label>अग्रिम आय कर (१.५ प्रतिशत)</label>*@
+                                                <label>अग्रिम आय कर (@Model.Agrim_Shulka1 प्रतिशत)</label>
+                                                @Html.EditorFor(model => model.Agrim_Shulka, new { htmlAttributes = new { @class = "form-control", onchange = "getagrim()" } })
+                                                @Html.ValidationMessageFor(model => model.Agrim_Shulka, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                @*<label>पारिश्रमिक कर (१५ प्रतिशत)</label>*@
+                                                <label>पारिश्रमिक कर (@Model.Parishramik1 प्रतिशत)</label>
+                                                @Html.EditorFor(model => model.Parishramik, new { htmlAttributes = new { @class = "form-control", onchange = "getparish()" } })
+                                                @Html.ValidationMessageFor(model => model.Parishramik, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                @*<label>बहाल कर (१० प्रतिशत)</label>*@
+                                                <label>बहाल कर (@Model.Bahal_Kar1 प्रतिशत)</label>
+                                                @Html.EditorFor(model => model.Bahal_Kar, new { htmlAttributes = new { @class = "form-control", onchange = "getbahal()" } })
+                                                @Html.ValidationMessageFor(model => model.Bahal_Kar, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>जम्मा कट्टी रकम</label>
+                                                @Html.EditorFor(model => model.Katti_Rakam, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.Katti_Rakam, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>भुक्तानी रकम</label>
+                                                @Html.EditorFor(model => model.Remaining_Bhuktani_Amount, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.Remaining_Bhuktani_Amount, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label style="color:blue;">भुक्तानी स्विकृत गर्नुहोस</label>
+                                                &nbsp;&nbsp;&nbsp; @Html.CheckBoxFor(model => model.IsBhuktaniApproval, new { @class = "form-control", @onclick = "checkApproval()" })
+                                            </div>
+                                        </div>
+                                       
+                                        <script>
+                                            function checkApproval() {
+                                                var checkbox = document.getElementById('IsBhuktaniApproval');
+                                                if (checkbox.checked != false) {
+                                                    alert("एक पटक स्विकृत गरिएको भुक्तानी सच्याउन मिल्दैन । के तपाँई भुक्तानी स्विकृत गर्न चाहानुहुन्छ ?");
+                                                }
+                                            }
+                                        </script>
+
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <div class="form-group">
+                                        <label class="col-lg-3  col-md-4 control-label"></label>
+                                        <div class="col-lg-7 col-md-7">
+                                            <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                                            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("BhuktaniIndex", "PlanningSamjhauta", new { id = Model.Planning_Samjhauta_Id,fiscalYear=Model.Fiscal_Year_Record,projectName= Model.Aayojana_Karyakram })'">मुख्य मेनु</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <input style="display:none;" id="NaPa_Binayajit1" name="hiddeninputname" value="" />
+                                <input style="display:none;" id="Samajik_Surekchya1" name="hiddeninputname" value="" />
+                                <input style="display:none;" id="Agrim_Shulka1" name="hiddeninputname" value="" />
+                                <input style="display:none;" id="Parishramik1" name="hiddeninputname" value="" />
+                                <input style="display:none;" id="Bahal_Kar1" name="hiddeninputname" value="" />
+                                <input style="display:none;" id="Technical_Amount1" name="hiddeninputname" value="" />
+                                <input style="display:none;" id="Peski1" name="hiddeninputname" value="" />
+                                <input style="display:none;" id="Kantigenci1" name="hiddeninputname" value="" />
+                                <input style="display:none;" id="Katti_Rakam1" name="hiddeninputname" value="" />
+                                <input style="display:none;" id="Remaining_Bhuktani_Amount1" name="hiddeninputname" value="" />
+
+                            }
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        debugger;        
+        var contigencyAmount = $('#Kantigenci').val()
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: contigencyAmount
+            },
+            success: function (result) {
+                $('input[id=Kantigenci1]').val(result);
+                sumAll();
+                getnapa();
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+
+
+
+<script>
+    $('#SamjhautaDate').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+</script>
+
+<script>
+    function getnapa() {
+        //alert('napa')
+        var napa = $('#NaPa_Binayajit').val();
+        //alert(napa);
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: napa
+            },
+            success: function (result) {
+                //console.log(result);
+                //alert(result + " napa rakam");
+                $('input[id=NaPa_Binayajit1]').val(result);
+                getBhuktaniAmount();
+            },
+            error: function () {
+            }
+        });
+    }
+    function getpeski() {
+        var peski = $('#Peski').val();
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: peski
+            },
+            success: function (result) {
+                $('input[id=Peski1]').val(result);
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function getconti() {
+        var conti = $('#Kantigenci').val();
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: conti
+            },
+            success: function (result) {
+                $('input[id=Kantigenci1]').val(result);
+                sumAll();
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function gettechni() {
+        var techni = $('#Technical_Amount').val();
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: techni
+            },
+            success: function (result) {
+                $('input[id=Technical_Amount1]').val(result);
+                sumAll();
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function getsamajik()
+    {
+        var samajik = $('#Samajik_Surekchya').val();
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: samajik
+            },
+            success: function (result) {
+                $('input[id=Samajik_Surekchya1]').val(result);
+                sumAll();
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function getagrim() {
+        var agrim = $('#Agrim_Shulka').val();
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: agrim
+            },
+            success: function (result) {
+                $('input[id=Agrim_Shulka1]').val(result);
+                sumAll();
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function getparish() {
+        var parish = $('#Parishramik').val();
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: parish
+            },
+            success: function (result) {
+                $('input[id=Parishramik1]').val(result);
+                sumAll();
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function getbahal() {
+        var bahal = $('#Bahal_Kar').val();
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: bahal
+            },
+            success: function (result) {
+                $('input[id=Bahal_Kar1]').val(result);
+                sumAll();
+            },
+            error: function () {
+            }
+        });
+    }
+
+
+
+    function sumAll() {
+
+        debugger;
+        if ($('#Kantigenci1').val() == "") {
+            var totalContingency = 0;
+        }
+        else {
+            var totalContingency = $('#Kantigenci1').val();
+        }
+        if ($('#Samajik_Surekchya1').val() == "")
+        {
+            var totalsamajik = 0;
+        }
+        else
+        {
+            var totalsamajik = $('#Samajik_Surekchya1').val();
+        }
+
+        if ($('#Agrim_Shulka1').val() == "") {
+            var totalagrim = 0;
+        }
+        else {
+            var totalagrim = $('#Agrim_Shulka1').val();
+        }
+
+        if ($('#Parishramik1').val() == "") {
+            var totalparish = 0;
+        }
+        else {
+            var totalparish = $('#Parishramik1').val();
+        }
+
+        if ($('#Bahal_Kar1').val() == "") {
+            var totalbahal = 0;
+        }
+        else {
+            var totalbahal = $('#Bahal_Kar1').val();
+        }
+
+
+        var samajik = parseFloat(totalsamajik);
+        var agrimsulka = parseFloat(totalagrim);
+        var parish = parseFloat(totalparish);
+        var bahalkar = parseFloat(totalbahal);
+        var contingency = parseFloat(totalContingency);
+
+        var Total = parseFloat(samajik + agrimsulka + parish + bahalkar+contingency);
+        $('#Katti_Rakam1').attr('value', Total);
+        getResultSum();
+
+    }
+
+    function getResultSum() {
+        debugger
+        var totalamt = document.getElementById('Katti_Rakam1').value;
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_English_Nepali",
+            type: 'GET',
+            data: {
+                EnglishNumericValue: totalamt
+            },
+            success: function (result) {
+                $('#Katti_Rakam').attr('value', result);
+                getBhuktaniAmount();
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function getBhuktaniAmount() {
+        if ($('#Technical_Amount1').val() == "") {
+            var totaltechnical = 0;
+        }
+        else {
+            var totaltechnical = $('#Technical_Amount1').val();
+        }
+        if ($('#Peski1').val() == "") {
+            var totalpeski = 0;
+        }
+        else {
+            var totalpeski = $('#Peski1').val();
+        }
+        if ($('#Kantigenci1').val() == "") {
+            var totalkanti = 0;
+        }
+        else {
+            var totalkanti = $('#Kantigenci1').val();
+        }
+        if ($('#Katti_Rakam1').val() == "") {
+            var totalkatti = 0;
+        }
+        else {
+            var totalkatti = $('#Katti_Rakam1').val();
+        }
+        if ($('#NaPa_Binayajit1').val()=="") {
+            var totalnapabin = 0;
+        }
+        else {
+            var totalnapabin = $('#NaPa_Binayajit1').val();
+        }
+        debugger;
+       // alert(totalnapabin);
+        var technical = parseFloat(totaltechnical);
+        var peski = parseFloat(totalpeski);
+        var kanti = parseFloat(totalkanti);
+        var katti = parseFloat(totalkatti);
+        var napabiniyojan = parseFloat(totalnapabin);
+       // alert(napabiniyojan + " napa biniyojit");
+        //var Total = parseFloat(technical - peski - kanti - katti);
+        var Total = parseFloat(napabiniyojan - katti);
+
+        $('#Remaining_Bhuktani_Amount1').attr('value', Total);
+        getResultSumForBhuktani();
+    }
+
+    function getResultSumForBhuktani() {
+        debugger
+        var totalamt = document.getElementById('Remaining_Bhuktani_Amount1').value;
+        $.ajax({
+            url: "/PlanningSamjhauta/Get_English_Nepali",
+            type: 'GET',
+            data: {
+                EnglishNumericValue: totalamt
+            },
+            success: function (result) {
+                $('#Remaining_Bhuktani_Amount').attr('value', result);
+            },
+            error: function () {
+            }
+        });
+    }
+
+
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $(document).ready(function () {
+        $('input').change(function () {
+            debugger;
+            var samajikSurekchya = $('#Samajik_Surekchya').val();
+        $.ajax({
+            //url: '@Url.Action("Get_Nepali_English", "PlanningSamjhauta")',
+            url: "/PlanningSamjhauta/Get_Nepali_English",
+            type: 'GET',
+            data: {
+                NepaliNumericValue: samajikSurekchya
+            },
+            success: function (result) {
+                $('#Samajik_Surekchya1').append(result);
+            },
+            error: function () {
+            }
+        });
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function GetProjectNameByFiscalYear() {
+        debugger;
+        var value = $('#Fiscal_Year_Record option:selected').val();
+        if (value == null || value == 0) {
+            var item = "<option>-- छान्नुहोस --</option>";
+            $("#Aayojana_Karyakram").html(item);
+            return false;
+        }
+        $.ajax({
+            url: "@Url.Action("GetProjectNameByFiscalYear", "PlanningSamjhauta")",
+            type: 'get',
+            datatype: "json",
+            data: { fiscalYear: value },
+            success: function (data) {
+                var items = "<option value=\"'0'\">" + "छान्नुहोस्" + "</option>";
+                $.each(data, function (i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#Aayojana_Karyakram").html(items);
+            },
+            failure: function () {
+                alert('An error occurred.');
+            }
+        })
+    }
+</script>
+
+
+
+

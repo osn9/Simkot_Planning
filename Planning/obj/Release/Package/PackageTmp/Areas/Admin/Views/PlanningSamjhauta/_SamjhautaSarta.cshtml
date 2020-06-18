@@ -1,0 +1,73 @@
+﻿
+@*@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel*@
+@model Planning.Planning.Entities.Planning_Samjhauta
+
+<div class="col-lg-12 col-md-12" style="font-size:16px;">१. प्राप्त रकम तथा निर्माण सामाग्री सम्बन्धित आयोजनाको उदेश्यका लागि मात्र प्रयोग गर्ने गराउनेछाेे ।</div>
+
+<div class="col-lg-12 col-md-12" style="font-size:16px;">२. आयोजना सम्पन्न भएपछि अनिवार्य रुपमा सार्वजनिक परिक्षण गराएर नगरपालिकावाट जाँचपास गरी फरफारक लिनेछाेे ।</div>
+
+<div class="col-lg-12 col-md-12" style="font-size:16px;">३. आम्दानी/खर्चको विवरण र कार्य प्रगतीको जान्कारी उपभोक्ता समुहलाई छलफल गराई अर्को किस्ता माग गर्नेछाेे ।</div>
+
+<div class="col-lg-12 col-md-12" style="font-size:16px;">४. नगदी, जिन्सी सामान्को प्राप्ती, खर्च र बाँकी तथा आयोजनाको प्रगति विवरण अभिलेख आदी तयार राख्नेछाेे ।</div>
+
+<div class="col-lg-12 col-md-12" style="font-size:16px;">५. आयोजनाको कुल लागत भन्दा घटी लागतमा आयोजना सम्पन्न भएको अवस्थामा सो मुताविक नेे अनुदान र श्रमदान प्रतिशत निर्धारण गरी भुक्तानी लिन/दिन सहमत छाेे ।</div>
+
+<div class="col-lg-12 col-md-12" style="font-size:16px;">६. आआयोजना सम्पन्न भए पछि मर्मत सम्भारको व्यवस्था हामी उपभोक्ता आफेे गर्ने छाेे ।</div>
+
+<div class="col-lg-12 col-md-12" style="font-size:16px;">७. आआयोजनाको सबेे काम उपभोक्ता समिति, समुहाको निर्णय अनुसार नर्ने गराउने छाेे ।</div>
+@if (Model.Planning_Entry !=null) { 
+foreach (var planDate in Model.Planning_Entry)
+{
+    <div class="col-lg-12 col-md-12" style="font-size:16px;">८. आयोजना मिति &nbsp; <strong> @Planning.Utility.NepaliEnglishNumber.English_Nepali(planDate.Planning_Start_Date.Value.ToShortDateString()) </strong> &nbsp; देखि शुरु गरी मिति &nbsp; <strong> @Planning.Utility.NepaliEnglishNumber.English_Nepali(planDate.Planning_End_Date.Value.ToShortDateString()) </strong> &nbsp; सम्ममा पुरा गर्ने / गराउने छाै ।</div>
+    }
+}
+else
+{
+    <div class="col-lg-12 col-md-12" style="font-size:16px;">
+        ८. आयोजना मिति..................देखि शुरु गरी मिति................सम्ममा पुरा गर्ने / गराउने छाै ।
+    </div>
+}
+        <div class="col-lg-12 col-md-12" style="font-size:16px;">९. उपभोक्ता समितिले अनुदान रु.५,००,०००।- (पाँच लाख) भन्दा माथिका योजना संचालन स्थलको नजिक सार्वजनिक ठाउँमा नगरपालिकाले तोके वमोजिमको ढाँचामा सवाैले देख्नेगरी अनिवार्य रुपमा होडिङ्वोड राख्नुपर्नेछ, सो भन्दा कम अनुदान भएका योजनाहरुको हकमा भने सुचना राख्नुपर्ने छ ।</div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:16px;">१०. उपभोक्ता समितिले सम्झौतामा तोकिएको मिति भित्र आयोजनाको सम्पूर्ण कार्य सम्पन्न गर्नु पर्नेछ । अन्यथा नगरपालिकाबाट उक्त समय भित्र सम्पन्न कार्यको मात्र मूल्याङ्कन गरी रकम भुक्तानी गरिने छ ।</div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:16px;">११. उपभोक्ता समितिवाट भुक्तानीको लागि पेश भएको सामान खरिद बिलमा धुवानि कर १०% कट्टा गरी मात्र रकम भुक्तानी गरिने छ ।</div>
+
+
+
+        @*<div class="col-md-8"><h5><strong>सम्झौताका शर्तहरुः</strong></h5></div>
+            <div class="col-md-4"></div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">१. प्राप्त रकम तथा निर्माण सामाग्री सम्बन्धित आयोजनाको उदेश्यका लागि मात्र प्रयोग गर्ने गराउनेछाै ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">२. आयोजना सम्पन्न भएपछि अनिवार्य रुपमा सार्वजनिक परिक्षण गराएर नगरपालिकावाट जाँचपास गरी फरफारक लिनेछाै ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">३. आम्दानी/खर्चको विवरण र कार्य प्रगतीको जान्कारी उपभोक्ता समुहलाई छलफल गराई अर्को किस्ता माग गर्नेछाै ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">४. नगदी, जिन्सी सामान्को प्राप्ती, खर्च र बाँकी तथा आयोजनाको प्रगति विवरण अभिलेख आदी तयार राख्नेछाै ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">५. आयोजनाको कुल लागत भन्दा घटी लागतमा आयोजना सम्पन्न भएको अवस्थामा सो मुताविक नेे अनुदान र श्रमदान प्रतिशत निर्धारण गरी भुक्तानी लिन/दिन सहमत छाै ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">६. आआयोजना सम्पन्न भए पछि मर्मत सम्भारको व्यवस्था हामी उपभोक्ता आफेे गर्ने छाै ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">७. आआयोजनाको सबेे काम उपभोक्ता समिति, समुहाको निर्णय अनुसार नर्ने गराउने छाै ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">८. आयोजना मिति..................देखि शुरु गरी मिति................सम्ममा पुरा गर्ने / गराउने छाै ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">९. उपभोक्ता समितिले अनुदान रु.५,००,०००।- (पाँच लाख) भन्दा माथिका योजना संचालन स्थलको नजिक सार्वजनिक ठाउँमा नगरपालिकाले तोके वमोजिमको ढाँचामा सवाैले देख्नेगरी अनिवार्य रुपमा होडिङ्वोड राख्नुपर्नेछ, सो भन्दा कम अनुदान भएका योजनाहरुको हकमा भने सुचना राख्नुपर्ने छ ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">१०. उपभोक्ता समितिले सम्झौतामा तोकिएको मिति भित्र आयोजनाको सम्पूर्ण कार्य सम्पन्न गर्नु पर्नेछ । अन्यथा नगरपालिकाबाट उक्त समय भित्र सम्पन्न कार्यको मात्र मूल्याङ्कन गरी रकम भुक्तानी गरिने छ ।</div>
+            <div class="clearfix"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-11">११. उपभोक्ता समितिवाट भुक्तानीको लागि पेश भएको सामान खरिद बिलमा धुवानि कर १०% कट्टा गरी मात्र रकम भुक्तानी गरिने छ ।</div>
+            <div class="clearfix"></div>*@

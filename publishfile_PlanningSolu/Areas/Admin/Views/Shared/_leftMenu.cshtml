@@ -1,0 +1,360 @@
+﻿<aside class="fixed skin-1">
+    <div class="sidebar-inner scrollable-sidebars">
+
+        <div class="main-menu">
+            <ul>
+                <li>
+                    <a href="@Url.Action("Index","PlanningDashBoard")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            ड्यासबोर्ड
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","FiscalYearRecord")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            आर्थिक वर्ष
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="@Url.Action("Index","OrganizationSetup")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            नगरपालिका
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","KarKattiSetup")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            कर कट्टी
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Sarta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            सम्झौताका शर्त
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","DarkhastaForm")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            बैङ्क फारम
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                @*<li>
+                    <a href="@Url.Action("UploadFiles", "PlanningSamjhauta",new { @id=1})">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            उ.स.लाई गठन गर्ने सम्बन्धमा
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("UploadFiles", "PlanningSamjhauta",new { @id=2})">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            निर्णय
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("UploadFiles", "PlanningSamjhauta",new { @id=3})">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            सम्झोेता गरी पाउँ
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>*@
+                @*<li>
+                        <a href="@Url.Action("PlanningEntry","PlanningSamjhauta")">
+                            <span class="menu-icon">
+                                <i class="fa fa-desktop fa-lg"></i>
+                            </span>
+                            <span class="text">
+                                योजना सम्बन्धी विवरण
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                    </li>*@
+                @*<li>
+                    <a href="@Url.Action("PlanningEntryIndex","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            योजना सम्बन्धी विवरण
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>*@
+                @*<li>
+                        <a href="@Url.Action("PlanningSamjhauta","PlanningSamjhauta")">
+                            <span class="menu-icon">
+                                <i class="fa fa-desktop fa-lg"></i>
+                            </span>
+                            <span class="text">
+                                नगरपालिका र उपभोक्ता समिति बीचको सम्झौता
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                    </li>*@
+                <li>
+                    <a href="@Url.Action("PlanningSamjhautaIndex","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            नगरपालिका र उपभोक्ता समिति बीचको सम्झौता
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("SamjhautaReport","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            सम्झाेेता
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                @*<li>
+                    <a href="@Url.Action("UploadFiles", "PlanningSamjhauta",new { @id=4})">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            अनुमान
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>*@
+                <li>
+                    <a href="@Url.Action("Karyadesh","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            कार्यादेश
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                @*<li>
+                    <a href="@Url.Action("UploadFiles", "PlanningSamjhauta",new { @id=5})">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            नाप जाँच
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("UploadFiles", "PlanningSamjhauta",new { @id=6})">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            प्रमाणीकरण रिपोर्ट
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("UploadFiles", "PlanningSamjhauta",new { @id=7})">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            कार्य सम्पन्न रिपोर्ट
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("UploadFiles", "PlanningSamjhauta",new { @id=8})">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            भुक्तानी निबेदन
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>*@
+                @*<li>
+                    <a href="@Url.Action("BhuktaniIndex","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            भुक्तानी
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                    </li>*@
+                @*<li>
+                    <a href="@Url.Action("Bhuktani","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            भुक्तानी
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>*@
+                @*<li>
+                    <a href="@Url.Action("BudgetBiniyojan","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            बजेट बिनियोजन
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>*@
+                @*<li>
+                    <a href="@Url.Action("BarshikPragati","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            वार्षिक प्रगति रिपोर्ट
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("NagarStrayaDetails","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            नगर स्तरीय योजना रिपोर्ट
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>*@
+                @*<li>
+                    <a href="@Url.Action("Index","PlanningAnusuchi3")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            अनुसूची ३
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","PlanningAnusuchi4")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            अनुसूची ४
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","PlanningAnusuchi6")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            अनुसूची ६
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>*@
+                <li hidden>
+                    <a href="@Url.Action("Anusuchi1","PragatiPratibedan")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            प्रगति प्रतिवेदन अनुसूची १
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Anusuchi2","PragatiPratibedan")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            प्रगति प्रतिवेदन अनुसूची २
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("PlanningSelectedReport","PlanningSamjhauta")">
+                        <span class="menu-icon">
+                            <i class="fa fa-desktop fa-lg"></i>
+                        </span>
+                        <span class="text">
+                            सम्झौताका सूची 
+                        </span>
+                        <span class="menu-hover"></span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="alert alert-info">
+                योजना प्रबन्ध प्रणालीमा ​​स्वागत छ ।
+            </div>
+        </div>
+
+
+
+    </div>
+</aside>

@@ -1,0 +1,438 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi3ViewModel
+
+@{
+    ViewBag.Title = "Anusuchi3Report";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .cotract_letter {
+        border: 1px solid #ccc;
+        margin: 30px 0px;
+        padding: 30px;
+    }
+
+        .cotract_letter header-sec img {
+            max-width: 100%;
+            max-height: 100px;
+        }
+
+    .header-section h1 {
+        font-size: 65px;
+        letter-spacing: 5px;
+    }
+
+    .header-section h2 {
+        font-size: 40px;
+    }
+
+    .header-section h3, .subject h3 {
+        font-size: 30px;
+    }
+
+    .header-section h4 {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+
+    .header-section h1, .header-section h2, .header-section h3,
+    .header-section h4, .subject h3, .letter_footer h3, .letter_content h4, .aanya-raaya h3 {
+        font-weight: 600;
+    }
+
+    .subject h3 {
+        margin-top: 60px;
+    }
+
+    .letter_footer {
+        margin-top: 60px;
+    }
+
+    .approved-by {
+        margin-top: 60px;
+    }
+
+    .letter_footer, .letter_footer strong, .letter_content, .titleNumber {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+        .letter_footer ul {
+            margin-top: 15px;
+        }
+
+            .letter_footer ul li {
+                list-style-type: none;
+            }
+
+                .letter_footer ul li span {
+                    padding-left: 20px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    position: relative;
+                    margin-top: -14px;
+                }
+
+        .titleNumber ul li {
+            list-style-type: none;
+        }
+
+    .personName {
+        border-style: none;
+    }
+
+        .personName:hover {
+            border-style: none;
+        }
+
+        .personName:focus {
+            border-style: none;
+        }
+
+    .btn.btn-primary.pull-right {
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+
+
+    .content-section th, .content-section td {
+        padding: 0px !important;
+    }
+
+    .content-section td {
+        color: #000000 !important;
+    }
+</style>
+
+<div class="container">
+    <input type="button" class="btn btn-primary pull-right" value="सार्वजनिक परिक्षण प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+    <div class="cotract_letter" id="printdiv">
+
+        <style>
+            .header-section .table tbody > tr, .content-section .table tbody > tr, .detail .table tbody > tr, .sign.table tbody > tr {
+                border: none !important;
+            }
+
+            th {
+                text-align: center;
+            }
+
+            header-section .table tr td, .content-section .table tbody > tr, .detail .table tbody > tr, .sign .table tbody > tr {
+                border: none !important;
+                border-color: #f9f9f9 !important;
+                padding: 0px !important;
+            }
+
+            @@media print {
+                .header-section .table tr td, .content-section .table tr td {
+                    border: none !important;
+                    border: !important;
+                    border-color: #fff !important;
+                    padding: 0px !important;
+                }
+
+                .header-section .table tbody > tr, .content-section .table tbody > tr {
+                    border: none !important;
+                    border: 0 !important;
+                }
+
+                .header-section .table, .table tbody > tr, td, .content-section .table, .table tbody > tr {
+                    border: none !important;
+                    border: 0 !important;
+                }
+                   .content-section th, .content-section td {
+        padding: 0px !important;
+    }
+
+    .content-section td {
+        color: #000000 !important;
+    }
+            }
+        </style>
+
+
+        <div class="header-section">
+            <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td width="20%" style="border:none !important; border:0px !important;">
+                            <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                        </td>
+                        <td width="55%" style="text-align:center; border:none !important; border:0px !important;">
+                            <h2 style="font-weight:bold; font-size:12px;">अनुसूची ३</h2>
+                            <h2 style="font-weight:bold; font-size:12px; margin-top:0px;">(कार्यविधिको दफा ११(५) सँग सम्बन्धित)</h2>
+                            <h2 style="font-weight:bold; font-size:12px; margin-top:0px;">सार्वजनिक परिक्षण फारमको ढाचाँ पेश गरेको कार्यालय ............</h2>
+                        </td>
+                        <td width="25%" style="border:none !important; border:0px !important;">
+                            <img src="~/img/nagarpalika_logo.jpg" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        @foreach (var item in Model.Anusuchi3ViewModelList)
+        {
+            <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>१. आयोजनाको विवरण</strong></div>
+            <div class="content-section">
+                <table class="table" border="0" style="border:0px !important; margin-bottom:0px;" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">क) आयोजनाको नामः @item.Project_Name</span></td>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">ख) आयोजनाको स्थलः @item.Project_Place</span></td>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">ग) लागत अनुमानः@item.Estimated_Amount</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">घ) आयोजना सुरु हुने मितिः @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_Start_Date.Value.ToShortDateString())</span></td>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">ङ) आयोजना सम्पन्न हुनु पर्ने मितिः @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_End_Date.Value.ToShortDateString())</span></td>
+                            <td style="font-size:12px; border:none !important;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>२. उपभोक्ता समिति-सामुदायिक संस्था</strong></div>
+            <div class="content-section">
+                <table class="table" border="0" style="border:0px !important;  margin-bottom:0px;" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">क) नामः @item.Upabhokta_Samiti_Name</span></td>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">ख) अध्यक्षको नामः@item.Adakshya_Name</span></td>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">ग) सदस्य संख्याः @item.Total_Members &nbsp;&nbsp;&nbsp;  महिलाः @item.Female_No &nbsp;&nbsp;&nbsp;   पुरुषः @item.Male_No</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>३. आम्दानी र खर्चको विवरणः</strong></div>
+
+        <div class="col-lg-12 col-md-12 content-section" style="font-size:12px; font-weight:500; padding:0px 60px;">
+            <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>क) आम्दानीतर्फ जम्माः</strong></div>
+            <table class="table table-bordered" style="margin-bottom:0px;">
+                <thead>
+                    <tr>
+                        <th style="width:34%;">आम्दानिको श्रोत(कहाँबाट कति नगद तथा जिन्सी प्राप्त भयो खुलाउने)</th>
+                        <th style="width:33%;">रकम वा परिमाण</th>
+                        <th style="width:33%;">कैफियत</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Anusuchi3IncomeViewModelList)
+                    {
+                    <tr>
+                        <td>@item.Income_Source</td>
+                        <td>@item.Amount_Quantity</td>
+                        <td>@item.Income_Remarks</td>
+                        <td></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="col-lg-12 col-md-12  content-section" style="font-size:12px; font-weight:500; padding:0px 60px;">
+            <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>ख) खर्चतर्फ</strong></div>
+            <table class="table table-bordered" style="margin-bottom:0px;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>खर्चको विवरण</th>
+                        <th>दर</th>
+                        <th>परिमाण</th>
+                        <th>जम्मा</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Anusuchi3ExpensesViewModelList)
+                    {
+                    <tr>
+                        <td>१ सामाग्री (के के सामाग्री खरिद भयो ?)</td>
+                        <td>@item.Expenses_Details</td>
+                        <td>@item.Expenses_Rate</td>
+                        <td>@item.Expenses_Quantity</td>
+                        <td>@item.Expenses_Total</td>
+                    </tr>
+                    }
+                    @foreach (var item in Model.Anusuchi3ExpensesViewModelList2)
+                    {
+                    <tr>
+                        <td>२ ज्याला (के मा कति भुक्तानी भयो ?)</td>
+                        <td>@item.Expenses_Details</td>
+                        <td>@item.Expenses_Rate</td>
+                        <td>@item.Expenses_Quantity</td>
+                        <td>@item.Expenses_Total</td>
+                    </tr>
+                    }
+                    @foreach (var item in Model.Anusuchi3ExpensesViewModelList3)
+                    {
+                    <tr>
+                        <td>३ श्रमदान (कति जनाले श्रमदान गरे ?)</td>
+                        <td>@item.Expenses_Details</td>
+                        <td>@item.Expenses_Rate</td>
+                        <td>@item.Expenses_Quantity</td>
+                        <td>@item.Expenses_Total</td>
+                    </tr>
+                    }
+                    @foreach (var item in Model.Anusuchi3ExpensesViewModelList4)
+                    {
+                    <tr>
+                        <td>४ व्यवस्थापन खर्च (ढुवानी तथा अन्य खर्च )</td>
+                        <td>@item.Expenses_Details</td>
+                        <td>@item.Expenses_Rate</td>
+                        <td>@item.Expenses_Quantity</td>
+                        <td>@item.Expenses_Total</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="col-lg-12 col-md-12  content-section" style="font-size:12px; font-weight:500; padding:0px 60px;">
+            <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>ग) मौज्दात</strong></div>
+            <table class="table table-bordered" style="margin-bottom:0px;">
+                <thead>
+                    <tr>
+                        <th>विवरण</th>
+                        <th>रकम वा परिमाण</th>
+                        <th>कैफियत</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Anusuchi3MaujatViewModelList)
+                    {
+                    <tr>
+                        <td>@item.Maujat_Details</td>
+                        <td>@item.Maujat_Amount</td>
+                        <td>@item.Maujat_Remarks</td>
+                    </tr>
+                    }
+                    @foreach (var item in Model.Anusuchi3MaujatViewModelList2)
+                    {
+                    <tr>
+                        <td>@item.Maujat_Details</td>
+                        <td>@item.Maujat_Amount</td>
+                        <td>@item.Maujat_Remarks</td>
+                    </tr>
+                    }
+                    @foreach (var item in Model.Anusuchi3MaujatViewModelList3)
+                    {
+                    <tr>
+                        <td>@item.Maujat_Details</td>
+                        <td>@item.Maujat_Amount</td>
+                        <td>@item.Maujat_Remarks</td>
+                    </tr>
+                    }
+                    @foreach (var item in Model.Anusuchi3MaujatViewModelList4)
+                    {
+                    <tr>
+                        <td>@item.Maujat_Details</td>
+                        <td>@item.Maujat_Amount</td>
+                        <td>@item.Maujat_Remarks</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="col-lg-12 col-md-12  content-section" style="font-size:12px; font-weight:500; padding:0px 60px;">
+            <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>घ) भूक्तानी दिन बाँकी</strong></div>
+            <table class="table table-bordered" style="margin-bottom:0px;">
+                <thead>
+                    <tr>
+                        <th>विवरण</th>
+                        <th>रकम वा परिमाण</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Anusuchi3ViewModelList)
+                    {
+                    <tr>
+                        <td>@item.Bhuktani_Details</td>
+                        <td>@item.Bhuktani_Amount</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>४. सम्पन्न आयोजनाको लक्ष्य तथा प्रगति विवरण</strong></div>
+        <div class="col-lg-12 col-md-12  content-section" style="font-size:12px; font-weight:500; padding:0px 60px;">
+            <table class="table table-bordered" style="margin-bottom:0px;">
+                <thead>
+                    <tr>
+                        <th>कामको विवरण</th>
+                        <th>लक्ष्य </th>
+                        <th>प्रगति</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Anusuchi3ViewModelList)
+                    {
+                    <tr>
+                        <td>@item.Work_Details</td>
+                        <td>@item.Work_Plan</td>
+                        <td>@item.Work_Progress</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong> ५. आयोजनाले पुर्याएको लाभ तथा प्रत्यक्ष रुपमा लाभान्वित जनसंख्या (आयोजना सञ्चालन भएको स्थानका उपभोक्ताहरु) :</strong>@foreach (var item in Model.Anusuchi3ViewModelList)
+        { <span style="font-size:12px; color:black;">@item.Total_Benificial_No</span>}</div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>६. आयोजना सञ्चालन गर्दा आयोजक संस्थामा कामको जिम्मेवारी बाँडफाँड (कस कसले कस्तो कस्तो कामको जिम्मेवारी लिएका थिएसोखुलाउने)</strong></div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>उपस्थितिः</strong></div>
+        @{ int m = 1;}
+        @foreach (var item in Model.Anusuchi3WorkDivisionViewModelList)
+            {
+            <div class="col-lg-12 col-md-12" style="font-size:12px; margin-left:30px;">@Planning.Utility.NepaliEnglishNumber.English_Nepali(m.ToString()). &nbsp;<span>@item.Members </span></div>
+            m++;
+        }
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; color:black; text-decoration:underline"><strong>रोहबरः</strong></div>
+        
+        <div class="content-section">
+            <table class="table" border="0" style="border:0px !important;  margin-bottom:0px;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    @foreach (var item in Model.Anusuchi3ViewModelList)
+                    {
+                        <tr>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">नामथरः @item.Rohabar_Name</span></td>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">पदः @item.Rohabar_Position</span></td>
+                            <td style="font-size:12px; border:none !important;"><span style="display:block;">मितिः @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Rohabar_Date.Value.ToShortDateString())</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; color:black;"><strong>द्रष्टव्यः सार्वजनिक परीक्षण कार्यक्रममा उपस्थित सरोकारवालाहरुको उपस्थिति अनिवार्य रुपमा संलग्न हुनुपर्नेछ ।</strong></div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+
+
+
+

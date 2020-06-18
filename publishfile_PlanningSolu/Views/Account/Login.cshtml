@@ -1,0 +1,205 @@
+﻿
+@using Planning.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "प्रयोगकर्ता लगइन";
+}
+
+<style>
+    .validation-summary-errors ul li {
+        list-style-type: none;
+        color: #ff0000;
+    }
+</style>
+
+<div class="page login-page">
+    <div class="form-outer text-center d-flex align-items-center login_box">
+        <div class="form-inner">
+            <div class="logo text-uppercase row">
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <figure> <img src="~/img/nepal.gif" /> </figure>
+                </div>
+                <div class="col-lg-10 col-md-9 col-sm-8">
+                    <span>योजना प्रबन्ध प्रणाली </span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "text-left form-validate" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <h4><strong>@ViewBag.Title</strong></h4>
+                <div class="form-group">
+                    <label for="login-username">ई-मेल</label>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "प्रयोगकर्ताको इमेल " })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="login-password">पासवर्ड</label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "प्रयोगकर्ताको पासवर्ड" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                @Html.ValidationSummary(true)
+                <div class="form-group text-center">
+                    <input type="submit" value="लगइन गर्नुहोस्" class="btn btn-primary" />
+                </div>
+
+
+            }
+            <a href="javascript:void(0)" class="forgot-pass">Forgot Password?</a>
+        </div>
+        <div class="copyrights text-center">
+            <p>Developed by <a href="javascript:void(0)" class="external">Softech Foundation</a></p>
+            @*<p>Version 1.2</p>*@
+        </div>
+    </div>
+</div>
+
+
+
+
+@*<div class="header-title">
+        <div class="col-md-4">
+            <img src="~/img/nepal.gif" height="60px" class="pull-right" />
+        </div>
+        <div>
+            <h1 style="padding-left:30%; color:white">योजना प्रबन्ध प्रणाली</h1>
+        </div>
+    </div>
+
+    <hr />
+    <br /><br /><br />
+    <h3 style="padding-left:30%; color:white">@ViewBag.Title</h3>
+    <br />
+
+    <div class="row" style="padding-left:30%;">
+        <div class="col-md-8">
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label", @style = "color:white" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "प्रयोगकर्ताको इमेल " })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label", @style = "color:white" })
+                            <div class="col-md-10">
+                                <span class="add-on">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "प्रयोगकर्ताको पासवर्ड" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="लगइन गर्नुहोस्" class="btn btn-danger" />
+                            </div>
+                        </div>
+                        <p>
+                                @Html.ActionLink("नयाँ प्रयोगकर्ता दर्ता गर्नुहोस्", "Register")
+                            </p>
+
+                }
+            </section>
+        </div>
+
+    </div>*@
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@using Planning.Models
+    @model LoginViewModel
+    @{
+        ViewBag.Title = "Log in";
+    }
+
+    <h2>@ViewBag.Title.</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Log in" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Register as a new user", "Register")
+                    </p>
+
+                }
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

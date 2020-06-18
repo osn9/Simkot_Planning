@@ -1,0 +1,47 @@
+﻿
+@*@model Planning.Areas.Admin.Models.PlanningEntryViewModel.PlanningEntryViewModel*@
+
+@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+@using Planning.Helpers
+
+                        
+
+    @using (Html.BeginCollectionItem("KistaFirstDetailsList"))
+    {
+        @Html.HiddenFor(model => model.Kista_Kram, new { @class = "form-control", @Value = "पहिलो" })
+        <div class="col-md-1">पहिलो किस्ता</div>
+        <div class="col-md-2">@Html.TextBoxFor(model => model.Kista_Rakam, new { @class = "form-control", @id = "Kista_Rakam1" })</div>
+        <div class="col-md-2">@Html.TextBoxFor(model => model.Payment_Date, new { @class = "form-control nepali-calendar", @id = "Payment_Date1", @placeholder = "____/__/__" })</div>
+        <div class="col-md-2">@Html.TextBoxFor(model => model.Peski_Bhuktani, new { @class = "form-control", @id = "Peski_Bhuktani1"})</div>
+        <div class="col-md-2">@Html.TextAreaFor(model => model.Sarta, new { @class = "form-control", @id = "Sarta1" })</div>
+        <div class="col-md-3 form-group">@Html.TextAreaFor(model => model.Remarks, new { @class = "form-control", @id = "Description1" })</div>
+        <div class="clearfix"></div>
+     }
+                        
+
+    
+@*<script type="text/javascript">
+    jQuery(function ($) {
+        $("#Payment_Date1").mask("9999/99/99");
+    });
+</script>*@
+
+@*<script>
+    $('#Payment_Date1').nepaliDatePicker({
+        onFocus: false,
+        npdMonth: true,
+        npdYear: true,
+        ndpTriggerButton: true,
+        ndpTriggerButtonText: 'मिति छान्नुहोस्',
+        ndpTriggerButtonClass: 'btn btn-primary btn-sm'
+    });
+</script>*@
+
+
+<script>
+    $('#Payment_Date1').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+</script>

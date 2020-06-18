@@ -1,0 +1,265 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+@{
+    ViewBag.Title = "Anusuchi2";
+    int i = 1;
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from b in db.Organization_Setup select b).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+    }
+
+}
+
+
+
+@using (Html.BeginForm("Anusuchi2", "PragatiPratibedan", FormMethod.Get))
+{
+    <fieldset>
+        <div class="row" style="margin-left:20px;">
+            <div class="col-md-3">
+                <label>आर्थिक वर्ष</label>
+                @Html.DropDownList("FiscalYear", Planning.Utility.CommonUtility.GetFiscalYearList(), "-- छान्नुहोस --", new { @class = "form-control", @OnChange = "GetProjectNameByFiscalYear()" })
+            </div>
+            <div class="col-md-3">
+                <label>वडा / नगर</label>
+                @Html.DropDownList("OdaNagar", new List<SelectListItem>
+                {
+                    new SelectListItem { Text = "वडा", Value = "O"},
+                    new SelectListItem { Text = "नगर", Value = "N"},
+                }, "--छान्नुहोस--", new { @class = "form-control" })
+            </div>
+
+            <div class="col-md-3">
+                <label>आयोजनाको नाम</label>
+                @Html.DropDownList("ProjectName", Planning.Utility.CommonUtility.GetProjectNameList(), "-- छान्नुहोस --", new { @class = "form-control " })
+            </div>
+            <div class="col-md-2" style="padding-left:0px; padding-top:20px;">
+                <input type="submit" name="submit" id="submit" value="खाेज्नुहाेस" class="btn btn-primary" />
+            </div>
+        </div>
+    </fieldset>
+}
+
+
+<div class="padding-md">
+    <input type="button" class="btn btn-primary pull-right" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+    <div class="cotract_letter" id="printdiv">
+
+        <style>
+            @@media print {
+                .table tr td {
+                    border: none !important;
+                    border: 0 !important;
+                    border-color: #fff !important;
+                    padding: 0px !important;
+                }
+
+                .table tbody > tr {
+                    border: none !important;
+                    border: 0 !important;
+                }
+
+                .table, .table tbody > tr, td {
+                    border: none !important;
+                    border: 0 !important;
+                }
+            }
+        </style>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="25%" style="border:none !important; border:0px !important;">
+                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                </td>
+                                <td width="45%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h4>प्रगति प्रतिवेदन</h4>
+                                    <h4>अनुसूचि २</h4>
+                                    <h4>प्रथम | चौमासिक | बार्षिक</h4>
+                                    <h4>वडास्तरीय / नगरस्तरीय योजनाको वित्तिय प्रगति विवरण</h4>
+                                </td>
+                                <td width="30%" style="border:none !important; border:0px !important;">
+                                    <img src="@ViewBag.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered table-condensed table-hover table-striped bhuktaniDetail">
+                        <thead>
+                            <tr class="success">
+                                <th>सि.नं.</th>
+                                <th>योजनाको नाम र ठेगाना</th>
+                                <th>स्वीकृत रकम</th>
+                                <th>पेशकी रकम</th>
+                                <th>प्रथम किस्ता भुक्तानी</th>
+                                <th>दोस्रो किस्ता भुक्तानी</th>
+                                <th>तेस्रो/अन्तिम किस्ता भुक्तानी</th>
+                                <th>वित्तिय प्रगति प्रतिशत</th>
+                                <th>कैफियत</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{var total = 0; }
+                            @foreach (var item in Model.PragatiPratibedanAnusuchi2List)
+                            {
+                                Model.Kista_Rakam = "0";
+                                <tr>
+                                    <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</td>
+                                    <td>@item.Project_Name</td>
+                                    <td>@item.Project_estimated_Amount</td>
+                                    <td>
+                                        @foreach (var peski in Model.PlanningSamjhautaPeskiDetailsList)
+                                        {
+                                            if (item.Planning_Samjhauta_Id == peski.Planning_Samjhauta_Id)
+                                            {
+                                                <span>@peski.Remaining_Bhuktani_Amount</span>
+                                                <input style="display:none;" id="firstKista_@i" class="firstKista" name="hiddeninputname" value="@if (peski.Remaining_Bhuktani_Amount != null)
+                                                { @Planning.Utility.NepaliEnglishNumber.Nepali_English(peski.Remaining_Bhuktani_Amount)}" />
+
+                                                var peski1 = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(peski.Remaining_Bhuktani_Amount);
+                                                int kistapeski = peski1.AsInt();
+                                                total = kistapeski;
+
+                                                Model.Kista_Rakam = total.ToString();
+
+                                            } 
+                                        }
+                                    </td>
+                                    <td>
+                                        @foreach (var first in Model.PlanningSamjhautaKistaFirstDetailsList)
+                                        {
+                                            if (item.Planning_Samjhauta_Id == first.Planning_Samjhauta_Id)
+                                            {
+                                                <span>@first.Remaining_Bhuktani_Amount</span>
+                                                <input style="display:none;" id="firstKista_@i" class="firstKista" name="hiddeninputname" value="@if (first.Remaining_Bhuktani_Amount != null)
+                                                { @Planning.Utility.NepaliEnglishNumber.Nepali_English(first.Remaining_Bhuktani_Amount)}" />
+
+                                                var kista1 = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(first.Remaining_Bhuktani_Amount);
+                                                int kistafirst = kista1.AsInt();
+                                                total = kistafirst;
+
+                                                Model.Kista_Rakam = total.ToString();
+
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @foreach (var second in Model.PlanningSamjhautaKistaSecondDetailsList)
+                                        {
+                                            if (item.Planning_Samjhauta_Id == second.Planning_Samjhauta_Id)
+                                            {
+                                                <span>@second.Remaining_Bhuktani_Amount</span>
+                                                <input style="display:none;" id="secondKista_@i" class="secondKista" name="hiddeninputname" value="@if (second.Remaining_Bhuktani_Amount != null)
+                                                { @Planning.Utility.NepaliEnglishNumber.Nepali_English(second.Remaining_Bhuktani_Amount)}" />
+
+                                                var kista2 = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(second.Remaining_Bhuktani_Amount);
+                                                int kistasecond = kista2.AsInt();
+                                                total = total + kistasecond;
+
+                                                Model.Kista_Rakam = total.ToString();
+
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @foreach (var third in Model.PlanningSamjhautaKistaThirdDetailsList)
+                                        {
+                                            if (item.Planning_Samjhauta_Id == third.Planning_Samjhauta_Id)
+                                            {
+                                                <span>@third.Remaining_Bhuktani_Amount</span>
+                                                <input style="display:none;" id="thirdKista_@i" class="thirdKista" name="hiddeninputname" value="@if (third.Remaining_Bhuktani_Amount != null)
+                                                { @Planning.Utility.NepaliEnglishNumber.Nepali_English(third.Remaining_Bhuktani_Amount)}" />
+
+                                                var kista3 = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(third.Remaining_Bhuktani_Amount);
+                                                int kistathird = kista3.AsInt();
+                                                total = total + kistathird;
+
+                                                Model.Kista_Rakam = total.ToString();
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @{
+                                            var tot = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Project_estimated_Amount);
+
+                                            decimal totalestimate = Convert.ToDecimal(tot);
+                                            decimal kistaTotal = Convert.ToDecimal(Model.Kista_Rakam);
+
+                                            if (totalestimate != 0 && kistaTotal != 0)
+                                            {
+                                                decimal result = (kistaTotal / totalestimate) * 100;
+                                                //Model.Kista_Budget = result.ToString();
+                                                Model.Kista_Budget = result.ToString("0.00");
+                                            }
+                                            else
+                                            {
+                                                decimal result = 0;
+                                                //Model.Kista_Budget = result.ToString();
+                                                //Model.Kista_Budget = result.ToString("#.##");
+                                                Model.Kista_Budget = result.ToString("0.00");
+                                            }
+
+                                        }
+                                        @Planning.Utility.NepaliEnglishNumber.Get_English_Nepali(Model.Kista_Budget)
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                                i++;
+                                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function GetProjectNameByFiscalYear() {
+        debugger;
+        var value = $('#FiscalYear option:selected').val();
+        if (value == null || value == 0) {
+            var item = "<option>-- छान्नुहोस --</option>";
+            $("#ProjectName").html(item);
+            return false;
+        }
+        $.ajax({
+            url: "@Url.Action("GetProjectNameByFiscalYear", "PragatiPratibedan")",
+            type: 'get',
+            datatype: "json",
+            data: { fiscalYear: value },
+            success: function (data) {
+                var items = "<option value=\"\">" + "छान्नुहोस्" + "</option>";
+                $.each(data, function (i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#ProjectName").html(items);
+            },
+            failure: function () {
+                alert('An error occurred.');
+            }
+        })
+    }
+</script>

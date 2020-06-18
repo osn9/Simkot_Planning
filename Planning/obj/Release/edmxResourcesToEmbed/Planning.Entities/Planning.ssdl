@@ -1,0 +1,2030 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SOLU_DUDH_KUNDA_PLANNINGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Aayojana_Maintainance">
+    <Key>
+      <PropertyRef Name="Aayojana_Maintainance_Id" />
+    </Key>
+    <Property Name="Aayojana_Maintainance_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Responsible_Org" Type="nvarchar" MaxLength="500" />
+    <Property Name="Janashram" Type="nvarchar" MaxLength="50" />
+    <Property Name="SewaSulka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dastur_Chanda" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lagat_Anudan" Type="nvarchar" MaxLength="50" />
+    <Property Name="Interest_Saving" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Amanat_Deatils">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Darja" Type="nvarchar" MaxLength="100" />
+    <Property Name="SahiDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Planning_Samjhata_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Anugaman">
+    <Key>
+      <PropertyRef Name="AnugamanId" />
+    </Key>
+    <Property Name="AnugamanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnugamanName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Date" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tipani" Type="nvarchar" MaxLength="500" />
+    <Property Name="PlanningEntryId" Type="int" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="UpdateDate" Type="date" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="AnuSuchi1">
+    <Key>
+      <PropertyRef Name="AnuSuchi1_Id" />
+    </Key>
+    <Property Name="AnuSuchi1_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Upabhokta_Samiti_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Adakshya" Type="nvarchar" MaxLength="250" />
+    <Property Name="Upadakshya" Type="nvarchar" MaxLength="250" />
+    <Property Name="Sachib" Type="nvarchar" MaxLength="250" />
+    <Property Name="Koshadakshya" Type="nvarchar" MaxLength="250" />
+    <Property Name="Establish_Date" Type="datetime" />
+    <Property Name="Bank_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Account_Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AnuSuchi10">
+    <Key>
+      <PropertyRef Name="AnuSuchi10_Id" />
+    </Key>
+    <Property Name="AnuSuchi10_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Adakshya" Type="nvarchar" MaxLength="500" />
+    <Property Name="Adakshya_Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adakshya_MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AnuSuchi10_Discussion_Conclusions">
+    <Key>
+      <PropertyRef Name="AnuSuchi10_Discussion_Conclusions_Id" />
+    </Key>
+    <Property Name="AnuSuchi10_Discussion_Conclusions_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi10_Id" Type="int" />
+    <Property Name="Conclusions" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="AnuSuchi10_Discussion_Subjects">
+    <Key>
+      <PropertyRef Name="AnuSuchi10_Discussion_Subjects_Id" />
+    </Key>
+    <Property Name="AnuSuchi10_Discussion_Subjects_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi10_Id" Type="int" />
+    <Property Name="Subjects" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="AnuSuchi10_Meeting">
+    <Key>
+      <PropertyRef Name="AnuSuchi10_Meeting_Id" />
+    </Key>
+    <Property Name="AnuSuchi10_Meeting_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi10_Id" Type="int" />
+    <Property Name="Baithak_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Baithak_Date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AnuSuchi10_Members">
+    <Key>
+      <PropertyRef Name="AnuSuchi10_Members_Id" />
+    </Key>
+    <Property Name="AnuSuchi10_Members_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi10_Id" Type="int" />
+    <Property Name="Members" Type="nvarchar" MaxLength="500" />
+    <Property Name="Members_Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Members_Pad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Members_MobileNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AnuSuchi11">
+    <Key>
+      <PropertyRef Name="AnuSuchi11_Id" />
+    </Key>
+    <Property Name="AnuSuchi11_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Position" Type="nvarchar" MaxLength="250" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Suggestion" Type="nvarchar(max)" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AnuSuchi3">
+    <Key>
+      <PropertyRef Name="AnuSuchi3_Id" />
+    </Key>
+    <Property Name="AnuSuchi3_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planing_Samjhauta_Id" Type="int" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Project_Place" Type="nvarchar" MaxLength="500" />
+    <Property Name="Estimated_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_Start_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_End_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Upabhokta_Samiti_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Adakshya_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Total_Members" Type="nvarchar" MaxLength="50" />
+    <Property Name="Male_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Female_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Benificial_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rohabar_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Rohabar_Position" Type="nvarchar" MaxLength="500" />
+    <Property Name="Rohabar_Date" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AnuSuchi3_Bhuktani">
+    <Key>
+      <PropertyRef Name="AnuSuchi3_Bhuktani_Id" />
+    </Key>
+    <Property Name="AnuSuchi3_Bhuktani_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi3_Id" Type="int" />
+    <Property Name="Bhuktani_Details" Type="nvarchar(max)" />
+    <Property Name="Bhuktani_Amount" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AnuSuchi3_Expenses">
+    <Key>
+      <PropertyRef Name="AnuSuchi3_Expenses_Id" />
+    </Key>
+    <Property Name="AnuSuchi3_Expenses_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi3_Id" Type="int" />
+    <Property Name="Expenses_Details" Type="nvarchar(max)" />
+    <Property Name="Expenses_Rate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expenses_Quantity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expenses_Total" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="AnuSuchi3_Income">
+    <Key>
+      <PropertyRef Name="AnuSuchi3_Income_Id" />
+    </Key>
+    <Property Name="AnuSuchi3_Income_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi3_Id" Type="int" />
+    <Property Name="Income_Source" Type="nvarchar(max)" />
+    <Property Name="Amount_Quantity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Income_Remarks" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AnuSuchi3_Maujat">
+    <Key>
+      <PropertyRef Name="AnuSuchi3_Maujat_Id" />
+    </Key>
+    <Property Name="AnuSuchi3_Maujat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi3_Id" Type="int" />
+    <Property Name="Maujat_Details" Type="nvarchar(max)" />
+    <Property Name="Maujat_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Maujat_Remarks" Type="nvarchar(max)" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="AnuSuchi3_Project_Work_Detail">
+    <Key>
+      <PropertyRef Name="AnuSuchi3_Project_Work_Detail_Id" />
+    </Key>
+    <Property Name="AnuSuchi3_Project_Work_Detail_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi3_Id" Type="int" />
+    <Property Name="Work_Details" Type="nvarchar(max)" />
+    <Property Name="Work_Plan" Type="nvarchar(max)" />
+    <Property Name="Work_Progress" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AnuSuchi3_Work_Division">
+    <Key>
+      <PropertyRef Name="AnuSuchi3_Work_Division_Id" />
+    </Key>
+    <Property Name="AnuSuchi3_Work_Division_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi3_Id" Type="int" />
+    <Property Name="Members" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AnuSuchi4">
+    <Key>
+      <PropertyRef Name="AnuSuchi4_Id" />
+    </Key>
+    <Property Name="AnuSuchi4_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Project_Place" Type="nvarchar" MaxLength="500" />
+    <Property Name="Project_Estimated_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fiscal_Year" Type="nvarchar" MaxLength="250" />
+    <Property Name="Project_Approval_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_To_Finish_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_Ended_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Samiti_Expenses_Approval_Date" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Anusuchi4_Expenses">
+    <Key>
+      <PropertyRef Name="Anusuchi4_Expenses_Id" />
+    </Key>
+    <Property Name="Anusuchi4_Expenses_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anusuchi4_Id" Type="int" />
+    <Property Name="Jyalla" Type="nvarchar" MaxLength="250" />
+    <Property Name="Nirman_Samagri_Kharid" Type="nvarchar" MaxLength="250" />
+    <Property Name="Dhuwani" Type="nvarchar" MaxLength="250" />
+    <Property Name="Bhada" Type="nvarchar" MaxLength="250" />
+    <Property Name="Bawestapan_Kharcha" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Anusuchi4_Income">
+    <Key>
+      <PropertyRef Name="Anusuchi4_Income_Id" />
+    </Key>
+    <Property Name="Anusuchi4_Income_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anusuchi4_Id" Type="int" />
+    <Property Name="First_Kista" Type="nvarchar" MaxLength="250" />
+    <Property Name="Second_Kista" Type="nvarchar" MaxLength="250" />
+    <Property Name="Third_Kista" Type="nvarchar" MaxLength="250" />
+    <Property Name="Janashram" Type="nvarchar" MaxLength="250" />
+    <Property Name="Bastugat_Sahayata" Type="nvarchar" MaxLength="250" />
+    <Property Name="Lagat_Sahabhagita" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="AnuSuchi5">
+    <Key>
+      <PropertyRef Name="AnuSuchi5_Id" />
+    </Key>
+    <Property Name="AnuSuchi5_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Project_Run_Org" Type="nvarchar" MaxLength="500" />
+    <Property Name="Upabhokta_Samiti_Adakshya" Type="nvarchar" MaxLength="500" />
+    <Property Name="Project_Estimate_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Municipality_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Jana_Sahabhagita_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Other_Org_Source_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_Contract_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_End_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Project_Beneficiaries" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Anusuchi6">
+    <Key>
+      <PropertyRef Name="Anusuchi6_Id" />
+    </Key>
+    <Property Name="Anusuchi6_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Ward_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Street_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Upabhokta_Samiti_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Adakshya" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sachib" Type="nvarchar" MaxLength="500" />
+    <Property Name="Anudan_Rakam" Type="nvarchar" MaxLength="250" />
+    <Property Name="Chanda_Rakam" Type="nvarchar" MaxLength="250" />
+    <Property Name="Jana_Sahabhagita_Rakam" Type="nvarchar" MaxLength="250" />
+    <Property Name="Total_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Total_Expenses_TillNow" Type="nvarchar" MaxLength="250" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Anusuchi6_Janasahabhagita">
+    <Key>
+      <PropertyRef Name="Anusuchi6_Janasahabhagita_Id" />
+    </Key>
+    <Property Name="Anusuchi6_Janasahabhagita_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anusuchi6_Id" Type="int" />
+    <Property Name="Janasahabhagita_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Sharam_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Jinsi_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Technical_Review_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Upabhikta_Decision_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Kista_Rakam_Demand" Type="nvarchar" MaxLength="250" />
+    <Property Name="Field_Supervise_Decision" Type="nvarchar(max)" />
+    <Property Name="Main_Expenses" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Anusuchi6_Karyalaya">
+    <Key>
+      <PropertyRef Name="Anusuchi6_Karyalaya_Id" />
+    </Key>
+    <Property Name="Anusuchi6_Karyalaya_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anusuchi6_Id" Type="int" />
+    <Property Name="Karyalaya_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Nirman_Samagri_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Dashya_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Adashya_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Others_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Travel_Expenses_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Technical_Supervise_Amount" Type="nvarchar" MaxLength="250" />
+    <Property Name="Masalanda_Amount" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Anusuchi6_Solutions">
+    <Key>
+      <PropertyRef Name="Anusuchi6_Solutions_Id" />
+    </Key>
+    <Property Name="Anusuchi6_Solutions_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anusuchi6_Id" Type="int" />
+    <Property Name="Solutions" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AnuSuchi7">
+    <Key>
+      <PropertyRef Name="AnuSuchi7_Id" />
+    </Key>
+    <Property Name="AnuSuchi7_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Samiti_Estd_Date" Type="datetime" />
+    <Property Name="Samiti_Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Established_Type" Type="nvarchar" MaxLength="250" />
+    <Property Name="Adakshyata" Type="nvarchar" MaxLength="250" />
+    <Property Name="Total_Present_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AnuSuchi7_Anugaman_Samiti">
+    <Key>
+      <PropertyRef Name="AnuSuchi7_Anugaman_Samiti_Id" />
+    </Key>
+    <Property Name="AnuSuchi7_Anugaman_Samiti_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi7_Id" Type="int" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" />
+    <Property Name="Member_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Father_Husband_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="GrandFather_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Mobile_No" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AnuSuchi7_Upabhokta_Samiti">
+    <Key>
+      <PropertyRef Name="AnuSuchi7_Upabhokta_Samiti_Id" />
+    </Key>
+    <Property Name="AnuSuchi7_Upabhokta_Samiti_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi7_Id" Type="int" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" />
+    <Property Name="Member_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Father_Husband_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="GrandFather_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Mobile_No" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AnuSuchi9">
+    <Key>
+      <PropertyRef Name="AnuSuchi9_Id" />
+    </Key>
+    <Property Name="AnuSuchi9_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Adakshya" Type="nvarchar" MaxLength="500" />
+    <Property Name="Adakshya_Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sachib" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sachib_Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Koshadakshya" Type="nvarchar" MaxLength="500" />
+    <Property Name="Koshadakshya_Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AnuSuchi9_Discussion_Conclusions">
+    <Key>
+      <PropertyRef Name="AnuSuchi9_Discussion_Conclusions_Id" />
+    </Key>
+    <Property Name="AnuSuchi9_Discussion_Conclusions_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi9_Id" Type="int" />
+    <Property Name="Conclusions" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="AnuSuchi9_Discussion_Subjects">
+    <Key>
+      <PropertyRef Name="AnuSuchi9_Discussion_Subjects_Id" />
+    </Key>
+    <Property Name="AnuSuchi9_Discussion_Subjects_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi9_Id" Type="int" />
+    <Property Name="Subjects" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="AnuSuchi9_Meeting">
+    <Key>
+      <PropertyRef Name="AnuSuchi9_Meeting_Id" />
+    </Key>
+    <Property Name="AnuSuchi9_Meeting_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi9_Id" Type="int" />
+    <Property Name="Baithak_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Baithak_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AnuSuchi9_Members">
+    <Key>
+      <PropertyRef Name="AnuSuchi9_Members_Id" />
+    </Key>
+    <Property Name="AnuSuchi9_Members_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnuSuchi9_Id" Type="int" />
+    <Property Name="Members" Type="nvarchar" MaxLength="500" />
+    <Property Name="Members_Address" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Beneficiaries_Group">
+    <Key>
+      <PropertyRef Name="Beneficiaries_Group_Id" />
+    </Key>
+    <Property Name="Beneficiaries_Group_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Total_House" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Male" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Female" Type="nvarchar" MaxLength="50" />
+    <Property Name="Community" Type="nvarchar" MaxLength="500" />
+    <Property Name="Other" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BhukataniItem">
+    <Key>
+      <PropertyRef Name="bhukataniItemId" />
+    </Key>
+    <Property Name="bhukataniItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BhutaniID" Type="int" />
+    <Property Name="itemid" Type="int" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="status" Type="bit" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="createdBy" Type="int" />
+    <Property Name="deletedDate" Type="date" />
+    <Property Name="deletedby" Type="int" />
+    <Property Name="updatedeby" Type="int" />
+    <Property Name="updatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="Budget_Source">
+    <Key>
+      <PropertyRef Name="Budget_Source_Id" />
+    </Key>
+    <Property Name="Budget_Source_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Source_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Class_A_Bank_List">
+    <Key>
+      <PropertyRef Name="Class_A_Bank_List_Id" />
+    </Key>
+    <Property Name="Class_A_Bank_List_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bank_Name_Nepali" Type="nvarchar" MaxLength="500" />
+    <Property Name="Bank_Name_English" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Darkhasta_Form">
+    <Key>
+      <PropertyRef Name="Darkhasta_Form_Id" />
+    </Key>
+    <Property Name="Darkhasta_Form_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Yojana_name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Bank_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Ward_No" Type="int" />
+    <Property Name="Samiti_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Adakshya_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Koshadakshya_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Sachib_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Chalani_Number" Type="nvarchar" MaxLength="250" />
+    <Property Name="Other_Bank_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="Fiscal_Year_Record" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DateConversion_TblNepaliCalender">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="YearID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MonthID" Type="nvarchar" MaxLength="50" />
+    <Property Name="E_Start_Date" Type="datetime" />
+    <Property Name="E_End_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fiscal_Year_Record">
+    <Key>
+      <PropertyRef Name="Fiscal_Year_Record_Id" />
+    </Key>
+    <Property Name="Fiscal_Year_Record_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="itemId" />
+    </Key>
+    <Property Name="itemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="ekainame" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="createdBy" Type="int" />
+    <Property Name="deletedBy" Type="int" />
+    <Property Name="deletedDate" Type="date" />
+    <Property Name="updateBy" Type="int" />
+    <Property Name="updatedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Kar_Katti">
+    <Key>
+      <PropertyRef Name="Kar_Katti_Id" />
+    </Key>
+    <Property Name="Kar_Katti_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Contigency" Type="nvarchar" MaxLength="50" />
+    <Property Name="MarmatSambhar" Type="nvarchar" MaxLength="50" />
+    <Property Name="SamajikSurekchya" Type="nvarchar" MaxLength="50" />
+    <Property Name="BahalKar" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgrimShulka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Parishramik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Municipality_Samiti_Manjuri_Patra">
+    <Key>
+      <PropertyRef Name="Municipality_Samiti_Manjuri_Patra_Id" />
+    </Key>
+    <Property Name="Municipality_Samiti_Manjuri_Patra_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Municipality_Rep_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Municipality_Rep_Post" Type="nvarchar" MaxLength="500" />
+    <Property Name="Municipality_Rep_Sign" Type="nvarchar" MaxLength="500" />
+    <Property Name="Municipality_Manjuri_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Samiti_Adakshya_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Samiti_Adakshya_Sign" Type="nvarchar" MaxLength="500" />
+    <Property Name="Samiti_Sachib_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Samiti_Sachib_Sign" Type="nvarchar" MaxLength="500" />
+    <Property Name="Samiti_Rohabar_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Samiti_Rohabar_Sign" Type="nvarchar" MaxLength="500" />
+    <Property Name="yojanSakhaRepresentativePostSign" Type="nvarchar" MaxLength="50" />
+    <Property Name="yojanSakhaRepresentativePost" Type="nvarchar" MaxLength="50" />
+    <Property Name="yojanSakhaRepresentaive" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Organization_Representative">
+    <Key>
+      <PropertyRef Name="Organization_Representative_Id" />
+    </Key>
+    <Property Name="Organization_Representative_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Representative_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Representative_Designition" Type="nvarchar" MaxLength="250" />
+    <Property Name="Representative_Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Organization_Setup">
+    <Key>
+      <PropertyRef Name="Organization_Setup_Id" />
+    </Key>
+    <Property Name="Organization_Setup_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Organization_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Organization_Type" Type="nvarchar" MaxLength="500" />
+    <Property Name="District_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="State_Country" Type="nvarchar" MaxLength="500" />
+    <Property Name="Image_Path" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Payment_Records">
+    <Key>
+      <PropertyRef Name="Payment_Records_Id" />
+    </Key>
+    <Property Name="Payment_Records_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Kista_Kram" Type="nvarchar" MaxLength="250" />
+    <Property Name="Payment_Date" Type="datetime" />
+    <Property Name="Kista_Rakam" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nirmarn_Samagri" Type="nvarchar" MaxLength="500" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Planning_Bhuktani">
+    <Key>
+      <PropertyRef Name="Planning_Bhuktani_Id" />
+    </Key>
+    <Property Name="Planning_Bhuktani_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fiscal_Year_Record" Type="nvarchar" MaxLength="250" />
+    <Property Name="Budget_Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Budget_Title_Number" Type="nvarchar" MaxLength="250" />
+    <Property Name="Nirman_Upabhokta" Type="nvarchar" MaxLength="250" />
+    <Property Name="Aayojana_Karyakram" Type="nvarchar" MaxLength="250" />
+    <Property Name="Kul_La_Ie" Type="nvarchar" MaxLength="50" />
+    <Property Name="NaPa_Binayajit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Otheers" Type="nvarchar" MaxLength="50" />
+    <Property Name="Jana_Sahabagita" Type="nvarchar" MaxLength="50" />
+    <Property Name="Peski" Type="nvarchar" MaxLength="50" />
+    <Property Name="Technical_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kantigenci" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remaining_Bhuktani_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Agrim_Shulka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bahal_Kar" Type="nvarchar" MaxLength="50" />
+    <Property Name="MarmatShmar" Type="nvarchar" MaxLength="50" />
+    <Property Name="Katti_Rakam" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aanya_Raaya" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdakshyaName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SamjhautaDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Farchot_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Running_Bhuktani" Type="nvarchar" MaxLength="50" />
+    <Property Name="Samajik_Surekchya" Type="nvarchar" MaxLength="50" />
+    <Property Name="Parishramik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Bhuktani_Type" Type="int" />
+    <Property Name="IsBhuktaniApproval" Type="bit" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Planning_Documents">
+    <Key>
+      <PropertyRef Name="Planning_Documents_Id" />
+    </Key>
+    <Property Name="Planning_Documents_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Fiscal_Year" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Upabhokta_Gathan" Type="nvarchar" MaxLength="250" />
+    <Property Name="Nirnaya" Type="nvarchar" MaxLength="500" />
+    <Property Name="Samjhauta" Type="nvarchar" MaxLength="500" />
+    <Property Name="Anuman" Type="nvarchar" MaxLength="500" />
+    <Property Name="Mapan" Type="nvarchar" MaxLength="500" />
+    <Property Name="Pramanikaran" Type="nvarchar" MaxLength="500" />
+    <Property Name="Karya_Sampanna" Type="nvarchar" MaxLength="500" />
+    <Property Name="Bhuktani_Nibedan" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Planning_Entry">
+    <Key>
+      <PropertyRef Name="Planning_Entry_Id" />
+    </Key>
+    <Property Name="Planning_Entry_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="FiscalYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="Planning_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Planning_Start_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Planning_End_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Work_Details" Type="nvarchar(max)" />
+    <Property Name="Amount_Estimate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Work_Type" Type="int" />
+    <Property Name="Ward_No" Type="int" />
+    <Property Name="Work_Area" Type="int" />
+    <Property Name="SerialNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Budget_Source" Type="int" />
+    <Property Name="Planning_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpaBhoktaSamiti_HeadName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Contractor_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Planning_Entry_Anudan">
+    <Key>
+      <PropertyRef Name="Planning_Entry_Anudan_Id" />
+    </Key>
+    <Property Name="Planning_Entry_Anudan_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Entry_Id" Type="int" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Nagarpalika_Amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpaBhoktaSamiti_Amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Other_Amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="JanaSahaBhagita_Amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Planning_Entry_Kista_Detail">
+    <Key>
+      <PropertyRef Name="Planning_Entry_Kista_Detail_Id" />
+    </Key>
+    <Property Name="Planning_Entry_Kista_Detail_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Entry_Id" Type="int" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Kista_Kram" Type="nvarchar" MaxLength="250" />
+    <Property Name="Kista_Rakam" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payment_Date" Type="datetime" />
+    <Property Name="Peski_Bhuktani" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sarta" Type="nvarchar(max)" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Planning_Samjhauta">
+    <Key>
+      <PropertyRef Name="Planning_Samjhauta_Id" />
+    </Key>
+    <Property Name="Planning_Samjhauta_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fiscal_Year_Record" Type="nvarchar" MaxLength="250" />
+    <Property Name="Samjhauta_Org_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Contegency_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="MarmatSambhar_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Samjhauta_Acceptance" Type="bit" />
+    <Property Name="Contegency_Percentage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Project_Entry_Detail">
+    <Key>
+      <PropertyRef Name="Project_Entry_Detail_Id" />
+    </Key>
+    <Property Name="Project_Entry_Detail_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Project_Place" Type="nvarchar" MaxLength="250" />
+    <Property Name="Project_Objective" Type="nvarchar(max)" />
+    <Property Name="Project_Acceptance_By" Type="nvarchar" MaxLength="250" />
+    <Property Name="Project_Start_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_End_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_Complete_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Project_estimated_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Use_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Project_Working_Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Project_Other_Source">
+    <Key>
+      <PropertyRef Name="Project_Other_Source_Id" />
+    </Key>
+    <Property Name="Project_Other_Source_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Source_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Quantity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Material_Details" Type="nvarchar(max)" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Project_Source_Detail">
+    <Key>
+      <PropertyRef Name="Project_Source_Detail_Id" />
+    </Key>
+    <Property Name="Project_Source_Detail_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Project_estimated_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nepal_Government" Type="nvarchar" MaxLength="50" />
+    <Property Name="Municipality" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="NGO_INGO" Type="nvarchar" MaxLength="50" />
+    <Property Name="Community_Org" Type="nvarchar" MaxLength="50" />
+    <Property Name="Foreign_Org" Type="nvarchar" MaxLength="50" />
+    <Property Name="Public_Community" Type="nvarchar" MaxLength="50" />
+    <Property Name="Loan_Grant" Type="nvarchar" MaxLength="50" />
+    <Property Name="Other_Source" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Samiti_Detail">
+    <Key>
+      <PropertyRef Name="Samiti_Detail_Id" />
+    </Key>
+    <Property Name="Samiti_Detail_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="Samiti_Estd_Date" Type="datetime" />
+    <Property Name="Adakshya" Type="nvarchar" MaxLength="250" />
+    <Property Name="AdakshyaContactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="SachibContactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="KoshadakshyaConctactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="SachibContractNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sachib" Type="nvarchar" MaxLength="250" />
+    <Property Name="Koshadakshya" Type="nvarchar" MaxLength="250" />
+    <Property Name="Sadashya" Type="nvarchar(max)" />
+    <Property Name="Beneficiaries_Attendance" Type="nvarchar" MaxLength="50" />
+    <Property Name="Beneficiaries_Absent" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Sarta_Setup">
+    <Key>
+      <PropertyRef Name="Sarta_Setup_Id" />
+    </Key>
+    <Property Name="Sarta_Setup_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UpaBhokta_Samiti_Members_Details">
+    <Key>
+      <PropertyRef Name="UpaBhokta_Samiti_Members_Details_Id" />
+    </Key>
+    <Property Name="UpaBhokta_Samiti_Members_Details_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planning_Samjhauta_Id" Type="int" />
+    <Property Name="MemberName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UpbhoktaSamiti_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="SahiDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Planning_Ssamjhata_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Upload_File">
+    <Key>
+      <PropertyRef Name="Upload_File_Id" />
+    </Key>
+    <Property Name="Upload_File_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="File_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="File_Path" Type="nvarchar" MaxLength="500" />
+    <Property Name="FiscalYear" Type="nchar" MaxLength="250" />
+    <Property Name="WardNo" Type="nvarchar" MaxLength="250" />
+    <Property Name="File_Id" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Work_Area">
+    <Key>
+      <PropertyRef Name="Work_Area_Id" />
+    </Key>
+    <Property Name="Work_Area_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Work_Area_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Work_Type">
+    <Key>
+      <PropertyRef Name="Work_Type_Id" />
+    </Key>
+    <Property Name="Work_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Work_Type_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Aayojana_Maintainance_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Aayojana_Maintainance" Type="Self.Aayojana_Maintainance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Aayojana_Maintainance">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Amanat_Deatils_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Amanat_Deatils" Type="Self.Amanat_Deatils" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Amanat_Deatils">
+        <PropertyRef Name="Planning_Samjhata_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anugaman_Planning_Entry">
+    <End Role="Planning_Entry" Type="Self.Planning_Entry" Multiplicity="0..1" />
+    <End Role="Anugaman" Type="Self.Anugaman" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Entry">
+        <PropertyRef Name="Planning_Entry_Id" />
+      </Principal>
+      <Dependent Role="Anugaman">
+        <PropertyRef Name="PlanningEntryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi1_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="AnuSuchi1" Type="Self.AnuSuchi1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi1">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi10_Discussion_Conclusions_AnuSuchi10">
+    <End Role="AnuSuchi10" Type="Self.AnuSuchi10" Multiplicity="0..1" />
+    <End Role="AnuSuchi10_Discussion_Conclusions" Type="Self.AnuSuchi10_Discussion_Conclusions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi10">
+        <PropertyRef Name="AnuSuchi10_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi10_Discussion_Conclusions">
+        <PropertyRef Name="AnuSuchi10_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi10_Discussion_Subjects_AnuSuchi10">
+    <End Role="AnuSuchi10" Type="Self.AnuSuchi10" Multiplicity="0..1" />
+    <End Role="AnuSuchi10_Discussion_Subjects" Type="Self.AnuSuchi10_Discussion_Subjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi10">
+        <PropertyRef Name="AnuSuchi10_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi10_Discussion_Subjects">
+        <PropertyRef Name="AnuSuchi10_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi10_Meeting_AnuSuchi10">
+    <End Role="AnuSuchi10" Type="Self.AnuSuchi10" Multiplicity="0..1" />
+    <End Role="AnuSuchi10_Meeting" Type="Self.AnuSuchi10_Meeting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi10">
+        <PropertyRef Name="AnuSuchi10_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi10_Meeting">
+        <PropertyRef Name="AnuSuchi10_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi10_Members_AnuSuchi10">
+    <End Role="AnuSuchi10" Type="Self.AnuSuchi10" Multiplicity="0..1" />
+    <End Role="AnuSuchi10_Members" Type="Self.AnuSuchi10_Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi10">
+        <PropertyRef Name="AnuSuchi10_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi10_Members">
+        <PropertyRef Name="AnuSuchi10_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi10_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="AnuSuchi10" Type="Self.AnuSuchi10" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi10">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi11_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="AnuSuchi11" Type="Self.AnuSuchi11" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi11">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi3_Bhuktani_AnuSuchi3">
+    <End Role="AnuSuchi3" Type="Self.AnuSuchi3" Multiplicity="0..1" />
+    <End Role="AnuSuchi3_Bhuktani" Type="Self.AnuSuchi3_Bhuktani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi3">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi3_Bhuktani">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi3_Expenses_AnuSuchi3">
+    <End Role="AnuSuchi3" Type="Self.AnuSuchi3" Multiplicity="0..1" />
+    <End Role="AnuSuchi3_Expenses" Type="Self.AnuSuchi3_Expenses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi3">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi3_Expenses">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi3_Income_AnuSuchi3">
+    <End Role="AnuSuchi3" Type="Self.AnuSuchi3" Multiplicity="0..1" />
+    <End Role="AnuSuchi3_Income" Type="Self.AnuSuchi3_Income" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi3">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi3_Income">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi3_Maujat_AnuSuchi3">
+    <End Role="AnuSuchi3" Type="Self.AnuSuchi3" Multiplicity="0..1" />
+    <End Role="AnuSuchi3_Maujat" Type="Self.AnuSuchi3_Maujat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi3">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi3_Maujat">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi3_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="AnuSuchi3" Type="Self.AnuSuchi3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi3">
+        <PropertyRef Name="Planing_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi3_Project_Work_Detail_AnuSuchi3">
+    <End Role="AnuSuchi3" Type="Self.AnuSuchi3" Multiplicity="0..1" />
+    <End Role="AnuSuchi3_Project_Work_Detail" Type="Self.AnuSuchi3_Project_Work_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi3">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi3_Project_Work_Detail">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi3_Work_Division_AnuSuchi3">
+    <End Role="AnuSuchi3" Type="Self.AnuSuchi3" Multiplicity="0..1" />
+    <End Role="AnuSuchi3_Work_Division" Type="Self.AnuSuchi3_Work_Division" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi3">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi3_Work_Division">
+        <PropertyRef Name="AnuSuchi3_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anusuchi4_Expenses_AnuSuchi4">
+    <End Role="AnuSuchi4" Type="Self.AnuSuchi4" Multiplicity="0..1" />
+    <End Role="Anusuchi4_Expenses" Type="Self.Anusuchi4_Expenses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi4">
+        <PropertyRef Name="AnuSuchi4_Id" />
+      </Principal>
+      <Dependent Role="Anusuchi4_Expenses">
+        <PropertyRef Name="Anusuchi4_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anusuchi4_Income_AnuSuchi4">
+    <End Role="AnuSuchi4" Type="Self.AnuSuchi4" Multiplicity="0..1" />
+    <End Role="Anusuchi4_Income" Type="Self.Anusuchi4_Income" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi4">
+        <PropertyRef Name="AnuSuchi4_Id" />
+      </Principal>
+      <Dependent Role="Anusuchi4_Income">
+        <PropertyRef Name="Anusuchi4_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi4_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="AnuSuchi4" Type="Self.AnuSuchi4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi4">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi5_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="AnuSuchi5" Type="Self.AnuSuchi5" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi5">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anusuchi6_Janasahabhagita_Anusuchi6">
+    <End Role="Anusuchi6" Type="Self.Anusuchi6" Multiplicity="0..1" />
+    <End Role="Anusuchi6_Janasahabhagita" Type="Self.Anusuchi6_Janasahabhagita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anusuchi6">
+        <PropertyRef Name="Anusuchi6_Id" />
+      </Principal>
+      <Dependent Role="Anusuchi6_Janasahabhagita">
+        <PropertyRef Name="Anusuchi6_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anusuchi6_Karyalaya_Anusuchi6">
+    <End Role="Anusuchi6" Type="Self.Anusuchi6" Multiplicity="0..1" />
+    <End Role="Anusuchi6_Karyalaya" Type="Self.Anusuchi6_Karyalaya" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anusuchi6">
+        <PropertyRef Name="Anusuchi6_Id" />
+      </Principal>
+      <Dependent Role="Anusuchi6_Karyalaya">
+        <PropertyRef Name="Anusuchi6_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anusuchi6_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Anusuchi6" Type="Self.Anusuchi6" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Anusuchi6">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anusuchi6_Solutions_Anusuchi6">
+    <End Role="Anusuchi6" Type="Self.Anusuchi6" Multiplicity="0..1" />
+    <End Role="Anusuchi6_Solutions" Type="Self.Anusuchi6_Solutions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anusuchi6">
+        <PropertyRef Name="Anusuchi6_Id" />
+      </Principal>
+      <Dependent Role="Anusuchi6_Solutions">
+        <PropertyRef Name="Anusuchi6_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi7_Anugaman_Samiti_AnuSuchi7">
+    <End Role="AnuSuchi7" Type="Self.AnuSuchi7" Multiplicity="0..1" />
+    <End Role="AnuSuchi7_Anugaman_Samiti" Type="Self.AnuSuchi7_Anugaman_Samiti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi7">
+        <PropertyRef Name="AnuSuchi7_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi7_Anugaman_Samiti">
+        <PropertyRef Name="AnuSuchi7_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi7_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="AnuSuchi7" Type="Self.AnuSuchi7" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi7">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi7_Upabhokta_Samiti_AnuSuchi7">
+    <End Role="AnuSuchi7" Type="Self.AnuSuchi7" Multiplicity="0..1" />
+    <End Role="AnuSuchi7_Upabhokta_Samiti" Type="Self.AnuSuchi7_Upabhokta_Samiti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi7">
+        <PropertyRef Name="AnuSuchi7_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi7_Upabhokta_Samiti">
+        <PropertyRef Name="AnuSuchi7_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi9_Discussion_Conclusions_AnuSuchi9">
+    <End Role="AnuSuchi9" Type="Self.AnuSuchi9" Multiplicity="0..1" />
+    <End Role="AnuSuchi9_Discussion_Conclusions" Type="Self.AnuSuchi9_Discussion_Conclusions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi9">
+        <PropertyRef Name="AnuSuchi9_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi9_Discussion_Conclusions">
+        <PropertyRef Name="AnuSuchi9_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi9_Discussion_Subjects_AnuSuchi9">
+    <End Role="AnuSuchi9" Type="Self.AnuSuchi9" Multiplicity="0..1" />
+    <End Role="AnuSuchi9_Discussion_Subjects" Type="Self.AnuSuchi9_Discussion_Subjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi9">
+        <PropertyRef Name="AnuSuchi9_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi9_Discussion_Subjects">
+        <PropertyRef Name="AnuSuchi9_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi9_Meeting_AnuSuchi9">
+    <End Role="AnuSuchi9" Type="Self.AnuSuchi9" Multiplicity="0..1" />
+    <End Role="AnuSuchi9_Meeting" Type="Self.AnuSuchi9_Meeting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi9">
+        <PropertyRef Name="AnuSuchi9_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi9_Meeting">
+        <PropertyRef Name="AnuSuchi9_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi9_Members_AnuSuchi9">
+    <End Role="AnuSuchi9" Type="Self.AnuSuchi9" Multiplicity="0..1" />
+    <End Role="AnuSuchi9_Members" Type="Self.AnuSuchi9_Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnuSuchi9">
+        <PropertyRef Name="AnuSuchi9_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi9_Members">
+        <PropertyRef Name="AnuSuchi9_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnuSuchi9_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="AnuSuchi9" Type="Self.AnuSuchi9" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="AnuSuchi9">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Beneficiaries_Group_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Beneficiaries_Group" Type="Self.Beneficiaries_Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Beneficiaries_Group">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Municipality_Samiti_Manjuri_Patra_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Municipality_Samiti_Manjuri_Patra" Type="Self.Municipality_Samiti_Manjuri_Patra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Municipality_Samiti_Manjuri_Patra">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Organization_Representative_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Organization_Representative" Type="Self.Organization_Representative" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Organization_Representative">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Records_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Payment_Records" Type="Self.Payment_Records" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Payment_Records">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Planning_Documents_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Planning_Documents" Type="Self.Planning_Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Planning_Documents">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Planning_Entry_Anudan_Planning_Entry">
+    <End Role="Planning_Entry" Type="Self.Planning_Entry" Multiplicity="0..1" />
+    <End Role="Planning_Entry_Anudan" Type="Self.Planning_Entry_Anudan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Entry">
+        <PropertyRef Name="Planning_Entry_Id" />
+      </Principal>
+      <Dependent Role="Planning_Entry_Anudan">
+        <PropertyRef Name="Planning_Entry_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Planning_Entry_Anudan_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Planning_Entry_Anudan" Type="Self.Planning_Entry_Anudan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Planning_Entry_Anudan">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Planning_Entry_Budget_Source">
+    <End Role="Budget_Source" Type="Self.Budget_Source" Multiplicity="0..1" />
+    <End Role="Planning_Entry" Type="Self.Planning_Entry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Budget_Source">
+        <PropertyRef Name="Budget_Source_Id" />
+      </Principal>
+      <Dependent Role="Planning_Entry">
+        <PropertyRef Name="Budget_Source" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Planning_Entry_Kista_Detail_Planning_Entry">
+    <End Role="Planning_Entry" Type="Self.Planning_Entry" Multiplicity="0..1" />
+    <End Role="Planning_Entry_Kista_Detail" Type="Self.Planning_Entry_Kista_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Entry">
+        <PropertyRef Name="Planning_Entry_Id" />
+      </Principal>
+      <Dependent Role="Planning_Entry_Kista_Detail">
+        <PropertyRef Name="Planning_Entry_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Planning_Entry_Kista_Detail_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Planning_Entry_Kista_Detail" Type="Self.Planning_Entry_Kista_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Planning_Entry_Kista_Detail">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Planning_Entry_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Planning_Entry" Type="Self.Planning_Entry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Planning_Entry">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Planning_Entry_Work_Area">
+    <End Role="Work_Area" Type="Self.Work_Area" Multiplicity="0..1" />
+    <End Role="Planning_Entry" Type="Self.Planning_Entry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Work_Area">
+        <PropertyRef Name="Work_Area_Id" />
+      </Principal>
+      <Dependent Role="Planning_Entry">
+        <PropertyRef Name="Work_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Planning_Entry_Work_Type">
+    <End Role="Work_Type" Type="Self.Work_Type" Multiplicity="0..1" />
+    <End Role="Planning_Entry" Type="Self.Planning_Entry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Work_Type">
+        <PropertyRef Name="Work_Type_Id" />
+      </Principal>
+      <Dependent Role="Planning_Entry">
+        <PropertyRef Name="Work_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Entry_Detail_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Project_Entry_Detail" Type="Self.Project_Entry_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Project_Entry_Detail">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Other_Source_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Project_Other_Source" Type="Self.Project_Other_Source" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Project_Other_Source">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Source_Detail_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Project_Source_Detail" Type="Self.Project_Source_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Project_Source_Detail">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Samiti_Detail_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="Samiti_Detail" Type="Self.Samiti_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="Samiti_Detail">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UpaBhokta_Samiti_Members_Details_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="UpaBhokta_Samiti_Members_Details" Type="Self.UpaBhokta_Samiti_Members_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="UpaBhokta_Samiti_Members_Details">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UpbhoktaSamiti_Details_Planning_Samjhauta">
+    <End Role="Planning_Samjhauta" Type="Self.Planning_Samjhauta" Multiplicity="0..1" />
+    <End Role="UpbhoktaSamiti_Details" Type="Self.UpbhoktaSamiti_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning_Samjhauta">
+        <PropertyRef Name="Planning_Samjhauta_Id" />
+      </Principal>
+      <Dependent Role="UpbhoktaSamiti_Details">
+        <PropertyRef Name="Planning_Ssamjhata_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="IsNepaliDateExist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="nvarchar" Mode="In" />
+    <Parameter Name="month" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetLocalDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RomanDate" Type="datetime" Mode="In" />
+    <Parameter Name="Format" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetRomanDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocalYear" Type="int" Mode="In" />
+    <Parameter Name="LocalMonth" Type="int" Mode="In" />
+    <Parameter Name="LocalDay" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="SOLU_DUDH_KUNDA_PLANNINGModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Aayojana_Maintainance" EntityType="Self.Aayojana_Maintainance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Amanat_Deatils" EntityType="Self.Amanat_Deatils" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anugaman" EntityType="Self.Anugaman" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi1" EntityType="Self.AnuSuchi1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi10" EntityType="Self.AnuSuchi10" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi10_Discussion_Conclusions" EntityType="Self.AnuSuchi10_Discussion_Conclusions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi10_Discussion_Subjects" EntityType="Self.AnuSuchi10_Discussion_Subjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi10_Meeting" EntityType="Self.AnuSuchi10_Meeting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi10_Members" EntityType="Self.AnuSuchi10_Members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi11" EntityType="Self.AnuSuchi11" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi3" EntityType="Self.AnuSuchi3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi3_Bhuktani" EntityType="Self.AnuSuchi3_Bhuktani" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi3_Expenses" EntityType="Self.AnuSuchi3_Expenses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi3_Income" EntityType="Self.AnuSuchi3_Income" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi3_Maujat" EntityType="Self.AnuSuchi3_Maujat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi3_Project_Work_Detail" EntityType="Self.AnuSuchi3_Project_Work_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi3_Work_Division" EntityType="Self.AnuSuchi3_Work_Division" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi4" EntityType="Self.AnuSuchi4" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anusuchi4_Expenses" EntityType="Self.Anusuchi4_Expenses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anusuchi4_Income" EntityType="Self.Anusuchi4_Income" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi5" EntityType="Self.AnuSuchi5" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anusuchi6" EntityType="Self.Anusuchi6" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anusuchi6_Janasahabhagita" EntityType="Self.Anusuchi6_Janasahabhagita" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anusuchi6_Karyalaya" EntityType="Self.Anusuchi6_Karyalaya" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anusuchi6_Solutions" EntityType="Self.Anusuchi6_Solutions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi7" EntityType="Self.AnuSuchi7" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi7_Anugaman_Samiti" EntityType="Self.AnuSuchi7_Anugaman_Samiti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi7_Upabhokta_Samiti" EntityType="Self.AnuSuchi7_Upabhokta_Samiti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi9" EntityType="Self.AnuSuchi9" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi9_Discussion_Conclusions" EntityType="Self.AnuSuchi9_Discussion_Conclusions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi9_Discussion_Subjects" EntityType="Self.AnuSuchi9_Discussion_Subjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi9_Meeting" EntityType="Self.AnuSuchi9_Meeting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnuSuchi9_Members" EntityType="Self.AnuSuchi9_Members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Beneficiaries_Group" EntityType="Self.Beneficiaries_Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BhukataniItem" EntityType="Self.BhukataniItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Budget_Source" EntityType="Self.Budget_Source" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class_A_Bank_List" EntityType="Self.Class_A_Bank_List" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Darkhasta_Form" EntityType="Self.Darkhasta_Form" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DateConversion_TblNepaliCalender" EntityType="Self.DateConversion_TblNepaliCalender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fiscal_Year_Record" EntityType="Self.Fiscal_Year_Record" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kar_Katti" EntityType="Self.Kar_Katti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Municipality_Samiti_Manjuri_Patra" EntityType="Self.Municipality_Samiti_Manjuri_Patra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Organization_Representative" EntityType="Self.Organization_Representative" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Organization_Setup" EntityType="Self.Organization_Setup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment_Records" EntityType="Self.Payment_Records" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Planning_Bhuktani" EntityType="Self.Planning_Bhuktani" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Planning_Documents" EntityType="Self.Planning_Documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Planning_Entry" EntityType="Self.Planning_Entry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Planning_Entry_Anudan" EntityType="Self.Planning_Entry_Anudan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Planning_Entry_Kista_Detail" EntityType="Self.Planning_Entry_Kista_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Planning_Samjhauta" EntityType="Self.Planning_Samjhauta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_Entry_Detail" EntityType="Self.Project_Entry_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_Other_Source" EntityType="Self.Project_Other_Source" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_Source_Detail" EntityType="Self.Project_Source_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Samiti_Detail" EntityType="Self.Samiti_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sarta_Setup" EntityType="Self.Sarta_Setup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UpaBhokta_Samiti_Members_Details" EntityType="Self.UpaBhokta_Samiti_Members_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UpbhoktaSamiti_Details" EntityType="Self.UpbhoktaSamiti_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Upload_File" EntityType="Self.Upload_File" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Work_Area" EntityType="Self.Work_Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Work_Type" EntityType="Self.Work_Type" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Aayojana_Maintainance_Planning_Samjhauta" Association="Self.FK_Aayojana_Maintainance_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Aayojana_Maintainance" EntitySet="Aayojana_Maintainance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Amanat_Deatils_Planning_Samjhauta" Association="Self.FK_Amanat_Deatils_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Amanat_Deatils" EntitySet="Amanat_Deatils" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anugaman_Planning_Entry" Association="Self.FK_Anugaman_Planning_Entry">
+      <End Role="Planning_Entry" EntitySet="Planning_Entry" />
+      <End Role="Anugaman" EntitySet="Anugaman" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi1_Planning_Samjhauta" Association="Self.FK_AnuSuchi1_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="AnuSuchi1" EntitySet="AnuSuchi1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi10_Discussion_Conclusions_AnuSuchi10" Association="Self.FK_AnuSuchi10_Discussion_Conclusions_AnuSuchi10">
+      <End Role="AnuSuchi10" EntitySet="AnuSuchi10" />
+      <End Role="AnuSuchi10_Discussion_Conclusions" EntitySet="AnuSuchi10_Discussion_Conclusions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi10_Discussion_Subjects_AnuSuchi10" Association="Self.FK_AnuSuchi10_Discussion_Subjects_AnuSuchi10">
+      <End Role="AnuSuchi10" EntitySet="AnuSuchi10" />
+      <End Role="AnuSuchi10_Discussion_Subjects" EntitySet="AnuSuchi10_Discussion_Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi10_Meeting_AnuSuchi10" Association="Self.FK_AnuSuchi10_Meeting_AnuSuchi10">
+      <End Role="AnuSuchi10" EntitySet="AnuSuchi10" />
+      <End Role="AnuSuchi10_Meeting" EntitySet="AnuSuchi10_Meeting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi10_Members_AnuSuchi10" Association="Self.FK_AnuSuchi10_Members_AnuSuchi10">
+      <End Role="AnuSuchi10" EntitySet="AnuSuchi10" />
+      <End Role="AnuSuchi10_Members" EntitySet="AnuSuchi10_Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi10_Planning_Samjhauta" Association="Self.FK_AnuSuchi10_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="AnuSuchi10" EntitySet="AnuSuchi10" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi11_Planning_Samjhauta" Association="Self.FK_AnuSuchi11_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="AnuSuchi11" EntitySet="AnuSuchi11" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi3_Bhuktani_AnuSuchi3" Association="Self.FK_AnuSuchi3_Bhuktani_AnuSuchi3">
+      <End Role="AnuSuchi3" EntitySet="AnuSuchi3" />
+      <End Role="AnuSuchi3_Bhuktani" EntitySet="AnuSuchi3_Bhuktani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi3_Expenses_AnuSuchi3" Association="Self.FK_AnuSuchi3_Expenses_AnuSuchi3">
+      <End Role="AnuSuchi3" EntitySet="AnuSuchi3" />
+      <End Role="AnuSuchi3_Expenses" EntitySet="AnuSuchi3_Expenses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi3_Income_AnuSuchi3" Association="Self.FK_AnuSuchi3_Income_AnuSuchi3">
+      <End Role="AnuSuchi3" EntitySet="AnuSuchi3" />
+      <End Role="AnuSuchi3_Income" EntitySet="AnuSuchi3_Income" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi3_Maujat_AnuSuchi3" Association="Self.FK_AnuSuchi3_Maujat_AnuSuchi3">
+      <End Role="AnuSuchi3" EntitySet="AnuSuchi3" />
+      <End Role="AnuSuchi3_Maujat" EntitySet="AnuSuchi3_Maujat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi3_Planning_Samjhauta" Association="Self.FK_AnuSuchi3_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="AnuSuchi3" EntitySet="AnuSuchi3" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi3_Project_Work_Detail_AnuSuchi3" Association="Self.FK_AnuSuchi3_Project_Work_Detail_AnuSuchi3">
+      <End Role="AnuSuchi3" EntitySet="AnuSuchi3" />
+      <End Role="AnuSuchi3_Project_Work_Detail" EntitySet="AnuSuchi3_Project_Work_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi3_Work_Division_AnuSuchi3" Association="Self.FK_AnuSuchi3_Work_Division_AnuSuchi3">
+      <End Role="AnuSuchi3" EntitySet="AnuSuchi3" />
+      <End Role="AnuSuchi3_Work_Division" EntitySet="AnuSuchi3_Work_Division" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anusuchi4_Expenses_AnuSuchi4" Association="Self.FK_Anusuchi4_Expenses_AnuSuchi4">
+      <End Role="AnuSuchi4" EntitySet="AnuSuchi4" />
+      <End Role="Anusuchi4_Expenses" EntitySet="Anusuchi4_Expenses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anusuchi4_Income_AnuSuchi4" Association="Self.FK_Anusuchi4_Income_AnuSuchi4">
+      <End Role="AnuSuchi4" EntitySet="AnuSuchi4" />
+      <End Role="Anusuchi4_Income" EntitySet="Anusuchi4_Income" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi4_Planning_Samjhauta" Association="Self.FK_AnuSuchi4_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="AnuSuchi4" EntitySet="AnuSuchi4" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi5_Planning_Samjhauta" Association="Self.FK_AnuSuchi5_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="AnuSuchi5" EntitySet="AnuSuchi5" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anusuchi6_Janasahabhagita_Anusuchi6" Association="Self.FK_Anusuchi6_Janasahabhagita_Anusuchi6">
+      <End Role="Anusuchi6" EntitySet="Anusuchi6" />
+      <End Role="Anusuchi6_Janasahabhagita" EntitySet="Anusuchi6_Janasahabhagita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anusuchi6_Karyalaya_Anusuchi6" Association="Self.FK_Anusuchi6_Karyalaya_Anusuchi6">
+      <End Role="Anusuchi6" EntitySet="Anusuchi6" />
+      <End Role="Anusuchi6_Karyalaya" EntitySet="Anusuchi6_Karyalaya" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anusuchi6_Planning_Samjhauta" Association="Self.FK_Anusuchi6_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Anusuchi6" EntitySet="Anusuchi6" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anusuchi6_Solutions_Anusuchi6" Association="Self.FK_Anusuchi6_Solutions_Anusuchi6">
+      <End Role="Anusuchi6" EntitySet="Anusuchi6" />
+      <End Role="Anusuchi6_Solutions" EntitySet="Anusuchi6_Solutions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi7_Anugaman_Samiti_AnuSuchi7" Association="Self.FK_AnuSuchi7_Anugaman_Samiti_AnuSuchi7">
+      <End Role="AnuSuchi7" EntitySet="AnuSuchi7" />
+      <End Role="AnuSuchi7_Anugaman_Samiti" EntitySet="AnuSuchi7_Anugaman_Samiti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi7_Planning_Samjhauta" Association="Self.FK_AnuSuchi7_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="AnuSuchi7" EntitySet="AnuSuchi7" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi7_Upabhokta_Samiti_AnuSuchi7" Association="Self.FK_AnuSuchi7_Upabhokta_Samiti_AnuSuchi7">
+      <End Role="AnuSuchi7" EntitySet="AnuSuchi7" />
+      <End Role="AnuSuchi7_Upabhokta_Samiti" EntitySet="AnuSuchi7_Upabhokta_Samiti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi9_Discussion_Conclusions_AnuSuchi9" Association="Self.FK_AnuSuchi9_Discussion_Conclusions_AnuSuchi9">
+      <End Role="AnuSuchi9" EntitySet="AnuSuchi9" />
+      <End Role="AnuSuchi9_Discussion_Conclusions" EntitySet="AnuSuchi9_Discussion_Conclusions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi9_Discussion_Subjects_AnuSuchi9" Association="Self.FK_AnuSuchi9_Discussion_Subjects_AnuSuchi9">
+      <End Role="AnuSuchi9" EntitySet="AnuSuchi9" />
+      <End Role="AnuSuchi9_Discussion_Subjects" EntitySet="AnuSuchi9_Discussion_Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi9_Meeting_AnuSuchi9" Association="Self.FK_AnuSuchi9_Meeting_AnuSuchi9">
+      <End Role="AnuSuchi9" EntitySet="AnuSuchi9" />
+      <End Role="AnuSuchi9_Meeting" EntitySet="AnuSuchi9_Meeting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi9_Members_AnuSuchi9" Association="Self.FK_AnuSuchi9_Members_AnuSuchi9">
+      <End Role="AnuSuchi9" EntitySet="AnuSuchi9" />
+      <End Role="AnuSuchi9_Members" EntitySet="AnuSuchi9_Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnuSuchi9_Planning_Samjhauta" Association="Self.FK_AnuSuchi9_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="AnuSuchi9" EntitySet="AnuSuchi9" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Beneficiaries_Group_Planning_Samjhauta" Association="Self.FK_Beneficiaries_Group_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Beneficiaries_Group" EntitySet="Beneficiaries_Group" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Municipality_Samiti_Manjuri_Patra_Planning_Samjhauta" Association="Self.FK_Municipality_Samiti_Manjuri_Patra_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Municipality_Samiti_Manjuri_Patra" EntitySet="Municipality_Samiti_Manjuri_Patra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Organization_Representative_Planning_Samjhauta" Association="Self.FK_Organization_Representative_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Organization_Representative" EntitySet="Organization_Representative" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Records_Planning_Samjhauta" Association="Self.FK_Payment_Records_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Payment_Records" EntitySet="Payment_Records" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Planning_Documents_Planning_Samjhauta" Association="Self.FK_Planning_Documents_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Planning_Documents" EntitySet="Planning_Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Planning_Entry_Anudan_Planning_Entry" Association="Self.FK_Planning_Entry_Anudan_Planning_Entry">
+      <End Role="Planning_Entry" EntitySet="Planning_Entry" />
+      <End Role="Planning_Entry_Anudan" EntitySet="Planning_Entry_Anudan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Planning_Entry_Anudan_Planning_Samjhauta" Association="Self.FK_Planning_Entry_Anudan_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Planning_Entry_Anudan" EntitySet="Planning_Entry_Anudan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Planning_Entry_Budget_Source" Association="Self.FK_Planning_Entry_Budget_Source">
+      <End Role="Budget_Source" EntitySet="Budget_Source" />
+      <End Role="Planning_Entry" EntitySet="Planning_Entry" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Planning_Entry_Kista_Detail_Planning_Entry" Association="Self.FK_Planning_Entry_Kista_Detail_Planning_Entry">
+      <End Role="Planning_Entry" EntitySet="Planning_Entry" />
+      <End Role="Planning_Entry_Kista_Detail" EntitySet="Planning_Entry_Kista_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Planning_Entry_Kista_Detail_Planning_Samjhauta" Association="Self.FK_Planning_Entry_Kista_Detail_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Planning_Entry_Kista_Detail" EntitySet="Planning_Entry_Kista_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Planning_Entry_Planning_Samjhauta" Association="Self.FK_Planning_Entry_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Planning_Entry" EntitySet="Planning_Entry" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Planning_Entry_Work_Area" Association="Self.FK_Planning_Entry_Work_Area">
+      <End Role="Work_Area" EntitySet="Work_Area" />
+      <End Role="Planning_Entry" EntitySet="Planning_Entry" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Planning_Entry_Work_Type" Association="Self.FK_Planning_Entry_Work_Type">
+      <End Role="Work_Type" EntitySet="Work_Type" />
+      <End Role="Planning_Entry" EntitySet="Planning_Entry" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Entry_Detail_Planning_Samjhauta" Association="Self.FK_Project_Entry_Detail_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Project_Entry_Detail" EntitySet="Project_Entry_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Other_Source_Planning_Samjhauta" Association="Self.FK_Project_Other_Source_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Project_Other_Source" EntitySet="Project_Other_Source" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Source_Detail_Planning_Samjhauta" Association="Self.FK_Project_Source_Detail_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Project_Source_Detail" EntitySet="Project_Source_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Samiti_Detail_Planning_Samjhauta" Association="Self.FK_Samiti_Detail_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="Samiti_Detail" EntitySet="Samiti_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UpaBhokta_Samiti_Members_Details_Planning_Samjhauta" Association="Self.FK_UpaBhokta_Samiti_Members_Details_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="UpaBhokta_Samiti_Members_Details" EntitySet="UpaBhokta_Samiti_Members_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UpbhoktaSamiti_Details_Planning_Samjhauta" Association="Self.FK_UpbhoktaSamiti_Details_Planning_Samjhauta">
+      <End Role="Planning_Samjhauta" EntitySet="Planning_Samjhauta" />
+      <End Role="UpbhoktaSamiti_Details" EntitySet="UpbhoktaSamiti_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

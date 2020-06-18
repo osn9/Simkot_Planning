@@ -1,0 +1,26 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi6ViewModel
+
+@using Planning.Helpers
+
+
+@{ int i = 1;}
+
+@using (Html.BeginCollectionItem("Anusuchi6_SolutionsViewModelList"))
+{
+    <div id="PratibedanSolutionsFormgroup" class="form-group">
+        <div class="col-md-6">@Html.TextAreaFor(model => model.Solutions,3,70, new { htmlAttributes = new { @class = "form-control", @placeholder = "उपायहरु राख्नुहोस" } }) </div>
+        <div class="btn-delete col-md-1">
+            <div><a href='javascript:;' class="btn btn-danger btn-sm removesolutions"><span class='fa fa-minus fa-1x'></span></a></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+
+
+<script>
+    $(".removesolutions").click(function () {
+        $(this).parents("#PratibedanSolutionsFormgroup").remove();
+    });
+</script>
+

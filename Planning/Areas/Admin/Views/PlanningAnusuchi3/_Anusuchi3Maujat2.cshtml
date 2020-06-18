@@ -1,0 +1,14 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi3ViewModel
+
+@using Planning.Helpers
+
+@using (Html.BeginCollectionItem("Anusuchi3MaujatViewModelList2"))
+{
+    @Html.HiddenFor(model => model.Type, new { @class = "form-control", @Value = "2" })
+    @Html.HiddenFor(model => model.Maujat_Details, new { @class = "form-control", @Value = "बैंक" })
+    <div class="col-md-3" style="text-align:center;">बैंक</div>
+    <div class="col-md-3">@Html.TextBoxFor(model => model.Maujat_Amount, new { @class = "form-control" }) </div>
+    <div class="col-md-5">@Html.TextAreaFor(model => model.Maujat_Remarks, new { @class = "form-control" }) </div>
+                <div class="clearfix"></div>
+}

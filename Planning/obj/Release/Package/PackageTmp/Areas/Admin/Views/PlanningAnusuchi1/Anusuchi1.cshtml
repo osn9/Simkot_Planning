@@ -1,0 +1,216 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi1ViewModel
+@{
+    ViewBag.Title = "Anusuchi1";
+    Layout = null;
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from o in db.Organization_Setup select o).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+    }
+
+}
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+
+<div class="tab-pane fade in active" id="fiscalYearRecord">
+    <h3 class="step_ttl">अनुसूची १ / उपभोक्ता समितिको लागत</h3>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well" }))
+    {
+        @Html.HiddenFor(model => model.Planning_Samjhauta_Id)
+        @Html.HiddenFor(model => model.AnuSuchi1_Id)
+
+        <fieldset>
+            <div class="row">
+                <div class="col-md-12"><button type="button" id="btn-AddSamitiOptions" class="btn btn-primary btn-add pull-right"><i class="fa fa-plus"></i>&nbsp; समिति थप्नुहोस्</button></div>
+                <div class="clearfix"></div><br />
+                @if (Model.Anusuchi1ViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.Anusuchi1ViewModelList)
+                    {
+                        @Html.Partial("_Samiti", item)
+                    }
+                }
+                else
+                {
+                    @Html.Partial("_Samiti")
+                }
+                <div id="getSamitiOptions">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="form-group">
+                <label class="col-lg-3  col-md-4 control-label"></label>
+                <div class="col-lg-7 col-md-7">
+                    <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">प्रिन्ट</button>
+                </div>
+            </div>
+        </fieldset>
+    }
+</div>
+
+
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:800px;">
+            <div class="cotract_letter" id="printdiv">
+
+                <style>
+                    .header-section .table tbody > tr, .content-section .table tbody > tr, .detail .table tbody > tr, .sign.table tbody > tr {
+                        border: none !important;
+                    }
+
+                    header-section .table tr td, .content-section .table tbody > tr, .detail .table tbody > tr, .sign .table tbody > tr {
+                        border: none !important;
+                        border-color: #f9f9f9 !important;
+                        padding: 0px !important;
+                    }
+
+                    @@media print {
+                        .header-section .table tr td, .content-section .table tr td {
+                            border: none !important;
+                            border: !important;
+                            border-color: #fff !important;
+                            padding: 0px !important;
+                        }
+
+                        .header-section .table tbody > tr, .content-section .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+
+                        .header-section .table, .table tbody > tr, td, .content-section .table, .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+                    }
+                </style>
+
+                <div class="header-section">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="25%" style="border:none !important; border:0px !important;">
+                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                </td>
+                                <td width="45%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h2 style="font-weight:bold; font-size:18px;">अनुसूचीहरू</h2>
+                                    <h2 style="font-weight:bold; font-size:18px;">अनुसूची १</h2>
+                                    <h2 style="font-weight:bold; font-size:18px; margin-top:0px;">(कार्यविधिको दफा ४(१) सँग सम्बन्धित)</h2>
+                                    <h2 style="font-weight:bold; font-size:18px; margin-top:0px;">उपभोक्ता समितिको लागत</h2>
+                                    <h2 style="font-weight:bold; font-size:18px; margin-top:0px;">सोलुदुधकुण्ड नगरपालिका</h2>
+                                </td>
+                                <td width="30%" style="border:none !important; border:0px !important;">
+                                    <img src="@ViewBag.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                @{ int i = 1;}
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="2" colspan="1" style="text-align:center;">क्र.सं.</th>
+                            <th scope="col" rowspan="2" colspan="1" style="text-align:center">उपभोक्ता समितिको नाम र ठेगाना</th>
+                            <th scope="col" colspan="4" rowspan="1" style="text-align:center">पदाधिकारीको नाम र सम्पर्क नं.</th>
+                            <th scope="col" rowspan="2" colspan="1" style="text-align:center">गठन मिति</th>
+                            <th scope="col" rowspan="2" colspan="1" style="text-align:center">बैंकको नाम</th>
+                            <th scope="col" rowspan="2" colspan="1" style="text-align:center">खाता नं.</th>
+                        </tr>
+                        <tr>
+                            <th style="width:12%;text-align:center;">अध्यक्ष</th>
+                            <th style="width:12%;text-align:center;">उपाध्यक्ष</th>
+                            <th style="width:12%;text-align:center;">सचिव</th>
+                            <th style="width:12%;text-align:center;">कोषाध्यक्ष</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Anusuchi1ViewModelList)
+                        {
+                            <tr>
+                                <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</td>
+                                <td>@item.Upabhokta_Samiti_Name</td>
+                                <td>@item.Adakshya</td>
+                                <td>@item.Upadakshya</td>
+                                <td>@item.Sachib</td>
+                                <td>@item.Koshadakshya</td>
+                                <td>@if (item.Establish_Date != null)
+                                { @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Establish_Date.Value.ToShortDateString())}</td>
+                                <td>@item.Bank_Name</td>
+                                <td>@item.Account_Number</td>
+                            </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-AddSamitiOptions').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddSamiti", "PlanningAnusuchi1")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getSamitiOptions').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+
+        $('#myModal').modal('hide')
+        $('.modal-backdrop').hide();
+
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.btn-info').click(function () {
+            $('#myModal').modal({
+                backdrop: 'static'
+            });
+        });
+    });
+</script>

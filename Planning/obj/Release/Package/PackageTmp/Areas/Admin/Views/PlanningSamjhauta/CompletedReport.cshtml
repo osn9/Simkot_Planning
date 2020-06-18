@@ -1,0 +1,202 @@
+﻿@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+
+@{
+    ViewBag.Title = "CompletedReport";
+}
+<div>
+    <h2></h2>
+</div>
+
+<div class="container">
+        <input type="button" class="btn btn-primary pull-right" value="कार्यदेश प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+    <div class="cotract_letter" id="printdiv">
+
+        <style>
+            .table tbody > tr {
+                border: none !important;
+            }
+
+            .table tr td {
+                border: none !important;
+                border-color: #f9f9f9 !important;
+                padding: 0px !important;
+            }
+
+            @@media print {
+                .table tr td {
+                    border: none !important;
+                    border: 0 !important;
+                    border-color: #fff !important;
+                    padding: 0px !important;
+                }
+
+                .table tbody > tr {
+                    border: none !important;
+                    border: 0 !important;
+                }
+
+                .table, .table tbody > tr, td {
+                    border: none !important;
+                    border: 0 !important;
+                }
+            }
+        </style>
+
+        <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td rowspan="2" style="border:none !important; border:0px !important;">
+                        <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                    </td>
+                    @if (Model.OrganizationSetupList.Count > 0)
+                    {
+                        foreach (var org in Model.OrganizationSetupList)
+                        {
+                            <td rowspan="4" style="text-align:center; border:none !important; border:0px !important;">
+                                <h1 style="font-weight:bold; font-size:30px;">@org.Organization_Name</h1>
+                                <h2 style="font-weight:bold; font-size:24px; margin-top:0px;">@org.Organization_Type</h2>
+                                <h3 style="font-weight:bold; font-size:18px; margin-top:0px;">@org.District_Name</h3>
+                                <h4 style="font-weight:bold; font-size:14px;">@org.State_Country</h4>
+                            </td>
+                            <td style="border:none !important; border:0px !important;">
+                                <img src="@org.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                            </td>
+                        }
+                    }
+                </tr>
+                <tr>
+                    <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                </tr>
+                @*<tr>
+                        <td style="border:none !important; border:0px !important;"><p><h5><strong>पत्र संख्या :</strong></h5></p></td>
+                        <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                    </tr>*@
+                <tr>
+                    <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                    <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                    <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    @*<td style="border:none !important; border:0px !important;"><p><h5><strong>चलानी नम्बर :</strong></h5></p></td>*@
+                    <td colspan="10" style="border:none !important; border:0px !important; margin-right:100px;">
+                        <p style="text-align:right; letter-spacing:1px; line-height:24px; font-weight:500; font-size:16px;"><strong>मितिः @Planning.Utility.NepaliEnglishNumber.English_Nepali(DateTime.Now.ToString("yyyy-MM-dd"))</strong></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" style="text-align:center; font-size:24px; border:none !important;"><b style="margin-top:30px; display:block;">विषय: कार्य सम्पन्न भएको ।</b></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td style="margin-top:0px;">
+                        <h4 style="margin-bottom:0px;">
+                            श्री&nbsp;
+                            @if (Model.Samjhauta_Org_Name != null)
+                            {
+                                <strong>@Model.Samjhauta_Org_Name</strong>
+                            }
+                            else
+                            { <b>........</b>}
+                            &nbsp;&nbsp;
+                        </h4>
+                        @if (Model.Representative_Address != null)
+                        {
+                            <h4 style="margin-bottom:0px; margin-top:0px !important;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>@Model.Representative_Address,</strong>&nbsp;&nbsp;</h4>
+                        }
+                    </td>
+
+                    @*<td style="margin-top:0px;">
+                            <h4 style="margin-bottom:0px;">श्री&nbsp;<strong>@Model.Samjhauta_Org_Name</strong> &nbsp;&nbsp;</h4><br />
+                            <h4 style="margin-bottom:0px; margin-top:0px !important;">&nbsp;<strong>@Model.Representative_Address</strong>&nbsp;&nbsp;</h4>
+                        </td>*@
+                </tr>
+                <tr>
+                    <td>
+                        <p style="letter-spacing:1px; line-height:30px; font-weight:500; font-size:16px; padding-top:15px; text-align:justify !important;">
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; उपरोक्त विषयमा
+                            @if (Model.OrganizationSetupList.Count > 0)
+                            {
+                                foreach (var org in Model.OrganizationSetupList)
+                                {
+                                    <strong>@org.Organization_Name</strong>
+                                }
+                            }
+                            को आ.व 
+                            @if (Model.Fiscal_Year_Record != null)
+                            {
+                               <strong>@Model.Fiscal_Year_Record</strong>
+                            }else { <b>......</b>}
+                            स्वीक्रित वजेट, नीति तथा कार्यक्रम मिति
+                            @if (Model.Project_Start_Date != null)
+                            {
+                                <strong>@Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Project_Start_Date.ToString())</strong>
+                            }
+                            else
+                            { <b>.........</b>}
+                            को न.पा.को बेेठक निर्णयानुसार यस कार्यालयको प्राविधिक को प्रतयक्ष निर्देशनमा रही मिति
+                            @if (Model.Project_Completed_Date != null)
+                            {
+                                <strong>@Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Project_Completed_Date.ToString())</strong>
+                            }
+                            else
+                            { <b>.........</b>}
+                            भित्र सम्पन्न भयो| उक्त कार्यक्रमको लागि 
+                            @if (Model.Total_Used_Amount != null)
+                            {
+                                <strong>@Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Total_Used_Amount)</strong>
+                            }
+                            else
+                            {<b>.......</b>}
+
+                            रकम खर्च/प्रयोग भएको जानकारी गराइन्छ|
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <br />
+        <table class="table" border="0" style="border:0 !important; width:100%;">
+            <tbody>
+                <tr>
+                    <td> &nbsp; </td>
+                    <td> &nbsp; </td>
+                    @*<td style="font-size:16px; text-align:right;">.................................................</td>*@
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    @*<td style="font-size:16px; text-align:right;">.................................................</td>*@
+                </tr>
+            </tbody>
+        </table>
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>

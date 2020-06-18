@@ -1,0 +1,203 @@
+﻿@model Planning.Areas.Admin.Models.PlanningEntryViewModel.PlanningEntryViewModel
+
+@*@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel*@
+
+@{
+
+    int i = 1;
+}
+
+
+
+<input type="button" class="btn btn-primary pull-right" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+
+<div class="tbl_div" style="padding:60px;" id="printdiv">
+
+    <style type="text/css" media="print">
+        @@media print {
+            tr.anusuchiHeading {
+                background-color: #333333 !important;
+                -webkit-print-color-adjust: exact;
+                border-color: #ffffff !important;
+                color: #ffffff !important;
+            }
+        }
+
+        @@media print {
+            .anusuchiHeading th {
+                color: #333333 !important;
+                border-color: #ffffff !important;
+                color: #ffffff !important;
+                padding: 8px !important;
+            }
+        }
+
+        @@media print {
+            tr.anusuchiHeading2 {
+                background-color: #666666 !important;
+                -webkit-print-color-adjust: exact;
+                border-color: #ffffff !important;
+                color: #ffffff !important;
+            }
+        }
+
+        @@media print {
+            .anusuchiHeading2 th {
+                color: #666666 !important;
+                border-color: #ffffff !important;
+                color: #ffffff !important;
+                padding: 8px !important;
+            }
+        }
+
+        @@media print {
+            tr.anusuchiHeading3 {
+                background-color: #666666 !important;
+                -webkit-print-color-adjust: exact;
+                border-color: #ffffff !important;
+                color: #ffffff !important;
+            }
+        }
+
+        @@media print {
+            .anusuchiHeading3 th {
+                color: #666666 !important;
+                border-color: #ffffff !important;
+                color: #ffffff !important;
+                padding: 8px !important;
+            }
+        }
+
+        @@media print {
+            tr.anusuchibody {
+                background-color: #eeeeee !important;
+                -webkit-print-color-adjust: exact;
+                border-color: #000000 !important;
+            }
+        }
+
+        @@media print {
+            .anusuchiBody td {
+                color: #eeeeee !important;
+                border-color: #000000 !important;
+            }
+        }
+
+        @@media print {
+            table tr.anusuchiBody {
+                background-color: #eeeeee !important;
+                border-color: #ffffff !important;
+            }
+        }
+
+        @@media print {
+        }
+
+    </style>
+
+    @*<table width="100%" border="0" style="text-align:center; font-size:14px !important;" cellpadding="8">
+        <tr>
+            <td> <strong>नेपाल सरकार</strong> </td>
+        </tr>
+        <tr>
+            <td> <strong>  @Model.Organization_Name </strong> </td>
+        </tr>
+        <tr>
+            <td> <strong>आ.ब.&nbsp;&nbsp;  &nbsp;&nbsp;</strong> </td>
+        </tr>
+    </table>*@
+
+    <table width="100%" border="0" style="text-align:center; font-size:14px !important;" cellpadding="8">
+        <tr>
+            <td><img src="~/img/gov-logo.png" style="max-height:150px; max-width:100%;" /></td>
+            <td>
+                <h2><strong>नेपाल सरकार</strong></h2>
+                <h3><strong> @Model.Organization_Name</strong></h3>
+                <h4><strong>आ.ब.&nbsp;&nbsp; @Model.FiscalYear &nbsp;&nbsp; </strong></h4>
+            </td>
+        </tr>
+    </table>
+
+    <p></p><br />
+
+    @foreach (var workarea in Model.AnuSuchiViewModelListByWorkArea)
+    {
+        <div class="work-area-header"><h4>नगर स्तरीय @Planning.Utility.CommonUtility.GetWorkAreaNameById(workarea.Work_Area) तर्फको योजनाहरुको विवरण</h4></div>
+
+    <table width="100%" border="1" cellpadding="8" cellspacing="0" style="font-size:12px !important; border-color:#ffffff !important;">
+
+        <tr class="anusuchiHeading" style="background:#333333; color:#ffffff; border-color:#ffffff;">
+            <th scope="col" rowspan="2">सि.न.</th>
+            <th scope="col" rowspan="2">योजनाको नाम</th>
+            <th scope="col" rowspan="2">सम्झोेता मिति</th>
+            <th scope="col" rowspan="2">सम्पन्न गर्नुपर्ने मिति</th>
+            <th scope="col" rowspan="2">विनियोजित रकम</th>
+            <th scope="col" colspan="3">अनुमानित लागत</th>
+            <th scope="col" rowspan="2">पहिलो किस्ता</th>
+            <th scope="col" rowspan="2">अन्तिम किस्ता</th>
+            <th scope="col" rowspan="2">कार्य सम्पन्न मिति</th>
+            <th scope="col" colspan="3">सम्पन्न योजना भएको खर्च</th>
+        </tr>
+        <tr class="anusuchiHeading" style="background:#333333; color:#ffffff; border-color:#ffffff;">
+            <th scope="col">कुल ल.ई.रु</th>
+            <th scope="col">अनुदान रु.</th>
+            <th scope="col">जन सहभागिता</th>
+            <th scope="col">मुल्याङ्कन</th>
+            <th scope="col">जम्मा भुक्तानि</th>
+            <th scope="col">ठेक्का/उ.स</th>
+        </tr>
+        
+        @foreach (var item in Model.NagarWiseViewModelList)
+        {
+
+           
+                var municipality = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Nagarpalika_Amt);
+                var upabhokta = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.UpaBhoktaSamiti_Amt);
+                var other = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Other_Amt);
+                var janasaha = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.JanaSahaBhagita_Amt);
+                decimal muni = Convert.ToDecimal(municipality);
+                decimal upabh = Convert.ToDecimal(upabhokta);
+                decimal othe = Convert.ToDecimal(other);
+                decimal jana = Convert.ToDecimal(janasaha);
+                decimal totalAmtSource = muni + upabh + othe + jana ;
+                var TotalSourceAmount = Planning.Utility.NepaliEnglishNumber.English_Nepali(totalAmtSource.ToString());
+
+           
+
+
+
+        <tr class="anusuchiBody" style="background-color:#f4f4f4 !important; border-color:#999999 !important;">
+            <td scope="col">@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</td>
+            <td scope="col">@item.Planning_Name</td>
+            <td scope="col">@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Planning_Start_Date.Value.ToShortDateString())</td>
+            <td scope="col">@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Planning_End_Date.Value.ToShortDateString())</td>
+            <td scope="col">@item.Amount_Estimate</td>
+            <td scope="col"></td>
+            <td scope="col">@TotalSourceAmount</td>
+            <td scope="col">@item.JanaSahaBhagita_Amt</td>
+            <td scope="col">@item.JanaSahaBhagita_Amt</td>
+            <td scope="col"></td>
+            <td scope="col"></td>
+            <td scope="col"></td>
+            <td scope="col"></td>
+            <td scope="col"></td>
+        </tr>
+            i++;
+        }
+
+    </table>
+    }
+
+</div>
+
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML = "<html><head><title></title></head><body>" + divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>

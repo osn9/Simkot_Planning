@@ -1,0 +1,186 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi4ViewModel
+
+@{
+    ViewBag.Title = "Anusuchi4";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+
+<div class="padding-md">
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <h3 class="step_ttl">खर्च सार्वजनिक सूचना फारम</h3>
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well"}))
+                            {
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>आयोजनाको नामः</label>
+                                                @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @class = "form-control"} })
+                                                @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>आयोजनाको स्थलः</label>
+                                                @Html.EditorFor(model => model.Project_Place, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Project_Place, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>विनियोजित वजेटः</label>
+                                                @Html.EditorFor(model => model.Project_Estimated_Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Project_Estimated_Amount, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>आयोजना स्विकृत भएको आ.वः</label>
+                                                @Html.EditorFor(model => model.Fiscal_Year, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Fiscal_Year, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>आयोजना सम्झोेता भएको मितिः</label>
+                                                @Html.EditorFor(model => model.Project_Approval_Date, new { htmlAttributes = new { @class = "form-control  nepali-calendar" } })
+                                                @Html.ValidationMessageFor(model => model.Project_Approval_Date, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>काम सम्पन्न गर्नु पर्ने मितिः</label>
+                                                @Html.EditorFor(model => model.Project_To_Finish_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                                                @Html.ValidationMessageFor(model => model.Project_To_Finish_Date, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>काम सम्पन्न भएको मितिः</label>
+                                                @Html.EditorFor(model => model.Project_Ended_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                                                @Html.ValidationMessageFor(model => model.Project_Ended_Date, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>उ.स.बेेठकले खर्च स्विकृत गरेको मितिः</label>
+                                                @Html.EditorFor(model => model.Samiti_Expenses_Approval_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                                                @Html.ValidationMessageFor(model => model.Samiti_Expenses_Approval_Date, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="detail" style="font-size:16px; font-weight:500;">आम्दानी र खर्चको विवरणः</div>
+                                        <table class="table table-bordered" style="border-color:black">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" colspan="2"  style="text-align:center">आम्दानी</th>
+                                                    <th scope="col" colspan="2"  style="text-align:center">खर्च</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>विवरण</th>
+                                                    <th>रकम</th>
+                                                    <th>विवरण</th>
+                                                    <th>रकम</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                               <tr>
+                                                   <td>प्रथम किस्ता</td>
+                                                   <td>@Html.TextBoxFor(model=>model.First_Kista)</td>
+                                                   <td>ज्याला</td>
+                                                   <td>@Html.TextBoxFor(model => model.Jyalla)</td>
+                                               </tr>
+                                                <tr>
+                                                    <td>दोस्रो किस्ता</td>
+                                                    <td>@Html.TextBoxFor(model => model.Second_Kista)</td>
+                                                    <td>निर्माण सामाग्री खरिद</td>
+                                                    <td>@Html.TextBoxFor(model => model.Nirman_Samagri_Kharid)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>तेस्रो किस्ता</td>
+                                                    <td>@Html.TextBoxFor(model => model.Third_Kista)</td>
+                                                    <td>ढुवानी</td>
+                                                    <td>@Html.TextBoxFor(model => model.Dhuwani)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>जनश्रमदान</td>
+                                                    <td>@Html.TextBoxFor(model => model.Janashram)</td>
+                                                    <td>भाडा</td>
+                                                    <td>@Html.TextBoxFor(model => model.Bhada)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>वस्तुगत सहायता</td>
+                                                    <td>@Html.TextBoxFor(model => model.Bastugat_Sahayata)</td>
+                                                    <td>व्यवस्थापन खर्च</td>
+                                                    <td>@Html.TextBoxFor(model => model.Bawestapan_Kharcha)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>लागत सहभागिता</td>
+                                                    <td>@Html.TextBoxFor(model => model.Lagat_Sahabhagita)</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-lg-3  col-md-4 control-label"></label>
+                                        <div class="col-lg-7 col-md-7">
+                                            <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            }
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    $('#Project_Approval_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    $('#Project_To_Finish_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    $('#Project_Ended_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    $('#Samiti_Expenses_Approval_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+</script>
+
+
+
+

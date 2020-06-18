@@ -1,0 +1,443 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi3ViewModel
+
+@{
+    ViewBag.Title = "EditAnusuchi3";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+
+<div class="padding-md">
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <h3 class="step_ttl">सार्वजनिक परिक्षण फारमको ढाँचा</h3>
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well" }))
+                            {
+                                @Html.HiddenFor(model=>model.AnuSuchi3_Id)
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="detail" style="font-size:16px; font-weight:500;">१. आयोजना</div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>आयोजनाको नाम</label>
+                                                @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>स्थल</label>
+                                                @Html.EditorFor(model => model.Project_Place, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Project_Place, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>लागत अनुमान</label>
+                                                @Html.EditorFor(model => model.Estimated_Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Estimated_Amount, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>आयोजना शुरु हुने मिति</label>
+                                                @Html.EditorFor(model => model.Project_Start_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                                                @Html.ValidationMessageFor(model => model.Project_Start_Date, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>आयोजना सम्पन्न हुने मिति</label>
+                                                @Html.EditorFor(model => model.Project_End_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                                                @Html.ValidationMessageFor(model => model.Project_End_Date, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="detail" style="font-size:16px; font-weight:500;">२. उपभोक्ता समिति-सामुदायिक</div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>नाम</label>
+                                                @Html.EditorFor(model => model.Upabhokta_Samiti_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Upabhokta_Samiti_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>अध्यक्षको नाम</label>
+                                                @Html.EditorFor(model => model.Adakshya_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Adakshya_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>सदस्य संख्या</label>
+                                                @Html.EditorFor(model => model.Total_Members, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Total_Members, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>महिला</label>
+                                                @Html.EditorFor(model => model.Female_No, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Female_No, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>पुरुष</label>
+                                                @Html.EditorFor(model => model.Male_No, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Male_No, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="detail" style="font-size:16px; font-weight:500;">३. आम्दानी खर्चको विवरण</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="box-tools col-md-12">
+                                            <label>क) आम्दानीतर्फ जम्मा</label>
+                                            <button type="button" id="btn-AddAnusuchi3Income" class="btn btn-primary btn-add pull-right"><i class="fa fa-plus"></i>&nbsp; आम्दानी थप्नुहोस्</button>
+                                        </div>
+                                        @if (Model.Anusuchi3IncomeViewModelList.Count > 0)
+                                        {
+                                            foreach (var item in Model.Anusuchi3IncomeViewModelList)
+                                            {
+                                                @Html.Partial("_Anusuchi3Income", item)
+                                            }
+                                        }
+                                        else
+                                        {
+                                            @Html.Partial("_Anusuchi3Income")
+                                        }
+                                        <div id="getAnusuchi3Income">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="box-tools col-md-12">
+                                            <label>ख) खर्चतर्फ</label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-2" style="text-align:center;"><strong></strong></div>
+                                        <div class="col-md-4" style="text-align:center;"><strong>खर्चको विवरण</strong></div>
+                                        <div class="col-md-2" style="text-align:center;"><strong>दर</strong></div>
+                                        <div class="col-md-2" style="text-align:center;"><strong>परिमाण</strong></div>
+                                        <div class="col-md-2" style="text-align:center;"><strong>जम्मा</strong></div>
+                                        <div class="clearfix"></div>
+                                       
+
+                                        <div id="Anusuchi3ExpensesFormgroup" class="form-group">
+                                            @if (Model.Anusuchi3ExpensesViewModelList.Count() > 0 || Model.Anusuchi3ExpensesViewModelList2.Count() > 0 || Model.Anusuchi3ExpensesViewModelList3.Count() > 0 || Model.Anusuchi3ExpensesViewModelList4.Count() > 0)
+                                            {
+                                                if (Model.Anusuchi3ExpensesViewModelList.Count() > 0)
+                                                {
+                                                    foreach (var item in Model.Anusuchi3ExpensesViewModelList)
+                                                    {
+                                                        @Html.Partial("_Anusuchi3Expenses", item)
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @Html.Partial("_Anusuchi3Expenses")
+                                                }
+                                                if (Model.Anusuchi3ExpensesViewModelList2.Count() > 0)
+                                                {
+                                                    foreach (var item in Model.Anusuchi3ExpensesViewModelList2)
+                                                    {
+                                                        @Html.Partial("_Anusuchi3Expenses2", item)
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @Html.Partial("_Anusuchi3Expenses2")
+                                                }
+                                                if (Model.Anusuchi3ExpensesViewModelList3.Count() > 0)
+                                                {
+                                                    foreach (var item in Model.Anusuchi3ExpensesViewModelList3)
+                                                    {
+                                                        @Html.Partial("_Anusuchi3Expenses3", item)
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @Html.Partial("_Anusuchi3Expenses3")
+                                                }
+                                                if (Model.Anusuchi3ExpensesViewModelList4.Count() > 0)
+                                                {
+                                                    foreach (var item in Model.Anusuchi3ExpensesViewModelList4)
+                                                    {
+                                                        @Html.Partial("_Anusuchi3Expenses4", item)
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @Html.Partial("_Anusuchi3Expenses4")
+                                                }
+                                            }
+                                            else
+                                            {
+                                                @Html.Partial("_Anusuchi3Expenses")
+                                                @Html.Partial("_Anusuchi3Expenses2")
+                                                @Html.Partial("_Anusuchi3Expenses3")
+                                                @Html.Partial("_Anusuchi3Expenses4")
+                                            }
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="box-tools col-md-12">
+                                            <label>ग) मोेज्दात</label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-3" style="text-align:center;"><strong>विवरण</strong></div>
+                                        <div class="col-md-3" style="text-align:center;"><strong>रकम वा परिमाण</strong></div>
+                                        <div class="col-md-5" style="text-align:center;"><strong>कैफियत</strong></div>
+                                        <div class="clearfix"></div>
+                                        
+
+                                        <div id="Anusuchi3MaujatFormgroup" class="form-group">
+                                            @if (Model.Anusuchi3MaujatViewModelList.Count() > 0 || Model.Anusuchi3MaujatViewModelList2.Count() > 0 || Model.Anusuchi3MaujatViewModelList3.Count() > 0 || Model.Anusuchi3MaujatViewModelList4.Count() > 0)
+                                            {
+                                                if (Model.Anusuchi3MaujatViewModelList.Count() > 0)
+                                                {
+                                                    foreach (var item in Model.Anusuchi3MaujatViewModelList)
+                                                    {
+                                                        @Html.Partial("_Anusuchi3Maujat", item)
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @Html.Partial("_Anusuchi3Maujat")
+                                                }
+                                                if (Model.Anusuchi3MaujatViewModelList2.Count() > 0)
+                                                {
+                                                    foreach (var item in Model.Anusuchi3MaujatViewModelList2)
+                                                    {
+                                                        @Html.Partial("_Anusuchi3Maujat2", item)
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @Html.Partial("_Anusuchi3Maujat2")
+                                                }
+                                                if (Model.Anusuchi3MaujatViewModelList3.Count() > 0)
+                                                {
+                                                    foreach (var item in Model.Anusuchi3MaujatViewModelList3)
+                                                    {
+                                                        @Html.Partial("_Anusuchi3Maujat3", item)
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @Html.Partial("_Anusuchi3Maujat3")
+                                                }
+                                                if (Model.Anusuchi3MaujatViewModelList4.Count() > 0)
+                                                {
+                                                    foreach (var item in Model.Anusuchi3MaujatViewModelList4)
+                                                    {
+                                                        @Html.Partial("_Anusuchi3Maujat4", item)
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @Html.Partial("_Anusuchi3Maujat4")
+                                                }
+                                            }
+                                            else
+                                            {
+                                                @Html.Partial("_Anusuchi3Maujat")
+                                                @Html.Partial("_Anusuchi3Maujat2")
+                                                @Html.Partial("_Anusuchi3Maujat3")
+                                                @Html.Partial("_Anusuchi3Maujat4")
+                                            }
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="box-tools col-lg-12 col-md-12">
+                                            <label>घ) भूक्तानी दिन बाँकी</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-8"><label>विवरण</label>@Html.TextAreaFor(model => model.Bhuktani_Details, new { @class = "form-control" }) @Html.ValidationMessageFor(model => model.Bhuktani_Details, "", new { @class = "text-danger" })</div>
+                                            <div class="col-md-4"><label>रकम वा परिमाण</label>@Html.TextBoxFor(model => model.Bhuktani_Amount, new { @class = "form-control" }) @Html.ValidationMessageFor(model => model.Bhuktani_Amount, "", new { @class = "text-danger" })</div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="detail" style="font-size:16px; font-weight:500;">४. सम्पन्न आयोजनाको लक्ष्य तथा प्रगति विवरण</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-4"><label>कामको विवरण</label>@Html.TextAreaFor(model => model.Work_Details, new { @class = "form-control" }) @Html.ValidationMessageFor(model => model.Work_Details, "", new { @class = "text-danger" })</div>
+                                            <div class="col-md-4"><label>लक्ष्य</label>@Html.TextAreaFor(model => model.Work_Plan, new { @class = "form-control" }) @Html.ValidationMessageFor(model => model.Work_Plan, "", new { @class = "text-danger" })</div>
+                                            <div class="col-md-4"><label>प्रगति</label>@Html.TextAreaFor(model => model.Work_Progress, new { @class = "form-control" }) @Html.ValidationMessageFor(model => model.Work_Progress, "", new { @class = "text-danger" })</div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="detail" style="font-size:16px; font-weight:500;">५. आयोजनाले पुर्याएको लाभ तथा प्रत्यक्ष रुपमा लाभन्वित जनसंख्या (आयोजना सञ्चालन भएको स्थानका उपभक्ताहरु)</div>
+                                        <div class="col-md-3" style="margin-top: -28px; margin-left: 710px;">@Html.TextBoxFor(model => model.Total_Benificial_No, new { @class = "form-control" })</div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="detail" style="font-size:16px; font-weight:500;">६. आयोजना सञ्चालन गर्दा आयोजक संस्थामा कामको जिम्मेवारी बाँडफाँड (कस कसले कस्तो कस्तो कामको जिम्मेवारी लिएका थिएसोखुलाउने) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="box-tools col-md-8">
+                                            <label>उपस्थितिः</label>
+                                            <button type="button" id="btn-AddAnusuchi3Members" class="btn btn-primary btn-add pull-right"><i class="fa fa-plus"></i>&nbsp; सदस्य जिम्मेवारी थप्नुहोस्</button>
+                                        </div>
+                                        @if (Model.Anusuchi3WorkDivisionViewModelList.Count > 0)
+                                        {
+                                            foreach (var item in Model.Anusuchi3WorkDivisionViewModelList)
+                                            {
+                                                @Html.Partial("_Anusuchi3Members", item)
+                                            }
+                                        }
+                                        else
+                                        {
+                                            @Html.Partial("_Anusuchi3Members")
+                                        }
+                                        <div id="getAnusuchi3Members">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="row">
+                                        <div class="detail" style="font-size:16px; font-weight:500;">रोहबरः</div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>नामथर</label>
+                                                @Html.EditorFor(model => model.Rohabar_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Rohabar_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>पद</label>
+                                                @Html.EditorFor(model => model.Rohabar_Position, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Rohabar_Position, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>मिति</label>
+                                                @Html.EditorFor(model => model.Rohabar_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                                                @Html.ValidationMessageFor(model => model.Rohabar_Date, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3  col-md-4 control-label"></label>
+                                        <div class="col-lg-7 col-md-7">
+                                            <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            }
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<script>
+    $('#Rohabar_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    $('#Project_Start_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+    $('#Project_End_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+</script>
+
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-AddAnusuchi3Income').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddMoreIncome", "PlanningAnusuchi3")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getAnusuchi3Income').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-AddAnusuchi3Members').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddMoreMember", "PlanningAnusuchi3")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getAnusuchi3Members').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+
+
+
+
+

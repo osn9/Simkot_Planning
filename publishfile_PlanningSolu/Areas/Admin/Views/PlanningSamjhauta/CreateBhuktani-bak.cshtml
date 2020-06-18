@@ -1,0 +1,118 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningBhuktaniViewModel.PlanningBhuktaniViewModel
+
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="padding-md">
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <div class="main-content">
+
+                                @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    @Html.ValidationSummary()
+                                    <div class="col-md-12">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8">
+                                            <h3>भुक्तानी </h3>
+                                            <br /><br /><br />
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-12">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">आर्थिक वर्षः</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Fiscal_Year_Record, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">वजेट शिर्षकः</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Budget_Title, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">निर्माण उपभोक्ताः</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Nirman_Upabhokta, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">वजेट शिर्षक नं.:</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Budget_Title_Number, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">आयोजना / कार्यक्रम: </div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Aayojana_Karyakram, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="col-md-4"><h5><strong>आयोजनाको विवरणः</strong></h5></div>
+                                        <div class="col-md-8"></div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">कुल ल.ई.</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Kul_La_Ie, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">न.पा.विनियोजित</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.NaPa_Binayajit, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">अन्य</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Otheers, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">जन सहभागिता</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Jana_Sahabagita, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">पेश्की / रनिङ भुक्तानी</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Peski, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">अन्तिम प्राविधिक मूल्याङ्कन</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Technical_Amount, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">कन्टिन्जेन्सी</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Kantigenci, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">बाँकी भुक्तानी रकम</div>
+                                        <div class="col-md-6 form-group">@Html.TextBoxFor(model => model.Remaining_Bhuktani_Amount, new { @class = "form-control" })</div>
+                                        <div class="clearfix"></div>
+                                        <br /><br />
+
+                                    </div>
+
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3  col-md-4 control-label"></label>
+                                            <div class="col-lg-7 col-md-7">
+                                                <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                                                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("BhuktaniIndex", "PlanningSamjhauta")'">मुख्य मेनु</button>
+                                            </div>
+                                        </div>
+
+
+                                }
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+

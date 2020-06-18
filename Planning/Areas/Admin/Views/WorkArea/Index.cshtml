@@ -1,0 +1,143 @@
+﻿@model IEnumerable<Planning.Areas.Admin.Models.WorkAreaViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div class="padding-md">
+    
+    @if (TempData["SuccessMsg"] != null)
+    {
+        <script>alert("@TempData["SuccessMsg"]");</script>
+    }
+
+    @if (TempData["Msg"] != null)
+    {
+        <script>alert("@TempData["Msg"]");</script>
+    }
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="header-list" style="text-align: center">
+                    <h2>कार्यक्षेत्र</h2>
+                </div>
+                @*<hr />*@
+                <div class="panel-heading">
+                    <button type="button" class="btn btn-success btn-compose" onclick="OpenNewForm()"><span class="glyphicon glyphicon-plus"></span> नयाँ कार्यक्षेत्र राख्नुहोस्</button>
+                        @*@Html.ActionLink("नयाँ सम्झौता राख्नुहोस्", "PlanningSamjhauta", null, new { @class = "btn btn-success btn_add btn-sm" })*@
+                    </div>
+                <div class="clearfix"></div>
+                <hr />
+                <table id="example" class="table table-bordered table-condensed table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                क्रम संख्या
+                            </th>
+                            <th>
+                                कार्यक्षेत्रको नाम
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString()).
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Work_Area_Name)
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-compose" onclick="OpenEditForm(this)" data-id="@item.Work_Area_Id" data-name="@item.Work_Area_Name"><span class="fa fa-edit"></span> संशोधन</button>
+                                <button type="button" class="btn btn-danger btn-compose" onclick="Del(@item.Work_Area_Id)"><span class="fa fa-trash-o"></span> हटाउनुहोस् </button>
+                            </td>
+                        </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="padding:35px 50px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 style="text-align:center"><strong id="FormName"></strong></h4>
+            </div>
+            <div class="modal-body" style="padding:40px 50px;">
+                <form role="form" action="@Url.Action("Create", "WorkArea")" method="post">
+                    <input type="hidden" id="Work_Area_Id" name="Work_Area_Id" />
+                    <div class="form-group">
+                        <label for="Work_Area_Name"><span class="glyphicon glyphicon-user"></span> &nbsp; कार्यक्षेत्र </label>
+                        <input type="text" class="form-control" id="Work_Area_Name" name="Work_Area_Name" placeholder="Enter Work Area Name">
+                    </div>
+
+                    <button type="submit" style="text-align:center" class="btn btn-success btn-compose" id="btnName"><span class="glyphicon glyphicon-plus"></span> Update</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function OpenNewForm()
+    {
+        $('#FormName').html(" कार्यक्षेत्र बनाउनु होस ");
+        $('#btnName').html("राख्नुहोस");
+        $("#myModal").modal();
+        //alert("Test")
+    }
+
+    function OpenEditForm(e)
+    {
+        var id = $(e).attr("data-id");
+        var name = $(e).attr("data-name");
+
+        $('#Work_Area_Id').val(id);
+        $('#Work_Area_Name').val(name);
+        $('#FormName').html("कार्यक्षेत्र संसोधन कर्नुहोस");
+        $('#btnName').html("सम्पादन ");
+        $("#myModal").modal();
+    }
+
+    function Del(id)
+    {
+        var Confirmation = confirm("के तपाई कार्यक्षेत्र हटाउन चाहानु हुन्छ ?");
+        if (Confirmation)
+        {
+            $.ajax({
+            type: 'GET',
+            url: "@Url.Action("Delete", "WorkArea")",
+                data: {id : id},
+            success: function (result)
+            {
+                debugger;
+                if (result)
+                {
+                    alert("तपाईंको डाटा सफलतापूर्वक मेटियो !");
+                    window.location.reload();
+                } else
+                {
+                    alert("तपाईको डेटा सुरक्षित छ कृपया पुन: प्रयास गर्नुहोस्!");
+                }
+            }
+        });
+        }
+    }
+</script>
+

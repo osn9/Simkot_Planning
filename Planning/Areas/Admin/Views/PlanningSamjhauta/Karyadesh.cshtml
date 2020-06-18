@@ -1,0 +1,491 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .cotract_letter {
+        border: 1px solid #ccc;
+        margin: 30px 0px;
+        padding: 30px;
+    }
+
+        .cotract_letter header-sec img {
+            max-width: 100%;
+            max-height: 100px;
+        }
+
+    .header-section h1 {
+        font-size: 72px;
+        letter-spacing: 5px;
+    }
+
+    .header-section h2 {
+        font-size: 48px;
+    }
+
+    .header-section h3, .subject h3 {
+        font-size: 36px;
+    }
+
+    .header-section h4 {
+        font-size: 30px;
+        margin-top: 15px;
+    }
+
+    .header-section h1, .header-section h2, .header-section h3,
+    .header-section h4, .subject h3, .letter_footer h3, .letter_content h4 {
+        font-weight: 600;
+    }
+
+    .subject h3 {
+        margin-top: 60px;
+    }
+
+    .letter_footer {
+        margin-top: 60px;
+    }
+
+        .letter_footer, .letter_footer strong, .letter_content {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+            .letter_footer ul {
+                margin-top: 15px;
+            }
+
+                .letter_footer ul li {
+                    list-style-type: none;
+                }
+
+                    .letter_footer ul li span {
+                        padding-left: 20px;
+                        vertical-align: middle;
+                        display: inline-block;
+                        position: relative;
+                        margin-top: -14px;
+                    }
+
+    .personName {
+        border-style: none;
+    }
+
+        .personName:hover {
+            border-style: none;
+        }
+
+        .personName:focus {
+            border-style: none;
+        }
+
+    .btn.btn-primary.pull-right {
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+
+    .table tbody > tr {
+        border: none !important;
+    }
+
+    .table tr td {
+        border: none !important;
+        border-color: #f9f9f9 !important;
+        padding: 0px;
+    }
+
+    @@media print {
+        .table tr td {
+            border: none !important;
+            border-color: #fff !important;
+            padding: 0px !important;
+        }
+
+        .table tbody > tr {
+            border: none !important;
+        }
+
+        .table, .table tbody > tr, td {
+            border: 0 !important;
+        }
+    }
+</style>
+
+
+@using (Html.BeginForm("Karyadesh", "PlanningSamjhauta", FormMethod.Get))
+{
+    <fieldset>
+        <div class="row" style="margin-left:20px;">
+            <div class="col-md-3">
+                <label>आर्थिक वर्ष</label>
+                @*@Html.TextBox("FiscalYear", null, new { @class = "form-control", @required = "required" })*@
+                @Html.DropDownList("FiscalYear", Planning.Utility.CommonUtility.GetFiscalYearList(), "-- छान्नुहोस --", new { @class = "form-control", @OnChange = "GetProjectNameByFiscalYear()" })
+            </div>
+            <div class="col-md-3">
+                <label>आयोजनाको नाम</label>
+                @*@Html.TextBox("ProjectName", null, new { @class = "form-control", @required = "required" })*@
+                @Html.DropDownList("ProjectName", Planning.Utility.CommonUtility.GetProjectNameList(), "-- छान्नुहोस --", new { @class = "form-control " })
+            </div>
+            @*<div class="col-md-3">
+                    <label>सम्झौता गर्ने संस्थाको नाम</label>
+                    @Html.TextBox("OrgName", null, new { @class = "form-control" })
+                </div>*@
+            <div class="col-md-2" style="padding-left:0px; padding-top:20px;">
+                <input type="submit" name="submit" id="submit" value="खाेज्नुहाेस" class="btn btn-primary" />
+            </div>
+        </div>
+    </fieldset>
+}
+
+@if (Model.KaryadeshReportList != null)
+{
+    foreach (var item in Model.KaryadeshReportList)
+    {
+        <div class="container">
+            <input type="button" class="btn btn-primary pull-right" value="कार्यदेश प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+            <div class="cotract_letter" id="printdiv">
+
+                <style>
+                    .table tbody > tr {
+                        border: none !important;
+                    }
+
+                    .table tr td {
+                        border: none !important;
+                        border-color: #f9f9f9 !important;
+                        padding: 0px !important;
+                    }
+
+                    @@media print {
+                        .table tr td {
+                            border: none !important;
+                            border: 0 !important;
+                            border-color: #fff !important;
+                            padding: 0px !important;
+                        }
+
+                        .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+
+                        .table, .table tbody > tr, td {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+                    }
+                </style>
+
+                <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" style="border:none !important; border:0px !important;">
+                                <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                            </td>
+                            @if (Model.OrganizationSetupList.Count > 0)
+                            {
+                                foreach (var org in Model.OrganizationSetupList)
+                                {
+                                    <td rowspan="4" style="text-align:center; border:none !important; border:0px !important;">
+                                        <h1 style="font-weight:bold; font-size:30px;">@org.Organization_Name</h1>
+                                        <h2 style="font-weight:bold; font-size:24px; margin-top:0px;">@org.Organization_Type</h2>
+                                        <h3 style="font-weight:bold; font-size:18px; margin-top:0px;">@org.District_Name</h3>
+                                        <h4 style="font-weight:bold; font-size:14px;">@org.State_Country</h4>
+                                    </td>
+                                    <td style="border:none !important; border:0px !important;">
+                                        <img src="@org.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="border:none !important; border:0px !important;"><p><h5><strong>पत्र संख्या :</strong></h5></p></td>
+                            <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="border:none !important; border:0px !important;"><p><h5><strong>चलानी नम्बर :</strong></h5></p></td>
+                            <td style="border:none !important; border:0px !important;">
+                                @{ var date = DateTime.Now;
+                                    var currentEnglishDate = date.ToShortDateString();
+                                    var currentNepaliDate = @Planning.Utility.CommonUtility.getNepaliDate(currentEnglishDate);
+                                }
+                                <p style="letter-spacing:1px; line-height:24px; font-weight:500; font-size:16px;"><strong>मितिः @Planning.Utility.NepaliEnglishNumber.English_Nepali(currentNepaliDate)</strong></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align:center; font-size:24px; border:none !important;"><b style="margin-top:10px; display:block;">विषय: कार्य आदेश दिएको ।</b></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td style="margin-top:0px;">
+                                <h4 style="margin-bottom:0px;">श्री&nbsp;<strong>@item.Adakshya</strong> &nbsp;&nbsp;</h4><br />
+
+                                @*<h4 style="margin-bottom:0px; margin-top:0px !important;">&nbsp;<strong>@item.Representative_Address</strong>&nbsp;&nbsp;</h4>*@
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h4 style="margin-bottom:0px;">अध्यक्ष</h4></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @{
+                                    var projectStartDate = "";
+                                    var Project_End_Date = "";
+                                    if (item.Project_Start_Date != null)
+                                    {
+                                        var proStartDate = item.Project_Start_Date;
+                                        projectStartDate = Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(proStartDate));
+                                    }
+                                    if (item.Project_End_Date != null)
+                                    {
+                                        var proEndDate = item.Project_End_Date;
+                                        Project_End_Date = Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(proEndDate));
+                                    }
+                                }
+                                <p style="letter-spacing:1px; line-height:30px; font-weight:500; font-size:16px; padding-top:15px; text-align:justify !important;">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;           उपरोक्त विषयमा आ.व <strong>@item.Fiscal_Year_Record</strong>  को <strong>
+                                        @if (item.Planning_Type == "O")
+                                        {<span> वडा स्तरिय</span> }
+                                        else if (item.Planning_Type == "N")
+                                        { <span> नगर स्तरिय</span>}
+                                    </strong> कार्यक्रमवाट <strong>  @item.Samjhauta_Org_Name</strong> उ.स.त्रि.न.पा बीच  <strong> @item.Project_Name </strong>  कार्यको लागि मिति <strong>
+                                        @if (item.Municipality_Manjuri_Date!=null)
+                                        {
+                                            @Planning.Utility.NepaliEnglishNumber.English_Nepali(@Planning.Utility.CommonUtility.getNepaliDate(@item.Municipality_Manjuri_Date.ToString()))
+                                        }
+                                </strong> मा भएको सम्झोेता
+                                बमोजिम यस कार्यलयको प्राविधिकको प्रत्यक्ष निर्देशनमा गुणस्तरीय र सम्झोेतामा उल्लेख भएको समय भित्र नै योजना सम्पन्न गर्न हुन कार्यदेश दिइएको छ ।
+
+
+
+
+
+
+
+
+
+
+
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <br />
+                <br />
+                <table class="table" border="0" style="border:0 !important; width:100%;">
+                    <tbody>
+                        <tr>
+                            <td> &nbsp; </td>
+                            <td> &nbsp; </td>
+                            <td style="font-size:16px; text-align:right;">.................................................</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td style="font-size:16px; text-align:right;"><span style="display:block; padding-top:15px;"> शहरी  पूर्वाधार   साखा   </span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <h3 style="padding-top:80px; font-weight:600;font-size:16px; text-decoration:underline;">वोधार्थ</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><h4 style="font-size:16px;">१. &nbsp;श्री आर्थिक प्रशासन शाखा </h4></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><h4 style="font-size:16px;">२. &nbsp;वडा कार्यालय वडा नं. <strong>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Ward_No.ToString())</strong>&nbsp;&nbsp;आवश्यक निरीक्षण हुन </h4></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    }
+
+}
+else
+{
+
+    <div class="container">
+        <div class="cotract_letter" id="printdiv">
+
+            <style>
+                .table tbody > tr {
+                    border: none !important;
+                }
+
+                .table tr td {
+                    border: none !important;
+                    border-color: #f9f9f9 !important;
+                    padding: 0px !important;
+                }
+
+                .table tbody > tr {
+                    border: none !important;
+                    border: 0 !important;
+                }
+
+                .table, .table tbody > tr, td {
+                    border: none !important;
+                    border: 0 !important;
+                }
+            </style>
+
+            <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td rowspan="2" style="border:none !important; border:0px !important;">
+                            <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                        </td>
+                        @if (Model.OrganizationSetupList.Count > 0)
+                        {
+                            foreach (var org in Model.OrganizationSetupList)
+                            {
+                                <td rowspan="4" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h1 style="font-weight:bold; font-size:30px;">@org.Organization_Name</h1>
+                                    <h2 style="font-weight:bold; font-size:24px; margin-top:0px;">@org.Organization_Type</h2>
+                                    <h3 style="font-weight:bold; font-size:18px; margin-top:0px;">@org.District_Name</h3>
+                                    <h4 style="font-weight:bold; font-size:14px;">@org.State_Country</h4>
+                                </td>
+                                <td style="border:none !important; border:0px !important;">
+                                    <img src="@org.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border:none !important; border:0px !important;"><p><h5><strong>पत्र संख्या :</strong></h5></p></td>
+                        <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border:none !important; border:0px !important;"><p><h5><strong>चलानी नम्बर :</strong></h5></p></td>
+                        <td style="border:none !important; border:0px !important;">
+                            <p style="letter-spacing:1px; line-height:24px; font-weight:500; font-size:16px;"><strong>मितिः .............</strong></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" style="text-align:center; font-size:24px; border:none !important;"><b style="margin-top:30px; display:block;">विषय: कार्य आदेश दिएको ।</b></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td><h4 style="margin-bottom:0px;">श्री&nbsp;&nbsp;..........&nbsp;&nbsp;</h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-bottom:0px;">अध्यक्ष</h4></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p style="letter-spacing:1px; line-height:30px; font-weight:500; font-size:16px; padding-top:15px; text-align:justify !important;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;            उपरोक्त विषयमा आ.व.......................को ............. कार्यक्रमवाट ............उ.स.त्रि.न.पा बीच  ............................. कार्यको लागि मिति ................................. मा भएको सम्झोेता बमोजिम यस कार्यलयको
+                                प्राविधिकको प्रत्यक्ष निर्देशनमा गुणस्तरीय र सम्झोेतामा उल्लेख भएको समय भित्र नै योजना सम्पन्न गर्न हुन कार्यदेश दिइएको छ ।
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+            <br />
+            <table class="table" border="0" style="border:0 !important; width:100%;">
+                <tbody>
+                    <tr>
+                        <td> &nbsp; </td>
+                        <td> &nbsp; </td>
+                        <td style="font-size:16px; text-align:right;">.................................................</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td style="font-size:16px; text-align:right;"><span style="display:block; padding-top:15px;"> शहरी  पूर्वाधार   साखा   </span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <h3 style="padding-top:80px; font-weight:600;font-size:16px; text-decoration:underline;">वोधार्थ</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><h4 style="font-size:16px;">१. &nbsp;श्री आर्थिक प्रशासन शाखा </h4></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><h4 style="font-size:16px;">२. &nbsp;वडा कार्यालय वडा नं. <strong>..........................</strong>&nbsp;&nbsp;आवश्यक निरीक्षण हुन </h4></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+}
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+            "<html><head><title></title></head><body>" +
+            divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function GetProjectNameByFiscalYear() {
+        debugger;
+        var value = $('#FiscalYear option:selected').val();
+        if (value == null || value == 0) {
+            var item = "<option>-- छान्नुहोस --</option>";
+            $("#ProjectName").html(item);
+            return false;
+        }
+        $.ajax({
+            url: "@Url.Action("GetProjectNameByFiscalYear", "PlanningSamjhauta")",
+            type: 'get',
+            datatype: "json",
+            data: { fiscalYear: value },
+            success: function (data) {
+                var items = "<option value=\"'0'\">" + "छान्नुहोस्" + "</option>";
+                $.each(data, function (i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#ProjectName").html(items);
+            },
+            failure: function () {
+                alert('An error occurred.');
+            }
+        })
+    }
+</script>
+<script>
+    $(document).ready(function () {
+
+        $("#FiscalYear option[value='']").attr('selected', true);
+        $("#ProjectName option[value='']").attr('selected', true);
+    });
+</script>

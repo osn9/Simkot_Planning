@@ -1,0 +1,434 @@
+﻿
+@model Planning.Planning.Entities.Planning_Samjhauta
+@{
+    ViewBag.Title = "SamjhautaCompleteReport";
+    Layout = null;
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    List<Planning.Planning.Entities.Kar_Katti> karkatti = new List<Planning.Planning.Entities.Kar_Katti>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from i in db.Organization_Setup select i).ToList();
+        karkatti = (from j in db.Kar_Katti select j).ToList();
+    }
+}
+
+
+<div class="tab-pane fade in active" id="fiscalYearRecord">
+    <h3 class="step_ttl">अनुसूची २ / योजना सम्झौता फारम</h3>
+    <input type="button" class="btn btn-primary pull-right" value="सम्झौता प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+    <div class="main-content" id="printdiv">
+
+        <style>
+            .header-section .table tbody > tr {
+                border: none !important;
+            }
+
+            .body-section th, .body-section td {
+                padding: 0px !important;
+                text-align: center;
+            }
+
+            .body-section td {
+                color: #000000 !important;
+                text-align: center;
+            }
+
+            @@media print {
+                .header-section .table tr td {
+                    border: none !important;
+                    border: !important;
+                    border-color: #fff !important;
+                    padding: 0px !important;
+                }
+
+                .body-section th, .body-section td {
+                    padding: 0px !important;
+                    text-align: center;
+                }
+
+                .body-section td {
+                    color: #000000 !important;
+                    text-align: center;
+                }
+            }
+        </style>
+
+
+        <div class="header-section">
+            <table class="table" border="0" style="border:0px !important; margin-top: 0px;margin-bottom: 0px;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td width="20%" style="border:none !important; border:0px !important;">
+                            <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                        </td>
+                        @if (OrganiationName.Count > 0)
+                        {
+                            using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+                            {
+                                foreach (Planning.Planning.Entities.Organization_Setup i in OrganiationName)
+                                {
+                                    <td width="60%" style="text-align:center; border:none !important; border:0px !important;">
+                                        <h2 style="margin-bottom: 8px; margin-top: 17px;">@i.Organization_Name</h2>
+                                        <h3 style="margin-top: 0px; margin-bottom: 3px;">@i.Organization_Type</h3>
+                                        <h4 style="margin-top: 0px; margin-bottom: 3px;">@i.District_Name</h4>
+                                        <h5 style="margin-top: 0px; margin-bottom: 0px;">@i.State_Country</h5>
+                                    </td>
+                                    <td width="20%" style="border:none !important; border:0px !important;">
+                                        <img src="@i.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                    </td>
+                                }
+                            }
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-12">
+            <div style="text-align:center; font-weight:bold;">
+                <h4 style="text-align:center; font-weight:bold; margin-top:10px;">विषय: योजना सम्झौता ।</h4>
+            </div>
+        </div>
+        <div class="letter_content">
+            
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:18px;">
+            <div class="row">
+                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:0px; margin-bottom:0px;">तपसिल</b> </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+                <div class="col-lg-12 col-md-12" style="font-size:12px;font-weight:bold;">
+                    @if (OrganiationName.Count > 0)
+                    {
+                        using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+                        {
+                            foreach (Planning.Planning.Entities.Organization_Setup i in OrganiationName)
+                            {
+                                <b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">@i.Organization_Name कार्यालय र उपभोक्ता समिति बीचको सम्झौता</b>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        @foreach (var item in Model.Planning_Entry)
+        {
+            <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">आर्थिक वर्षः<span> @item.FiscalYear </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                        वजेट श्रोत: @if (item.Budget_Source == 1)
+                        {<span>वितिय समानिकरण </span>}
+                        else if (item.Budget_Source == 2)
+                        { <span>प्रदेश सरकार </span>}
+                        else if (item.Budget_Source == 3)
+                        {<span> आन्तरिक श्रोत</span> }
+                    </div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                        वडा स्तरिय/नगर स्तरिय:  @if (item.Planning_Type == "O")
+                        {<span> वडा स्तरिय</span> }
+                        else if (item.Planning_Type == "N")
+                        { <span> नगर स्तरिय</span>}
+                    </div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">वडा नं.:<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Ward_No.ToString()) </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                        कार्यक्षेत्र: @if (item.Work_Area == 1)
+                        {<span>पूर्वाधार</span> }
+                        else if (item.Work_Area == 2)
+                        {<span>सामाजिक</span> }
+                        else if (item.Work_Area == 3)
+                        {<span>आर्थिक</span>  }
+                        else if (item.Work_Area == 4)
+                        { <span>वातावरण</span> }
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        }
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;">
+            सम्झौता गर्ने संस्थाको नामः @Html.DisplayFor(model => model.Samjhauta_Org_Name, new { @class = "form-control" })
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">१. सम्झौत गर्ने पक्ष र आयोजनाः</b> </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+                @foreach (var item in Model.Organization_Representative)
+            {
+                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(क) उपभोक्त समिति /समुदायमा आधारीत संस्था /गेेर सरकारी संस्थाको विवरण : सम्झौता गर्ने संस्थाको प्रतिनिधीको,</b> </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१. नामः <span> @Html.DisplayFor(model => item.Representative_Name, new { @class = "form-control" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">२. पदः <span> @Html.DisplayFor(model => item.Representative_Designition, new { @class = "form-control" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">३. ठेगानाः <span> @Html.DisplayFor(model => item.Representative_Address, new { @class = "form-control" })</span></div>
+                }
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(ख) आयोजनाको विवरणः</b> </div>
+                @foreach (var item in Model.Project_Entry_Detail)
+            {
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१. नामः <span> @Html.DisplayFor(model => item.Project_Name, new { @class = "form-control" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">२. स्थानः <span> @Html.DisplayFor(model => item.Project_Place, new { @class = "form-control" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">३. उदेश्य: <span> @Html.DisplayFor(model => item.Project_Objective, new { @class = "form-control" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">४. आयोजना स्वीकृत गर्ने निकायः <span> @Html.DisplayFor(model => item.Project_Acceptance_By, new { @class = "form-control" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                    ५.आयोजना शुरु हुने मितिः @if (item.Project_Start_Date != null)
+                                                {<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_Start_Date) </span>}
+                                                else
+                                                {<span>&nbsp;</span> }
+                </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                    ६.आयोजना सम्पन्न हुने मितिः @if (item.Project_End_Date != null)
+                                                    {<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_End_Date) </span>}
+                                                    else
+                                                    {<span>&nbsp;</span> }
+                </div>
+
+                }
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+
+                @foreach (var item in Model.Project_Source_Detail)
+            {
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">(क) लागत अनुमान रुः <span> @Html.DisplayFor(model => item.Project_estimated_Amount, new { @class = "form-control" })</span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">(ख) लागत व्यहोर्ने श्रोतहरुः <span></span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१. नेपाल सरकार <span> रु.@Html.DisplayFor(model => item.Nepal_Government, new { @class = "form-control shrot" })</span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">२. नगरपालिकावाट <span> रु.@Html.DisplayFor(model => item.Municipality, new { @class = "form-control shrot" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">३. प्रदेश <span> रु.@Html.DisplayFor(model => item.State, new { @class = "form-control shrot" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">४. गेेर सरकारी संघ संस्थाबाट <span> रु.@Html.DisplayFor(model => item.NGO_INGO, new { @class = "form-control shrot" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">५. समुदायमा आधारित संस्थाबाट <span> रु.@Html.DisplayFor(model => item.Community_Org, new { @class = "form-control shrot" })</span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">६. विदेशी दातृ संघ संस्थाबाट <span> रु.@Html.DisplayFor(model => item.Foreign_Org, new { @class = "form-control shrot" })</span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">७. उपभोक्ता समितिवाट नगद <span> रु.@Html.DisplayFor(model => item.Public_Community, new { @class = "form-control shrot" })</span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">श्रमदान <span> रु.@Html.DisplayFor(model => item.Loan_Grant, new { @class = "form-control shrot" })</span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">८. अन्यवाट <span> रु.@Html.DisplayFor(model => item.Other_Source, new { @class = "form-control shrot" })</span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>जम्मा रु. <span id="TotalSum"></span></b></div>
+
+                }
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">२. आयोजनावाट लाभान्वित हुने (प्रतिशतमा):</b> </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+
+                @foreach (var item in Model.Beneficiaries_Group)
+            {
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१. घर संख्याः <span> @Html.DisplayFor(model => item.Total_House, new { @class = "form-control" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">२. जनसंख्याः <span> महिला:- @Html.DisplayFor(model => item.Total_Male, new { @class = "form-control" }) जना</span>&nbsp;&nbsp;&nbsp;<span>पुरुष:- @Html.DisplayFor(model => item.Total_Female, new { @class = "form-control" }) जना</span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">३. समुदायः <span> @Html.DisplayFor(model => item.Community, new { @class = "form-control" })</span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">४. अन्यः- समुदायमा आधारीत / गेेर सरकारी संस्थाः <span> @Html.DisplayFor(model => item.Other, new { @class = "form-control" })</span></div>
+
+                }
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">३. उपभोक्त समिति /गैर सरकारी संस्था /समुदायमा आधारीत संस्था सम्बन्धि विवरण :</b> </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+                @foreach (var item in Model.Samiti_Detail)
+            {
+                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;">
+                    <b>(क) समिति गठन भएको मितिः</b> @if (item.Samiti_Estd_Date != null)
+                        {<span>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Samiti_Estd_Date.Value.ToShortDateString())</span>}
+                        else
+                        {<span>&nbsp;</span> }
+                </div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(ख) पदाधिकारीको नाम र ठेगानाः</b> </div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१. अध्यक्षः <span> @Html.DisplayFor(model => item.Adakshya, new { @class = "form-control" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">२. सचिवः <span> @Html.DisplayFor(model => item.Sachib, new { @class = "form-control" }) </span></div>
+
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">३. कोषाध्यक्षः <span> @Html.DisplayFor(model => item.Koshadakshya, new { @class = "form-control" })</span></div>
+                }
+
+                @{ int m = 4;}
+                @foreach (var memb in Model.UpaBhokta_Samiti_Members_Details)
+            {
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">@Planning.Utility.NepaliEnglishNumber.English_Nepali(m.ToString()). सदस्य: <span> @Html.DisplayFor(model => memb.MemberName, new { @class = "form-control" })</span></div>
+                    m++;
+                }
+
+                @foreach (var item in Model.Samiti_Detail)
+            {
+                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(ग) समिति गठन गर्दा उपस्थित लाभान्वितको संख्याः</b> <span>@Html.DisplayFor(model => item.Beneficiaries_Attendance, new { @class = "form-control" })</span> </div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(घ) समिति गठन गर्दा अनुपस्थित लाभान्वितको संख्याः</b> <span>@Html.DisplayFor(model => item.Beneficiaries_Absent, new { @class = "form-control" })</span> </div>
+
+                }
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">४. आयोजना सञ्चालन सम्वन्धित अनुभवः</b> </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">५. उपभोक्त समिति समिदायमा आधारित संस्था गैर सरकारी संस्थाले प्राप्त गर्ने किस्ता विवरणः</b> </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+                @if (karkatti.Count > 0)
+                {
+                    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+                    {
+                        foreach (Planning.Planning.Entities.Kar_Katti i in karkatti)
+                        {
+                            if (i.Contigency != null)
+                            {
+                                ViewBag.Contigency1 = i.Contigency;
+                            }
+                            if (i.MarmatSambhar != null)
+                            {
+                                ViewBag.Marmat_Sambhar1 = i.MarmatSambhar;
+                            }
+                        }
+                    }
+                }
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">कन्टिजेनसी वापत कट्टिहुने रकम @ViewBag.Contigency1 % : <span> @Html.DisplayFor(model => model.Contegency_Amount, new { @class = "form-control" }) </span></div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">मर्मत सम्भार कोष वापत कट्टिहुने रकम @ViewBag.Marmat_Sambhar1 % : <span> @Html.DisplayFor(model => model.MarmatSambhar_Amount, new { @class = "form-control" }) </span></div>
+
+
+                @*<div class="col-lg-12 col-md-12" style="font-size:12px;">कन्टिजेनसी वापत कट्टिहुने रकम ३ % : <span> @Html.DisplayFor(model => model.Contegency_Amount, new { @class = "form-control" }) </span></div>*@
+                @*<div class="col-lg-12 col-md-12" style="font-size:12px;">कन्टिजेनसी वापत कट्टिहुने रकम @if (Model.Contegency_Percentage != null){ @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Contegency_Percentage)} % : <span> @Html.DisplayFor(model => model.Contegency_Amount, new { @class = "form-control" }) </span></div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">मर्मत सम्भार कोष वापत कट्टिहुने रकम १ % : <span> @Html.DisplayFor(model => model.MarmatSambhar_Amount, new { @class = "form-control" }) </span></div>*@
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="col-lg-12 col-md-12  body-section" style="font-size:12px; font-weight:500; padding:0px 30px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>किस्ता क्रम</th>
+                        <th>मिति</th>
+                        <th>किस्ता रकम</th>
+                        <th>निर्माण सामाग्री</th>
+                        <th>कैफियत</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model.Payment_Records)
+                    {
+                    <tr>
+                        <td>@item.Kista_Kram</td>
+                        <td>
+                            @if (item.Payment_Date != null)
+                            {<span>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Payment_Date.Value.ToShortDateString())</span>}
+                        </td>
+                        <td>@item.Kista_Rakam</td>
+                        <td>@item.Nirmarn_Samagri</td>
+                        <td>@item.Remarks</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold; text-align:center"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">सम्झौताका शर्तहरुः</b> </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">उपभोक्ता समितिको जिम्मेवारी तथा पालना गरिने शर्तहरु : </b> </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+           <div class="col-md-12" id="shartha">
+                                    @Html.Action("PartialIndex", "Sarta")   
+                                </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:0px; margin-bottom:0px;">कार्यालयको जिम्मेवारी तथा पालना गरिने शर्तहरु : </b> </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१.	आयोजनाको बजेट, उपभोक्ता समितिका काम, कर्तव्य तथा अधिकार, खरिद, लेखाङ्कन, प्रतिवेदन आदि विषयमा उपभोक्ता समितिका पदाधिकारीहरुलाई अनुशिक्षण कार्यक्रम सञ्चालन गरिनेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">२.	आयोजनामा आवश्यक प्राविधिक सहयोग कार्यालयबाट उपलब्ध गराउन सकिने अवस्थामा गराईनेछ र नसकिने अवस्थामा भएमा उपभोक्ता समितिले बाह्य बजारबाट सेवा परामर्श अन्तर्गत सेवा लिन सक्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">३.	आयोजनाको प्राविधिक सुपरिवेक्षणका लागि कार्यालयको तर्फबाट प्राविधिक खटाईनेछ । उपभोक्ता समितिबाट भएको कामको नियमित सुपरिवेक्षण गर्ने जिम्मेवारी निज प्राविधिकको हुनेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">४.	पेश्की लिएर लामो समयसम्म आयोजना नगर्ने उपभोक्ता समितिलाई कार्यालयले नियम अनुसार कारवाही गर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">५.	श्रममुलक प्रविधिबाट कार्य गराउने गरी लागत अनुमान स्वीकृत गराई सोही बमोजिम सम्झौता गरी मेशिनरी उपकरणको प्रयोगबाट कार्य गरेको पाईएमा त्यस्तो उपभोक्ता समितिसंग सम्झौता रद्ध गरी उपभोक्ता समितिलाई भुक्तानी गरिएको रकम मुल्यांकन गरी बढी भएको रकम सरकारी बाँकी सरह असुल उपर गरिनेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">६.	आयोजना सम्पन्न भएपछि कार्यालयबाट जाँच पास गरी फरफारक गर्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">७.	आवश्यक कागजात संलग्न गरी भुक्तानी उपलब्ध गराउन सम्बन्धित उपभोक्ता समितिबाट अनुरोध भई आएपछि उपभोक्ता समितिको बैंक खातामा भुक्तानी दिनु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">८.	यसमा उल्लेख नभएका कुराहरु प्रचलित कानून बमोजिम हुनेछ ।</div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">उपयुक्त बमोजिम गर्न हामी मञ्जुर छौ ।</b> </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:30px;">
+            <div class="row">
+                @foreach (var item in Model.Municipality_Samiti_Manjuri_Patra)
+            {
+                <div class="col-md-6" style="display:inline-block; position:relative; vertical-align:top; line-height:22px;">
+                    <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;">
+                        @if (OrganiationName.Count > 0)
+                            {
+                                using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+                                {
+                                    foreach (Planning.Planning.Entities.Organization_Setup i in OrganiationName)
+                                    {
+                            <b style="font-weight:bold;">@i.Organization_Name तर्फवाटः</b>
+                                    }
+                                }
+                            }
+                    </div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">नामः <span> @Html.DisplayFor(model => item.Municipality_Rep_Name, new { @class = "form-control" }) </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">दर्जा: <span> @Html.DisplayFor(model => item.Municipality_Rep_Post, new { @class = "form-control" }) </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">सही: <span>  </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                        मिति: @if (item.Municipality_Manjuri_Date != null)
+                            {<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Municipality_Manjuri_Date)</span>}
+                            else
+                            {<span>&nbsp;</span> }
+                    </div>
+                </div>
+                <div class="col-md-6" style="display:inline-block;position:relative; line-height:22px;">
+                    <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>उपभोक्ता समितिको तर्फवाटः</b> </div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">अध्यक्षको नामः <span> @Html.DisplayFor(model => item.Samiti_Adakshya_Name, new { @class = "form-control" }) </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">सही: <span>  </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">सचिवको नामः <span> @Html.DisplayFor(model => item.Samiti_Sachib_Name, new { @class = "form-control" }) </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">सही: <span>  </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">रोहवरः <span> @Html.DisplayFor(model => item.Samiti_Rohabar_Name, new { @class = "form-control" }) </span></div>
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">सही: <span>  </span></div>
+                </div>
+                }
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

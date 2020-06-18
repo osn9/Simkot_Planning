@@ -1,0 +1,1057 @@
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\csc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\vbc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll.config
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\WebGrease.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\csc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\vbc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll.config
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\WebGrease.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\TRIYUGA PLANNING\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\csc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\vbc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll.config
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\WebGrease.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\Nov-20-2018-Triyuga\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.pdb
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\csc.exe
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\vbc.exe
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll.config
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Planning.pdb
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Owin.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\WebGrease.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.pdb
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.dll
+C:\Users\Bipin\Desktop\planning\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\csc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\vbc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll.config
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\WebGrease.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Helpers.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Mvc.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Optimization.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\System.Web.WebPages.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Antlr3.Runtime.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Newtonsoft.Json.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\EntityFramework.SqlServer.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\dhangadimai\NewPlanning-Nov-25\NewPlanning-Oct-04\Planning\Planning\obj\Debug\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\csc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\vbc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\VBCSCompiler.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Planning.dll.config
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Antlr3.Runtime.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.SqlServer.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Newtonsoft.Json.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Helpers.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Mvc.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Optimization.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\WebGrease.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Helpers.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Mvc.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Optimization.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Antlr3.Runtime.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Newtonsoft.Json.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.SqlServer.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\obj\Debug\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\obj\Debug\Planning.pdb
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\csc.exe
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\System.Collections.Immutable.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\System.Reflection.Metadata.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\vbc.exe
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\VBCSCompiler.exe
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\VBCSCompiler.exe.config
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Planning.dll.config
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Planning.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Planning.pdb
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Antlr3.Runtime.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.SqlServer.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Google.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Web.Infrastructure.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Newtonsoft.Json.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Owin.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Helpers.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Mvc.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Optimization.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Razor.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Deployment.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Razor.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\WebGrease.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Helpers.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Mvc.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Optimization.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Razor.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Deployment.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Razor.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Antlr3.Runtime.pdb
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Newtonsoft.Json.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.SqlServer.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Google.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\obj\Debug\Planning.dll
+D:\Bipin Backup\FINAL PROJECT(RELEASE)\PLANNING\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\obj\Debug\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\csc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\vbc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\VBCSCompiler.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Planning.dll.config
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Antlr3.Runtime.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\EntityFramework.SqlServer.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Newtonsoft.Json.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.Helpers.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.Mvc.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.Optimization.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.WebPages.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.WebPages.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\WebGrease.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.Helpers.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.Mvc.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.Optimization.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.WebPages.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\System.Web.WebPages.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Antlr3.Runtime.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Newtonsoft.Json.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\EntityFramework.SqlServer.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\obj\Debug\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU_PLANNING\Planning--jan-7-2019\Planning\Planning\obj\Debug\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\csc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\vbc.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\VBCSCompiler.exe
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Planning.dll.config
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Antlr3.Runtime.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.SqlServer.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Newtonsoft.Json.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Owin.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Helpers.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Mvc.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Optimization.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Razor.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\WebGrease.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Helpers.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Mvc.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Optimization.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\System.Web.WebPages.Razor.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Antlr3.Runtime.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Newtonsoft.Json.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\EntityFramework.SqlServer.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\obj\Debug\Planning.dll
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\obj\Debug\Planning.pdb
+C:\Users\SOFTECH DEV TEAM\Desktop\SOLU-DUDH-KUNDA-PLANNING\SOLU_DUDH_KUNDA_PLANNING\Planning\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+D:\Planning System\Planning Solu\Planning\bin\roslyn\csc.exe
+D:\Planning System\Planning Solu\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Planning System\Planning Solu\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Planning System\Planning Solu\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Planning System\Planning Solu\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Planning System\Planning Solu\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Planning System\Planning Solu\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Planning System\Planning Solu\Planning\bin\roslyn\System.Collections.Immutable.dll
+D:\Planning System\Planning Solu\Planning\bin\roslyn\System.Reflection.Metadata.dll
+D:\Planning System\Planning Solu\Planning\bin\roslyn\vbc.exe
+D:\Planning System\Planning Solu\Planning\bin\roslyn\VBCSCompiler.exe
+D:\Planning System\Planning Solu\Planning\bin\roslyn\VBCSCompiler.exe.config
+D:\Planning System\Planning Solu\Planning\bin\Planning.dll.config
+D:\Planning System\Planning Solu\Planning\bin\Planning.dll
+D:\Planning System\Planning Solu\Planning\bin\Planning.pdb
+D:\Planning System\Planning Solu\Planning\bin\Antlr3.Runtime.dll
+D:\Planning System\Planning Solu\Planning\bin\EntityFramework.dll
+D:\Planning System\Planning Solu\Planning\bin\EntityFramework.SqlServer.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.Google.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Web.Infrastructure.dll
+D:\Planning System\Planning Solu\Planning\bin\Newtonsoft.Json.dll
+D:\Planning System\Planning Solu\Planning\bin\Owin.dll
+D:\Planning System\Planning Solu\Planning\bin\System.Web.Helpers.dll
+D:\Planning System\Planning Solu\Planning\bin\System.Web.Mvc.dll
+D:\Planning System\Planning Solu\Planning\bin\System.Web.Optimization.dll
+D:\Planning System\Planning Solu\Planning\bin\System.Web.Razor.dll
+D:\Planning System\Planning Solu\Planning\bin\System.Web.WebPages.Deployment.dll
+D:\Planning System\Planning Solu\Planning\bin\System.Web.WebPages.dll
+D:\Planning System\Planning Solu\Planning\bin\System.Web.WebPages.Razor.dll
+D:\Planning System\Planning Solu\Planning\bin\WebGrease.dll
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Planning System\Planning Solu\Planning\bin\System.Web.Helpers.xml
+D:\Planning System\Planning Solu\Planning\bin\System.Web.Mvc.xml
+D:\Planning System\Planning Solu\Planning\bin\System.Web.Optimization.xml
+D:\Planning System\Planning Solu\Planning\bin\System.Web.Razor.xml
+D:\Planning System\Planning Solu\Planning\bin\System.Web.WebPages.xml
+D:\Planning System\Planning Solu\Planning\bin\System.Web.WebPages.Deployment.xml
+D:\Planning System\Planning Solu\Planning\bin\System.Web.WebPages.Razor.xml
+D:\Planning System\Planning Solu\Planning\bin\Antlr3.Runtime.pdb
+D:\Planning System\Planning Solu\Planning\bin\Newtonsoft.Json.xml
+D:\Planning System\Planning Solu\Planning\bin\EntityFramework.xml
+D:\Planning System\Planning Solu\Planning\bin\EntityFramework.SqlServer.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.Google.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Planning System\Planning Solu\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Planning System\Planning Solu\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+D:\Planning System\Planning Solu\Planning\obj\Debug\Planning.dll
+D:\Planning System\Planning Solu\Planning\obj\Debug\Planning.pdb
+D:\planning solu-meher\Planning\bin\roslyn\csc.exe
+D:\planning solu-meher\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\planning solu-meher\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\planning solu-meher\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\planning solu-meher\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\planning solu-meher\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\planning solu-meher\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\planning solu-meher\Planning\bin\roslyn\System.Collections.Immutable.dll
+D:\planning solu-meher\Planning\bin\roslyn\System.Reflection.Metadata.dll
+D:\planning solu-meher\Planning\bin\roslyn\vbc.exe
+D:\planning solu-meher\Planning\bin\roslyn\VBCSCompiler.exe
+D:\planning solu-meher\Planning\bin\roslyn\VBCSCompiler.exe.config
+D:\planning solu-meher\Planning\bin\Planning.dll.config
+D:\planning solu-meher\Planning\bin\Planning.dll
+D:\planning solu-meher\Planning\bin\Planning.pdb
+D:\planning solu-meher\Planning\bin\Antlr3.Runtime.dll
+D:\planning solu-meher\Planning\bin\EntityFramework.dll
+D:\planning solu-meher\Planning\bin\EntityFramework.SqlServer.dll
+D:\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+D:\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\planning solu-meher\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Google.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+D:\planning solu-meher\Planning\bin\Microsoft.Web.Infrastructure.dll
+D:\planning solu-meher\Planning\bin\Newtonsoft.Json.dll
+D:\planning solu-meher\Planning\bin\Owin.dll
+D:\planning solu-meher\Planning\bin\PagedList.dll
+D:\planning solu-meher\Planning\bin\PagedList.Mvc.dll
+D:\planning solu-meher\Planning\bin\System.Web.Helpers.dll
+D:\planning solu-meher\Planning\bin\System.Web.Mvc.dll
+D:\planning solu-meher\Planning\bin\System.Web.Optimization.dll
+D:\planning solu-meher\Planning\bin\System.Web.Razor.dll
+D:\planning solu-meher\Planning\bin\System.Web.WebPages.Deployment.dll
+D:\planning solu-meher\Planning\bin\System.Web.WebPages.dll
+D:\planning solu-meher\Planning\bin\System.Web.WebPages.Razor.dll
+D:\planning solu-meher\Planning\bin\WebGrease.dll
+D:\planning solu-meher\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\planning solu-meher\Planning\bin\PagedList.xml
+D:\planning solu-meher\Planning\bin\PagedList.Mvc.xml
+D:\planning solu-meher\Planning\bin\System.Web.Helpers.xml
+D:\planning solu-meher\Planning\bin\System.Web.Mvc.xml
+D:\planning solu-meher\Planning\bin\System.Web.Optimization.xml
+D:\planning solu-meher\Planning\bin\System.Web.Razor.xml
+D:\planning solu-meher\Planning\bin\System.Web.WebPages.xml
+D:\planning solu-meher\Planning\bin\System.Web.WebPages.Deployment.xml
+D:\planning solu-meher\Planning\bin\System.Web.WebPages.Razor.xml
+D:\planning solu-meher\Planning\bin\Antlr3.Runtime.pdb
+D:\planning solu-meher\Planning\bin\Newtonsoft.Json.xml
+D:\planning solu-meher\Planning\bin\EntityFramework.xml
+D:\planning solu-meher\Planning\bin\EntityFramework.SqlServer.xml
+D:\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+D:\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.xml
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.xml
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Google.xml
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+D:\planning solu-meher\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\planning solu-meher\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+D:\planning solu-meher\Planning\obj\Debug\Planning.dll
+D:\planning solu-meher\Planning\obj\Debug\Planning.pdb
+D:\Project\planning solu-meher\Planning\bin\roslyn\csc.exe
+D:\Project\planning solu-meher\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project\planning solu-meher\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\planning solu-meher\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project\planning solu-meher\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project\planning solu-meher\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project\planning solu-meher\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project\planning solu-meher\Planning\bin\roslyn\System.Collections.Immutable.dll
+D:\Project\planning solu-meher\Planning\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project\planning solu-meher\Planning\bin\roslyn\vbc.exe
+D:\Project\planning solu-meher\Planning\bin\roslyn\VBCSCompiler.exe
+D:\Project\planning solu-meher\Planning\bin\roslyn\VBCSCompiler.exe.config
+D:\Project\planning solu-meher\Planning\bin\Planning.dll.config
+D:\Project\planning solu-meher\Planning\bin\Planning.dll
+D:\Project\planning solu-meher\Planning\bin\Planning.pdb
+D:\Project\planning solu-meher\Planning\bin\Antlr3.Runtime.dll
+D:\Project\planning solu-meher\Planning\bin\EntityFramework.dll
+D:\Project\planning solu-meher\Planning\bin\EntityFramework.SqlServer.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\planning solu-meher\Planning\bin\Newtonsoft.Json.dll
+D:\Project\planning solu-meher\Planning\bin\Owin.dll
+D:\Project\planning solu-meher\Planning\bin\PagedList.dll
+D:\Project\planning solu-meher\Planning\bin\PagedList.Mvc.dll
+D:\Project\planning solu-meher\Planning\bin\System.Web.Helpers.dll
+D:\Project\planning solu-meher\Planning\bin\System.Web.Mvc.dll
+D:\Project\planning solu-meher\Planning\bin\System.Web.Optimization.dll
+D:\Project\planning solu-meher\Planning\bin\System.Web.Razor.dll
+D:\Project\planning solu-meher\Planning\bin\System.Web.WebPages.Deployment.dll
+D:\Project\planning solu-meher\Planning\bin\System.Web.WebPages.dll
+D:\Project\planning solu-meher\Planning\bin\System.Web.WebPages.Razor.dll
+D:\Project\planning solu-meher\Planning\bin\WebGrease.dll
+D:\Project\planning solu-meher\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\planning solu-meher\Planning\bin\PagedList.xml
+D:\Project\planning solu-meher\Planning\bin\PagedList.Mvc.xml
+D:\Project\planning solu-meher\Planning\bin\System.Web.Helpers.xml
+D:\Project\planning solu-meher\Planning\bin\System.Web.Mvc.xml
+D:\Project\planning solu-meher\Planning\bin\System.Web.Optimization.xml
+D:\Project\planning solu-meher\Planning\bin\System.Web.Razor.xml
+D:\Project\planning solu-meher\Planning\bin\System.Web.WebPages.xml
+D:\Project\planning solu-meher\Planning\bin\System.Web.WebPages.Deployment.xml
+D:\Project\planning solu-meher\Planning\bin\System.Web.WebPages.Razor.xml
+D:\Project\planning solu-meher\Planning\bin\Antlr3.Runtime.pdb
+D:\Project\planning solu-meher\Planning\bin\Newtonsoft.Json.xml
+D:\Project\planning solu-meher\Planning\bin\EntityFramework.xml
+D:\Project\planning solu-meher\Planning\bin\EntityFramework.SqlServer.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\planning solu-meher\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\planning solu-meher\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+D:\Project\planning solu-meher\Planning\obj\Debug\Planning.dll
+D:\Project\planning solu-meher\Planning\obj\Debug\Planning.pdb
+D:\Projects\planning solu-meher\Planning\bin\roslyn\csc.exe
+D:\Projects\planning solu-meher\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\planning solu-meher\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\planning solu-meher\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\planning solu-meher\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\planning solu-meher\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\planning solu-meher\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\planning solu-meher\Planning\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\planning solu-meher\Planning\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\planning solu-meher\Planning\bin\roslyn\vbc.exe
+D:\Projects\planning solu-meher\Planning\bin\roslyn\VBCSCompiler.exe
+D:\Projects\planning solu-meher\Planning\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\planning solu-meher\Planning\bin\Planning.dll.config
+D:\Projects\planning solu-meher\Planning\bin\Planning.dll
+D:\Projects\planning solu-meher\Planning\bin\Planning.pdb
+D:\Projects\planning solu-meher\Planning\bin\Antlr3.Runtime.dll
+D:\Projects\planning solu-meher\Planning\bin\EntityFramework.dll
+D:\Projects\planning solu-meher\Planning\bin\EntityFramework.SqlServer.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Google.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects\planning solu-meher\Planning\bin\Newtonsoft.Json.dll
+D:\Projects\planning solu-meher\Planning\bin\Owin.dll
+D:\Projects\planning solu-meher\Planning\bin\PagedList.dll
+D:\Projects\planning solu-meher\Planning\bin\PagedList.Mvc.dll
+D:\Projects\planning solu-meher\Planning\bin\System.Web.Helpers.dll
+D:\Projects\planning solu-meher\Planning\bin\System.Web.Mvc.dll
+D:\Projects\planning solu-meher\Planning\bin\System.Web.Optimization.dll
+D:\Projects\planning solu-meher\Planning\bin\System.Web.Razor.dll
+D:\Projects\planning solu-meher\Planning\bin\System.Web.WebPages.Deployment.dll
+D:\Projects\planning solu-meher\Planning\bin\System.Web.WebPages.dll
+D:\Projects\planning solu-meher\Planning\bin\System.Web.WebPages.Razor.dll
+D:\Projects\planning solu-meher\Planning\bin\WebGrease.dll
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\planning solu-meher\Planning\bin\PagedList.xml
+D:\Projects\planning solu-meher\Planning\bin\PagedList.Mvc.xml
+D:\Projects\planning solu-meher\Planning\bin\System.Web.Helpers.xml
+D:\Projects\planning solu-meher\Planning\bin\System.Web.Mvc.xml
+D:\Projects\planning solu-meher\Planning\bin\System.Web.Optimization.xml
+D:\Projects\planning solu-meher\Planning\bin\System.Web.Razor.xml
+D:\Projects\planning solu-meher\Planning\bin\System.Web.WebPages.xml
+D:\Projects\planning solu-meher\Planning\bin\System.Web.WebPages.Deployment.xml
+D:\Projects\planning solu-meher\Planning\bin\System.Web.WebPages.Razor.xml
+D:\Projects\planning solu-meher\Planning\bin\Antlr3.Runtime.pdb
+D:\Projects\planning solu-meher\Planning\bin\Newtonsoft.Json.xml
+D:\Projects\planning solu-meher\Planning\bin\EntityFramework.xml
+D:\Projects\planning solu-meher\Planning\bin\EntityFramework.SqlServer.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Google.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Projects\planning solu-meher\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Projects\planning solu-meher\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+D:\Projects\planning solu-meher\Planning\obj\Debug\Planning.dll
+D:\Projects\planning solu-meher\Planning\obj\Debug\Planning.pdb
+D:\Projects\Planning_Solu\Planning\bin\roslyn\csc.exe
+D:\Projects\Planning_Solu\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\Planning_Solu\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\Planning_Solu\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\Planning_Solu\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\Planning_Solu\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\Planning_Solu\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\Planning_Solu\Planning\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\Planning_Solu\Planning\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\Planning_Solu\Planning\bin\roslyn\vbc.exe
+D:\Projects\Planning_Solu\Planning\bin\roslyn\VBCSCompiler.exe
+D:\Projects\Planning_Solu\Planning\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\Planning_Solu\Planning\bin\Planning.dll.config
+D:\Projects\Planning_Solu\Planning\bin\Planning.dll
+D:\Projects\Planning_Solu\Planning\bin\Planning.pdb
+D:\Projects\Planning_Solu\Planning\bin\Antlr3.Runtime.dll
+D:\Projects\Planning_Solu\Planning\bin\EntityFramework.dll
+D:\Projects\Planning_Solu\Planning\bin\EntityFramework.SqlServer.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Google.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects\Planning_Solu\Planning\bin\Newtonsoft.Json.dll
+D:\Projects\Planning_Solu\Planning\bin\Owin.dll
+D:\Projects\Planning_Solu\Planning\bin\PagedList.dll
+D:\Projects\Planning_Solu\Planning\bin\PagedList.Mvc.dll
+D:\Projects\Planning_Solu\Planning\bin\System.Web.Helpers.dll
+D:\Projects\Planning_Solu\Planning\bin\System.Web.Mvc.dll
+D:\Projects\Planning_Solu\Planning\bin\System.Web.Optimization.dll
+D:\Projects\Planning_Solu\Planning\bin\System.Web.Razor.dll
+D:\Projects\Planning_Solu\Planning\bin\System.Web.WebPages.Deployment.dll
+D:\Projects\Planning_Solu\Planning\bin\System.Web.WebPages.dll
+D:\Projects\Planning_Solu\Planning\bin\System.Web.WebPages.Razor.dll
+D:\Projects\Planning_Solu\Planning\bin\WebGrease.dll
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\Planning_Solu\Planning\bin\PagedList.xml
+D:\Projects\Planning_Solu\Planning\bin\PagedList.Mvc.xml
+D:\Projects\Planning_Solu\Planning\bin\System.Web.Helpers.xml
+D:\Projects\Planning_Solu\Planning\bin\System.Web.Mvc.xml
+D:\Projects\Planning_Solu\Planning\bin\System.Web.Optimization.xml
+D:\Projects\Planning_Solu\Planning\bin\System.Web.Razor.xml
+D:\Projects\Planning_Solu\Planning\bin\System.Web.WebPages.xml
+D:\Projects\Planning_Solu\Planning\bin\System.Web.WebPages.Deployment.xml
+D:\Projects\Planning_Solu\Planning\bin\System.Web.WebPages.Razor.xml
+D:\Projects\Planning_Solu\Planning\bin\Antlr3.Runtime.pdb
+D:\Projects\Planning_Solu\Planning\bin\Newtonsoft.Json.xml
+D:\Projects\Planning_Solu\Planning\bin\EntityFramework.xml
+D:\Projects\Planning_Solu\Planning\bin\EntityFramework.SqlServer.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Google.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Projects\Planning_Solu\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Projects\Planning_Solu\Planning\obj\Debug\Planning.csprojResolveAssemblyReference.cache
+D:\Projects\Planning_Solu\Planning\obj\Debug\Planning.dll
+D:\Projects\Planning_Solu\Planning\obj\Debug\Planning.pdb
+D:\Projects\Solu_Planning\Planning_Solu\Planning\obj\Debug\Planning.csproj.CoreCompileInputs.cache
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\csc.exe
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\vbc.exe
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\VBCSCompiler.exe
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Planning.dll.config
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Planning.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Planning.pdb
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Antlr3.Runtime.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\EntityFramework.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\EntityFramework.SqlServer.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Google.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Newtonsoft.Json.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Owin.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\PagedList.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\PagedList.Mvc.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.Helpers.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.Mvc.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.Optimization.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.Razor.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.WebPages.Deployment.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.WebPages.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.WebPages.Razor.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\WebGrease.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\PagedList.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\PagedList.Mvc.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.Helpers.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.Mvc.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.Optimization.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.Razor.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.WebPages.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.WebPages.Deployment.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\System.Web.WebPages.Razor.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Antlr3.Runtime.pdb
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Newtonsoft.Json.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\EntityFramework.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\EntityFramework.SqlServer.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Google.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Projects\Solu_Planning\Planning_Solu\Planning\obj\Debug\Planning.csproj.CopyComplete
+D:\Projects\Solu_Planning\Planning_Solu\Planning\obj\Debug\Planning.dll
+D:\Projects\Solu_Planning\Planning_Solu\Planning\obj\Debug\Planning.pdb
+D:\Projects\Solu_Planning\Planning_Solu\Planning\obj\Debug\Planning.csprojAssemblyReference.cache

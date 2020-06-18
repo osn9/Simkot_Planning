@@ -1,0 +1,114 @@
+﻿
+@model Planning.Areas.Admin.Models.DarkhastaFormViewModel.DarkhastaFormViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="padding-md">
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <h3 class="step_ttl">संयुक्त खाताको लागि बैङ्क फारम</h3>
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well", @id = "contact_form" }))
+                            {
+                                @Html.HiddenFor(model=>model.Darkhasta_Form_Id)
+                                <fieldset>
+                                    <div class="row">
+                                        @*<div class="col-lg-4 col-md-6">
+                                                <div class="form-group">
+                                                    <label>आर्थिक वर्षः</label>
+                                                    @Html.EditorFor(model => model.Fiscal_Year_Record, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.Fiscal_Year_Record, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>*@
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>चलानि नं.</label>
+                                                @Html.EditorFor(model => model.Chalani_Number, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Chalani_Number, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>बैंक</label>
+                                                @Html.DropDownListFor(model => model.Bank_Name, Planning.Utility.CommonUtility.GetClassABankList(), "---छान्नुहोस्---", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Bank_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        
+                                        @if (Model.Other_Bank_Name != null)
+                                        {
+                                        <div class="col-lg-4 col-md-6" id="other-bank">
+                                            <div class="form-group">
+                                                <label>अन्य बैंक</label>
+                                                @Html.EditorFor(model => model.Other_Bank_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Other_Bank_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        }
+
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>वडा नं.</label>
+                                                @Html.DropDownListFor(model => model.Ward_No, Planning.Utility.CommonUtility.GetWardNoList(), "---छान्नुहोस्---", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Ward_No, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>उपभोक्ता समिति</label>
+                                                @Html.EditorFor(model => model.Samiti_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Samiti_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>अध्यक्ष</label>
+                                                @Html.EditorFor(model => model.Adakshya_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Adakshya_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>कोषाध्यक्ष</label>
+                                                @Html.EditorFor(model => model.Koshadakshya_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Koshadakshya_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label>सचिव</label>
+                                                @Html.EditorFor(model => model.Sachib_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Sachib_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>&nbsp;</p>
+                                    <div class="form-group">
+                                        <label class="col-lg-3  col-md-4 control-label"></label>
+                                        <div class="col-lg-7 col-md-7">
+                                            <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                                            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("BhuktaniIndex", "PlanningSamjhauta")'">मुख्य मेनु</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            }
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+

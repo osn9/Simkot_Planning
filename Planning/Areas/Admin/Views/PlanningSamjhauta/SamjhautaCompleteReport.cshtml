@@ -1,0 +1,1188 @@
+﻿
+@model Planning.Planning.Entities.Planning_Samjhauta
+@{
+    ViewBag.Title = "SamjhautaCompleteReport";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    List<Planning.Planning.Entities.Kar_Katti> karkatti = new List<Planning.Planning.Entities.Kar_Katti>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from i in db.Organization_Setup select i).ToList();
+        karkatti = (from j in db.Kar_Katti select j).ToList();
+    }
+
+
+}
+
+@using Planning.Helpers
+
+<script src="~/SweetAlert/dist/sweetalert2.all.min.js"></script>
+<link href="~/SweetAlert/dist/sweetalert2.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery.maskedinput.js"></script>
+
+<style>
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
+
+<div class="tab">
+    @*<button class="tablinks" onclick="openAnusuchi(event, 'अनुसूची१')">अनुसूची १</button>*@
+    @*<button class="tablinks" onclick="openAnusuchi(event, 'अनुसूची२')">अनुसूची २</button>*@
+    @*<button class="tablinks" onclick="openAnusuchi(event, 'अनुसूची३')">अनुसूची ३</button>*@
+    @*<button class="tablinks" onclick="openAnusuchi(event, 'अनुसूची४')">अनुसूची ४</button>*@
+    @*<button class="tablinks" onclick="openAnusuchi(event, 'अनुसूची५')">अनुसूची ५</button>*@
+    @*<button class="tablinks" onclick="openAnusuchi(event, 'अनुसूची६')">अनुसूची ६</button>*@
+    <button class="tablinks" onclick="getAnusuchi1('@Model.Planning_Samjhauta_Id')">अनुसूची १</button>
+    <button class="tablinks" onclick="getAnusuchi2('@Model.Planning_Samjhauta_Id')">अनुसूची २</button>
+    <button class="tablinks" onclick="getAnusuchi3('@Model.Planning_Samjhauta_Id')">अनुसूची ३</button>
+    <button class="tablinks" onclick="getAnusuchi4('@Model.Planning_Samjhauta_Id')">अनुसूची ४</button>
+    <button class="tablinks" onclick="getAnusuchi5('@Model.Planning_Samjhauta_Id')">अनुसूची ५</button>
+    <button class="tablinks" onclick="getAnusuchi6('@Model.Planning_Samjhauta_Id')">अनुसूची ६</button>
+    <button class="tablinks" onclick="getAnusuchi7('@Model.Planning_Samjhauta_Id')">अनुसूची ७</button>
+    <button class="tablinks" onclick="getAnusuchi9('@Model.Planning_Samjhauta_Id')">अनुसूची ९</button>
+    <button class="tablinks" onclick="getAnusuchi10('@Model.Planning_Samjhauta_Id')">अनुसूची १०</button>
+    <button class="tablinks" onclick="getAnusuchi11('@Model.Planning_Samjhauta_Id')">अनुसूची ११</button>
+</div>
+
+@*<div id="अनुसूची१" class="tabcontent">
+        <h3>अनुसूची १</h3>
+        <p>सादउसगह</p>
+    </div>
+
+    <div id="अनुसूची२" class="tabcontent">
+        <h3>अनुसूची २</h3>
+        <p>ासदउगउह</p>
+    </div>
+
+    <div id="अनुसूची३" class="tabcontent">
+        <h3>अनुसूची ३</h3>
+        <p>दसउग</p>
+    </div>*@
+
+@*<script>
+        function openAnusuchi(evt, anusuchiName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(anusuchiName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>*@
+
+@if (TempData["Msg"] != null)
+{
+    <script>alert("@TempData["Msg"]");</script>
+}
+
+
+
+<div class="padding-md">
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <input type="button" class="btn btn-primary pull-right" value="सम्झौता प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+                            <div class="main-content" id="printdiv">
+
+                                <style>
+                                    .header-section .table tbody > tr {
+                                        border: none !important;
+                                    }
+
+                                    .body-section th, .body-section td {
+                                        padding: 0px !important;
+                                        text-align: center;
+                                    }
+
+                                    .body-section td {
+                                        color: #000000 !important;
+                                        text-align: center;
+                                    }
+
+                                    @@media print {
+                                        .header-section .table tr td {
+                                            border: none !important;
+                                            border: !important;
+                                            border-color: #fff !important;
+                                            padding: 0px !important;
+                                        }
+
+                                        .body-section th, .body-section td {
+                                            padding: 0px !important;
+                                            text-align: center;
+                                        }
+
+                                        .body-section td {
+                                            color: #000000 !important;
+                                            text-align: center;
+                                        }
+                                    }
+                                </style>
+
+
+                                <div class="header-section">
+                                    <table class="table" border="0" style="border:0px !important; margin-top: 0px;margin-bottom: 0px;" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td width="20%" style="border:none !important; border:0px !important;">
+                                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                                </td>
+                                                @if (OrganiationName.Count > 0)
+                                                {
+                                                    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+                                                    {
+                                                        foreach (Planning.Planning.Entities.Organization_Setup i in OrganiationName)
+                                                        {
+                                                            <td width="60%" style="text-align:center; border:none !important; border:0px !important;">
+                                                                <h2 style="margin-bottom: 8px; margin-top: 17px;">@i.Organization_Name</h2>
+                                                                <h3 style="margin-top: 0px; margin-bottom: 3px;">@i.Organization_Type</h3>
+                                                                <h4 style="margin-top: 0px; margin-bottom: 3px;">@i.District_Name</h4>
+                                                                <h5 style="margin-top: 0px; margin-bottom: 0px;">@i.State_Country</h5>
+                                                            </td>
+                                                            <td width="20%" style="border:none !important; border:0px !important;">
+                                                                <img src="~/img/nagarpalika_logo.jpg" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                                            </td>
+                                                        }
+                                                    }
+                                                }
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div style="text-align:center; font-weight:bold;">
+                                        <h4 style="text-align:center; font-weight:bold; margin-top:10px;">विषय: योजना सम्झौता ।</h4>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:18px;">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:0px; margin-bottom:0px;">तपसिल</b> </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12" style="font-size:12px;font-weight:bold;">
+                                            @if (OrganiationName.Count > 0)
+                                            {
+                                                using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+                                                {
+                                                    foreach (Planning.Planning.Entities.Organization_Setup i in OrganiationName)
+                                                    {
+                                                        <b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">@i.Organization_Name कार्यालय र उपभोक्ता समिति बीचको सम्झौता</b>
+                                                    }
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                @foreach (var item in Model.Planning_Entry)
+                                {
+
+                                    <div class="letter_content">
+                                        त्रियुगा नगरपालिकाको आ.व. <strong>@item.FiscalYear  </strong> को स्वीकृत बार्षिक बजेट तथा नीति कार्यक्रम अनुसार त्रि.न.पा. वडा न. <strong> @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Ward_No.ToString())</strong>मा वडास्तरीय/नगरस्तरीय कार्यक्रम अन्तर्गत <strong>
+                                     @if ( @Model.Project_Entry_Detail.FirstOrDefault().Project_Name!=null)
+                                     {
+                                      <span>  @Model.Project_Entry_Detail.FirstOrDefault().Project_Name </span>
+                                     }
+                                      
+                                                                
+                                                                </strong>गर्ने कार्यको लागि यस कार्यलय र उपभोक्ता समितिबीच तपशिल बमोजिमको शर्तमा रही उक्त योजना/कार्यक्रम कार्यान्वयन गर्न सम्झौता गरिएको छ ।
+                                    </div>
+                                    <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">आर्थिक वर्षः<span> @item.FiscalYear </span></div>
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                                                वजेट श्रोत:@Planning.Utility.CommonUtility.GetBudgetNameById(item.Budget_Source ?? 0)  @*@if (item.Budget_Source == 1)
+                        {<span>वितिय समानिकरण </span>}
+                        else if (item.Budget_Source == 2)
+                        { <span>प्रदेश सरकार </span>}
+                        else if (item.Budget_Source == 3)
+                        {<span> आन्तरिक श्रोत</span> }*@
+                                            </div>
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                                                वडा स्तरिय/नगर स्तरिय:  @if (item.Planning_Type == "O")
+                                                {<span> वडा स्तरिय</span> }
+                                                else if (item.Planning_Type == "N")
+                                                { <span> नगर स्तरिय</span>}
+                                            </div>
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">वडा नं.:<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Ward_No.ToString()) </span></div>
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                                                कार्यक्षेत्र: @if (item.Work_Area == 1)
+                                                {<span>पूर्वाधार</span> }
+                                                else if (item.Work_Area == 2)
+                                                {<span>सामाजिक</span> }
+                                                else if (item.Work_Area == 3)
+                                                {<span>आर्थिक</span> }
+                                                else if (item.Work_Area == 4)
+                                                { <span>वातावरण</span>}
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                }
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;">
+                                    सम्झौता गर्ने संस्थाको नामः @Html.DisplayFor(model => model.Samjhauta_Org_Name, new { @class = "form-control" })
+                                </div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">१. सम्झौत गर्ने पक्ष र आयोजनाः</b> </div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+                                    <div class="row">
+                                        @foreach (var item in Model.Organization_Representative)
+                                        {
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(क) उपभोक्त समिति /समुदायमा आधारीत संस्था /गेेर सरकारी संस्थाको विवरण : सम्झौता गर्ने संस्थाको प्रतिनिधीको,</b> </div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">१. नामः <span> @Html.DisplayFor(model => item.Representative_Name, new { @class = "form-control" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">२. पदः <span> @Html.DisplayFor(model => item.Representative_Designition, new { @class = "form-control" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">३. ठेगानाः <span> @Html.DisplayFor(model => item.Representative_Address, new { @class = "form-control" })</span></div>
+                                        }
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(ख) आयोजनाको विवरणः</b> </div>
+                                        @foreach (var item in Model.Project_Entry_Detail)
+                                        {
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">१. नामः <span> @Html.DisplayFor(model => item.Project_Name, new { @class = "form-control" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">२. स्थानः <span> @Html.DisplayFor(model => item.Project_Place, new { @class = "form-control" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">३. उदेश्य: <span> @Html.DisplayFor(model => item.Project_Objective, new { @class = "form-control" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">४. आयोजना स्वीकृत गर्ने निकायः <span> @Html.DisplayFor(model => item.Project_Acceptance_By, new { @class = "form-control" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                                                ५.आयोजना शुरु हुने मितिः @if (item.Project_Start_Date != null)
+                                                {
+                                                    <span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Project_Start_Date)) </span>
+                                                    @*<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_Start_Date.Value.ToShortDateString()) </span>*@
+                                                }
+                                                else
+                                                {<span>&nbsp;</span>}
+                                            </div>
+
+                                            var stardate = "";
+                                            if (item.Project_Start_Date != null)
+                                            {
+                                                stardate = @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Project_Start_Date));
+                                            }
+                                            var enddate = "";
+                                            if (item.Project_End_Date != null)
+                                            {
+                                                enddate = @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Project_End_Date));
+                                            }
+                                            <input type="hidden" value="@stardate" id="starddate1" />
+                                            <input type="hidden" value="@enddate" id="enddate1" />
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                                                ६.आयोजना सम्पन्न हुने मितिः @if (item.Project_End_Date != null)
+                                                {<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Project_End_Date)) </span>}
+                                            else
+                                            {<span>&nbsp;</span>}
+                                            </div>
+
+                                        }
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+                                    <div class="row">
+
+                                        @foreach (var item in Model.Project_Source_Detail)
+                                        {
+                                            var nepgov = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Nepal_Government);
+                                            var municipality = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Municipality);
+                                            var state = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.State);
+                                            var ngo = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.NGO_INGO);
+                                            var communityOrg = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Community_Org);
+                                            var foreOrg = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Foreign_Org);
+                                            var publicCommu = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Public_Community);
+                                            var loangra = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Loan_Grant);
+                                            var othsour = Planning.Utility.NepaliEnglishNumber.Get_Nepali_English(item.Other_Source);
+                                            decimal nepgo = Convert.ToDecimal(nepgov);
+                                            decimal muni = Convert.ToDecimal(municipality);
+                                            decimal stat = Convert.ToDecimal(state);
+                                            decimal ngoing = Convert.ToDecimal(ngo);
+                                            decimal comorg = Convert.ToDecimal(communityOrg);
+                                            decimal fororg = Convert.ToDecimal(foreOrg);
+                                            decimal puborg = Convert.ToDecimal(publicCommu);
+                                            decimal loagra = Convert.ToDecimal(loangra);
+                                            decimal otso = Convert.ToDecimal(othsour);
+                                            decimal totalAmtSource = nepgo + muni + stat + ngoing + comorg + fororg + puborg + loagra + otso;
+                                            var TotalSourceAmount = Planning.Utility.NepaliEnglishNumber.English_Nepali(totalAmtSource.ToString());
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">(क) लागत अनुमान रुः <span> @Html.DisplayFor(model => item.Project_estimated_Amount, new { @class = "form-control" })</span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">(ख) लागत व्यहोर्ने श्रोतहरुः <span></span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">१. नेपाल सरकार <span> रु.@Html.DisplayFor(model => item.Nepal_Government, new { @class = "form-control shrot" })</span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">२. नगरपालिकावाट <span> रु.@Html.DisplayFor(model => item.Municipality, new { @class = "form-control shrot" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">३. प्रदेश <span> रु.@Html.DisplayFor(model => item.State, new { @class = "form-control shrot" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">४. गेेर सरकारी संघ संस्थाबाट <span> रु.@Html.DisplayFor(model => item.NGO_INGO, new { @class = "form-control shrot" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">५. समुदायमा आधारित संस्थाबाट <span> रु.@Html.DisplayFor(model => item.Community_Org, new { @class = "form-control shrot" })</span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">६. विदेशी दातृ संघ संस्थाबाट <span> रु.@Html.DisplayFor(model => item.Foreign_Org, new { @class = "form-control shrot" })</span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">७. उपभोक्ता समितिवाट नगद <span> रु.@Html.DisplayFor(model => item.Public_Community, new { @class = "form-control shrot" })</span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">श्रमदान <span> रु.@Html.DisplayFor(model => item.Loan_Grant, new { @class = "form-control shrot" })</span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">८. अन्यवाट <span> रु.@Html.DisplayFor(model => item.Other_Source, new { @class = "form-control shrot" })</span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>जम्मा रु. <span id="TotalSum">@TotalSourceAmount</span></b></div>
+
+                                        }
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">२. आयोजनावाट लाभान्वित हुने (प्रतिशतमा):</b> </div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+                                    <div class="row">
+
+                                        @foreach (var item in Model.Beneficiaries_Group)
+                                        {
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">१. घर संख्याः <span> @Html.DisplayFor(model => item.Total_House, new { @class = "form-control" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">२. जनसंख्याः <span> महिला:- @Html.DisplayFor(model => item.Total_Male, new { @class = "form-control" }) जना</span>&nbsp;&nbsp;&nbsp;<span>पुरुष:- @Html.DisplayFor(model => item.Total_Female, new { @class = "form-control" }) जना</span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">३. समुदायः <span> @Html.DisplayFor(model => item.Community, new { @class = "form-control" })</span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">४. अन्यः- समुदायमा आधारीत / गेेर सरकारी संस्थाः <span> @Html.DisplayFor(model => item.Other, new { @class = "form-control" })</span></div>
+
+                                        }
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">३. उपभोक्त समिति /गैर सरकारी संस्था /समुदायमा आधारीत संस्था सम्बन्धि विवरण :</b> </div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+                                    <div class="row">
+                                        @foreach (var item in Model.Samiti_Detail)
+                                        {
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;">
+                                                <b>(क) समिति गठन भएको मितिः</b> @if (item.Samiti_Estd_Date != null)
+                                                {<span>@Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Samiti_Estd_Date.Value.ToShortDateString()))</span>}
+                                            else
+                                            {<span>&nbsp;</span>}
+                                            </div>
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(ख) पदाधिकारीको नाम र ठेगानाः</b> </div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">१. अध्यक्षः <span> @Html.DisplayFor(model => item.Adakshya, new { @class = "form-control" }) </span></div>
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">२. अध्यक्ष सम्पर्क नम्बर: <span> @Html.DisplayFor(model => item.AdakshyaContactNumber, new { @class = "form-control" }) </span></div>
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">३. सचिवः <span> @Html.DisplayFor(model => item.Sachib, new { @class = "form-control" }) </span></div>
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">४. सचिव सम्पर्क नम्बर:  <span> @Html.DisplayFor(model => item.SachibContactNumber, new { @class = "form-control" }) </span></div>
+
+
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">५. कोषाध्यक्षः <span> @Html.DisplayFor(model => item.Koshadakshya, new { @class = "form-control" })</span></div>
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">६. कोषाध्यक्ष सम्पर्क नम्बर: <span> @Html.DisplayFor(model => item.KoshadakshyaConctactNumber, new { @class = "form-control" })</span></div>
+                                        }
+
+                                        @{ int m = 4;}
+                                        @foreach (var memb in Model.UpaBhokta_Samiti_Members_Details)
+                                        {
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px;">@Planning.Utility.NepaliEnglishNumber.English_Nepali(m.ToString()). सदस्य: <span> @Html.DisplayFor(model => memb.MemberName, new { @class = "form-control" })</span></div>
+                                            m++;
+                                        }
+
+                                        @foreach (var item in Model.Samiti_Detail)
+                                        {
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(ग) समिति गठन गर्दा उपस्थित लाभान्वितको संख्याः</b> <span>@Html.DisplayFor(model => item.Beneficiaries_Attendance, new { @class = "form-control" })</span> </div>
+                                            <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>(घ) समिति गठन गर्दा अनुपस्थित लाभान्वितको संख्याः</b> <span>@Html.DisplayFor(model => item.Beneficiaries_Absent, new { @class = "form-control" })</span> </div>
+
+                                        }
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">४. आयोजना सञ्चालन सम्वन्धित अनुभवः</b> </div>
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">५. उपभोक्त समिति समिदायमा आधारित संस्था गैर सरकारी संस्थाले प्राप्त गर्ने किस्ता विवरणः</b> </div>
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12" style="font-size:12px;">प्राप्त गर्ने अनुदान: <span> @Html.DisplayFor(model => model.Total_Amount, new { @class = "form-control" }) </span></div>
+                                        @if (karkatti.Count > 0)
+                                        {
+                                            using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+                                            {
+                                                foreach (Planning.Planning.Entities.Kar_Katti i in karkatti)
+                                                {
+                                                    if (i.Contigency != null)
+                                                    {
+                                                        ViewBag.Contigency1 = i.Contigency;
+                                                    }
+                                                    if (i.MarmatSambhar != null)
+                                                    {
+                                                        ViewBag.Marmat_Sambhar1 = i.MarmatSambhar;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        <div class="col-lg-12 col-md-12" style="font-size:12px;">कन्टिजेनसी वापत कट्टिहुने रकम @ViewBag.Contigency1 % : <span> @Html.DisplayFor(model => model.Contegency_Amount, new { @class = "form-control" }) </span></div>
+                                        <div class="col-lg-12 col-md-12" style="font-size:12px;">मर्मत सम्भार कोष वापत कट्टिहुने रकम @ViewBag.Marmat_Sambhar1 % : <span> @Html.DisplayFor(model => model.MarmatSambhar_Amount, new { @class = "form-control" }) </span></div>
+                                    
+
+                                            @*<div class="col-lg-12 col-md-12" style="font-size:12px;">कन्टिजेनसी वापत कट्टिहुने रकम ३ % : <span> @Html.DisplayFor(model => model.Contegency_Amount, new { @class = "form-control" }) </span></div>*@
+                                            @*<div class="col-lg-12 col-md-12" style="font-size:12px;">कन्टिजेनसी वापत कट्टिहुने रकम @if (Model.Contegency_Percentage != null)
+            { @Planning.Utility.NepaliEnglishNumber.English_Nepali(Model.Contegency_Percentage)} % : <span> @Html.DisplayFor(model => model.Contegency_Amount, new { @class = "form-control" }) </span></div>
+            <div class="col-lg-12 col-md-12" style="font-size:12px;">मर्मत सम्भार कोष वापत कट्टिहुने रकम १ % : <span> @Html.DisplayFor(model => model.MarmatSambhar_Amount, new { @class = "form-control" }) </span></div>*@
+                                        </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12  body-section" style="font-size:12px; font-weight:500; padding:0px 30px;">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>किस्ता क्रम</th>
+                                                <th>मिति</th>
+                                                <th>किस्ता रकम</th>
+                                                <th>निर्माण सामाग्री</th>
+                                                <th>कैफियत</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach (var item in Model.Payment_Records)
+                                            {
+                                                <tr>
+                                                    <td>@item.Kista_Kram</td>
+                                                    <td>
+                                                        @if (item.Payment_Date != null)
+                                                        {<span>@Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Payment_Date.Value.ToShortDateString()))</span>}
+                                                    </td>
+                                                    <td>@item.Kista_Rakam</td>
+                                                    <td>@item.Nirmarn_Samagri</td>
+                                                    <td>@item.Remarks</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+
+                                </div>
+
+                                <div class="col-md-12" id="shartha">
+                                    @Html.Action("PartialIndex", "Sarta")
+                                </div>
+                                @*<div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold; text-align:center"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">सम्झौताका शर्तहरुः</b> </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">उपभोक्ता समितिको जिम्मेवारी तथा पालना गरिने शर्तहरु : </b> </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+                @foreach (var item in Model.Project_Entry_Detail)
+                {
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                        १. आयोजना मिति &nbsp; <strong>
+                            @if (item.Project_Start_Date != null)
+                            {<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Project_Start_Date.Value.ToShortDateString())) </span>}
+                            else
+                            {<span>&nbsp;</span> }
+                        </strong> &nbsp; देखि शुरु गरी मिति &nbsp; <strong>
+                            @if (item.Project_End_Date != null)
+                            {<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Project_End_Date.Value.ToShortDateString())) </span>}
+                            else
+                            {<span>&nbsp;</span> }
+                        </strong> &nbsp; सम्ममा पुरा गर्नु पर्नेछ ।
+                    </div>
+                }
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">२.	प्राप्त रकम तथा निर्माण सामाग्री सम्बन्धित आयोजनाको उद्देश्यका लागि मात्र प्रयोग गर्नुपर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">३.	नगदी, जिन्सी सामानको प्राप्ती, खर्च र बाँकी तथा आयोजनाको प्रगति विवरण राख्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">४.	आम्दानी खर्चको विवरण र कार्यप्रगतिको जानकारी उपभोक्ता समूहमा छलफल गरी अर्को किस्ता माग गर्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">५.	आयोजनाको कुल लागत भन्दा घटी लागतमा आयोजना सम्पन्न भएको अवस्थामा सो मुताविकनै अनुदान र श्रमदानको प्रतिशत निर्धारण गरी भुक्तानी लिनु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">६.	उपभोक्ता समितिले प्राविधिकको राय, परामर्श एवं निर्देशन अनुरुप काम गर्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">७.	उपभोक्ता समितिले आयोजनासंग सम्बन्धित विल, भरपाईहरु, डोर हाजिरी फारामहरु, जिन्सी नगदी खाताहरु, समिति-समुहको निर्णय पुस्तिका आदि कागजातहरु कार्यालयले मगेको बखत उपलब्ध गराउनु पर्नेछ र त्यसको लेखापरीक्षण पनि गराउनु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">८.	कुनै सामाग्री खरिद गर्दा आन्तरिक राजस्व कार्यालयबाट स्थायी लेखा नम्बर र मुल्य अभिबृद्धि कर दर्ता प्रमाण पत्र प्राप्त व्यक्ति वा फर्म संस्था वा कम्पनीबाट खरिद गरी सोही अनुसारको विल भरपाई आधरकारीक व्यक्तिबाट प्रमाणित गरी पेश गर्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">९.	मूल्य अभिबृद्धि कर (VAT) लाग्ने बस्तु तथा सेवा खरिद गर्दा रु २०,०००।– भन्दा बढी मूल्यको सामाग्रीमा अनिवार्य रुपमा मूल्य अभिबृद्धि कर दर्ता प्रमाणपत्र प्राप्त गरेका व्यक्ति फर्म संस्था वा कम्पनीबाट खिरद गर्नु पर्नेछ । साथै उक्त विलमा उल्लिखित मु.अ.कर बाहेकको रकममा १.५% अग्रीम आयकर बापत करकट्टि गरी बाँकी रकम मात्र सम्बन्धित सेवा प्रदायकलाई भुक्तानी हुनेछ । रु २०,०००।– भन्दा कम मूल्यको सामाग्रफ खरिदमा पान नम्बर लिएको व्यक्ति वा फर्मबाट खरिद गर्नु पर्नेछ । अन्यथा खरिद गर्ने पदाधिकारी स्वयम् जिम्मेवार हुनेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१०.	डोजर रोलर लगायतका मेशिनरी सामान भाडामा लिएको एवम् घर बहालमा लिई विल भरपाई पेश भएको अवस्थामा १०% प्रतिशत घर भाडा कर एबम् बहाल कर तर्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">११.	प्रशिक्षकले पाउने पारिश्रमिक एवम् सहभागीले पाउने भत्तामा प्रचलित नियमानुसार कर लाग्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१२.	निर्माण कार्यको हकमा शुरु लागत अनुमानका कुनै आईटमहरुमा परिवर्तन हुने भएमा अधिकार प्राप्त व्यक्ति-कार्यालयबाट लागत अनुमान संसोधन गरे पश्चात मात्र कार्य गराउनु पर्नेछ । यसरी लागत अनुमान संसोधन नगरी कार्य गरेमा उपभोक्ता समिति-समुहनै जिम्मेवार हुनेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१३.	उपभोक्ता समितिले काम सम्पन्न गरिसकेपछि बाँकी रहन गएका खप्ने सामानहरु मर्मत संभार समिति गठन भएको भए सो समितिलाई र सो नभए सम्बन्धित कार्यालयलाई बुझाउनु पर्नेछ । तर मर्मत समितिलाई बुझाएको सामानको विवरण एक प्रति सम्बन्धित कार्यालयलाई जानकारीको लागि बुझाउनु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१४.	सम्झौता बमोजिम आयोजना सम्पन्न भएपछि अन्तिम भुक्तानिको लागि कार्यसम्पन्न प्रतिवेदन, नापी किताब, प्रमाणित बिल भरपाई, योजनाको फोटो, सम्बन्धित उपभोक्ता समितिले आयोजना संचालन गर्दा भएको आय व्ययको अनुमोदन सहितको निर्णय, उपभोक्ता भेलाबाट भएको सार्वजिनक लेखा परिक्षणको निर्णयको प्रतिलिपी तथा सम्बन्धित कार्यालयको वडा कार्यालयको वडा कार्यालयको सिफारिस सहित अन्तिम किस्ता भुक्तानीको लागि निवेदन पेश गर्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१५.	आयोजना सम्पन्न भएपछि कार्यालयबाट जाँचपास गरी फरफारकको प्रमाणपत्र लिनु पर्नेछ । साथै आयोजनाको आवश्यक मर्मत संभारको व्यवस्था सम्बन्धित उपभोक्ताहरुले नै गर्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१६.	आयोजना कार्यान्वयन गर्ने समूह वा उपभोक्ता समितिले आयोजनाको भौतिक तथा वित्तीय प्रगती प्रतिवेदन अनुसूची ६ को ढाँचामा सम्झौतामा तोकिए बमोजिम कार्यालयमा पेश गर्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१७.	आयोजनाको दीगो सञ्चालन तथा मर्मत संभारको व्यवस्था गर्न पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१८.	आयोजनाको सबै काम उपभोक्ता समिति-सुहको निर्णय अनुसार गर्नु गराउनु पर्नेछ ।</div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:0px; margin-bottom:0px;">कार्यालयको जिम्मेवारी तथा पालना गरिने शर्तहरु : </b> </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१.	आयोजनाको बजेट, उपभोक्ता समितिका काम, कर्तव्य तथा अधिकार, खरिद, लेखाङ्कन, प्रतिवेदन आदि विषयमा उपभोक्ता समितिका पदाधिकारीहरुलाई अनुशिक्षण कार्यक्रम सञ्चालन गरिनेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">२.	आयोजनामा आवश्यक प्राविधिक सहयोग कार्यालयबाट उपलब्ध गराउन सकिने अवस्थामा गराईनेछ र नसकिने अवस्थामा भएमा उपभोक्ता समितिले बाह्य बजारबाट सेवा परामर्श अन्तर्गत सेवा लिन सक्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">३.	आयोजनाको प्राविधिक सुपरिवेक्षणका लागि कार्यालयको तर्फबाट प्राविधिक खटाईनेछ । उपभोक्ता समितिबाट भएको कामको नियमित सुपरिवेक्षण गर्ने जिम्मेवारी निज प्राविधिकको हुनेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">४.	पेश्की लिएर लामो समयसम्म आयोजना नगर्ने उपभोक्ता समितिलाई कार्यालयले नियम अनुसार कारवाही गर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">५.	श्रममुलक प्रविधिबाट कार्य गराउने गरी लागत अनुमान स्वीकृत गराई सोही बमोजिम सम्झौता गरी मेशिनरी उपकरणको प्रयोगबाट कार्य गरेको पाईएमा त्यस्तो उपभोक्ता समितिसंग सम्झौता रद्ध गरी उपभोक्ता समितिलाई भुक्तानी गरिएको रकम मुल्यांकन गरी बढी भएको रकम सरकारी बाँकी सरह असुल उपर गरिनेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">६.	आयोजना सम्पन्न भएपछि कार्यालयबाट जाँच पास गरी फरफारक गर्नु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">७.	आवश्यक कागजात संलग्न गरी भुक्तानी उपलब्ध गराउन सम्बन्धित उपभोक्ता समितिबाट अनुरोध भई आएपछि उपभोक्ता समितिको बैंक खातामा भुक्तानी दिनु पर्नेछ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">८.	यसमा उल्लेख नभएका कुराहरु प्रचलित कानून बमोजिम हुनेछ ।</div>
+                <div class="clearfix"></div>
+            </div>
+        </div>*@
+
+
+
+
+                                @*<div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">सम्झौताका शर्तहरुः</b> </div>
+        <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:22px;">
+            <div class="row">
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१. प्राप्त रकम तथा निर्माण सामाग्री सम्बन्धित आयोजनाको उदेश्यका लागि मात्र प्रयोग गर्ने गराउनेछाेे ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">२. आयोजना सम्पन्न भएपछि अनिवार्य रुपमा सार्वजनिक परिक्षण गराएर नगरपालिकावाट जाँचपास गरी फरफारक लिनेछाेे ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">३. आम्दानी/खर्चको विवरण र कार्य प्रगतीको जान्कारी उपभोक्ता समुहलाई छलफल गराई अर्को किस्ता माग गर्नेछाेे ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">४. नगदी, जिन्सी सामान्को प्राप्ती, खर्च र बाँकी तथा आयोजनाको प्रगति विवरण अभिलेख आदी तयार राख्नेछाेे ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">५. आयोजनाको कुल लागत भन्दा घटी लागतमा आयोजना सम्पन्न भएको अवस्थामा सो मुताविक नेे अनुदान र श्रमदान प्रतिशत निर्धारण गरी भुक्तानी लिन/दिन सहमत छाेे ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">६. आआयोजना सम्पन्न भए पछि मर्मत सम्भारको व्यवस्था हामी उपभोक्ता आफेे गर्ने छाेे ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">७. आआयोजनाको सबेे काम उपभोक्ता समिति, समुहाको निर्णय अनुसार नर्ने गराउने छाेे ।</div>
+                @foreach (var item in Model.Project_Entry_Detail)
+                {
+                    <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                        ८. आयोजना मिति &nbsp; <strong>
+                            @if (item.Project_Start_Date != null)
+                            {<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_Start_Date.Value.ToShortDateString()) </span>}
+                            else
+                            {<span>&nbsp;</span> }
+                        </strong> &nbsp; देखि शुरु गरी मिति &nbsp; <strong>
+                            @if (item.Project_End_Date != null)
+                            {<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_End_Date.Value.ToShortDateString()) </span>}
+                            else
+                            {<span>&nbsp;</span> }
+                        </strong> &nbsp; सम्ममा पुरा गर्ने / गराउने छाै ।
+                    </div>
+                }
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">९. उपभोक्ता समितिले अनुदान रु.५,००,०००।- (पाँच लाख) भन्दा माथिका योजना संचालन स्थलको नजिक सार्वजनिक ठाउँमा नगरपालिकाले तोके वमोजिमको ढाँचामा सवाैले देख्नेगरी अनिवार्य रुपमा होडिङ्वोड राख्नुपर्नेछ, सो भन्दा कम अनुदान भएका योजनाहरुको हकमा भने सुचना राख्नुपर्ने छ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">१०. उपभोक्ता समितिले सम्झौतामा तोकिएको मिति भित्र आयोजनाको सम्पूर्ण कार्य सम्पन्न गर्नु पर्नेछ । अन्यथा नगरपालिकाबाट उक्त समय भित्र सम्पन्न कार्यको मात्र मूल्याङ्कन गरी रकम भुक्तानी गरिने छ ।</div>
+                <div class="col-lg-12 col-md-12" style="font-size:12px;">११. उपभोक्ता समितिवाट भुक्तानीको लागि पेश भएको सामान खरिद बिलमा धुवानि कर १०% कट्टा गरी मात्र रकम भुक्तानी गरिने छ ।</div>
+                <div class="clearfix"></div>
+            </div>
+        </div>*@
+
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:bold;"><b style="font-weight:bold; font-size:14px; margin-top:10px; margin-bottom:0px;">उपयुक्त बमोजिम गर्न हामी मञ्जुर छौ ।</b> </div>
+                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:500; padding-left:60px; line-height:30px;">
+                                    <div class="row">
+                                        @foreach (var item in Model.Municipality_Samiti_Manjuri_Patra)
+                                        {
+                                            <div class="col-md-4" style="display:inline-block; position:relative; vertical-align:top; line-height:22px;">
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;">
+                                                    @if (OrganiationName.Count > 0)
+                                                    {
+                                                        using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+                                                        {
+                                                            foreach (Planning.Planning.Entities.Organization_Setup i in OrganiationName)
+                                                            {
+                                                                <b style="font-weight:bold;">@i.Organization_Name तर्फवाटः</b>
+                                                            }
+                                                        }
+                                                    }
+                                                </div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">नामः <span> @Html.DisplayFor(model => item.Municipality_Rep_Name, new { @class = "form-control" }) </span></div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">दर्जा: <span> @Html.DisplayFor(model => item.Municipality_Rep_Post, new { @class = "form-control" }) </span></div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">सही: <span>  </span></div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">
+                                                    मिति: @if (item.Municipality_Manjuri_Date != null)
+                                                    {<span> @Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Municipality_Manjuri_Date))</span>}
+                                                else
+                                                {<span>&nbsp;</span>}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" style="display:inline-block;position:relative; line-height:22px;">
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>उयोजना साखाको तर्फवाटः:</b> </div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;"> नामः <span> @Html.DisplayFor(model => item.Samiti_Adakshya_Name, new { @class = "form-control" }) </span></div>
+                                            
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">दर्जा <span> @Html.DisplayFor(model => item.Samiti_Sachib_Name, new { @class = "form-control" }) </span></div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">सही: <span>  </span></div>
+                                                
+                                            </div>
+                                            <div class="col-md-4" style="display:inline-block;position:relative; line-height:22px;">
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px; font-weight:600;"><b>उपभोक्ता समितिको तर्फवाटः</b> </div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">अध्यक्षको नामः <span> @Html.DisplayFor(model => item.Samiti_Adakshya_Name, new { @class = "form-control" }) </span></div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">सही: <span>  </span></div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">सचिवको नामः <span> @Html.DisplayFor(model => item.Samiti_Sachib_Name, new { @class = "form-control" }) </span></div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">सही: <span>  </span></div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">रोहवरः <span> @Html.DisplayFor(model => item.Samiti_Rohabar_Name, new { @class = "form-control" }) </span></div>
+                                                <div class="col-lg-12 col-md-12" style="font-size:12px;">सही: <span>  </span></div>
+                                            </div>
+                                        }
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi1(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("Anusuchi1", "PlanningAnusuchi1")',
+            type: 'GET',
+            data: {
+                id: planningSamjhautaId,
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi2(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("Anusuchi2SamjhautaCompleteReport", "PlanningSamjhauta")',
+            type: 'GET',
+            data: {
+                id: planningSamjhautaId,
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi3(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("PlanningSamjhautaAnusuchi3", "PlanningAnusuchi3")',
+            type: 'GET',
+            data: {
+                id: planningSamjhautaId,
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi4(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("PlanningSamjhautaAnusuchi4", "PlanningAnusuchi4")',
+            type: 'GET',
+            data: {
+                id: planningSamjhautaId,
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi5(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("Index", "PlanningAnusuchi5")',
+            type: 'GET',
+            data: {
+                //id: $('#Karyakram_Id').val(),
+                id: planningSamjhautaId,
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi6(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("PlanningSamjhautaAnusuchi6", "PlanningAnusuchi6")',
+            type: 'GET',
+            data: {
+                id: planningSamjhautaId,
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi7(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("Anusuchi7", "PlanningAnusuchi7")',
+            type: 'GET',
+            data: {
+                id: planningSamjhautaId,
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi9(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("Anusuchi9", "PlanningAnusuchi9")',
+            type: 'GET',
+            data: {
+                id: planningSamjhautaId,
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi10(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("AnugamaPartial", "PlanningAnusuchi10")',
+            type: 'GET',
+            data: {
+                id: planningSamjhautaId,
+                 ids:planningSamjhautaId
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function getAnusuchi11(id) {
+        debugger;
+        Swal({
+            title: "कृपया पर्खनुहोस्....",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+        })
+        Swal.showLoading()
+        var planningSamjhautaId = id;
+        $.ajax({
+            url: '@Url.Action("Anusuchi11", "PlanningAnusuchi11")',
+            type: 'GET',
+            data: {
+                id: planningSamjhautaId,
+            },
+            success: function (result) {
+                $('.tab-content').empty();
+                $('.tab-content').html(result);
+                swal.close();
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            },
+            error: function () {
+            }
+        });
+    };
+</script>
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+<script>
+
+        function PrintElem(elem) {
+            Popup(jQuery(elem).html());
+        }
+
+        function Popup(data) {
+            var mywindow = window.open('', 'my div', 'height=400,width=600');
+            mywindow.document.write('<html><head><title></title>');
+            mywindow.document.write('<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />');
+            mywindow.document.write('<style type="text/css">.test { color:red; } </style></head><body>');
+            mywindow.document.write(data);
+            mywindow.document.write('</body></html>');
+            mywindow.document.close();
+            mywindow.print();
+        }
+</script>
+
+<script>
+        $(document).ready(function () {
+            $('.shrot').keyup(function () {
+                debugger;
+                var calculated_total_sum = 0;
+                $('.shrot').each(function () {
+                    var get_textbox_value = $(this).val();
+                    if ($.isNumeric(get_textbox_value)) {
+                        calculated_total_sum += parseFloat(get_textbox_value);
+                    }
+                });
+                alert(calculated_total_sum);
+                $("#TotalSum").html(calculated_total_sum);
+                $("#subTotalSourceAmount").val(calculated_total_sum);
+            })
+        });
+        //$('#c').click(function () {
+        //    debugger
+        //    var calculated_total_sum = 0;
+        //    $('.shrot').each(function () {
+        //        var get_textbox_value = $(this).text();
+        //        if ($.isNumeric(get_textbox_value)) {
+        //            calculated_total_sum += parseFloat(get_textbox_value);
+        //        }
+        //    });
+        //    alert(calculated_total_sum);
+        //});
+
+        //function notify() {
+        //    debugger;
+        //    var labels = $(".shrot");
+        //    var total = 0;
+        //    $.each(labels, function (index, lbl) {
+        //        total += parseInt($(lbl).text());
+        //    });
+        //    alert(total)
+        //}
+
+</script>
+
+<script>
+        $(document).ready(function () {
+            $('.kistarakam').keyup(function () {
+                debugger;
+                var calculated_total_sum = 0;
+                var katta_hune_rakam = 0;
+                $('.kistarakam').each(function () {
+                    var get_textbox_value = $(this).val();
+                    if ($.isNumeric(get_textbox_value)) {
+                        calculated_total_sum += parseFloat(get_textbox_value);
+
+                        katta_hune_rakam = parseFloat(calculated_total_sum * 0.03)
+                    }
+                });
+
+                $("#kattaHuniRakam").html(katta_hune_rakam);
+
+                $("#TotalSumForKista").html(calculated_total_sum - katta_hune_rakam);
+
+                var totamt = calculated_total_sum - katta_hune_rakam;
+
+                //document.getElementById('TotalSumInWord').value = totamt;
+
+                $('#subTotalKattaHuni').val(katta_hune_rakam);
+                $('#subTotalKista').val(totamt);
+
+            })
+        });
+</script>
+
+<script type="text/javascript">
+        jQuery(function ($) {
+            $("#FirstKista").mask("9999/99/99");
+            $("#SecondKista").mask("9999/99/99");
+            $("#ThirdKista").mask("9999/99/99");
+        });
+</script>
+
+<script>
+        function setsadashya() {
+            var Sadashya = $('#Sadashya');
+            $(Sadashya).val('');
+            var SadashyaVal = '';
+            $('.Sadashya').each(function (index, item) {
+                SadashyaVal += $(item).val() + ','
+            });
+            SadashyaVal = SadashyaVal.substring(0, SadashyaVal.length - 1);
+            $(Sadashya).val(SadashyaVal);
+        }
+</script>
+<script>
+   // $.noConflict();
+    jQuery(document).ready(function ($) {
+        var sdate = $('#starddate1').val();
+        var edate = $('#enddate1').val();
+        $("#shartha").each(function () {
+            $(this).html($(this).html().replace("()",  sdate));
+        });
+        $("#shartha").each(function () {
+            $(this).html($(this).html().replace("(-)",    edate    ));
+        });
+    });
+</script>
+
+@*<script type="text/javascript">
+        var $ = jQuery.noConflict();
+        function getAnusuchi3(id) {
+            debugger;
+            var planningSamjhautaId = id;
+            $.ajax({
+                url: '@Url.Action("PlanningSamjhautaAnusuchi3", "PlanningAnusuchi3")',
+                type: 'GET',
+                data: {
+                    id: planningSamjhautaId,
+                },
+                success: function (result) {
+                    $('.tab-content').empty();
+                    $('.tab-content').html(result);
+                },
+                error: function () {
+                }
+            });
+        };
+    </script>*@

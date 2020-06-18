@@ -1,0 +1,1112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SOLU_DUDH_KUNDA_PLANNINGModelStoreContainer" CdmEntityContainer="PLANNING_OCT_03Entities">
+    <FunctionImportMapping FunctionImportName="IsNepaliDateExist" FunctionName="SOLU_DUDH_KUNDA_PLANNINGModel.Store.IsNepaliDateExist" />
+    <FunctionImportMapping FunctionImportName="sp_GetLocalDate" FunctionName="SOLU_DUDH_KUNDA_PLANNINGModel.Store.sp_GetLocalDate" />
+    <FunctionImportMapping FunctionImportName="sp_GetRomanDate" FunctionName="SOLU_DUDH_KUNDA_PLANNINGModel.Store.sp_GetRomanDate" />
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aayojana_Maintainance">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Aayojana_Maintainance">
+        <MappingFragment StoreEntitySet="Aayojana_Maintainance">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Interest_Saving" ColumnName="Interest_Saving" />
+          <ScalarProperty Name="Lagat_Anudan" ColumnName="Lagat_Anudan" />
+          <ScalarProperty Name="Dastur_Chanda" ColumnName="Dastur_Chanda" />
+          <ScalarProperty Name="SewaSulka" ColumnName="SewaSulka" />
+          <ScalarProperty Name="Janashram" ColumnName="Janashram" />
+          <ScalarProperty Name="Responsible_Org" ColumnName="Responsible_Org" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Aayojana_Maintainance_Id" ColumnName="Aayojana_Maintainance_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Amanat_Deatils">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Amanat_Deatils">
+        <MappingFragment StoreEntitySet="Amanat_Deatils">
+          <ScalarProperty Name="Planning_Samjhata_Id" ColumnName="Planning_Samjhata_Id" />
+          <ScalarProperty Name="SahiDate" ColumnName="SahiDate" />
+          <ScalarProperty Name="Darja" ColumnName="Darja" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anugamen">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Anugaman">
+        <MappingFragment StoreEntitySet="Anugaman">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="PlanningEntryId" ColumnName="PlanningEntryId" />
+          <ScalarProperty Name="Tipani" ColumnName="Tipani" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="AnugamanName" ColumnName="AnugamanName" />
+          <ScalarProperty Name="AnugamanId" ColumnName="AnugamanId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi1">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi1">
+        <MappingFragment StoreEntitySet="AnuSuchi1">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Account_Number" ColumnName="Account_Number" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Establish_Date" ColumnName="Establish_Date" />
+          <ScalarProperty Name="Koshadakshya" ColumnName="Koshadakshya" />
+          <ScalarProperty Name="Sachib" ColumnName="Sachib" />
+          <ScalarProperty Name="Upadakshya" ColumnName="Upadakshya" />
+          <ScalarProperty Name="Adakshya" ColumnName="Adakshya" />
+          <ScalarProperty Name="Upabhokta_Samiti_Name" ColumnName="Upabhokta_Samiti_Name" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="AnuSuchi1_Id" ColumnName="AnuSuchi1_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi10">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10">
+        <MappingFragment StoreEntitySet="AnuSuchi10">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Adakshya_MobileNo" ColumnName="Adakshya_MobileNo" />
+          <ScalarProperty Name="Adakshya_Gender" ColumnName="Adakshya_Gender" />
+          <ScalarProperty Name="Adakshya" ColumnName="Adakshya" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="AnuSuchi10_Id" ColumnName="AnuSuchi10_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi10_Discussion_Conclusions">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10_Discussion_Conclusions">
+        <MappingFragment StoreEntitySet="AnuSuchi10_Discussion_Conclusions">
+          <ScalarProperty Name="Conclusions" ColumnName="Conclusions" />
+          <ScalarProperty Name="AnuSuchi10_Id" ColumnName="AnuSuchi10_Id" />
+          <ScalarProperty Name="AnuSuchi10_Discussion_Conclusions_Id" ColumnName="AnuSuchi10_Discussion_Conclusions_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi10_Discussion_Subjects">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10_Discussion_Subjects">
+        <MappingFragment StoreEntitySet="AnuSuchi10_Discussion_Subjects">
+          <ScalarProperty Name="Subjects" ColumnName="Subjects" />
+          <ScalarProperty Name="AnuSuchi10_Id" ColumnName="AnuSuchi10_Id" />
+          <ScalarProperty Name="AnuSuchi10_Discussion_Subjects_Id" ColumnName="AnuSuchi10_Discussion_Subjects_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi10_Meeting">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10_Meeting">
+        <MappingFragment StoreEntitySet="AnuSuchi10_Meeting">
+          <ScalarProperty Name="Baithak_Date" ColumnName="Baithak_Date" />
+          <ScalarProperty Name="Baithak_No" ColumnName="Baithak_No" />
+          <ScalarProperty Name="AnuSuchi10_Id" ColumnName="AnuSuchi10_Id" />
+          <ScalarProperty Name="AnuSuchi10_Meeting_Id" ColumnName="AnuSuchi10_Meeting_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi10_Members">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10_Members">
+        <MappingFragment StoreEntitySet="AnuSuchi10_Members">
+          <ScalarProperty Name="Members_MobileNo" ColumnName="Members_MobileNo" />
+          <ScalarProperty Name="Members_Pad" ColumnName="Members_Pad" />
+          <ScalarProperty Name="Members_Gender" ColumnName="Members_Gender" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="AnuSuchi10_Id" ColumnName="AnuSuchi10_Id" />
+          <ScalarProperty Name="AnuSuchi10_Members_Id" ColumnName="AnuSuchi10_Members_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi11">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi11">
+        <MappingFragment StoreEntitySet="AnuSuchi11">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Suggestion" ColumnName="Suggestion" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="AnuSuchi11_Id" ColumnName="AnuSuchi11_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi3_Bhuktani">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Bhuktani">
+        <MappingFragment StoreEntitySet="AnuSuchi3_Bhuktani">
+          <ScalarProperty Name="Bhuktani_Amount" ColumnName="Bhuktani_Amount" />
+          <ScalarProperty Name="Bhuktani_Details" ColumnName="Bhuktani_Details" />
+          <ScalarProperty Name="AnuSuchi3_Id" ColumnName="AnuSuchi3_Id" />
+          <ScalarProperty Name="AnuSuchi3_Bhuktani_Id" ColumnName="AnuSuchi3_Bhuktani_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi3_Expenses">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Expenses">
+        <MappingFragment StoreEntitySet="AnuSuchi3_Expenses">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Expenses_Total" ColumnName="Expenses_Total" />
+          <ScalarProperty Name="Expenses_Quantity" ColumnName="Expenses_Quantity" />
+          <ScalarProperty Name="Expenses_Rate" ColumnName="Expenses_Rate" />
+          <ScalarProperty Name="Expenses_Details" ColumnName="Expenses_Details" />
+          <ScalarProperty Name="AnuSuchi3_Id" ColumnName="AnuSuchi3_Id" />
+          <ScalarProperty Name="AnuSuchi3_Expenses_Id" ColumnName="AnuSuchi3_Expenses_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi3_Income">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Income">
+        <MappingFragment StoreEntitySet="AnuSuchi3_Income">
+          <ScalarProperty Name="Income_Remarks" ColumnName="Income_Remarks" />
+          <ScalarProperty Name="Amount_Quantity" ColumnName="Amount_Quantity" />
+          <ScalarProperty Name="Income_Source" ColumnName="Income_Source" />
+          <ScalarProperty Name="AnuSuchi3_Id" ColumnName="AnuSuchi3_Id" />
+          <ScalarProperty Name="AnuSuchi3_Income_Id" ColumnName="AnuSuchi3_Income_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi3_Maujat">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Maujat">
+        <MappingFragment StoreEntitySet="AnuSuchi3_Maujat">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Maujat_Remarks" ColumnName="Maujat_Remarks" />
+          <ScalarProperty Name="Maujat_Amount" ColumnName="Maujat_Amount" />
+          <ScalarProperty Name="Maujat_Details" ColumnName="Maujat_Details" />
+          <ScalarProperty Name="AnuSuchi3_Id" ColumnName="AnuSuchi3_Id" />
+          <ScalarProperty Name="AnuSuchi3_Maujat_Id" ColumnName="AnuSuchi3_Maujat_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi3_Project_Work_Detail">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Project_Work_Detail">
+        <MappingFragment StoreEntitySet="AnuSuchi3_Project_Work_Detail">
+          <ScalarProperty Name="Work_Progress" ColumnName="Work_Progress" />
+          <ScalarProperty Name="Work_Plan" ColumnName="Work_Plan" />
+          <ScalarProperty Name="Work_Details" ColumnName="Work_Details" />
+          <ScalarProperty Name="AnuSuchi3_Id" ColumnName="AnuSuchi3_Id" />
+          <ScalarProperty Name="AnuSuchi3_Project_Work_Detail_Id" ColumnName="AnuSuchi3_Project_Work_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi3_Work_Division">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Work_Division">
+        <MappingFragment StoreEntitySet="AnuSuchi3_Work_Division">
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="AnuSuchi3_Id" ColumnName="AnuSuchi3_Id" />
+          <ScalarProperty Name="AnuSuchi3_Work_Division_Id" ColumnName="AnuSuchi3_Work_Division_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anusuchi4_Expenses">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi4_Expenses">
+        <MappingFragment StoreEntitySet="Anusuchi4_Expenses">
+          <ScalarProperty Name="Bawestapan_Kharcha" ColumnName="Bawestapan_Kharcha" />
+          <ScalarProperty Name="Bhada" ColumnName="Bhada" />
+          <ScalarProperty Name="Dhuwani" ColumnName="Dhuwani" />
+          <ScalarProperty Name="Nirman_Samagri_Kharid" ColumnName="Nirman_Samagri_Kharid" />
+          <ScalarProperty Name="Jyalla" ColumnName="Jyalla" />
+          <ScalarProperty Name="Anusuchi4_Id" ColumnName="Anusuchi4_Id" />
+          <ScalarProperty Name="Anusuchi4_Expenses_Id" ColumnName="Anusuchi4_Expenses_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anusuchi4_Income">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi4_Income">
+        <MappingFragment StoreEntitySet="Anusuchi4_Income">
+          <ScalarProperty Name="Lagat_Sahabhagita" ColumnName="Lagat_Sahabhagita" />
+          <ScalarProperty Name="Bastugat_Sahayata" ColumnName="Bastugat_Sahayata" />
+          <ScalarProperty Name="Janashram" ColumnName="Janashram" />
+          <ScalarProperty Name="Third_Kista" ColumnName="Third_Kista" />
+          <ScalarProperty Name="Second_Kista" ColumnName="Second_Kista" />
+          <ScalarProperty Name="First_Kista" ColumnName="First_Kista" />
+          <ScalarProperty Name="Anusuchi4_Id" ColumnName="Anusuchi4_Id" />
+          <ScalarProperty Name="Anusuchi4_Income_Id" ColumnName="Anusuchi4_Income_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anusuchi6">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi6">
+        <MappingFragment StoreEntitySet="Anusuchi6">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total_Expenses_TillNow" ColumnName="Total_Expenses_TillNow" />
+          <ScalarProperty Name="Total_Amount" ColumnName="Total_Amount" />
+          <ScalarProperty Name="Jana_Sahabhagita_Rakam" ColumnName="Jana_Sahabhagita_Rakam" />
+          <ScalarProperty Name="Chanda_Rakam" ColumnName="Chanda_Rakam" />
+          <ScalarProperty Name="Anudan_Rakam" ColumnName="Anudan_Rakam" />
+          <ScalarProperty Name="Sachib" ColumnName="Sachib" />
+          <ScalarProperty Name="Adakshya" ColumnName="Adakshya" />
+          <ScalarProperty Name="Upabhokta_Samiti_Name" ColumnName="Upabhokta_Samiti_Name" />
+          <ScalarProperty Name="Street_Name" ColumnName="Street_Name" />
+          <ScalarProperty Name="Ward_No" ColumnName="Ward_No" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Anusuchi6_Id" ColumnName="Anusuchi6_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anusuchi6_Janasahabhagita">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi6_Janasahabhagita">
+        <MappingFragment StoreEntitySet="Anusuchi6_Janasahabhagita">
+          <ScalarProperty Name="Main_Expenses" ColumnName="Main_Expenses" />
+          <ScalarProperty Name="Field_Supervise_Decision" ColumnName="Field_Supervise_Decision" />
+          <ScalarProperty Name="Kista_Rakam_Demand" ColumnName="Kista_Rakam_Demand" />
+          <ScalarProperty Name="Upabhikta_Decision_Amount" ColumnName="Upabhikta_Decision_Amount" />
+          <ScalarProperty Name="Technical_Review_Amount" ColumnName="Technical_Review_Amount" />
+          <ScalarProperty Name="Jinsi_Amount" ColumnName="Jinsi_Amount" />
+          <ScalarProperty Name="Sharam_Amount" ColumnName="Sharam_Amount" />
+          <ScalarProperty Name="Janasahabhagita_Amount" ColumnName="Janasahabhagita_Amount" />
+          <ScalarProperty Name="Anusuchi6_Id" ColumnName="Anusuchi6_Id" />
+          <ScalarProperty Name="Anusuchi6_Janasahabhagita_Id" ColumnName="Anusuchi6_Janasahabhagita_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anusuchi6_Karyalaya">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi6_Karyalaya">
+        <MappingFragment StoreEntitySet="Anusuchi6_Karyalaya">
+          <ScalarProperty Name="Masalanda_Amount" ColumnName="Masalanda_Amount" />
+          <ScalarProperty Name="Technical_Supervise_Amount" ColumnName="Technical_Supervise_Amount" />
+          <ScalarProperty Name="Travel_Expenses_Amount" ColumnName="Travel_Expenses_Amount" />
+          <ScalarProperty Name="Others_Amount" ColumnName="Others_Amount" />
+          <ScalarProperty Name="Adashya_Amount" ColumnName="Adashya_Amount" />
+          <ScalarProperty Name="Dashya_Amount" ColumnName="Dashya_Amount" />
+          <ScalarProperty Name="Nirman_Samagri_Amount" ColumnName="Nirman_Samagri_Amount" />
+          <ScalarProperty Name="Karyalaya_Amount" ColumnName="Karyalaya_Amount" />
+          <ScalarProperty Name="Anusuchi6_Id" ColumnName="Anusuchi6_Id" />
+          <ScalarProperty Name="Anusuchi6_Karyalaya_Id" ColumnName="Anusuchi6_Karyalaya_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anusuchi6_Solutions">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi6_Solutions">
+        <MappingFragment StoreEntitySet="Anusuchi6_Solutions">
+          <ScalarProperty Name="Solutions" ColumnName="Solutions" />
+          <ScalarProperty Name="Anusuchi6_Id" ColumnName="Anusuchi6_Id" />
+          <ScalarProperty Name="Anusuchi6_Solutions_Id" ColumnName="Anusuchi6_Solutions_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi7">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi7">
+        <MappingFragment StoreEntitySet="AnuSuchi7">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total_Present_No" ColumnName="Total_Present_No" />
+          <ScalarProperty Name="Adakshyata" ColumnName="Adakshyata" />
+          <ScalarProperty Name="Established_Type" ColumnName="Established_Type" />
+          <ScalarProperty Name="Samiti_Address" ColumnName="Samiti_Address" />
+          <ScalarProperty Name="Samiti_Estd_Date" ColumnName="Samiti_Estd_Date" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="AnuSuchi7_Id" ColumnName="AnuSuchi7_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi7_Anugaman_Samiti">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi7_Anugaman_Samiti">
+        <MappingFragment StoreEntitySet="AnuSuchi7_Anugaman_Samiti">
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="GrandFather_Name" ColumnName="GrandFather_Name" />
+          <ScalarProperty Name="Father_Husband_Name" ColumnName="Father_Husband_Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="AnuSuchi7_Id" ColumnName="AnuSuchi7_Id" />
+          <ScalarProperty Name="AnuSuchi7_Anugaman_Samiti_Id" ColumnName="AnuSuchi7_Anugaman_Samiti_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi7_Upabhokta_Samiti">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi7_Upabhokta_Samiti">
+        <MappingFragment StoreEntitySet="AnuSuchi7_Upabhokta_Samiti">
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="GrandFather_Name" ColumnName="GrandFather_Name" />
+          <ScalarProperty Name="Father_Husband_Name" ColumnName="Father_Husband_Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="AnuSuchi7_Id" ColumnName="AnuSuchi7_Id" />
+          <ScalarProperty Name="AnuSuchi7_Upabhokta_Samiti_Id" ColumnName="AnuSuchi7_Upabhokta_Samiti_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi9">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9">
+        <MappingFragment StoreEntitySet="AnuSuchi9">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Koshadakshya_Address" ColumnName="Koshadakshya_Address" />
+          <ScalarProperty Name="Koshadakshya" ColumnName="Koshadakshya" />
+          <ScalarProperty Name="Sachib_Address" ColumnName="Sachib_Address" />
+          <ScalarProperty Name="Sachib" ColumnName="Sachib" />
+          <ScalarProperty Name="Adakshya_Address" ColumnName="Adakshya_Address" />
+          <ScalarProperty Name="Adakshya" ColumnName="Adakshya" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="AnuSuchi9_Id" ColumnName="AnuSuchi9_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi9_Discussion_Conclusions">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9_Discussion_Conclusions">
+        <MappingFragment StoreEntitySet="AnuSuchi9_Discussion_Conclusions">
+          <ScalarProperty Name="Conclusions" ColumnName="Conclusions" />
+          <ScalarProperty Name="AnuSuchi9_Id" ColumnName="AnuSuchi9_Id" />
+          <ScalarProperty Name="AnuSuchi9_Discussion_Conclusions_Id" ColumnName="AnuSuchi9_Discussion_Conclusions_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi9_Discussion_Subjects">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9_Discussion_Subjects">
+        <MappingFragment StoreEntitySet="AnuSuchi9_Discussion_Subjects">
+          <ScalarProperty Name="Subjects" ColumnName="Subjects" />
+          <ScalarProperty Name="AnuSuchi9_Id" ColumnName="AnuSuchi9_Id" />
+          <ScalarProperty Name="AnuSuchi9_Discussion_Subjects_Id" ColumnName="AnuSuchi9_Discussion_Subjects_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi9_Meeting">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9_Meeting">
+        <MappingFragment StoreEntitySet="AnuSuchi9_Meeting">
+          <ScalarProperty Name="Baithak_Date" ColumnName="Baithak_Date" />
+          <ScalarProperty Name="Baithak_No" ColumnName="Baithak_No" />
+          <ScalarProperty Name="AnuSuchi9_Id" ColumnName="AnuSuchi9_Id" />
+          <ScalarProperty Name="AnuSuchi9_Meeting_Id" ColumnName="AnuSuchi9_Meeting_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi9_Members">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9_Members">
+        <MappingFragment StoreEntitySet="AnuSuchi9_Members">
+          <ScalarProperty Name="Members_Address" ColumnName="Members_Address" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="AnuSuchi9_Id" ColumnName="AnuSuchi9_Id" />
+          <ScalarProperty Name="AnuSuchi9_Members_Id" ColumnName="AnuSuchi9_Members_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Beneficiaries_Group">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Beneficiaries_Group">
+        <MappingFragment StoreEntitySet="Beneficiaries_Group">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="Community" ColumnName="Community" />
+          <ScalarProperty Name="Total_Female" ColumnName="Total_Female" />
+          <ScalarProperty Name="Total_Male" ColumnName="Total_Male" />
+          <ScalarProperty Name="Total_House" ColumnName="Total_House" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Beneficiaries_Group_Id" ColumnName="Beneficiaries_Group_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BhukataniItems">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.BhukataniItem">
+        <MappingFragment StoreEntitySet="BhukataniItem">
+          <ScalarProperty Name="updatedby" ColumnName="updatedby" />
+          <ScalarProperty Name="updatedeby" ColumnName="updatedeby" />
+          <ScalarProperty Name="deletedby" ColumnName="deletedby" />
+          <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="itemid" ColumnName="itemid" />
+          <ScalarProperty Name="BhutaniID" ColumnName="BhutaniID" />
+          <ScalarProperty Name="bhukataniItemId" ColumnName="bhukataniItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Budget_Source">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Budget_Source">
+        <MappingFragment StoreEntitySet="Budget_Source">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Source_Name" ColumnName="Source_Name" />
+          <ScalarProperty Name="Budget_Source_Id" ColumnName="Budget_Source_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Class_A_Bank_List">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Class_A_Bank_List">
+        <MappingFragment StoreEntitySet="Class_A_Bank_List">
+          <ScalarProperty Name="Bank_Name_English" ColumnName="Bank_Name_English" />
+          <ScalarProperty Name="Bank_Name_Nepali" ColumnName="Bank_Name_Nepali" />
+          <ScalarProperty Name="Class_A_Bank_List_Id" ColumnName="Class_A_Bank_List_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DateConversion_TblNepaliCalender">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.DateConversion_TblNepaliCalender">
+        <MappingFragment StoreEntitySet="DateConversion_TblNepaliCalender">
+          <ScalarProperty Name="E_End_Date" ColumnName="E_End_Date" />
+          <ScalarProperty Name="E_Start_Date" ColumnName="E_Start_Date" />
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fiscal_Year_Record">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Fiscal_Year_Record">
+        <MappingFragment StoreEntitySet="Fiscal_Year_Record">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Fiscal_Year_Record_Id" ColumnName="Fiscal_Year_Record_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+          <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+          <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="ekainame" ColumnName="ekainame" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="itemId" ColumnName="itemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kar_Katti">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Kar_Katti">
+        <MappingFragment StoreEntitySet="Kar_Katti">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Parishramik" ColumnName="Parishramik" />
+          <ScalarProperty Name="AgrimShulka" ColumnName="AgrimShulka" />
+          <ScalarProperty Name="BahalKar" ColumnName="BahalKar" />
+          <ScalarProperty Name="SamajikSurekchya" ColumnName="SamajikSurekchya" />
+          <ScalarProperty Name="MarmatSambhar" ColumnName="MarmatSambhar" />
+          <ScalarProperty Name="Contigency" ColumnName="Contigency" />
+          <ScalarProperty Name="Kar_Katti_Id" ColumnName="Kar_Katti_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organization_Representative">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Organization_Representative">
+        <MappingFragment StoreEntitySet="Organization_Representative">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Representative_Address" ColumnName="Representative_Address" />
+          <ScalarProperty Name="Representative_Designition" ColumnName="Representative_Designition" />
+          <ScalarProperty Name="Representative_Name" ColumnName="Representative_Name" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Organization_Representative_Id" ColumnName="Organization_Representative_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organization_Setup">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Organization_Setup">
+        <MappingFragment StoreEntitySet="Organization_Setup">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+          <ScalarProperty Name="State_Country" ColumnName="State_Country" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="Organization_Type" ColumnName="Organization_Type" />
+          <ScalarProperty Name="Organization_Name" ColumnName="Organization_Name" />
+          <ScalarProperty Name="Organization_Setup_Id" ColumnName="Organization_Setup_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Records">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Payment_Records">
+        <MappingFragment StoreEntitySet="Payment_Records">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Nirmarn_Samagri" ColumnName="Nirmarn_Samagri" />
+          <ScalarProperty Name="Kista_Rakam" ColumnName="Kista_Rakam" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+          <ScalarProperty Name="Kista_Kram" ColumnName="Kista_Kram" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Payment_Records_Id" ColumnName="Payment_Records_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planning_Documents">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Documents">
+        <MappingFragment StoreEntitySet="Planning_Documents">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Bhuktani_Nibedan" ColumnName="Bhuktani_Nibedan" />
+          <ScalarProperty Name="Karya_Sampanna" ColumnName="Karya_Sampanna" />
+          <ScalarProperty Name="Pramanikaran" ColumnName="Pramanikaran" />
+          <ScalarProperty Name="Mapan" ColumnName="Mapan" />
+          <ScalarProperty Name="Anuman" ColumnName="Anuman" />
+          <ScalarProperty Name="Samjhauta" ColumnName="Samjhauta" />
+          <ScalarProperty Name="Nirnaya" ColumnName="Nirnaya" />
+          <ScalarProperty Name="Upabhokta_Gathan" ColumnName="Upabhokta_Gathan" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Fiscal_Year" ColumnName="Fiscal_Year" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Planning_Documents_Id" ColumnName="Planning_Documents_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planning_Entry_Anudan">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Entry_Anudan">
+        <MappingFragment StoreEntitySet="Planning_Entry_Anudan">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="JanaSahaBhagita_Amt" ColumnName="JanaSahaBhagita_Amt" />
+          <ScalarProperty Name="Other_Amt" ColumnName="Other_Amt" />
+          <ScalarProperty Name="UpaBhoktaSamiti_Amt" ColumnName="UpaBhoktaSamiti_Amt" />
+          <ScalarProperty Name="Nagarpalika_Amt" ColumnName="Nagarpalika_Amt" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Planning_Entry_Id" ColumnName="Planning_Entry_Id" />
+          <ScalarProperty Name="Planning_Entry_Anudan_Id" ColumnName="Planning_Entry_Anudan_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planning_Entry_Kista_Detail">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Entry_Kista_Detail">
+        <MappingFragment StoreEntitySet="Planning_Entry_Kista_Detail">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Sarta" ColumnName="Sarta" />
+          <ScalarProperty Name="Peski_Bhuktani" ColumnName="Peski_Bhuktani" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+          <ScalarProperty Name="Kista_Rakam" ColumnName="Kista_Rakam" />
+          <ScalarProperty Name="Kista_Kram" ColumnName="Kista_Kram" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Planning_Entry_Id" ColumnName="Planning_Entry_Id" />
+          <ScalarProperty Name="Planning_Entry_Kista_Detail_Id" ColumnName="Planning_Entry_Kista_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planning_Samjhauta">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Samjhauta">
+        <MappingFragment StoreEntitySet="Planning_Samjhauta">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Contegency_Percentage" ColumnName="Contegency_Percentage" />
+          <ScalarProperty Name="Samjhauta_Acceptance" ColumnName="Samjhauta_Acceptance" />
+          <ScalarProperty Name="Total_Amount" ColumnName="Total_Amount" />
+          <ScalarProperty Name="MarmatSambhar_Amount" ColumnName="MarmatSambhar_Amount" />
+          <ScalarProperty Name="Contegency_Amount" ColumnName="Contegency_Amount" />
+          <ScalarProperty Name="Samjhauta_Org_Name" ColumnName="Samjhauta_Org_Name" />
+          <ScalarProperty Name="Fiscal_Year_Record" ColumnName="Fiscal_Year_Record" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Other_Source">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Project_Other_Source">
+        <MappingFragment StoreEntitySet="Project_Other_Source">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Material_Details" ColumnName="Material_Details" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Source_Name" ColumnName="Source_Name" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Project_Other_Source_Id" ColumnName="Project_Other_Source_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Source_Detail">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Project_Source_Detail">
+        <MappingFragment StoreEntitySet="Project_Source_Detail">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total_Amount" ColumnName="Total_Amount" />
+          <ScalarProperty Name="Other_Source" ColumnName="Other_Source" />
+          <ScalarProperty Name="Loan_Grant" ColumnName="Loan_Grant" />
+          <ScalarProperty Name="Public_Community" ColumnName="Public_Community" />
+          <ScalarProperty Name="Foreign_Org" ColumnName="Foreign_Org" />
+          <ScalarProperty Name="Community_Org" ColumnName="Community_Org" />
+          <ScalarProperty Name="NGO_INGO" ColumnName="NGO_INGO" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Municipality" ColumnName="Municipality" />
+          <ScalarProperty Name="Nepal_Government" ColumnName="Nepal_Government" />
+          <ScalarProperty Name="Project_estimated_Amount" ColumnName="Project_estimated_Amount" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Project_Source_Detail_Id" ColumnName="Project_Source_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Samiti_Detail">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Samiti_Detail">
+        <MappingFragment StoreEntitySet="Samiti_Detail">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Beneficiaries_Absent" ColumnName="Beneficiaries_Absent" />
+          <ScalarProperty Name="Beneficiaries_Attendance" ColumnName="Beneficiaries_Attendance" />
+          <ScalarProperty Name="Sadashya" ColumnName="Sadashya" />
+          <ScalarProperty Name="Koshadakshya" ColumnName="Koshadakshya" />
+          <ScalarProperty Name="Sachib" ColumnName="Sachib" />
+          <ScalarProperty Name="SachibContractNumber" ColumnName="SachibContractNumber" />
+          <ScalarProperty Name="KoshadakshyaConctactNumber" ColumnName="KoshadakshyaConctactNumber" />
+          <ScalarProperty Name="SachibContactNumber" ColumnName="SachibContactNumber" />
+          <ScalarProperty Name="AdakshyaContactNumber" ColumnName="AdakshyaContactNumber" />
+          <ScalarProperty Name="Adakshya" ColumnName="Adakshya" />
+          <ScalarProperty Name="Samiti_Estd_Date" ColumnName="Samiti_Estd_Date" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Samiti_Detail_Id" ColumnName="Samiti_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sarta_Setup">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Sarta_Setup">
+        <MappingFragment StoreEntitySet="Sarta_Setup">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Sarta_Setup_Id" ColumnName="Sarta_Setup_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UpaBhokta_Samiti_Members_Details">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.UpaBhokta_Samiti_Members_Details">
+        <MappingFragment StoreEntitySet="UpaBhokta_Samiti_Members_Details">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="UpaBhokta_Samiti_Members_Details_Id" ColumnName="UpaBhokta_Samiti_Members_Details_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UpbhoktaSamiti_Details">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.UpbhoktaSamiti_Details">
+        <MappingFragment StoreEntitySet="UpbhoktaSamiti_Details">
+          <ScalarProperty Name="Planning_Ssamjhata_Id" ColumnName="Planning_Ssamjhata_Id" />
+          <ScalarProperty Name="SahiDate" ColumnName="SahiDate" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Upload_File">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Upload_File">
+        <MappingFragment StoreEntitySet="Upload_File">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="File_Id" ColumnName="File_Id" />
+          <ScalarProperty Name="WardNo" ColumnName="WardNo" />
+          <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+          <ScalarProperty Name="File_Path" ColumnName="File_Path" />
+          <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+          <ScalarProperty Name="Upload_File_Id" ColumnName="Upload_File_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_Area">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Work_Area">
+        <MappingFragment StoreEntitySet="Work_Area">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Work_Area_Name" ColumnName="Work_Area_Name" />
+          <ScalarProperty Name="Work_Area_Id" ColumnName="Work_Area_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_Type">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Work_Type">
+        <MappingFragment StoreEntitySet="Work_Type">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Work_Type_Name" ColumnName="Work_Type_Name" />
+          <ScalarProperty Name="Work_Type_Id" ColumnName="Work_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUser">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRole">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Planning_Bhuktani">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Bhuktani">
+        <MappingFragment StoreEntitySet="Planning_Bhuktani">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsBhuktaniApproval" ColumnName="IsBhuktaniApproval" />
+          <ScalarProperty Name="Bhuktani_Type" ColumnName="Bhuktani_Type" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Parishramik" ColumnName="Parishramik" />
+          <ScalarProperty Name="Samajik_Surekchya" ColumnName="Samajik_Surekchya" />
+          <ScalarProperty Name="Running_Bhuktani" ColumnName="Running_Bhuktani" />
+          <ScalarProperty Name="Farchot_Amount" ColumnName="Farchot_Amount" />
+          <ScalarProperty Name="SamjhautaDate" ColumnName="SamjhautaDate" />
+          <ScalarProperty Name="AdakshyaName" ColumnName="AdakshyaName" />
+          <ScalarProperty Name="Aanya_Raaya" ColumnName="Aanya_Raaya" />
+          <ScalarProperty Name="Katti_Rakam" ColumnName="Katti_Rakam" />
+          <ScalarProperty Name="MarmatShmar" ColumnName="MarmatShmar" />
+          <ScalarProperty Name="Bahal_Kar" ColumnName="Bahal_Kar" />
+          <ScalarProperty Name="Agrim_Shulka" ColumnName="Agrim_Shulka" />
+          <ScalarProperty Name="Remaining_Bhuktani_Amount" ColumnName="Remaining_Bhuktani_Amount" />
+          <ScalarProperty Name="Kantigenci" ColumnName="Kantigenci" />
+          <ScalarProperty Name="Technical_Amount" ColumnName="Technical_Amount" />
+          <ScalarProperty Name="Peski" ColumnName="Peski" />
+          <ScalarProperty Name="Jana_Sahabagita" ColumnName="Jana_Sahabagita" />
+          <ScalarProperty Name="Otheers" ColumnName="Otheers" />
+          <ScalarProperty Name="NaPa_Binayajit" ColumnName="NaPa_Binayajit" />
+          <ScalarProperty Name="Kul_La_Ie" ColumnName="Kul_La_Ie" />
+          <ScalarProperty Name="Aayojana_Karyakram" ColumnName="Aayojana_Karyakram" />
+          <ScalarProperty Name="Nirman_Upabhokta" ColumnName="Nirman_Upabhokta" />
+          <ScalarProperty Name="Budget_Title_Number" ColumnName="Budget_Title_Number" />
+          <ScalarProperty Name="Budget_Title" ColumnName="Budget_Title" />
+          <ScalarProperty Name="Fiscal_Year_Record" ColumnName="Fiscal_Year_Record" />
+          <ScalarProperty Name="Planning_Bhuktani_Id" ColumnName="Planning_Bhuktani_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planning_Entry">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Entry">
+        <MappingFragment StoreEntitySet="Planning_Entry">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Contractor_Name" ColumnName="Contractor_Name" />
+          <ScalarProperty Name="UpaBhoktaSamiti_HeadName" ColumnName="UpaBhoktaSamiti_HeadName" />
+          <ScalarProperty Name="Planning_Type" ColumnName="Planning_Type" />
+          <ScalarProperty Name="Budget_Source" ColumnName="Budget_Source" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="Work_Area" ColumnName="Work_Area" />
+          <ScalarProperty Name="Ward_No" ColumnName="Ward_No" />
+          <ScalarProperty Name="Work_Type" ColumnName="Work_Type" />
+          <ScalarProperty Name="Amount_Estimate" ColumnName="Amount_Estimate" />
+          <ScalarProperty Name="Work_Details" ColumnName="Work_Details" />
+          <ScalarProperty Name="Planning_End_Date" ColumnName="Planning_End_Date" />
+          <ScalarProperty Name="Planning_Start_Date" ColumnName="Planning_Start_Date" />
+          <ScalarProperty Name="Planning_Name" ColumnName="Planning_Name" />
+          <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Planning_Entry_Id" ColumnName="Planning_Entry_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Entry_Detail">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Project_Entry_Detail">
+        <MappingFragment StoreEntitySet="Project_Entry_Detail">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Project_Working_Status" ColumnName="Project_Working_Status" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total_Use_Amount" ColumnName="Total_Use_Amount" />
+          <ScalarProperty Name="Project_estimated_Amount" ColumnName="Project_estimated_Amount" />
+          <ScalarProperty Name="Project_Complete_Date" ColumnName="Project_Complete_Date" />
+          <ScalarProperty Name="Project_End_Date" ColumnName="Project_End_Date" />
+          <ScalarProperty Name="Project_Start_Date" ColumnName="Project_Start_Date" />
+          <ScalarProperty Name="Project_Acceptance_By" ColumnName="Project_Acceptance_By" />
+          <ScalarProperty Name="Project_Objective" ColumnName="Project_Objective" />
+          <ScalarProperty Name="Project_Place" ColumnName="Project_Place" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Project_Entry_Detail_Id" ColumnName="Project_Entry_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi4">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi4">
+        <MappingFragment StoreEntitySet="AnuSuchi4">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Samiti_Expenses_Approval_Date" ColumnName="Samiti_Expenses_Approval_Date" />
+          <ScalarProperty Name="Project_Ended_Date" ColumnName="Project_Ended_Date" />
+          <ScalarProperty Name="Project_To_Finish_Date" ColumnName="Project_To_Finish_Date" />
+          <ScalarProperty Name="Project_Approval_Date" ColumnName="Project_Approval_Date" />
+          <ScalarProperty Name="Fiscal_Year" ColumnName="Fiscal_Year" />
+          <ScalarProperty Name="Project_Estimated_Amount" ColumnName="Project_Estimated_Amount" />
+          <ScalarProperty Name="Project_Place" ColumnName="Project_Place" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="AnuSuchi4_Id" ColumnName="AnuSuchi4_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi3">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3">
+        <MappingFragment StoreEntitySet="AnuSuchi3">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Rohabar_Date" ColumnName="Rohabar_Date" />
+          <ScalarProperty Name="Rohabar_Position" ColumnName="Rohabar_Position" />
+          <ScalarProperty Name="Rohabar_Name" ColumnName="Rohabar_Name" />
+          <ScalarProperty Name="Total_Benificial_No" ColumnName="Total_Benificial_No" />
+          <ScalarProperty Name="Female_No" ColumnName="Female_No" />
+          <ScalarProperty Name="Male_No" ColumnName="Male_No" />
+          <ScalarProperty Name="Total_Members" ColumnName="Total_Members" />
+          <ScalarProperty Name="Adakshya_Name" ColumnName="Adakshya_Name" />
+          <ScalarProperty Name="Upabhokta_Samiti_Name" ColumnName="Upabhokta_Samiti_Name" />
+          <ScalarProperty Name="Project_End_Date" ColumnName="Project_End_Date" />
+          <ScalarProperty Name="Project_Start_Date" ColumnName="Project_Start_Date" />
+          <ScalarProperty Name="Estimated_Amount" ColumnName="Estimated_Amount" />
+          <ScalarProperty Name="Project_Place" ColumnName="Project_Place" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Planing_Samjhauta_Id" ColumnName="Planing_Samjhauta_Id" />
+          <ScalarProperty Name="AnuSuchi3_Id" ColumnName="AnuSuchi3_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnuSuchi5">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi5">
+        <MappingFragment StoreEntitySet="AnuSuchi5">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total_Project_Beneficiaries" ColumnName="Total_Project_Beneficiaries" />
+          <ScalarProperty Name="Project_End_Date" ColumnName="Project_End_Date" />
+          <ScalarProperty Name="Project_Contract_Date" ColumnName="Project_Contract_Date" />
+          <ScalarProperty Name="Other_Org_Source_Amount" ColumnName="Other_Org_Source_Amount" />
+          <ScalarProperty Name="Jana_Sahabhagita_Amount" ColumnName="Jana_Sahabhagita_Amount" />
+          <ScalarProperty Name="Municipality_Amount" ColumnName="Municipality_Amount" />
+          <ScalarProperty Name="Project_Estimate_Amount" ColumnName="Project_Estimate_Amount" />
+          <ScalarProperty Name="Upabhokta_Samiti_Adakshya" ColumnName="Upabhokta_Samiti_Adakshya" />
+          <ScalarProperty Name="Project_Run_Org" ColumnName="Project_Run_Org" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="AnuSuchi5_Id" ColumnName="AnuSuchi5_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Darkhasta_Form">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Darkhasta_Form">
+        <MappingFragment StoreEntitySet="Darkhasta_Form">
+          <ScalarProperty Name="Fiscal_Year_Record" ColumnName="Fiscal_Year_Record" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Other_Bank_Name" ColumnName="Other_Bank_Name" />
+          <ScalarProperty Name="Chalani_Number" ColumnName="Chalani_Number" />
+          <ScalarProperty Name="Sachib_Name" ColumnName="Sachib_Name" />
+          <ScalarProperty Name="Koshadakshya_Name" ColumnName="Koshadakshya_Name" />
+          <ScalarProperty Name="Adakshya_Name" ColumnName="Adakshya_Name" />
+          <ScalarProperty Name="Samiti_Name" ColumnName="Samiti_Name" />
+          <ScalarProperty Name="Ward_No" ColumnName="Ward_No" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Yojana_name" ColumnName="Yojana_name" />
+          <ScalarProperty Name="Darkhasta_Form_Id" ColumnName="Darkhasta_Form_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Municipality_Samiti_Manjuri_Patra">
+      <EntityTypeMapping TypeName="SOLU_DUDH_KUNDA_PLANNINGModel.Municipality_Samiti_Manjuri_Patra">
+        <MappingFragment StoreEntitySet="Municipality_Samiti_Manjuri_Patra">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="yojanSakhaRepresentaive" ColumnName="yojanSakhaRepresentaive" />
+          <ScalarProperty Name="yojanSakhaRepresentativePost" ColumnName="yojanSakhaRepresentativePost" />
+          <ScalarProperty Name="yojanSakhaRepresentativePostSign" ColumnName="yojanSakhaRepresentativePostSign" />
+          <ScalarProperty Name="Samiti_Rohabar_Sign" ColumnName="Samiti_Rohabar_Sign" />
+          <ScalarProperty Name="Samiti_Rohabar_Name" ColumnName="Samiti_Rohabar_Name" />
+          <ScalarProperty Name="Samiti_Sachib_Sign" ColumnName="Samiti_Sachib_Sign" />
+          <ScalarProperty Name="Samiti_Sachib_Name" ColumnName="Samiti_Sachib_Name" />
+          <ScalarProperty Name="Samiti_Adakshya_Sign" ColumnName="Samiti_Adakshya_Sign" />
+          <ScalarProperty Name="Samiti_Adakshya_Name" ColumnName="Samiti_Adakshya_Name" />
+          <ScalarProperty Name="Municipality_Manjuri_Date" ColumnName="Municipality_Manjuri_Date" />
+          <ScalarProperty Name="Municipality_Rep_Sign" ColumnName="Municipality_Rep_Sign" />
+          <ScalarProperty Name="Municipality_Rep_Post" ColumnName="Municipality_Rep_Post" />
+          <ScalarProperty Name="Municipality_Rep_Name" ColumnName="Municipality_Rep_Name" />
+          <ScalarProperty Name="Planning_Samjhauta_Id" ColumnName="Planning_Samjhauta_Id" />
+          <ScalarProperty Name="Municipality_Samiti_Manjuri_Patra_Id" ColumnName="Municipality_Samiti_Manjuri_Patra_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

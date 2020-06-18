@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c6a0408a06a4f7d890397fa45386229" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Aayojana_Maintainance" Width="1.5" PointX="3" PointY="132.625" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Amanat_Deatils" Width="1.5" PointX="3" PointY="55.5" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Anugaman" Width="1.5" PointX="5.25" PointY="83.375" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi1" Width="1.5" PointX="3" PointY="108.875" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10" Width="1.5" PointX="3" PointY="90.375" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10_Discussion_Conclusions" Width="1.5" PointX="5.25" PointY="87.5" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10_Discussion_Subjects" Width="1.5" PointX="5.25" PointY="90" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10_Meeting" Width="1.5" PointX="5.25" PointY="95.625" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi10_Members" Width="1.5" PointX="5.25" PointY="92.5" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi11" Width="1.5" PointX="3" PointY="75.5" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Bhuktani" Width="1.5" PointX="5.25" PointY="148.375" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Expenses" Width="1.5" PointX="5.25" PointY="145" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Income" Width="1.5" PointX="5.25" PointY="157.125" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Maujat" Width="1.5" PointX="5.25" PointY="154" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Project_Work_Detail" Width="1.5" PointX="5.25" PointY="151.125" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3_Work_Division" Width="1.5" PointX="5.25" PointY="160" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi4_Expenses" Width="1.5" PointX="5.25" PointY="44" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi4_Income" Width="1.5" PointX="5.25" PointY="47.375" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi6" Width="1.5" PointX="3" PointY="124.25" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi6_Janasahabhagita" Width="1.5" PointX="5.25" PointY="128.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi6_Karyalaya" Width="1.5" PointX="5.25" PointY="124.875" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Anusuchi6_Solutions" Width="1.5" PointX="5.25" PointY="122.25" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi7" Width="1.5" PointX="3" PointY="33.625" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi7_Anugaman_Samiti" Width="1.5" PointX="5.25" PointY="32.625" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi7_Upabhokta_Samiti" Width="1.5" PointX="5.25" PointY="36.125" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9" Width="1.5" PointX="3" PointY="100.875" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9_Discussion_Conclusions" Width="1.5" PointX="5.25" PointY="100.875" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9_Discussion_Subjects" Width="1.5" PointX="5.25" PointY="98.375" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9_Meeting" Width="1.5" PointX="5.25" PointY="106.125" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi9_Members" Width="1.5" PointX="5.25" PointY="103.5" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Beneficiaries_Group" Width="1.5" PointX="3" PointY="137.5" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.BhukataniItem" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Budget_Source" Width="1.5" PointX="0.75" PointY="90" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Class_A_Bank_List" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.DateConversion_TblNepaliCalender" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Fiscal_Year_Record" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Item" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Kar_Katti" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Organization_Representative" Width="1.5" PointX="3" PointY="118" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Organization_Setup" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Payment_Records" Width="1.5" PointX="3" PointY="50.875" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Documents" Width="1.5" PointX="3" PointY="58.375" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Entry_Anudan" Width="1.5" PointX="8.25" PointY="82.875" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Entry_Kista_Detail" Width="1.5" PointX="5.25" PointY="77.625" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Samjhauta" Width="1.5" PointX="0.75" PointY="80.5" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Project_Other_Source" Width="1.5" PointX="3" PointY="39.625" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Project_Source_Detail" Width="1.5" PointX="3" PointY="64" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Samiti_Detail" Width="1.5" PointX="3" PointY="26.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Sarta_Setup" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.UpaBhokta_Samiti_Members_Details" Width="1.5" PointX="3" PointY="114.125" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.UpbhoktaSamiti_Details" Width="1.5" PointX="3" PointY="142.125" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Upload_File" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Work_Area" Width="1.5" PointX="0.75" PointY="77.5" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Work_Type" Width="1.5" PointX="0.75" PointY="92.5" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Aayojana_Maintainance_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Amanat_Deatils_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi1_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi10_Discussion_Conclusions_AnuSuchi10" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi10_Discussion_Subjects_AnuSuchi10" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi10_Meeting_AnuSuchi10" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi10_Members_AnuSuchi10" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi10_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi11_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Anusuchi6_Janasahabhagita_Anusuchi6" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Anusuchi6_Karyalaya_Anusuchi6" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Anusuchi6_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Anusuchi6_Solutions_Anusuchi6" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi7_Anugaman_Samiti_AnuSuchi7" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi7_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi7_Upabhokta_Samiti_AnuSuchi7" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi9_Discussion_Conclusions_AnuSuchi9" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi9_Discussion_Subjects_AnuSuchi9" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi9_Meeting_AnuSuchi9" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi9_Members_AnuSuchi9" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi9_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Beneficiaries_Group_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Organization_Representative_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Payment_Records_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Planning_Documents_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Planning_Entry_Anudan_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Planning_Entry_Kista_Detail_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Project_Other_Source_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Project_Source_Detail_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Samiti_Detail_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_UpaBhokta_Samiti_Members_Details_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_UpbhoktaSamiti_Details_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Bhuktani" Width="1.5" PointX="11.375" PointY="5.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Planning_Entry" Width="1.5" PointX="3" PointY="82.5" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Anugaman_Planning_Entry" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Planning_Entry_Budget_Source" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Planning_Entry_Anudan_Planning_Entry" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Planning_Entry_Kista_Detail_Planning_Entry" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Planning_Entry_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Planning_Entry_Work_Area" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Planning_Entry_Work_Type" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Project_Entry_Detail" Width="1.5" PointX="3" PointY="20.375" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Project_Entry_Detail_Planning_Samjhauta" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi4" Width="1.5" PointX="3" PointY="44.375" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Anusuchi4_Expenses_AnuSuchi4" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Anusuchi4_Income_AnuSuchi4" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi4_Planning_Samjhauta" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi3" Width="1.5" PointX="3" PointY="145.5" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi3_Bhuktani_AnuSuchi3" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi3_Expenses_AnuSuchi3" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi3_Income_AnuSuchi3" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi3_Maujat_AnuSuchi3" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi3_Planning_Samjhauta" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi3_Project_Work_Detail_AnuSuchi3" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi3_Work_Division_AnuSuchi3" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.AnuSuchi5" Width="1.5" PointX="3" PointY="14.375" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_AnuSuchi5_Planning_Samjhauta" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Darkhasta_Form" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="SOLU_DUDH_KUNDA_PLANNINGModel.Municipality_Samiti_Manjuri_Patra" Width="1.5" PointX="3" PointY="153.125" />
+        <AssociationConnector Association="SOLU_DUDH_KUNDA_PLANNINGModel.FK_Municipality_Samiti_Manjuri_Patra_Planning_Samjhauta" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

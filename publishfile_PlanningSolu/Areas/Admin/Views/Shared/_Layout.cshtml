@@ -1,0 +1,195 @@
+﻿
+@using Microsoft.AspNet.Identity
+
+@{ 
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from i in db.Organization_Setup select i).ToList();
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>योजना प्रबन्ध प्रणाली - @ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <!-- Pace -->
+    <link href="~/Content/pace.css" rel="stylesheet" />
+    <!-- Endless -->
+    <link href="~/Content/endless.min.css" rel="stylesheet" />
+    <link href="~/Content/endless-skin.css" rel="stylesheet" />
+
+    <link href="~/css/customForm.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript">
+        //Stop Form Submission of Enter Key Press
+        function stopRKey(evt) {
+            var evt = (evt) ? evt : ((event) ? event : null);
+            var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+            if ((evt.keyCode == 13) && (node.type == "text")) { return false; }
+        }
+        document.onkeypress = stopRKey;
+    </script>
+
+</head>
+
+
+
+<body class="overflow-hidden">
+    <div id="wrapper" class="preload">
+        <div id="top-nav" class="skin-1 fixed">
+            <div class="brand">
+                <span>योजना प्रबन्ध प्रणाली</span>
+                <span class="text-toggle"></span>
+            </div>
+            <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggle pull-left hide-menu" id="menuToggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <style>
+                #top-nav.skin-1 .brand {
+                    background: #0073aa;
+                }
+
+                .logo_sec {
+                    margin-left: 5px;
+                    padding-right: 10px;
+                    background: #0073aa;
+                }
+
+                    .logo_sec, .logo_sec a, .logo_sec figure, .logo_sec b {
+                        display: inline-block;
+                        position: relative;
+                        color: #fff;
+                        vertical-align: middle;
+                    }
+
+                        .logo_sec figure {
+                            padding: 2px 2px 1px 2px;
+                            background: #0073aa;
+                            border-style: solid;
+                            border-width: 0px 1px 2px 1px;
+                            border-color: #006696;
+                        }
+
+                            .logo_sec figure img {
+                                max-height: 40px;
+                                max-width: 100%;
+                            }
+
+                        .logo_sec b {
+                            font-size: 18px;
+                            padding-left: 5px;
+                        }
+            </style>
+
+            <div class="logo_sec">
+                <a href="#" title="Planning">
+                    <figure> <img src="~/img/gov-logo.png" alt="Nepal Gov Logo" /> </figure>
+
+                    @if (OrganiationName.Count > 0)
+                    {
+                        using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+                        {
+                            foreach (Planning.Planning.Entities.Organization_Setup i in OrganiationName)
+                            {
+                                <b>@i.Organization_Name</b>
+                                <span>@i.District_Name &nbsp; @i.State_Country</span>
+                            }
+                        }
+                    }
+                </a>
+            </div>
+
+            <ul class="nav-notification clearfix">
+
+                <li class="profile dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        @User.Identity.GetUserName()
+                        <span><i class="fa fa-chevron-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="clearfix" href="#">
+                                <div class="detail">
+                                    <strong>@User.Identity.GetUserName()</strong>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li><a tabindex="-1" href="@Url.Action("ResetUserPassword", "PlanningDashBoard")" class="main-link"><i class="fa fa-user fa-key"></i> पासवर्ड परिवर्तन </a></li>
+                        <li><a tabindex="-1" href="@Url.Action("NewUserRegister", "PlanningDashBoard")" class="main-link"><i class="fa fa-user fa-user"></i> नयाँ प्रयोगकर्ता दर्ता </a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fa fa-lock fa-lg"></i>&nbsp; लगआउट</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        @Html.Partial("_leftMenu")
+
+        <div id="main-container">
+            @RenderBody()
+        </div>
+    </div>
+    <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
+
+
+    <div class="modal fade" id="logoutModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center" style="color:dodgerblue">योजना प्रबन्ध प्रणाली</h3>
+                </div>
+                <div class="modal-body">
+                    <p><h4 class="text-center" style="color:red">के तपाइँ लगआउट गर्न चाहानुहुन्छ ?</h4></p>
+                </div>
+                <div class="modal-footer text-center" style="text-align:center !important">
+                    @using (Html.BeginForm("LogOff", "Account", new { @area = "" }, FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="submit" value="चाँहान्छु" class="btn btn-success m-right-sm" />
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">चाँहादिन</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Modernizr -->
+    <script src="~/Scripts/modernizr.min.js"></script>
+    <!-- Pace -->
+    <script src="~/Scripts/pace.min.js"></script>
+    <!-- Popup Overlay -->
+    <script src="~/Scripts/jquery.popupoverlay.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="~/Scripts/jquery.slimscroll.min.js"></script>
+    <!-- Cookie -->
+    <script src="~/Scripts/jquery.cookie.min.js"></script>
+    <!-- Endless -->
+    <script src="~/Scripts/endless.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

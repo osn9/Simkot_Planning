@@ -1,0 +1,180 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div id="dialog-confirm" style="display: none">
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        Are you sure to delete?
+    </p>
+</div>
+<div id="dialog-edit" style="display: none">
+</div>
+<div id="dialog-detail" style="display: none">
+</div>
+
+<div class="padding-md">
+    @if (ViewBag.success != null)
+    {
+        <div class="alert alert-success">
+            <strong>Well done!</strong> @ViewBag.success
+        </div>
+    }
+    @if (TempData["SuccessMsg"] != null)
+    {
+        <script>alert("@TempData["SuccessMsg"]");</script>
+    }
+
+    @if (TempData["Msg"] != null)
+    {
+        <script>alert("@TempData["Msg"]");</script>
+    }
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="header-list" style="text-align: center">
+                    <h2>नगरपालिका र उपभोक्ता समिति बीचको सम्झौता</h2>
+                </div>
+                <hr />
+                <div class="panel-heading">
+                    @Html.ActionLink("नयाँ सम्झौता राख्नुहोस्", "PlanningSamjhauta", null, new { @class = "btn btn-success btn_add btn-xs" })
+                </div>
+                <div class="panel-body">
+                    <div>
+                        @{ 
+                            var SamitiList = Model.PlanningSamjhautaViewModelList.Select(x => new { x.Samjhauta_Org_Name}).Distinct().ToList();
+                            var AcceptList = Model.PlanningSamjhautaViewModelList.Select(x => new { x.Samjhauta_Acceptance}).Distinct().ToList();
+                            SelectList workArea = new SelectList(new List<SelectListItem> {
+                                new SelectListItem {Selected=false,Text="वडास्तरीय",Value="O" },
+                                new SelectListItem {Selected=false, Text="नगरस्तरीय",Value="N" }
+                            }, "Value","Text");
+                        }
+                        <h4>Filter table </h4> 
+                        <div class="col-md-4">
+                            <span>वडा/नगर</span>
+                            @Html.DropDownList("WorkAreaFilter", workArea, "छान्नुहोस्", new { @class = "form-control filter" })
+                        </div>
+                        <div class="col-md-4">
+                            <span>सम्झौता गर्ने संस्थाको नाम</span>
+                            @Html.DropDownList("SamitiList", new SelectList(SamitiList, "Samjhauta_Org_Name", "Samjhauta_Org_Name"), "छान्नुहोस्", new { @class = "form-control filter" })
+                        </div>
+                        <div class="col-md-4">
+                            <span>स्वीकृत छ/छैन</span>
+                            @Html.DropDownList("AcceptList", new SelectList(AcceptList, "Samjhauta_Acceptance", "Samjhauta_Acceptance"), "छान्नुहोस्", new { @class = "form-control filter" })
+                        </div>
+                        
+                               </div>
+                </div>
+                <table class="table table-bordered table-condensed table-hover table-striped">
+                    <thead>
+                        <tr class="success">
+                            <th>क्र.स.</th>
+                            <th>आर्थिक वर्ष</th>
+                            <th>वडा/नगर</th>
+                            <th>आयोजनाको नाम</th>
+                            <th>आयोजनाको स्थल</th>
+                            <th>सम्झौता गर्ने संस्थाको नाम</th>
+                            <th>शुरु हुने मिति</th>
+                            <th>सम्पन्न हुने मिति</th>
+                            <th>स्वीकृत छ/छैन</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>                        
+                            @foreach (var item in Model.PlanningSamjhautaViewModelList)
+                            {
+                                <tr>
+                                    <th>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</th>
+                                    <td>@item.Fiscal_Year_Record</td>
+                                    <td>
+                                        @if (item.Planning_Type == "O")
+                                        {
+                                            <span style="color:darkorange">वडास्तरीय</span>
+                                        }
+                                        else if (item.Planning_Type == "N")
+                                        {
+                                            <span style="color:darkblue">नगरस्तरीय</span>
+                                        }
+                                    </td>
+                                    <td>@item.Project_Name</td>
+                                    <td>@item.Project_Place</td>
+                                    <td>@item.Samjhauta_Org_Name</td>
+                                    <td>
+                                        @*@if (item.Project_Start_Date != null)
+                        {@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_Start_Date.Value.ToShortDateString())}*@
+                                        @{
+                                            var startdate = item.Project_Start_Date.Value.ToShortDateString();
+                                            var start = Planning.Utility.CommonUtility.getNepaliDate(startdate);
+                                            var projStartDate = Planning.Utility.NepaliEnglishNumber.English_Nepali(start);
+                                        }
+                                        <span>@projStartDate</span>
+                                    </td>
+                                    <td>
+                                        @*@if (item.Project_End_Date != null)
+                        {@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_End_Date.Value.ToShortDateString())}*@
+                                        @{
+                                            var enddate = item.Project_End_Date.Value.ToShortDateString();
+                                            var end = Planning.Utility.CommonUtility.getNepaliDate(enddate);
+                                            var projEndDate = Planning.Utility.NepaliEnglishNumber.English_Nepali(end);
+                                        }
+                                        <span>@projEndDate</span>
+                                    </td>
+                                    <td>
+                                        @if (item.Samjhauta_Acceptance)
+                                    {
+                                        <span style="color:#65cea7">छ</span>
+                                    }
+                                    else
+                                    {
+                                        <span style="color:red">छैन</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (!item.Samjhauta_Acceptance)
+                                    {
+                                        <a class="btn btn-success btn-sm" title="सच्याउनुहोस्" href="@Url.Action("PlanningSamjhautaEdit", "PlanningSamjhauta", new { id = item.Planning_Samjhauta_Id })"><i class="fa fa-edit"></i> सच्याउनुहोस</a>
+                                    }
+                                    @* <a class="btn btn-success btn-sm" title="सच्याउनुहोस्" href="@Url.Action("PlanningSamjhautaEdit", "PlanningSamjhauta", new { id = item.Planning_Samjhauta_Id })"><i class="fa fa-edit"></i> सच्याउनुहोस</a>*@
+                                    <a class="btn btn-primary btn-sm" title="विवरण" href="@Url.Action("SamjhautaCompleteReport", "PlanningSamjhauta", new { planningSamjhautaId = item.Planning_Samjhauta_Id })"><i class="fa fa-file"></i> विवरण</a>
+                                    <a class="btn btn-info btn-sm" title="कागजातहरु" href="@Url.Action("PlanningDocuments", "PlanningSamjhauta", new { id = item.Planning_Samjhauta_Id,fiscalYear=item.Fiscal_Year_Record,projectName= item.Project_Name })"><i class="fa fa-plus"></i>&nbsp; कागजातहरु</a>
+                                    <a class="btn btn-info btn-sm" title="भुक्तानी" href="@Url.Action("BhuktaniIndex", "PlanningSamjhauta", new { id = item.Planning_Samjhauta_Id,fiscalYear=item.Fiscal_Year_Record,projectName= item.Project_Name })"><i class="fa fa-rupee"></i>&nbsp; भुक्तानी</a>
+                                </td>
+                            </tr>
+                                                i++;
+                                            }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".filter").on("change", function () {
+        //alert("change");
+        var clone = $("tbody").clone();
+        $("tbody").remove();
+        var workarea=$("#WorkAreaFilter").val();
+        var samitiName=$("#SamitiList").val();
+        var Accept = $("#AcceptList").val();
+        if (workarea == "") {
+            workarea = null;
+        }
+        if (samitiName == "") {
+            samitiName = null;
+        }
+        if (Accept == "") {
+            Accept = null;
+
+        }
+        alert(workarea);
+        alert(samitiName);
+        alert(Accept);
+        $("table").append(clone);
+    });
+</script>

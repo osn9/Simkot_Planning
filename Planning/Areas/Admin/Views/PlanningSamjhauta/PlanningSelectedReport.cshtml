@@ -1,0 +1,198 @@
+﻿@model PagedList.IPagedList<Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "PlanningSelectedReport";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div class="padding-md">
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="header-list" style="text-align: center">
+                    <h2>नगरपालिका र उपभोक्ता समिति बीचको सम्झौता</h2>
+                </div>
+                <hr />
+
+                @using (Html.BeginForm("PlanningSelectedReport", "PlanningSamjhauta", FormMethod.Get))
+                {
+                    <fieldset>
+                        <div class="row" style="margin-left:20px;">
+                            <div class="col-md-2">
+                                <label>आर्थिक वर्ष</label>
+                                @Html.DropDownList("FiscalYear", Planning.Utility.CommonUtility.GetFiscalYearList(), "-- छान्नुहोस --", new { @class = "form-control", @OnChange = "GetProjectNameByFiscalYear()" })
+                            </div>
+                            <div class="col-md-2">
+                                <label>आयोजनाको नाम</label>
+                                @Html.DropDownList("ProjectName", Planning.Utility.CommonUtility.GetProjectNameList(), "-- छान्नुहोस --", new { @class = "form-control " })
+                            </div>
+                            <div class="col-md-2">
+                                <label>वजेट श्रोत</label>
+                                @Html.DropDownList("BudgetSource", Planning.Utility.CommonUtility.GetBudgetSourceList(), "---छान्नुहोस्---", new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-2">
+                                <label>वडा / नगर</label>
+                                @Html.DropDownList("OdaNagar", new List<SelectListItem>
+                                                 {
+                                                     new SelectListItem { Text = "वडा", Value = "O"},
+                                                     new SelectListItem { Text = "नगर", Value = "N"},
+                                                 }, "--छान्नुहोस--", new { @class = "form-control" })
+
+                            </div>
+                            <div class="col-md-2">
+                                <label> संपूर्ण डाटा </label>
+                                @Html.DropDownList("pageSizeManual", new List<SelectListItem>
+                                                 {
+                                                     new SelectListItem { Text = "संपूर्ण", Value = "allData"},
+                                                 }, "--छान्नुहोस--", new { @class = "form-control" })
+
+                            </div>
+                            <div class="col-md-2" style="padding-left:0px; padding-top:20px;">
+                                <input type="submit" name="submit" id="submit" value="खाेज्नुहाेस" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </fieldset>
+                }
+
+                @*<input id="btnExport" type="button" class="btn btn-info pull-right" value="Excel मा लैजानुहोस् " />*@
+                <a class="btn btn-info btn-sm pull-right" title="Excel" href="" id="btnExport" style="margin-bottom:5px;"><i class="fa fa-file-excel-o"></i>&nbsp; Excel मा लैजानुहोस्</a>
+
+                <div id="page-wrap">
+                    <table class="table table-bordered table-condensed table-hover table-striped" id="divPrint">
+                        <thead>
+                            <tr class="success">
+                                <th>क्र.स.</th>
+                                <th>आर्थिक वर्ष</th>
+                                <th>वजेट श्रोत</th>
+                                <th>वडा/नगर</th>
+                                <th>आयोजनाको नाम</th>
+                                <th>आयोजनाको स्थल</th>
+                                <th>सम्झौता गर्ने संस्थाको नाम</th>
+                                <th>शुरु हुने मिति</th>
+                                <th>सम्पन्न हुने मिति</th>
+                                <th>लागत अनुमान</th>
+                                <th>कनटिनजेन्सी(%)</th>
+                                <th style="text-align:center;">मर्मत सम्भार(%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</th>
+                                    <td>@item.Fiscal_Year_Record</td>
+                                    <td>@item.BudgetSource</td>
+                                    <td>
+                                        @if (item.Planning_Type == "O")
+                                        {
+                                            <span>वडास्तरीय</span>
+                                        }
+                                        else if (item.Planning_Type == "N")
+                                        {
+                                            <span>नगरस्तरीय</span>
+                                        }
+                                    </td>
+                                    <td>@item.Project_Name</td>
+                                    <td>@item.Project_Place</td>
+                                    <td>@item.Samjhauta_Org_Name</td>
+                                    <td>
+                                        @if (item.Project_Start_Date != null)
+                                        {@Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Project_Start_Date))}
+                                    </td>
+                                    <td>
+                                        @if (item.Project_End_Date != null)
+                                        {@Planning.Utility.NepaliEnglishNumber.English_Nepali(Planning.Utility.CommonUtility.getNepaliDate(item.Project_End_Date))}
+                                    </td>
+                                    <td>@item.Project_estimated_Amount</td>
+                                    <td>
+                                        @item.Contegency_Amount
+                                        @if (item.Contegency_Percentage != null)
+                                        {
+                                            <span>(@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Contegency_Percentage)%)</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (item.MarmatSambhar_Amount != null)
+                                        {
+                                            <span>@item.MarmatSambhar_Amount (@Planning.Utility.CommonUtility.GetKarkatiMarmatSambhar()%)</span>
+                                        }
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                        <tfoot style="background-color:darkgrey; border:!important;">
+                            @if (ViewBag.sumOfProjectAmount != null)
+                            {
+                                <tr>
+                                    <td colspan="7"></td>
+                                    <td colspan="2" style="text-align:center;"><strong>कुल रकम</strong></td>
+                                    <td><strong>@ViewBag.sumOfProjectAmount</strong></td>
+                                    <td><strong>@ViewBag.sumOfCountigensy</strong></td>
+                                    <td><strong>@ViewBag.sumOfMaramat</strong></td>
+                                </tr>
+                            }
+                        </tfoot>
+                    </table>
+                    <br />
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                    @Html.PagedListPager(Model, Page_No => Url.Action("PlanningSelectedReport",
+                   new { Page_No, FiscalYear = ViewBag.FiscalYear, ProjectName = ViewBag.ProjectName, budgetSource = ViewBag.budgetSource, OdaNagar = ViewBag.OdaNagar }))
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function GetProjectNameByFiscalYear()
+    {
+        debugger;
+        var value = $('#FiscalYear option:selected').val();
+        if (value == null || value == 0)
+        {
+            var item = "<option>-- छान्नुहोस --</option>";
+            $("#ProjectName").html(item);
+            return false;
+        }
+        $.ajax({
+            url: "@Url.Action("GetProjectNameByFiscalYear", "PlanningSamjhauta")",
+            type: 'get',
+            datatype: "json",
+            data: { fiscalYear: value },
+            success: function (data)
+            {
+                var items = "<option value=\"\">" + "छान्नुहोस्" + "</option>";
+                $.each(data, function (i, item)
+                {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#ProjectName").html(items);
+            },
+            failure: function ()
+            {
+                alert('An error occurred.');
+            }
+        })
+    }
+</script>
+
+<script>
+    $("#btnExport").click(function ()
+    {
+        //var currentdate = new Date();
+        var currentdate = new Date().toLocaleString();
+        let file = new Blob([$('#page-wrap').html()], { type: "application/vnd.ms-excel" });
+        let url = URL.createObjectURL(file);
+        let a = $("<a />", {
+            href: url,
+            download: "योजना-सम्झौता.xls"
+            //download: currentdate+"योजना-सम्झौता.xls"
+        }).appendTo("body").get(0).click();
+        e.preventDefault();
+    });
+</script>

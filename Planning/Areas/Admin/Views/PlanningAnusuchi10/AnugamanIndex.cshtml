@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "AnugamanIndex";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from b in db.Organization_Setup select b).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+      
+    }
+      int counter = 1;
+}
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+<div class="tab-pane fade in active" id="fiscalYearRecord">
+    <h3 class="step_ttl">अनुसूची १० / अनुगमन तथा सहजीकरण समितिको बैठक</h3>
+    <fieldset>
+
+        <a class="btn btn-info btn-sm" title="भुक्तानी" href="@Url.Action("AnugamanCreate", "PlanningAnusuchi10", new { id = Model.Planning_Samjhauta_Id })"> नयाँ  अनुगमन </a>
+
+        <table id="example" class="table table-bordered table-condensed table-hover table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        क्र.स.
+                    </td>
+                    <td>
+                        बैठक नं.
+                    </td>
+                    <td>
+                        बैठकको मितिः
+                    </td>
+                    <td>
+
+                    </td>
+
+                </tr>
+                
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Anusuchi10ViewModelList)
+                {
+                    <tr>
+                        <td>
+                          @Planning.Utility.NepaliEnglishNumber.English_Nepali(counter.ToString())  
+                        </td>
+                        <td>
+                            @item.Baithak_No
+                        </td>
+                        <td>
+                           @Planning.Utility.NepaliEnglishNumber.English_Nepali( @item.Baithak_Date)
+                        </td>
+                        <td>
+                            <a class="btn btn-info btn-sm" title="अनुगमन" href="@Url.Action("Anugaman", "PlanningAnusuchi10", new { id = item.Planning_Samjhauta_Id ,ids=item.AnuSuchi10_Id })">
+                                <i class="fa fa-rupee"></i>&nbsp;
+                                सम्पादन गर्नुहोस्
+                            </a>
+                            <a class="btn btn-danger btn-sm" title="अनुगमन" href="@Url.Action("AnugamanDelete", "PlanningAnusuchi10", new { id = item.Planning_Samjhauta_Id ,ids=item.AnuSuchi10_Id })"><i class="fa fa-rupee"></i>&nbsp; हटाउनु</a>
+
+                        </td>
+                    </tr>
+                    counter++;
+                }
+            </tbody>
+        </table>
+    </fieldset>
+</div>
+
+
+
+

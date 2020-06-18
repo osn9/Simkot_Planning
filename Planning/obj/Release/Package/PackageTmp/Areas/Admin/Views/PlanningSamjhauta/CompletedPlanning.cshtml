@@ -1,0 +1,114 @@
+﻿@model Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel
+
+@{
+    ViewBag.Title = "CompletedPlanning";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div class="padding-md">
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="header-list" style="text-align: center">
+                    <h2> सम्पन्न आयोजना</h2>
+                </div>
+                @*<div class="panel-heading">
+                    @Html.ActionLink("नयाँ सम्झौता राख्नुहोस्", "CompleteProject", "PlanningSamjhauta", null, new { @class = "btn btn-success btn_add btn-sm" })
+                </div>*@
+                <hr />
+                @using (Html.BeginForm("CompletedPlanning", "PlanningSamjhauta", FormMethod.Get))
+                {
+                    <fieldset>
+                        <div class="row" style="margin-left:20px;">
+                            <div class="col-md-2">
+                                <label>आर्थिक वर्ष</label>
+                                @Html.DropDownList("FiscalYear", Planning.Utility.CommonUtility.GetFiscalYearList(), "-- छान्नुहोस --", new { @class = "form-control", @OnChange = "GetProjectNameByFiscalYear()" })
+                            </div>
+                            <div class="col-md-3">
+                                <label>आयोजनाको नाम</label>
+                                @Html.DropDownList("ProjectName", Planning.Utility.CommonUtility.GetProjectNameList(), "-- छान्नुहोस --", new { @class = "form-control " })
+                            </div>
+                            <div class="col-md-3">
+                                <label>वजेट श्रोत</label>
+                                @Html.DropDownList("BudgetSource", Planning.Utility.CommonUtility.GetBudgetSourceList(), "---छान्नुहोस्---", new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-2">
+                                <label>वडा / नगर</label>
+                                @Html.DropDownList("OdaNagar", new List<SelectListItem>
+                                                 {
+                                                     new SelectListItem { Text = "वडा", Value = "O"},
+                                                     new SelectListItem { Text = "नगर", Value = "N"},
+                                                 }, "--छान्नुहोस--", new { @class = "form-control" })
+
+                            </div>
+                            <div class="col-md-2" style="padding-left:0px; padding-top:25px;">
+                                <input type="submit" name="submit" id="submit" value="खाेज्नुहाेस" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </fieldset>
+                }
+                <br />
+                @*<input id="btnExport" type="button" class="btn btn-info pull-right" value="Excel मा लैजानुहोस् " />*@
+                @*<a class="btn btn-info btn-sm pull-right" title="Excel" href="" id="btnExport" style="margin-bottom:5px;"><i class="fa fa-file-excel-o"></i>&nbsp; Excel मा लैजानुहोस्</a>*@
+
+                <div id="page-wrap">
+                    <table class="table table-bordered table-condensed table-hover table-striped" id="divPrint">
+                        <thead>
+                            <tr class="success">
+                                <th>क्र.स.</th>
+                                <th>आर्थिक वर्ष</th>
+                                <th>वजेट श्रोत</th>
+                                <th>वडा/नगर</th>
+                                <th>आयोजनाको नाम</th>
+                                <th>आयोजनाको स्थल</th>
+                                <th>सम्झौता गर्ने संस्थाको नाम</th>
+                                <th>सम्पन्न भएको मिति</th>
+                                <th>कुल रकम</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.PlanningSamjhautaViewModelList)
+                            {
+                                <tr>
+                                    <th>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</th>
+                                    <td>@item.Fiscal_Year_Record</td>
+                                    <td>@item.BudgetSource</td>
+                                    <td>
+                                        @if (item.Planning_Type == "O")
+                                        {
+                                            <span>वडास्तरीय</span>
+                                        }
+                                        else if (item.Planning_Type == "N")
+                                        {
+                                            <span>नगरस्तरीय</span>
+                                        }
+                                    </td>
+                                    <td>@item.Project_Name</td>
+                                    <td>@item.Project_Place</td>
+                                    <td>@item.Samjhauta_Org_Name</td>
+                                    <td>
+                                        @if (item.Project_Completed_Date != null)
+                                        {@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Project_Completed_Date)}
+                                    </td>
+                                    @*<td>@item.Project_Completed_Date</td>*@
+                                    <td>
+                                        @if (item.Total_Used_Amount != null)
+                                        {@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Total_Used_Amount)}
+                                    </td>
+                                    @*<td>@item.Total_Used_Amount</td>*@
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="@Url.Action("CompletedReport", "PlanningSamjhauta", new { id = item.Planning_Entry_Id})"><i class="glyphicon glyphicon-print"></i>&nbsp; </a>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

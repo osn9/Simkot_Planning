@@ -1,0 +1,286 @@
+﻿
+@model Planning.Areas.Admin.Models.DarkhastaFormViewModel.DarkhastaFormViewModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .cotract_letter {
+        border: 1px solid #ccc;
+        margin: 30px 0px;
+        padding: 30px;
+    }
+
+        .cotract_letter header-sec img {
+            max-width: 100%;
+            max-height: 100px;
+        }
+
+    .header-section h1 {
+        font-size: 65px;
+        letter-spacing: 5px;
+    }
+
+    .header-section h2 {
+        font-size: 40px;
+    }
+
+    .header-section h3, .subject h3 {
+        font-size: 30px;
+    }
+
+    .header-section h4 {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+
+    .header-section h1, .header-section h2, .header-section h3,
+    .header-section h4, .subject h3, .letter_footer h3, .letter_content h4, .aanya-raaya h3 {
+        font-weight: 600;
+    }
+
+    .subject h3 {
+        margin-top: 60px;
+    }
+
+    .letter_footer {
+        margin-top: 60px;
+    }
+
+    .approved-by {
+        margin-top: 60px;
+    }
+
+    .letter_footer, .letter_footer strong, .letter_content, .titleNumber {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+        .letter_footer ul {
+            margin-top: 15px;
+        }
+
+            .letter_footer ul li {
+                list-style-type: none;
+            }
+
+                .letter_footer ul li span {
+                    padding-left: 20px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    position: relative;
+                    margin-top: -14px;
+                }
+
+        .titleNumber ul li {
+            list-style-type: none;
+        }
+
+    .personName {
+        border-style: none;
+    }
+
+        .personName:hover {
+            border-style: none;
+        }
+
+        .personName:focus {
+            border-style: none;
+        }
+
+    .btn.btn-primary.pull-right {
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+</style>
+
+@foreach (var item in Model.DarkhastaFormViewModelList)
+{
+
+    <div class="container">
+        <input type="button" class="btn btn-primary pull-right" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+        <div class="cotract_letter" id="printdiv">
+
+            <style>
+                th {
+                    color: #000;
+                }
+
+                .table tbody > tr {
+                    border: none !important;
+                }
+
+                .table tr td {
+                    border: none !important;
+                    border-color: #f9f9f9 !important;
+                    padding: 0px !important;
+                }
+
+                .table.table-bordered th, .table.table-bordered td {
+                    padding: 8px !important;
+                }
+
+                @@media print {
+                    .table tr td {
+                        border: none !important;
+                        border: 0 !important;
+                        border-color: #fff !important;
+                        padding: 0px !important;
+                    }
+
+                    .table tbody > tr {
+                        border: none !important;
+                        border: 0 !important;
+                    }
+
+                    .table, .table tbody > tr, td {
+                        border: none !important;
+                        border: 0 !important;
+                    }
+
+                    th {
+                        color: #000;
+                    }
+
+                    .table.table-bordered {
+                        border: 1px solid #000 !important;
+                    }
+
+                        .table.table-bordered th, .table.table-bordered td {
+                            padding: 2px 8px !important;
+                            border: 1px solid #000 !important;
+                        }
+                }
+            </style>
+
+            <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td rowspan="2" style="border:none !important; border:0px !important;">
+                            <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                        </td>
+                        <td rowspan="4" style="text-align:center; border:none !important; border:0px !important;">
+                            @if (Model.OrganizationSetupList.Count > 0)
+                            {
+                                foreach (var org in Model.OrganizationSetupList)
+                                {
+                                    <h1 style="font-weight:bold; font-size:30px;">@org.Organization_Name</h1>
+                                    <h2 style="font-weight:bold; font-size:24px; margin-top:0px;">@org.Organization_Type</h2>
+                                    <h3 style="font-weight:bold; font-size:18px; margin-top:0px;">@org.District_Name</h3>
+                                    <h4 style="font-weight:bold; font-size:14px;">@org.State_Country</h4>
+                                }
+                            }
+                        </td>
+                        <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                        <td style="border:none !important; border:0px !important;">&nbsp; <br /></td>
+                        @*<td style="border:none !important; border:0px !important;">
+                <div style="margin-left:67px; margin-top:2px; font-weight:600;">  ५६०१३८ कार्यालय </div>
+                <div style="font-weight:600; margin-top:2px;">
+                    <img src="~/img/phone.png" style="max-height:20px; max-width:100%; display:inline-block; position:relative;" /> &nbsp; :- ०३३ &nbsp; ५६०१३९ प्रशासन </div>
+                <div style="margin-left:70px; margin-top:2px; font-weight:600;">  ५६०३७० राजश्व  </div>
+                <div style="margin-left:70px; margin-top:2px; font-weight:600;"> ५६०१३७ फ्याक्स  </div>
+            </td>*@
+                    </tr>
+
+                    <tr>
+                        <td style="border:none !important; border:0px !important;"><h5 style="margin:5px 0px !important;"><strong>पत्र संख्या :</strong></h5></td>
+                        <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border:none !important; border:0px !important;"><h5 style="margin:5px 0px !important;"><strong>चलानी नम्बर :&nbsp; @item.Chalani_Number</strong></h5></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="4" style="text-align:right; font-size:14px; border:none !important;"><b style="margin-top:10px; display:block;"><i class="fa fa-phone"></i>कार्यालय न.:९८५७६७४\५१११ </b></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3" style="text-align:right; font-size:14px; border:none !important;"><b style="margin-top:10px; display:block;">Email:mahashilagapa@gmail.com </b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align:right; font-size:14px; border:none !important;"><b style="margin-top:10px; display:block;">Url:wwww.nahashilamum.gov.np </b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align:right; font-size:14px; border:none !important;"><b style="margin-top:10px; display:block;">&nbsp; </b></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none !important; border:0px !important;"><h5 style="margin:5px 0px !important;"><strong>&nbsp;&nbsp;</strong></h5></td>
+
+                        <td style="border:none !important; border:0px !important;">&nbsp;</td>
+                        <td style="border:none !important; border:0px !important;">
+                            @{ var date = DateTime.Now;
+                                var currentEnglishDate = date.ToShortDateString();
+                                var currentNepaliDate = @Planning.Utility.CommonUtility.getNepaliDate(currentEnglishDate);
+                            }
+                            <p style="letter-spacing:1px; line-height:24px; font-weight:500; font-size:16px;"><strong>मितिः @Planning.Utility.NepaliEnglishNumber.English_Nepali(currentNepaliDate)</strong></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table" border="0" style="border:0px !important; margin-bottom:0px;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td style="text-align:center; font-size:24px; border:none !important;"><b style="margin-top:20px; margin-bottom:30px; display:block;">विषय: संयुक्त दस्तखतबाट संचालन हुने गरि खाता खोली दिने वारे ।</b></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-bottom:0px;">श्री&nbsp;&nbsp;<strong>@if (item.Bank_Name == "अन्य") { <span>@item.Other_Bank_Name</span>} else { @item.Bank_Name}</strong></h4></td>
+                    </tr>
+                    <tr>
+                        <td><h5 style="margin-bottom:0px;"><strong>लुन्खु देउराली ।</strong></h5></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p style="letter-spacing:1px; line-height:30px; font-weight:500; font-size:16px; padding-top:5px; text-align:justify !important;margin-top:30px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; उपरोक्त सम्वन्धमा यस नगर कार्यपालिका अन्तरगत वडा नं.&nbsp; <strong>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Ward_No.ToString())</strong> &nbsp;
+                                स्थित &nbsp; <strong>@item.Samiti_Name</strong> &nbsp; कार्य उपभोक्ता समिति मार्फत संचालन हुने भएकोले संलग्न दस्तखत नमुना काड वमोजिम उपभोक्ता समितिका अध्यक्ष श्री  &nbsp; <strong>@item.Adakshya_Name</strong> &nbsp;
+                                 कोषाध्यक्ष श्री  &nbsp; <strong>@item.Koshadakshya_Name</strong> &nbsp; र सचिव श्री  &nbsp; <strong>@item.Sachib_Name</strong> &nbsp; को 
+                                संयुक्त दस्तखत बाट संचालन हुने गरि चल्ती खाता खोली दिन हुन अनुरोध छ ।
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br /><br /><br /><br />
+            <table class="table" border="0" style="border:0px !important; margin-bottom:0px;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td> &nbsp; </td>
+                        <td style="font-size:16px; text-align:right;"><span style="padding-right:15px;">........................................</span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td style="font-size:16px; text-align:right;"><span style="display:block; padding-top:15px; padding-right:15px;"> प्रमुख प्रशासकीय अधिकृत </span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+
+                            }
+
+
+
+<script language="javascript" type="text/javascript">
+        function printDiv(divID) {
+            var divElements = document.getElementById(divID).innerHTML;
+            var oldPage = document.body.innerHTML;
+            document.body.innerHTML =
+              "<html><head><title></title></head><body>" +
+              divElements + "</body>";
+            window.print();
+            document.body.innerHTML = oldPage;
+        }
+</script>
+

@@ -1,0 +1,154 @@
+﻿@model PagedList.IPagedList<Planning.Areas.Admin.Models.PlanningSamjhautaViewModel.PlanningSamjhautaViewModel>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "PlanningSelectedReport";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div class="padding-md">
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="header-list" style="text-align: center">
+                    <h2>कार्यक्षेत्र अनुसारको विवरण</h2>
+                </div>
+                <hr />
+
+                @using (Html.BeginForm("PlanningNagarReletedReport", "PlanningSamjhauta", FormMethod.Get))
+                {
+                    <fieldset>
+                        <div class="row" style="margin-left:20px;">
+                            <div class="col-md-3">
+                                <label>आर्थिक वर्ष</label>
+                                @Html.DropDownList("FiscalYear", Planning.Utility.CommonUtility.GetFiscalYearList(), "-- छान्नुहोस --", new { @class = "form-control", @OnChange = "GetProjectNameByFiscalYear()" })
+                            </div>
+                            <div class="col-md-3">
+                                <label>कार्यक्षेत्र</label>
+                                @Html.DropDownList("WorkArea", Planning.Utility.CommonUtility.GetAllWorkAreaList(), "-- छान्नुहोस --", new { @class = "form-control", @OnChange = "GetProjectNameByFiscalYear()" })
+                            </div>
+                            <div class="col-md-3">
+                                <label> संपूर्ण डाटा </label>
+                                @Html.DropDownList("pageSizeManual", new List<SelectListItem>
+                                                 {
+                                                     new SelectListItem { Text = "संपूर्ण", Value = "allData"},
+                                                 }, "--छान्नुहोस--", new { @class = "form-control" })
+
+                            </div>
+                            <div class="col-md-2" style="padding-left:0px; padding-top:20px;">
+                                <input type="submit" name="submit" id="submit" value="खाेज्नुहाेस" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </fieldset>
+                }
+
+                @*<input id="btnExport" type="button" class="btn btn-info pull-right" value="Excel मा लैजानुहोस् " />*@
+                <a class="btn btn-info btn-sm pull-right" title="Excel" href="" id="btnExport" style="margin-bottom:5px;"><i class="fa fa-file-excel-o"></i>&nbsp; Excel मा लैजानुहोस्</a>
+
+                <div id="page-wrap">
+                    <table class="table table-bordered table-condensed table-hover table-striped" id="divPrint">
+                        <thead>
+                            <tr class="success">
+                                <th>क्र.स.</th>
+                                <th>आर्थिक वर्ष</th>
+                                <th>वडा/नगर</th>
+                                <th>कार्यक्षेत्र</th>
+                                <th>आयोजनाको नाम</th>
+                                <th>लागत अनुमान</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</th>
+                                    <td>@item.Fiscal_Year_Record</td>
+                                    <td>
+                                        @if (item.Planning_Type == "O")
+                                        {
+                                            <span>वडास्तरीय</span>
+                                        }
+                                        else if (item.Planning_Type == "N")
+                                        {
+                                            <span>नगरस्तरीय</span>
+                                        }
+                                    </td>
+                                    <td>@item.WorkAreName</td>
+                                    <td>@item.Project_Name</td>
+                                    <td>@item.Project_estimated_Amount</td>
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                        <tfoot style="background-color:darkgrey; border:!important;">
+                            @if (ViewBag.sumOfProjectAmount != null)
+                            {
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td style="text-align:center;"><strong>कुल रकम</strong></td>
+                                    <td><strong>@ViewBag.sumOfProjectAmount</strong></td>
+                                </tr>
+                            }
+                        </tfoot>
+                    </table>
+                    <br />
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                    @Html.PagedListPager(Model, Page_No => Url.Action("PlanningNagarReletedReport",
+                   new { Page_No, FiscalYear = ViewBag.FiscalYear, WorkArea = ViewBag.WorkArea }))
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<script type="text/javascript">
+        var $ = jQuery.noConflict();
+        function GetProjectNameByFiscalYear()
+        {
+            debugger;
+            var value = $('#FiscalYear option:selected').val();
+            if (value == null || value == 0)
+            {
+                var item = "<option>-- छान्नुहोस --</option>";
+                $("#ProjectName").html(item);
+                return false;
+            }
+            $.ajax({
+                url: "@Url.Action("GetProjectNameByFiscalYear", "PlanningSamjhauta")",
+                type: 'get',
+                datatype: "json",
+                data: { fiscalYear: value },
+                success: function (data)
+                {
+                    var items = "<option value=\"\">" + "छान्नुहोस्" + "</option>";
+                    $.each(data, function (i, item)
+                    {
+                        items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                    });
+                    $("#ProjectName").html(items);
+                },
+                failure: function ()
+                {
+                    alert('An error occurred.');
+                }
+            })
+        }
+    </script>*@
+
+<script>
+    $("#btnExport").click(function ()
+    {
+        //var currentdate = new Date();
+        var currentdate = new Date().toLocaleString();
+        let file = new Blob([$('#page-wrap').html()], { type: "application/vnd.ms-excel" });
+        let url = URL.createObjectURL(file);
+        let a = $("<a />", {
+            href: url,
+            download: "योजना-सम्झौता.xls"
+            //download: currentdate+"योजना-सम्झौता.xls"
+        }).appendTo("body").get(0).click();
+        e.preventDefault();
+    });
+</script>

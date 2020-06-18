@@ -1,0 +1,462 @@
+﻿@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi10ViewModel
+
+@{
+    ViewBag.Title = "Anusuchi10";
+     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    List<Planning.Planning.Entities.Organization_Setup> OrganiationName = new List<Planning.Planning.Entities.Organization_Setup>();
+    using (Planning.Planning.Entities.PLANNING_OCT_03Entities db = new Planning.Planning.Entities.PLANNING_OCT_03Entities())
+    {
+        OrganiationName = (from b in db.Organization_Setup select b).ToList();
+        var Image_Path = OrganiationName.Select(x => x.Image_Path).SingleOrDefault();
+        ViewBag.Image_Path = Image_Path;
+    }
+
+}
+
+
+<script src="~/js/nepali.datepicker.v2.2.min.js"></script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+
+<div class="tab-pane fade in active" id="fiscalYearRecord">
+    <h3 class="step_ttl">अनुसूची १० / अनुगमन तथा सहजीकरण समितिको बैठक</h3>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well" }))
+    {
+        @Html.HiddenFor(model => model.Planning_Samjhauta_Id)
+        @Html.HiddenFor(model => model.AnuSuchi10_Id)
+
+        <fieldset>
+
+            @if (Model.Anusuchi10_MeetingViewModelList.Count > 0)
+            {
+                <span style="text-decoration:underline; font-size:16px; font-weight:bold;">सम्पन्न बैठ </span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>बैठक नं.</th>
+                            <th>बैठकको मितिः</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Anusuchi10_MeetingViewModelList)
+                        {
+                            <tr>
+                                <td>@item.Baithak_No</td>
+                                <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(item.Baithak_Date)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            <br />
+            <span style="text-decoration:underline; font-size:16px; font-weight:bold;">नयाँ बैठक</span>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>बैठक नं.</label>
+                        @Html.EditorFor(model => model.Baithak_No, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Baithak_No, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>बैठकको मितिः</label>
+                        @Html.EditorFor(model => model.Baithak_Date, new { htmlAttributes = new { @class = "form-control nepali-calendar" } })
+                        @Html.ValidationMessageFor(model => model.Baithak_Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="row">
+                <div class="detail" style="font-size:16px; font-weight:500;">१.उपस्थिति</div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>अध्यक्षको नामः</label>
+                        @Html.EditorFor(model => model.Adakshya, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.ValidationMessageFor(model => model.Adakshya, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>अध्यक्षको लिंगः</label>
+                        @Html.DropDownListFor(model => model.Adakshya_Gender, Planning.Utility.CommonUtility.GetGenderList(), "-- छान्नुहोस --", new { @class = "form-control " })
+                        @Html.ValidationMessageFor(model => model.Adakshya_Gender, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <label>अध्यक्षको मोबाइल नंः</label>
+                        @Html.EditorFor(model => model.Adakshya_MobileNo, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.ValidationMessageFor(model => model.Adakshya_MobileNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>अन्य पदाधिकारी</label>
+                </div>
+                <div class="col-md-10">
+                    <button type="button" id="btn-Add_MembersOptions" class="btn btn-primary btn-add pull-right">
+                        <i class="fa fa-plus"></i>&nbsp; पदाधिकारी थप्नुहोस्
+                    </button>
+                </div>
+                <div class="clearfix">
+                </div><br />
+                @*@if (Model.PlanningSamjhautaMembersViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.PlanningSamjhautaMembersViewModelList)
+                    {
+                        @Html.Partial("_Members", item)
+                    }
+                }*@
+                @if (Model.Anusuchi10_MembersViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.Anusuchi10_MembersViewModelList)
+                    {
+                        @Html.Partial("_Members", item)
+                    }
+                }
+                else
+                {
+                    @Html.Partial("_Members")
+                }
+
+
+                <div id="getMembersOptions">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>२. समितिको बैठकमा छलफल गरिएको प्रस्ताव विषयः</label>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" id="btn-Add_SubjectsOptions" class="btn btn-primary btn-add">
+                        <i class="fa fa-plus"></i>&nbsp; विषयहरु थप्नुहोस्
+                    </button>
+                </div>
+                <div class="clearfix"></div><br />
+
+                @if (Model.Anusuchi10_Discussion_SubjectsViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.Anusuchi10_Discussion_SubjectsViewModelList)
+                    {
+                        @Html.Partial("_Subjects", item)
+                    }
+                }
+                else
+                {
+                    @Html.Partial("_Subjects")
+                }
+
+                <div id="getSubjectsOption">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>३. निर्णयहरुः</label>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" id="btn-Add_ConclusionsOptions" class="btn btn-primary btn-add">
+                        <i class="fa fa-plus"></i>&nbsp; निर्णयहरु थप्नुहोस्
+                    </button>
+                </div>
+                <div class="clearfix"></div><br />
+
+                @if (Model.Anusuchi10_Discussion_ConclusionsViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.Anusuchi10_Discussion_ConclusionsViewModelList)
+                    {
+                        @Html.Partial("_Conclusions", item)
+                    }
+                }
+                else
+                {
+                    @Html.Partial("_Conclusions")
+                }
+
+                <div id="getConclusionsOption">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+
+            <div class="form-group">
+                <label class="col-lg-3  col-md-4 control-label"></label>
+                <div class="col-lg-7 col-md-7">
+                    <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">प्रिन्ट</button>
+                </div>
+            </div>
+        </fieldset>
+    }
+</div>
+
+
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:800px;">
+            <div class="cotract_letter" id="printdiv">
+
+                <style>
+                    .header-section .table tbody > tr, .content-section .table tbody > tr, .detail .table tbody > tr, .sign.table tbody > tr {
+                        border: none !important;
+                    }
+
+                    th {
+                        text-align: center;
+                    }
+
+                    header-section .table tr td, .content-section .table tbody > tr, .detail .table tbody > tr, .sign .table tbody > tr {
+                        border: none !important;
+                        border-color: #f9f9f9 !important;
+                        padding: 0px !important;
+                    }
+
+                    @@media print {
+                        .header-section .table tr td, .content-section .table tr td {
+                            border: none !important;
+                            border: !important;
+                            border-color: #fff !important;
+                            padding: 0px !important;
+                        }
+
+                        .header-section .table tbody > tr, .content-section .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+
+                        .header-section .table, .table tbody > tr, td, .content-section .table, .table tbody > tr {
+                            border: none !important;
+                            border: 0 !important;
+                        }
+                    }
+                </style>
+
+                <div class="header-section">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="20%" style="border:none !important; border:0px !important;">
+                                    <img src="~/img/gov-logo.png" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline;" />
+                                </td>
+                                <td width="55%" style="text-align:center; border:none !important; border:0px !important;">
+                                    <h2 style="font-weight:bold; font-size:18px;">अनुसूची १०</h2>
+                                    <h2 style="font-weight:bold; font-size:18px; margin-top:0px;">अनुगमन तथा सहजीकरण समितिको बैठक</h2>
+                                </td>
+                                <td width="25%" style="border:none !important; border:0px !important;">
+                                    <img src="@ViewBag.Image_Path" style="max-height:120px; max-width:100%; display:inline-block; position:relative; vertical-align:baseline; float:right;" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section" style="font-size:14px; font-weight:500; padding:0px 60px;">
+                    <table class="table" border="0" style="border:0px !important;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="font-size:16px; border:none !important;"><span style="font-size:14px;">बैठक नं. @Model.Baithak_No</span></td>
+                                <td style="font-size:16px; border:none !important;"><span style="font-size:14px;">बैठकको मितिः @Model.Baithak_Date</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-12 col-md-12" style="font-size:14px; font-weight:500; padding:0px 60px;">
+                    <h4 style="margin:0px;">१. अनुगमन तथा सहजीकरण समितिको उपस्थिति</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center; width:5%;">क्र.सं.</th>
+                                <th style="text-align:center;">पदाधिकारीको नाम</th>
+                                <th style="text-align:center; width:10%;">लिंग</th>
+                                <th style="text-align:center;width:10%;">पद</th>
+                                <th style="text-align:center;">मोबाइल नं.</th>
+                                <th style="text-align:center;width:20%;">दस्तखत</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>१.</td>
+                                <td>@Model.Adakshya</td>
+                                <td>@Model.Adakshya_Gender</td>
+                                <td>अध्यक्ष</td>
+                                <td>@Model.Adakshya_MobileNo</td>
+                                <td></td>
+                            </tr>
+
+                            @{ int i = 2;}
+                            @if (Model.Anusuchi10_MembersViewModelList.Count > 0)
+                            {
+                                foreach (var item in Model.Anusuchi10_MembersViewModelList)
+                                {
+                                    <tr>
+                                        <td>@Planning.Utility.NepaliEnglishNumber.English_Nepali(i.ToString())</td>
+                                        <td>@item.Members</td>
+                                        <td>@item.Members_Gender</td>
+                                        <td>@item.Members_Pad</td>
+                                        <td>@item.Members_MobileNo</td>
+                                        <td></td>
+                                    </tr>
+                                    i++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-12 col-md-12" style="font-size:14px; font-weight:500; padding:0px 60px;">
+                    <h4 style="margin:0px;">२. प्रस्ताव छलफल र निर्णयः</h4>
+                    <h4 style="margin:0px;">समितिको बैठकमा छलफल गरिएको प्रस्ताव । विषय</h4>
+                    <table class="table ">
+                        <tbody>
+                            @{ int j = 1;}
+                            @if (Model.Anusuchi10_Discussion_SubjectsViewModelList.Count > 0)
+                            {
+                                foreach (var item in Model.Anusuchi10_Discussion_SubjectsViewModelList)
+                                {
+                                    <tr style="border:none;">
+                                        <td style="border:none;" width="5px;">@Planning.Utility.NepaliEnglishNumber.English_Nepali(j.ToString())</td>
+                                        <td style="border:none;">@item.Subjects</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-12 col-md-12" style="font-size:14px; font-weight:500; padding:0px 60px;">
+                    <h4 style="margin:0px;">निर्णयहरू</h4>
+                    <table class="table">
+                        <tbody>
+                            @{ int k = 1;}
+                            @if (Model.Anusuchi10_Discussion_ConclusionsViewModelList.Count > 0)
+                            {
+                                foreach (var item in Model.Anusuchi10_Discussion_ConclusionsViewModelList)
+                                {
+                                    <tr style="border:none;">
+                                        <td style="border:none;" width="5px;">@Planning.Utility.NepaliEnglishNumber.English_Nepali(k.ToString())</td>
+                                        <td style="border:none;">@item.Conclusions</td>
+                                    </tr>
+                                }
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="प्रिन्ट गर्नुहोस" formtarget="_blank" onclick="javascript: printDiv('printdiv')" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-Add_MembersOptions').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddMembers", "PlanningAnusuchi10")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getMembersOptions').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-Add_SubjectsOptions').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddSubjects", "PlanningAnusuchi10")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getSubjectsOption').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $('#btn-Add_ConclusionsOptions').on('click', function () {
+        debugger;
+        $.ajax({
+            url: '@Url.Action("AddConclusions", "PlanningAnusuchi10")',
+            type: 'GET',
+            data: {
+            },
+            success: function (result) {
+                $('#getConclusionsOption').append(result);
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+<script>
+    $('#Baithak_Date').nepaliDatePicker({
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 10
+    });
+</script>
+
+
+<script language="javascript" type="text/javascript">
+    function printDiv(divID) {
+
+        $('#myModal').modal('hide')
+        $('.modal-backdrop').hide();
+
+        var divElements = document.getElementById(divID).innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+          "<html><head><title></title></head><body>" +
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
+</script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.btn-info').click(function () {
+        $('#myModal').modal({
+			backdrop: 'static'
+		});
+	});
+});
+</script>

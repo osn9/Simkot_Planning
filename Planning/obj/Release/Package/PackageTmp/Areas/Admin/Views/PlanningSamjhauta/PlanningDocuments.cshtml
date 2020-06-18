@@ -1,0 +1,326 @@
+﻿
+@model Planning.Areas.Admin.Models.PlanningDocumentsViewModel.PlanningDocumentsViewModel
+
+@{
+    ViewBag.Title = "PlanningDocuments";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<div class="padding-md">
+    <section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="fiscalYearRecord">
+                            <h3 class="step_ttl">संलग्न कागजातहरु</h3>
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "well" }))
+                            {
+                                @Html.HiddenFor(model => model.Planning_Samjhauta_Id)
+                                @Html.HiddenFor(model => model.Fiscal_Year)
+                                @Html.HiddenFor(model => model.Project_Name)
+                                @Html.HiddenFor(model => model.Planning_Documents_Id)
+
+                                if (Model != null)
+                                {
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-lg-2  col-md-4 control-label">उ.स.लाई गठन गर्ने सम्बन्धमा</label>
+                                                @if (Model.Upabhokta_Gathan != null)
+                                                {
+                                                    <div class="col-lg-4 col-md-8">
+                                                        <a href="@Url.Action("DownloadPlanningDocumentFiles", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" style="color:forestgreen"><i class="fa fa-download">&nbsp;</i> डाउनलोड गर्नुहोस्</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="@Url.Action("PreviewPlanningDocumentFile", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" target="_blank" style="color:cornflowerblue"> <i class="fa fa-file">&nbsp;</i> पूर्वावलोकन</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="#" style="color:midnightblue" class="edit" onclick="getUploadOption(this)"><i class="fa fa-edit"></i> सच्याउनुहोस</a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col-lg-3 col-md-6 inputGroupContainer">
+                                                        <input type="file" name="File" id="File">
+                                                    </div>
+                                                }
+                                                <div class="col-lg-5 col-md-8 inputGroupContainer planchange">
+                                                    <a href="#" style="color:red;" onclick="hideUploadOption(this)"><i class="fa fa-times"></i> हटाउनुहोस</a>
+                                                    <input type="file" name="File" id="File" style="display:inline-block !important;position:relative;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-lg-2  col-md-4 control-label">निर्णय</label>
+                                                @if (Model.Nirnaya != null)
+                                                {
+                                                    <div class="col-lg-4 col-md-8">
+                                                        <a href="@Url.Action("DownloadPlanningDocumentFiles", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" style="color:forestgreen"><i class="fa fa-download">&nbsp;</i> डाउनलोड गर्नुहोस्</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="@Url.Action("PreviewPlanningDocumentFile", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" target="_blank" style="color:cornflowerblue"> <i class="fa fa-file">&nbsp;</i> पूर्वावलोकन</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="#" style="color:midnightblue" class="edit" onclick="getUploadOption(this)"><i class="fa fa-edit"></i> सच्याउनुहोस</a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col-lg-3 col-md-6 inputGroupContainer">
+                                                        <input type="file" name="File1" id="File1">
+                                                    </div>
+                                                }
+                                                <div class="col-lg-5 col-md-8 inputGroupContainer planchange">
+                                                    <a href="#" style="color:red;" onclick="hideUploadOption(this)"><i class="fa fa-times"></i> हटाउनुहोस</a>
+                                                    <input type="file" name="File" id="File" style="display:inline-block !important;position:relative;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-lg-2  col-md-4 control-label">सम्झोेता गरी पाउँ</label>
+                                                @if (Model.Samjhauta != null)
+                                                {
+                                                    <div class="col-lg-4 col-md-8">
+                                                        <a href="@Url.Action("DownloadPlanningDocumentFiles", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" style="color:forestgreen"><i class="fa fa-download">&nbsp;</i> डाउनलोड गर्नुहोस्</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="@Url.Action("PreviewPlanningDocumentFile", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" target="_blank" style="color:cornflowerblue"> <i class="fa fa-file">&nbsp;</i> पूर्वावलोकन</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="#" style="color:midnightblue" class="edit" onclick="getUploadOption(this)"><i class="fa fa-edit"></i> सच्याउनुहोस</a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col-lg-3 col-md-6 inputGroupContainer">
+                                                        <input type="file" name="File2" id="File2">
+                                                    </div>
+                                                }
+                                                <div class="col-lg-5 col-md-8 inputGroupContainer planchange">
+                                                    <a href="#" style="color:red;" onclick="hideUploadOption(this)"><i class="fa fa-times"></i> हटाउनुहोस</a>
+                                                    <input type="file" name="File" id="File" style="display:inline-block !important;position:relative;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-lg-2  col-md-4 control-label">अनुमान</label>
+                                                @if (Model.Anuman != null)
+                                                {
+                                                    <div class="col-lg-4 col-md-8">
+                                                        <a href="@Url.Action("DownloadPlanningDocumentFiles", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" style="color:forestgreen"><i class="fa fa-download">&nbsp;</i> डाउनलोड गर्नुहोस्</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="@Url.Action("PreviewPlanningDocumentFile", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" target="_blank" style="color:cornflowerblue"> <i class="fa fa-file">&nbsp;</i> पूर्वावलोकन</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="#" style="color:midnightblue" class="edit" onclick="getUploadOption(this)"><i class="fa fa-edit"></i> सच्याउनुहोस</a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col-lg-3 col-md-6 inputGroupContainer">
+                                                        <input type="file" name="File3" id="File3">
+                                                    </div>
+                                                }
+                                                <div class="col-lg-5 col-md-8 inputGroupContainer planchange">
+                                                    <a href="#" style="color:red;" onclick="hideUploadOption(this)"><i class="fa fa-times"></i> हटाउनुहोस</a>
+                                                    <input type="file" name="File" id="File" style="display:inline-block !important;position:relative;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-lg-2  col-md-4 control-label">मापन</label>
+                                                @if (Model.Mapan != null)
+                                                {
+                                                    <div class="col-lg-4 col-md-8">
+                                                        <a href="@Url.Action("DownloadPlanningDocumentFiles", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" style="color:forestgreen"><i class="fa fa-download">&nbsp;</i> डाउनलोड गर्नुहोस्</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="@Url.Action("PreviewPlanningDocumentFile", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" target="_blank" style="color:cornflowerblue"> <i class="fa fa-file">&nbsp;</i> पूर्वावलोकन</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="#" style="color:midnightblue" class="edit" onclick="getUploadOption(this)"><i class="fa fa-edit"></i> सच्याउनुहोस</a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col-lg-3 col-md-6 inputGroupContainer">
+                                                        <input type="file" name="File4" id="File4">
+                                                    </div>
+                                                }
+                                                <div class="col-lg-5 col-md-8 inputGroupContainer planchange">
+                                                    <a href="#" style="color:red;" onclick="hideUploadOption(this)"><i class="fa fa-times"></i> हटाउनुहोस</a>
+                                                    <input type="file" name="File" id="File" style="display:inline-block !important;position:relative;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-lg-2  col-md-4 control-label">प्रमाणीकरण रिपोर्ट</label>
+                                                @if (Model.Pramanikaran != null)
+                                                {
+                                                    <div class="col-lg-4 col-md-8">
+                                                        <a href="@Url.Action("DownloadPlanningDocumentFiles", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" style="color:forestgreen"><i class="fa fa-download">&nbsp;</i> डाउनलोड गर्नुहोस्</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="@Url.Action("PreviewPlanningDocumentFile", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" target="_blank" style="color:cornflowerblue"> <i class="fa fa-file">&nbsp;</i> पूर्वावलोकन</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="#" style="color:midnightblue" class="edit" onclick="getUploadOption(this)"><i class="fa fa-edit"></i> सच्याउनुहोस</a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col-lg-3 col-md-6 inputGroupContainer">
+                                                        <input type="file" name="File5" id="File5">
+                                                    </div>
+                                                }
+                                                <div class="col-lg-5 col-md-8 inputGroupContainer planchange">
+                                                    <a href="#" style="color:red;" onclick="hideUploadOption(this)"><i class="fa fa-times"></i> हटाउनुहोस</a>
+                                                    <input type="file" name="File" id="File" style="display:inline-block !important;position:relative;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-lg-2  col-md-4 control-label">कार्य सम्पन्न रिपोर्ट</label>
+                                                @if (Model.Karya_Sampanna != null)
+                                                {
+                                                    <div class="col-lg-4 col-md-8">
+                                                        <a href="@Url.Action("DownloadPlanningDocumentFiles", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" style="color:forestgreen"><i class="fa fa-download">&nbsp;</i> डाउनलोड गर्नुहोस्</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="@Url.Action("PreviewPlanningDocumentFile", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" target="_blank" style="color:cornflowerblue"> <i class="fa fa-file">&nbsp;</i> पूर्वावलोकन</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="#" style="color:midnightblue" class="edit" onclick="getUploadOption(this)"><i class="fa fa-edit"></i> सच्याउनुहोस</a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col-lg-3 col-md-6 inputGroupContainer">
+                                                        <input type="file" name="File6" id="File6">
+                                                    </div>
+                                                }
+                                                <div class="col-lg-5 col-md-8 inputGroupContainer planchange">
+                                                    <a href="#" style="color:red;" onclick="hideUploadOption(this)"><i class="fa fa-times"></i> हटाउनुहोस</a>
+                                                    <input type="file" name="File" id="File" style="display:inline-block !important;position:relative;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-lg-2  col-md-4 control-label">भुक्तानी निबेदन</label>
+                                                @if (Model.Bhuktani_Nibedan != null)
+                                                {
+                                                    <div class="col-lg-4 col-md-8">
+                                                        <a href="@Url.Action("DownloadPlanningDocumentFiles", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" style="color:forestgreen"><i class="fa fa-download">&nbsp;</i> डाउनलोड गर्नुहोस्</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="@Url.Action("PreviewPlanningDocumentFile", "PlanningSamjhauta", new { @id = Model.Planning_Samjhauta_Id, @id1 = 1 })" target="_blank" style="color:cornflowerblue"> <i class="fa fa-file">&nbsp;</i> पूर्वावलोकन</a><span>&nbsp;&nbsp;</span>
+                                                        <a href="#" style="color:midnightblue" class="edit" onclick="getUploadOption(this)"><i class="fa fa-edit"></i> सच्याउनुहोस</a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col-lg-3 col-md-6 inputGroupContainer">
+                                                        <input type="file" name="File7" id="File7">
+                                                    </div>
+                                                }
+                                                <div class="col-lg-5 col-md-8 inputGroupContainer planchange">
+                                                    <a href="#" style="color:red;" onclick="hideUploadOption(this)"><i class="fa fa-times"></i> हटाउनुहोस</a>
+                                                    <input type="file" name="File" id="File" style="display:inline-block !important;position:relative;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p>&nbsp;</p>
+                                        <div class="form-group">
+                                            <label class="col-lg-3  col-md-4 control-label"></label>
+                                            <div class="col-lg-7 col-md-7">
+                                                <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                                                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("PlanningSamjhautaIndex", "PlanningSamjhauta")'">मुख्य मेनु</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                }
+                                else
+                                {
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label class="col-lg-2  col-md-4 control-label">उ.स.लाई गठन गर्ने सम्बन्धमा</label>
+                                            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                                                <input type="file" name="File" id="File">
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2  col-md-4 control-label">निर्णय</label>
+                                            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                                                <input type="file" name="File1" id="File1">
+
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2  col-md-4 control-label">सम्झोेता गरी पाउँ</label>
+                                            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                                                <input type="file" name="File2" id="File2">
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2  col-md-4 control-label">अनुमान</label>
+                                            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                                                <input type="file" name="File3" id="File3">
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2  col-md-4 control-label">मापन</label>
+                                            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                                                <input type="file" name="File4" id="File4">
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2  col-md-4 control-label">प्रमाणीकरण रिपोर्ट</label>
+                                            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                                                <input type="file" name="File5" id="File5">
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2  col-md-4 control-label">कार्य सम्पन्न रिपोर्ट</label>
+                                            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                                                <input type="file" name="File6" id="File6">
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2  col-md-4 control-label">भुक्तानी निबेदन</label>
+                                            <div class="col-lg-7 col-md-7 inputGroupContainer">
+                                                <input type="file" name="File7" id="File7">
+                                            </div>
+                                        </div>
+
+
+                                        <p>&nbsp;</p>
+                                        <div class="form-group">
+                                            <label class="col-lg-3  col-md-4 control-label"></label>
+                                            <div class="col-lg-7 col-md-7">
+                                                <button type="submit" class="btn btn-success">सुरक्षित गर्नुहोस </button>
+                                                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("PlanningSamjhautaIndex", "PlanningSamjhauta")'">मुख्य मेनु</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                }
+                            }
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.planchange').hide();
+    })
+    function getUploadOption(a) {
+        var row = $(a).closest('.row');
+        $(row).find('.planchange').show();
+        $(row).find('.edit').hide();
+    }
+    function hideUploadOption(a) {
+        var row = $(a).closest('.row');
+        $(row).find('.planchange').hide();
+        $(row).find('.edit').show();
+    }
+</script>

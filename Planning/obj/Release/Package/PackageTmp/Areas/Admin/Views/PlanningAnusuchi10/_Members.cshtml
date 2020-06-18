@@ -1,0 +1,48 @@
+﻿@model Planning.Areas.Admin.Models.PlanningAnusuchiViewModel.Anusuchi10ViewModel
+
+@using Planning.Helpers
+
+@using (Html.BeginCollectionItem("Anusuchi10_MembersViewModelList"))
+{
+    <div id="Members_UpaBhoktaSamiti" class="form-group">
+        <div class="col-lg-3 col-md-6">
+            <div class="form-group">
+                <label>पदाधिकारी नामः</label>
+                @Html.EditorFor(model => model.Members, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.Members, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <div class="form-group">
+                <label>पदाधिकारी लिंगः</label>
+                @Html.DropDownListFor(model => model.Members_Gender, Planning.Utility.CommonUtility.GetGenderList(), "-- छान्नुहोस --", new { @class = "form-control " })
+                @Html.ValidationMessageFor(model => model.Members_Gender, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="form-group">
+                <label>पदाधिकारी पदः</label>
+                @Html.DropDownListFor(model => model.Members_Pad, Planning.Utility.CommonUtility.GetDesignitionList(), "-- छान्नुहोस --", new { @class = "form-control " })
+                @Html.ValidationMessageFor(model => model.Members_Pad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="form-group">
+                <label>पदाधिकारी मोबाइल नंः</label>
+                @Html.EditorFor(model => model.Members_MobileNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Members_MobileNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="btn-delete col-md-1">
+            <div><a href='javascript:;' class="btn btn-danger btn-sm removesolutions"><span class='fa fa-minus fa-1x'></span></a></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+
+
+<script>
+    $(".removesolutions").click(function () {
+        $(this).parents("#Members_UpaBhoktaSamiti").remove();
+    });
+</script>
